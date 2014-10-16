@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1246</width>
+    <height>804</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Зоны Френеля</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <item row="0" column="0">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="tabPosition">
+         <enum>QTabWidget::South</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Заглавная страница</string>
+         </attribute>
+         <widget class="QWidget" name="verticalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>2</width>
+            <height>2</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2"/>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>40</y>
+            <width>691</width>
+            <height>52</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>DejaVu Sans</family>
+            <pointsize>30</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+          <property name="text">
+           <string>Зоны Френеля</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::RichText</enum>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="Line" name="line">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>110</y>
+            <width>981</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>260</y>
+            <width>621</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Зависимость интенсивности от расстояния</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>350</y>
+            <width>621</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Зависимость интенсивности от радиуса отверстия</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>170</y>
+            <width>621</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Построение зон Френеля</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>Построение зон Френеля</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Графики интенсивности на центральной оси</string>
+         </attribute>
+         <widget class="QCustomPlot" name="customPlot" native="true">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>1201</width>
+            <height>371</height>
+           </rect>
+          </property>
+          <widget class="QFrame" name="frame">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>1201</width>
+             <height>371</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QFrame" name="frame_2">
+          <property name="geometry">
+           <rect>
+            <x>850</x>
+            <y>390</y>
+            <width>361</width>
+            <height>341</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="SpiralGraph" name="widget" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>341</width>
+             <height>321</height>
+            </rect>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>900</x>
+            <y>730</y>
+            <width>281</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Графическое вычисление амплитуды</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="horizontalSlider">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>540</y>
+            <width>401</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>560</y>
+            <width>231</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Расстояние до отверстия</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="doubleSpinBox">
+          <property name="geometry">
+           <rect>
+            <x>336</x>
+            <y>560</y>
+            <width>81</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>600</x>
+            <y>730</y>
+            <width>231</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Зоны Френеля</string>
+          </property>
+         </widget>
+         <widget class="QFrame" name="frame_3">
+          <property name="geometry">
+           <rect>
+            <x>470</x>
+            <y>390</y>
+            <width>361</width>
+            <height>341</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="SpiralGraph" name="widget_2" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>341</width>
+             <height>321</height>
+            </rect>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>510</y>
+            <width>421</width>
+            <height>221</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Интерактивные параметры</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>630</y>
+            <width>231</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Радиус отверстия</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="horizontalSlider_2">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>610</y>
+            <width>401</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+          <property name="geometry">
+           <rect>
+            <x>336</x>
+            <y>630</y>
+            <width>81</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QSlider" name="horizontalSlider_3">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>680</y>
+            <width>401</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>700</y>
+            <width>231</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Длина волны</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+          <property name="geometry">
+           <rect>
+            <x>336</x>
+            <y>700</y>
+            <width>81</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>390</y>
+            <width>401</width>
+            <height>111</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Вид графика</string>
+          </property>
+          <widget class="QRadioButton" name="radioButton">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>401</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Зависимость от расстояния до отверстия</string>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="radioButton_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>401</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Зависимость от радиуса отверстия</string>
+           </property>
+          </widget>
+         </widget>
+         <zorder>groupBox</zorder>
+         <zorder>customPlot</zorder>
+         <zorder>frame_2</zorder>
+         <zorder>label_3</zorder>
+         <zorder>horizontalSlider</zorder>
+         <zorder>label_4</zorder>
+         <zorder>doubleSpinBox</zorder>
+         <zorder>label_5</zorder>
+         <zorder>frame_3</zorder>
+         <zorder>label_6</zorder>
+         <zorder>horizontalSlider_2</zorder>
+         <zorder>doubleSpinBox_2</zorder>
+         <zorder>horizontalSlider_3</zorder>
+         <zorder>label_7</zorder>
+         <zorder>doubleSpinBox_3</zorder>
+         <zorder>groupBox_2</zorder>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Интенсивность от ширины отверстия</string>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SpiralGraph</class>
+   <extends>QWidget</extends>
+   <header>spiralgraph.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>buttonXDependencePressed()</slot>
+ </slots>
+</ui>
