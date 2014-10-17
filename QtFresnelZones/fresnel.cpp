@@ -2,15 +2,21 @@
 
 #include <cmath>
 
-Fresnel::Fresnel(double initialAmplitude    = 100,
-                 double waveLength          = 500e-6,
-                 double holeRadius          = 0.01,
-                 double observerDistance    = 0.5,
-                 double sourceDistance      = 0.05,
-                 double accuracyPlot        = 0.001,
-                 double accuracySpiral      = 10,
-                 bool   amplitudePlate      = false,
-                 bool   phasePlate          = false) :
+
+Fresnel::Fresnel()
+{
+    this->setDefaults();
+}
+
+Fresnel::Fresnel(double initialAmplitude,
+                 double waveLength,
+                 double holeRadius,
+                 double observerDistance,
+                 double sourceDistance,
+                 double accuracyPlot,
+                 double accuracySpiral,
+                 bool   amplitudePlate,
+                 bool   phasePlate) :
     initialAmplitude(initialAmplitude),     // E0
     waveLength(waveLength),                 // l
     holeRadius(holeRadius),                 // R
@@ -23,6 +29,20 @@ Fresnel::Fresnel(double initialAmplitude    = 100,
     phasePlate(phasePlate)
 {
 
+}
+
+void Fresnel::setDefaults()
+{
+    this->initialAmplitude    = 100;
+    this->waveLength          = 500e-6;
+    this->holeRadius          = 0.01;
+    this->observerDistance    = 0.5;
+    this->sourceDistance      = 0.05;
+    this->accuracyPlot        = 0.00001;
+    this->accuracySpiral      = 10;
+    this->waveNumber          = 2.0 * M_PI / waveLength;
+    this->amplitudePlate      = false;
+    this->phasePlate          = false;
 }
 
 double Fresnel::intensity()
@@ -71,12 +91,11 @@ Complex Fresnel::amplitude(bool   parting,
         p = 1.0 / d;            // Sphere wave factor
         p *= r;                 // Jacobian
         p *= cos(phi) + 1.0;    // K(phi)
+        p *= amplitudeOnPlate(r);
 
         arg = -k * (d - b);     // Phase
         amp.re += -p * sin(arg);
         amp.im += p * cos(arg);
-
-        amp *= amplitudeOnPlate(r);
     }
 
     amp *= intK;
@@ -105,10 +124,12 @@ unsigned Fresnel::fresnelNumber(double r)
     return (int) (2.0 * (-l * b*b + sqrt(b*b + r*r)) / l);
 }
 
-void Fresnel::spiral(ComplexVector &spiral)
+void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
 {
-    spiral.clear();
-    spiral.push_back(Complex());
+    spiralX.clear();
+    spiralY.clear();
+    spiralX.push_back(0.0);
+    spiralY.push_back(0.0);
 
     unsigned fn = this->fresnelNumber();
     double R = this->holeRadius;
@@ -123,7 +144,8 @@ void Fresnel::spiral(ComplexVector &spiral)
 
         for (; (innerR < outerR) & (innerR < R); innerR += dr) {
             sp += this->amplitude(false, innerR, innerR + dr);
-            spiral.push_back(sp);
+            spiralX.push_back(sp.im);
+            spiralX.push_back(sp.re);
         }
 
         innerR = outerR;

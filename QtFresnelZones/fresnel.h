@@ -3,12 +3,13 @@
 
 #include "complex.h"
 
-#include <vector>
+#include <QVector>
 
 class Fresnel
 {
 public:
-    typedef std::vector<Complex> ComplexVector;
+    typedef QVector<Complex> ComplexVector;
+    typedef QVector<double>  DoubleVector;
     double  initialAmplitude;
     double  waveLength;
     double  holeRadius;
@@ -20,6 +21,7 @@ public:
     bool    amplitudePlate;
     bool    phasePlate;
 
+    Fresnel();
     Fresnel(double  initialAmplitude,
             double  waveLength,
             double  holeRadius,
@@ -30,14 +32,15 @@ public:
             bool    amplitudePlate,
             bool    phasePlate);
 
-    double     intensity();
+    void        setDefaults();
+    double      intensity();
     Complex     amplitude(bool   parting   = true,
                           double innerR    = 0.0,
                           double outerR    = -1.0);
     double      amplitudeOnPlate(double r);
     double      zoneOuterRadius(unsigned n);
     unsigned    fresnelNumber(double r = -1.0);
-    void        spiral(ComplexVector &spiral);
+    void        spiral(DoubleVector &spiralX, DoubleVector &doubleY);
 };
 
 #endif // FRESNEL_H
