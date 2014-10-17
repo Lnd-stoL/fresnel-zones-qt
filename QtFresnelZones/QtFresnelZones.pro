@@ -15,10 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     qcustomplot.cpp \
-    spiralgraph.cpp
+    spiralgraph.cpp \
+    fresnel.cpp \
+    complex.cpp
 
 HEADERS  += mainwindow.h \
     qcustomplot.h \
-    spiralgraph.h
+    spiralgraph.h \
+    fresnel.h \
+    complex.h
 
 FORMS    += mainwindow.ui
