@@ -16,13 +16,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     qcustomplot.cpp \
     spiralgraph.cpp \
-    fresnel.cpp \
-    complex.cpp
+    zonesgraph.cpp \
+    titlewindow.cpp \
+    intensitygraphwindow.cpp
 
 HEADERS  += mainwindow.h \
     qcustomplot.h \
     spiralgraph.h \
-    fresnel.h \
-    complex.h
+    zonesgraph.h \
+    titlewindow.h \
+    intensitygraphwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    titlewindow.ui \
+    intensitygraphwindow.ui
