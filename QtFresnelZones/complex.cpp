@@ -11,7 +11,7 @@ Complex::Complex(double re,
 }
 
 double Complex::sqAbs() {
-    return this->re * this->re + this->im + this->im;
+    return this->re * this->re + this->im * this->im;
 }
 
 double Complex::abs() {
