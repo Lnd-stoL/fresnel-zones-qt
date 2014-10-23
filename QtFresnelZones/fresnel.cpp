@@ -55,8 +55,7 @@ double Fresnel::intensity()
 // Integrate from innerR to outerR:
 // PI / l * E0 * e^(-k * (d - b)) / d * r * (cos(phi) + 1)) * dr
 //
-Complex Fresnel::amplitude(bool   parting,
-                           double innerR,
+Complex Fresnel::amplitude(double innerR,
                            double outerR)
 {
     if (outerR < 0) {
@@ -68,13 +67,8 @@ Complex Fresnel::amplitude(bool   parting,
     double r, dr, d, arg, p, phi;
     double R = outerR - innerR;
 
-    if (parting) {
-        dr = this->accuracyPlot;
-        n = R / dr;
-    } else {
-        dr = R;
-        n = 1;
-    }
+    dr = this->accuracyPlot;
+    n = R / dr;
 
     double l = this->waveLength;
     double a = this->sourceDistance;
@@ -111,7 +105,7 @@ double Fresnel::zoneOuterRadius(unsigned n)
 {
     double b = this->observerDistance;
     double l = this->waveLength;
-    return sqrt((n + 1)*(n + 1) * l*l / 4 + l * (n + 1) * b);
+    return sqrt((n + 1)*(n + 1) * l*l / 4.0 + l * (n + 1) * b);
 }
 
 unsigned Fresnel::fresnelNumber(double r)
@@ -121,7 +115,7 @@ unsigned Fresnel::fresnelNumber(double r)
     }
     double b = this->observerDistance;
     double l = this->waveLength;
-    return (int) (2.0 * (-l * b*b + sqrt(b*b + r*r)) / l);
+    return (unsigned int) (2.0 * (-l * b*b + sqrt(b*b + r*r)) / l);
 }
 
 void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
@@ -142,12 +136,15 @@ void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
         outerR = this->zoneOuterRadius(n);
         dr = (outerR - innerR) / accuracySpiral;
 
-        for (; (innerR < outerR) & (innerR < R); innerR += dr) {
-            sp += this->amplitude(false, innerR, innerR + dr);
-            spiralX.push_back(sp.im);
-            spiralX.push_back(sp.re);
-        }
+        for (unsigned i = 0; i < accuracySpiral; ++i) {
+            if (innerR > R) {
+                break;
+            }
 
-        innerR = outerR;
+            sp += this->amplitude(innerR, innerR + dr);
+            spiralX.push_back(sp.im);
+            spiralY.push_back(sp.re);
+            innerR += dr;
+        }
     }
 }

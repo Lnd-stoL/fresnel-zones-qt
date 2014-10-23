@@ -34,8 +34,7 @@ public:
 
     void        setDefaults();
     double      intensity();
-    Complex     amplitude(bool   parting   = true,
-                          double innerR    = 0.0,
+    Complex     amplitude(double innerR    = 0.0,
                           double outerR    = -1.0);
     double      amplitudeOnPlate(double r);
     double      zoneOuterRadius(unsigned n);
