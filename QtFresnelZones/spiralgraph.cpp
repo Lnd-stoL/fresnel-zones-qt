@@ -41,7 +41,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     painter.setBrush (QBrush (QColor (255, 255, 255)));  // Background
     painter.drawRect (0, 0, width, height);
 
-    painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 1, Qt::DashDotDotLine));
+    painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2));
     painter.drawLine (width/2, 0, width/2, height);
     painter.drawLine (0, height/2, width, height/2);
 

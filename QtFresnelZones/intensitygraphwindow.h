@@ -2,6 +2,7 @@
 #define INTENSITYGRAPHWINDOW_H
 
 #include <QMainWindow>
+#include "fresnel.h"
 
 namespace Ui {
 class IntensityGraphWindow;
@@ -16,8 +17,10 @@ public:
     ~IntensityGraphWindow();
 
 private:
+    bool holeDependance = false;
     bool readyToDrawGraphs;
     void updateGraph();
+    void updateGraphHole (Fresnel& fresnel);
 
 
 private slots:
@@ -30,6 +33,9 @@ private slots:
     void spin_xDistance_Changed  (int value);
     void spin_WaveLength_Changed (int value);
     void spin_HoleRadius_Changed (int value);
+
+    void radio_xDependance();
+    void radio_holeDependance();
 
 
 private:

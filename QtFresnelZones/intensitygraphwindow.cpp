@@ -106,6 +106,8 @@ IntensityGraphWindow::IntensityGraphWindow (QWidget *parent) :
     ui->setupUi (this);
 
     connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
+    connect (ui->radioButton_xDependance, SIGNAL(clicked()), this, SLOT(radio_xDependance()));
+    connect (ui->radioButton_holeDependance, SIGNAL(clicked()), this, SLOT(radio_holeDependance()));
 
     connect (ui->slider_xDistance,  SIGNAL(valueChanged(int)), this, SLOT(slider_xDistance_Changed(int)));
     connect (ui->slider_HoleRadius, SIGNAL(valueChanged(int)), this, SLOT(slider_HoleRadius_Changed(int)));
@@ -117,8 +119,8 @@ IntensityGraphWindow::IntensityGraphWindow (QWidget *parent) :
 
 
     int minWaveLength = 200, maxWaveLength = 900, defaultWaveLength = 500;
-    int minHoleRadius = 1000, maxHoleRadius = 20000, defaultHoleRadius = 10000;
-    int minxDistance  = 50, maxxDistance = 60000, defaultxDistance = 10000;
+    int minHoleRadius = 1000, maxHoleRadius = 100000, defaultHoleRadius = 10000;
+    int minxDistance  = 50, maxxDistance = 90000, defaultxDistance = 10000;
 
     ui->slider_HoleRadius->setRange (minHoleRadius, maxHoleRadius);
     ui->spin_HoleRadius->setRange (minHoleRadius, maxHoleRadius);
@@ -134,7 +136,6 @@ IntensityGraphWindow::IntensityGraphWindow (QWidget *parent) :
     ui->spin_xDistance->setRange (minxDistance, maxxDistance);
     ui->spin_xDistance->setValue (defaultxDistance);
     ui->slider_xDistance->setValue (defaultxDistance);
-
 
     readyToDrawGraphs = true;
     updateGraph();
@@ -152,56 +153,57 @@ void IntensityGraphWindow::updateGraph()
     if (!readyToDrawGraphs) return;
 
     Fresnel fresnel;
-
     fresnel.observerDistance = 0.0000001 * ui->slider_xDistance->value();
     fresnel.holeRadius = 0.0000001 * ui->slider_HoleRadius->value();
     fresnel.waveLength = 0.0000001 * ui->slider_WaveLength->value();
 
-    double lowest = 0.0000001 * ui->slider_xDistance->minimum();
-    double highest = 0.0000001 * ui->slider_xDistance->maximum();
-    double step = 0.0000001 * 50;
-
-    //qDebug() << "started";
-    QVector<double> plotX, plotY;
-    double current = fresnel.observerDistance;
-    for (double x = lowest; x < highest; x += step)
+    if (holeDependance) updateGraphHole (fresnel);
+    else
     {
-        //qDebug() << "calculating for " << x;
-        fresnel.observerDistance = x;
-        plotX.push_back (x);
-        plotY.push_back (fresnel.intensity());
+        double lowest = 0.0000001 * ui->slider_xDistance->minimum();
+        double highest = 0.0000001 * ui->slider_xDistance->maximum();
+        double step = 0.0000001 * 100;
+
+        //qDebug() << "started";
+        QVector<double> plotX, plotY;
+        double current = fresnel.observerDistance;
+        for (double x = lowest; x < highest; x += step)
+        {
+            //qDebug() << "calculating for " << x;
+            fresnel.observerDistance = x;
+            plotX.push_back (x);
+            plotY.push_back (fresnel.intensity());
+        }
+        fresnel.observerDistance = current;
+        //qDebug() << "finished";
+
+        ui->widget_Graph->addGraph();
+        ui->widget_Graph->graph(0)->setData (plotX, plotY);
+
+        ui->widget_Graph->xAxis->setLabel ("Расстояние (Нм)");
+        ui->widget_Graph->yAxis->setLabel ("Интенсивность");
+
+        ui->widget_Graph->xAxis->setRange (lowest, highest);
+        ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
+
+        ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 20));
+        ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 20));
+        ui->widget_Graph->xAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
+        ui->widget_Graph->yAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
+
+        ui->widget_Graph->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3));
+
+        ui->widget_Graph->replot();
     }
-    fresnel.observerDistance = current;
-    //qDebug() << "finished";
 
-    ui->widget_Graph->addGraph();
-    ui->widget_Graph->graph(0)->setData (plotX, plotY);
-
-    ui->widget_Graph->xAxis->setLabel ("Расстояние (Нм)");
-    ui->widget_Graph->yAxis->setLabel ("Интенсивность");
-
-    ui->widget_Graph->xAxis->setRange (lowest, highest);
-    ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
-
-    ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 20));
-    ui->widget_Graph->xAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
-    ui->widget_Graph->yAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
-    ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 20));
-
-    ui->widget_Graph->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3));
-
-    ui->widget_Graph->replot();
-
-
-    Fresnel fresnel2;
-    fresnel2.observerDistance = 0.0000001 * ui->slider_xDistance->value();
-    fresnel2.holeRadius = 0.0000001 * ui->slider_HoleRadius->value();
-    fresnel2.waveLength = 0.0000001 * ui->slider_WaveLength->value();
-
-    fresnel2.spiral (ui->widget_spiralGraph->spiralX, ui->widget_spiralGraph->spiralY);
-    qDebug() << "spiral calculated";
+    //-------------------------------------------------------------------------------------------------------
+    // Spiral
+    fresnel.spiral (ui->widget_spiralGraph->spiralX, ui->widget_spiralGraph->spiralY);
+    //qDebug() << "spiral calculated";
     ui->widget_spiralGraph->repaint();
 
+    //-------------------------------------------------------------------------------------------------------
+    // Zones
     ui->widget_Zones->zones.clear();
     for (int n = 0; n < fresnel.fresnelNumber(); ++n)
     {
@@ -213,6 +215,44 @@ void IntensityGraphWindow::updateGraph()
     spectral_color (cr, cg, cb, ui->slider_WaveLength->value());
     ui->widget_Zones->backgroundColor = waveLengthToRGB (ui->slider_WaveLength->value());
     ui->widget_Zones->repaint();
+}
+
+
+void IntensityGraphWindow::updateGraphHole (Fresnel& fresnel)
+{
+    double lowest = 0.0000001 * ui->slider_HoleRadius->minimum();
+    double highest = 0.0000001 * ui->slider_HoleRadius->maximum();
+    double step = 0.0000001 * 100;
+
+    QVector<double> plotX, plotY;
+    double current = fresnel.holeRadius = 0;
+    for (double x = lowest; x < highest; x += step)
+    {
+        //qDebug() << "calculating for " << x;
+        fresnel.holeRadius = x;
+        plotX.push_back (x);
+        plotY.push_back (fresnel.intensity());
+    }
+    fresnel.holeRadius = current;
+    //qDebug() << "finished";
+
+    ui->widget_Graph->addGraph();
+    ui->widget_Graph->graph(0)->setData (plotX, plotY);
+
+    ui->widget_Graph->xAxis->setLabel ("Размер отверстия (Нм)");
+    ui->widget_Graph->yAxis->setLabel ("Интенсивность");
+
+    ui->widget_Graph->xAxis->setRange (lowest, highest);
+    ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
+
+    ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 20));
+    ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 20));
+    ui->widget_Graph->xAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
+    ui->widget_Graph->yAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
+
+    ui->widget_Graph->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3));
+
+    ui->widget_Graph->replot();
 }
 
 
@@ -257,4 +297,23 @@ void IntensityGraphWindow::spin_HoleRadius_Changed (int value)
 {
     ui->slider_HoleRadius->setValue (value);
     //updateGraph();
+}
+
+
+void IntensityGraphWindow::radio_xDependance()
+{
+    if (this->holeDependance == true)
+    {
+        this->holeDependance = false;
+        this->updateGraph();
+    }
+}
+
+void IntensityGraphWindow::radio_holeDependance()
+{
+    if (this->holeDependance == false)
+    {
+        this->holeDependance = true;
+        this->updateGraph();
+    }
 }
