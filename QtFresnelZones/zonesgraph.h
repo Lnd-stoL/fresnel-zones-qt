@@ -9,6 +9,7 @@ class ZonesGraph : public QWidget
 
 public:
     QVector<double> zones;
+    QColor backgroundColor;
 
 public:
     explicit ZonesGraph(QWidget *parent = 0);

@@ -18,7 +18,7 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     int width = size().width();
     int height = size().height();
 
-    painter.setBrush (QBrush (QColor (0, 0, 0)));  // Background
+    painter.setBrush (QBrush (backgroundColor));  // Background
     painter.drawRect (0, 0, width, height);
 
     painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 1, Qt::DashDotDotLine));
