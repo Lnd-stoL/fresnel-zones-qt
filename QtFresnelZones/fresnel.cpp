@@ -1,8 +1,17 @@
 #include "fresnel.h"
-
+#include <QDebug>
 #include <cmath>
 
+double Fresnel::getWaveLength() const
+{
+    return waveLength;
+}
 
+void Fresnel::setWaveLength(double value)
+{
+    waveLength = value;
+    waveNumber = 2.0 * M_PI / waveLength;
+}
 Fresnel::Fresnel()
 {
     this->setDefaults();
@@ -115,7 +124,13 @@ unsigned Fresnel::fresnelNumber(double r)
     }
     double b = this->observerDistance;
     double l = this->waveLength;
-    return (unsigned int) (2.0 * (-l * b*b + sqrt(b*b + r*r)) / l);
+    //return (unsigned int) (2.0 * (-b*b + sqrt(b*b + r*r)) / l);
+    unsigned n = 0;
+    double x = 0;
+    while (x < r) {
+        x = zoneOuterRadius(n++);
+    }
+    return n;
 }
 
 void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
