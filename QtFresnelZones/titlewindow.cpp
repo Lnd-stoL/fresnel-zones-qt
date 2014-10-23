@@ -13,6 +13,7 @@ TitleWindow::TitleWindow(QWidget *parent) :
     ui->setupUi (this);
 
     connect (ui->pushButton_IntensityGraph, SIGNAL(clicked()), this, SLOT(openIntensityGraphWindow()));
+    connect (ui->pushButton_Exit, SIGNAL(clicked()), this, SLOT(exitApplication()));
 }
 
 
@@ -25,5 +26,12 @@ TitleWindow::~TitleWindow()
 void TitleWindow::openIntensityGraphWindow()
 {
     IntensityGraphWindow *wnd = new IntensityGraphWindow();
+    wnd->setAttribute (Qt::WA_DeleteOnClose);
     wnd->showFullScreen();
+}
+
+
+void TitleWindow::exitApplication()
+{
+    this->close();
 }

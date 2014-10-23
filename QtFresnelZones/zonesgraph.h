@@ -6,6 +6,10 @@
 class ZonesGraph : public QWidget
 {
     Q_OBJECT
+
+public:
+    QVector<double> zones;
+
 public:
     explicit ZonesGraph(QWidget *parent = 0);
 
@@ -13,6 +17,8 @@ signals:
 
 public slots:
 
+protected:
+    void paintEvent (QPaintEvent *event);
 };
 
 #endif // ZONESGRAPH_H

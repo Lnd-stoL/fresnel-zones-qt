@@ -39,7 +39,7 @@ void Fresnel::setDefaults()
     this->observerDistance    = 0.5;
     this->sourceDistance      = 0.05;
     this->accuracyPlot        = 0.00001;
-    this->accuracySpiral      = 10;
+    this->accuracySpiral      = 1;
     this->waveNumber          = 2.0 * M_PI / waveLength;
     this->amplitudePlate      = false;
     this->phasePlate          = false;
@@ -144,7 +144,7 @@ void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
 
         for (; (innerR < outerR) & (innerR < R); innerR += dr) {
             sp += this->amplitude(false, innerR, innerR + dr);
-            spiralX.push_back(sp.im);
+            spiralY.push_back(sp.im);
             spiralX.push_back(sp.re);
         }
 

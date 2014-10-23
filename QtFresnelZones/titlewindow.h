@@ -17,6 +17,7 @@ public:
 
 private slots:
     void openIntensityGraphWindow();
+    void exitApplication();
 
 private:
     Ui::TitleWindow *ui;
