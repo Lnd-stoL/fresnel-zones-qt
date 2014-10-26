@@ -47,7 +47,7 @@ void Fresnel::setDefaults()
     this->holeRadius          = 0.01;
     this->observerDistance    = 0.5;
     this->sourceDistance      = 0.05;
-    this->accuracyPlot        = 0.00001;
+    this->accuracyPlot        = 0.001;
     this->accuracySpiral      = 10;
     this->waveNumber          = 2.0 * M_PI / waveLength;
     this->amplitudePlate      = false;

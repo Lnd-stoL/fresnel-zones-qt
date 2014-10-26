@@ -33,7 +33,7 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
 
     for (int i = 0; i < zones.size(); ++i)
-        painter.drawEllipse (QPoint (width / 2, height / 2), (width/2) * zones[i] / maxRad, (height/2) * zones[i] / maxRad);
+        painter.drawEllipse (QPoint (width / 2, height / 2), (height/2) * zones[i] / maxRad, (height/2) * zones[i] / maxRad);
 
     //painter.translate (100, 100);
     painter.setFont (QFont ("Times", 25));

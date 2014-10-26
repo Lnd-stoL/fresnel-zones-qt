@@ -42,8 +42,8 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     painter.drawRect (0, 0, width, height);
 
     painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2));
-    painter.drawLine (width/2, 0, width/2, height);
-    painter.drawLine (0, height/2, width, height/2);
+    //painter.drawLine (width/2, 0, width/2, height);
+    //painter.drawLine (0, height/2, width, height/2);
 
     painter.setPen (QPen (QBrush (QColor (255, 50, 50)), 3));
 
