@@ -180,19 +180,20 @@ void IntensityGraphWindow::updateGraph()
         ui->widget_Graph->addGraph();
         ui->widget_Graph->graph(0)->setData (plotX, plotY);
 
-        ui->widget_Graph->xAxis->setLabel ("Расстояние (Нм)");
+        ui->widget_Graph->xAxis->setLabel ("Расстояние (нм)");
         ui->widget_Graph->yAxis->setLabel ("Интенсивность");
 
         ui->widget_Graph->xAxis->setRange (lowest, highest);
         ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
 
-        ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 20));
-        ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 20));
+        ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 15));
+        ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 15));
         ui->widget_Graph->xAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
         ui->widget_Graph->yAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
 
         ui->widget_Graph->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3));
 
+        ui->widget_Graph->yAxis->setTickLabels (false);
         ui->widget_Graph->replot();
     }
 
@@ -214,6 +215,7 @@ void IntensityGraphWindow::updateGraph()
 
     double cr, cg, cb;
     spectral_color (cr, cg, cb, ui->slider_WaveLength->value());
+    ui->widget_Zones->holeRadius = fresnel.holeRadius;
     ui->widget_Zones->backgroundColor = QColor (cr * 255, cg * 255, cb * 255);
     //ui->widget_Zones->backgroundColor = waveLengthToRGB (ui->slider_WaveLength->value());
     ui->widget_Zones->repaint();
@@ -238,6 +240,10 @@ void IntensityGraphWindow::updateGraphHole (Fresnel& fresnel)
     fresnel.holeRadius = current;
     //qDebug() << "finished";
 
+    //ui->widget_Graph->yAxis->setAutoTickLabels (false);
+    ui->widget_Graph->yAxis->setTickLabels (false);
+    //ui->widget_Graph->yAxis->setTickVectorLabels (QVector<QString>());
+
     ui->widget_Graph->addGraph();
     ui->widget_Graph->graph(0)->setData (plotX, plotY);
 
@@ -254,6 +260,7 @@ void IntensityGraphWindow::updateGraphHole (Fresnel& fresnel)
 
     ui->widget_Graph->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3));
 
+    ui->widget_Graph->yAxis->setTickLabels (false);
     ui->widget_Graph->replot();
 }
 

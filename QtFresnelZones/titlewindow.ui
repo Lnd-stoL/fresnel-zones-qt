@@ -27,6 +27,7 @@
         </property>
         <property name="font">
          <font>
+          <family>Arial</family>
           <pointsize>26</pointsize>
          </font>
         </property>
@@ -52,6 +53,7 @@
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
+          <family>Arial</family>
           <pointsize>40</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -73,6 +75,7 @@
         </property>
         <property name="font">
          <font>
+          <family>Arial</family>
           <pointsize>26</pointsize>
          </font>
         </property>
@@ -145,6 +148,7 @@
            </property>
            <property name="font">
             <font>
+             <family>Arial</family>
              <pointsize>24</pointsize>
             </font>
            </property>
@@ -153,6 +157,9 @@
            </property>
            <property name="text">
             <string>Выход</string>
+           </property>
+           <property name="default">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -279,7 +286,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Ubuntu</family>
+          <family>Arial</family>
           <pointsize>26</pointsize>
          </font>
         </property>
