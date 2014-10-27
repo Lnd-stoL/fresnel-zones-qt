@@ -3,6 +3,8 @@
 #include "ui_intensitygraphwindow.h"
 
 #include <QDebug>
+#include <QDesktopWidget>
+#include <QApplication>
 
 
 template<typename T>
@@ -186,8 +188,12 @@ void IntensityGraphWindow::updateGraph()
         ui->widget_Graph->xAxis->setRange (lowest, highest);
         ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
 
-        ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 15));
-        ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 15));
+
+        double k1 = (double) QApplication::desktop()->screenGeometry().height() / 768.0;
+        double k2 = (double) QApplication::desktop()->screenGeometry().width() / 1024.0;
+
+        ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", std::min (k1, k2) * 15));
+        ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", std::min (k1, k2) * 15));
         ui->widget_Graph->xAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
         ui->widget_Graph->yAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
 
@@ -253,7 +259,7 @@ void IntensityGraphWindow::updateGraphHole (Fresnel& fresnel)
     ui->widget_Graph->xAxis->setRange (lowest, highest);
     ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
 
-    ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 20));
+    ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 15));
     ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 20));
     ui->widget_Graph->xAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));
     ui->widget_Graph->yAxis->setBasePen (QPen (QBrush (QColor (0, 0, 0)), 2));

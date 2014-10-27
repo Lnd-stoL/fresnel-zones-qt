@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QScreen>
 #include <QDesktopWidget>
+#include <stdlib.h>
 
 
 void FontScalableLabel::resizeEvent(QResizeEvent *evt)
@@ -18,7 +19,7 @@ void FontScalableLabel::resizeEvent(QResizeEvent *evt)
     int fontSize = 1;
     QRect cRect = this->rect();
 
-
+/*
     int oldFontSize = oldFont.pixelSize();
     for (int i = 0; i < oldFont.pixelSize() + 5; ++i)
     {
@@ -28,17 +29,18 @@ void FontScalableLabel::resizeEvent(QResizeEvent *evt)
         if (r.height() < cRect.height() && r.width() < cRect.width() - 10) fontSize++;
         else break;
     }
-
+*/
     //qDebug() << (0.71) * this->fontMetrics ().height ();
-    double k1 = (double) QApplication::desktop ()->screenGeometry().height() / 1080.0;
-    double k2 = (double) QApplication::desktop ()->screenGeometry().width() / 1920.0;
-    oldFont.setPixelSize ((k1 < k2? k1 : k2) * this->fontMetrics ().height ());
+    double k1 = (double) QApplication::desktop ()->screenGeometry().height() / 768.0;
+    double k2 = (double) QApplication::desktop ()->screenGeometry().width() / 1024.0;
+    oldFont.setPixelSize (std::min (k1, k2) * 0.95 * this->fontMetrics ().height ());
     this->setFont(oldFont);
+    this->adjustSize();
     //this->setText (labelText);
     fontAdjusted = true;
 
-    qDebug() << cRect.width() << " " << cRect.height();
-    qDebug() << "resize " << evt->size().width() << " " << evt->size().height() << " from " << evt->oldSize().width() << " " << evt->oldSize().height();
+    //qDebug() << cRect.width() << " " << cRect.height();
+    //qDebug() << "resize " << evt->size().width() << " " << evt->size().height() << " from " << evt->oldSize().width() << " " << evt->oldSize().height();
 }
 
 

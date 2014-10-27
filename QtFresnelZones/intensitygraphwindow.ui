@@ -117,7 +117,7 @@
            </spacer>
           </item>
           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-           <widget class="QLabel" name="label">
+           <widget class="FontScalableLabel" name="label">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -127,7 +127,7 @@
             <property name="font">
              <font>
               <family>Arial</family>
-              <pointsize>23</pointsize>
+              <pointsize>22</pointsize>
               <weight>75</weight>
               <bold>true</bold>
               <underline>true</underline>
@@ -339,11 +339,13 @@
            <number>6</number>
           </property>
           <item>
-           <widget class="QLabel" name="label_5">
+           <widget class="FontScalableLabel" name="label_5">
             <property name="font">
              <font>
               <family>Arial</family>
               <pointsize>16</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -391,7 +393,7 @@
               </widget>
              </item>
              <item alignment="Qt::AlignVCenter">
-              <widget class="QLabel" name="label_2">
+              <widget class="FontScalableLabel" name="label_2">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -449,7 +451,7 @@
               </widget>
              </item>
              <item alignment="Qt::AlignVCenter">
-              <widget class="QLabel" name="label_3">
+              <widget class="FontScalableLabel" name="label_3">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -512,7 +514,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="FontScalableLabel" name="label_4">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -521,12 +523,13 @@
               </property>
               <property name="maximumSize">
                <size>
-                <width>362</width>
+                <width>500</width>
                 <height>36</height>
                </size>
               </property>
               <property name="font">
                <font>
+                <family>Arial</family>
                 <pointsize>16</pointsize>
                 <italic>true</italic>
                </font>
@@ -555,7 +558,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSpinBox" name="spin_xDistance">
+               <widget class="FontScalableSpinBox" name="spin_xDistance">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -601,21 +604,22 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_holeRadius">
+             <widget class="FontScalableLabel" name="label_holeRadius">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>1</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
               <property name="maximumSize">
                <size>
-                <width>377</width>
+                <width>500</width>
                 <height>16777215</height>
                </size>
               </property>
               <property name="font">
                <font>
+                <family>Arial</family>
                 <pointsize>16</pointsize>
                 <italic>true</italic>
                </font>
@@ -644,7 +648,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSpinBox" name="spin_HoleRadius">
+               <widget class="FontScalableSpinBox" name="spin_HoleRadius">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -687,7 +691,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_WaveLength">
+             <widget class="FontScalableLabel" name="label_WaveLength">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -696,8 +700,11 @@
               </property>
               <property name="font">
                <font>
+                <family>Arial</family>
                 <pointsize>16</pointsize>
+                <weight>50</weight>
                 <italic>true</italic>
+                <bold>false</bold>
                </font>
               </property>
               <property name="text">
@@ -726,7 +733,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSpinBox" name="spin_WaveLength">
+               <widget class="FontScalableSpinBox" name="spin_WaveLength">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -735,7 +742,7 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>80</width>
+                  <width>0</width>
                   <height>0</height>
                  </size>
                 </property>
@@ -800,6 +807,16 @@
    <extends>QWidget</extends>
    <header>zonesgraph.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FontScalableLabel</class>
+   <extends>QLabel</extends>
+   <header>fontscalablelabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FontScalableSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>fontscalablespinbox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -9,6 +9,7 @@ class FontScalableSpinBox : public QSpinBox
     Q_OBJECT
 
 protected:
+    bool fontAdjusted;
     virtual void resizeEvent (QResizeEvent* evt);
 
 public:

@@ -50,7 +50,7 @@
        </spacer>
       </item>
       <item row="1" column="1">
-       <widget class="QLabel" name="label">
+       <widget class="FontScalableLabel" name="label">
         <property name="font">
          <font>
           <family>Arial</family>
@@ -300,6 +300,13 @@
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FontScalableLabel</class>
+   <extends>QLabel</extends>
+   <header>fontscalablelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
