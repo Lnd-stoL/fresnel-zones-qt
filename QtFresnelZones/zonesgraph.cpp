@@ -3,6 +3,8 @@
 #include <QPainter>
 #include <stdio.h>
 
+#include <QDebug>
+
 
 ZonesGraph::ZonesGraph(QWidget *parent) :
     QWidget (parent),
@@ -19,14 +21,14 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
 
     int width = size().width();
     int height = size().height();
-    int squareWidth = std::min ((height/2), (width/2));
+    //qDebug() << width << height;
+    double squareWidth = std::min ((height/2), (width/2));
+    //qDebug() << squareWidth;
 
-    double maxRad = 0;
-    for (int i = 0; i < zones.size(); ++i)
-        if (zones[i] > maxRad) maxRad = zones[i];
+    double maxRad = holeRadius;
 
     painter.setBrush (QBrush (backgroundColor));  // Background
-    painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth * holeRadius / maxRad, squareWidth * holeRadius / maxRad);
+    painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth, squareWidth);
 
     painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 1, Qt::DashDotDotLine));
     //painter.drawLine (width/2, 0, width/2, height);
@@ -35,7 +37,7 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     painter.setPen (QPen (QBrush (QColor (255, 255, 255)), 3));
     painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
 
-    for (int i = 0; i < zones.size() - 1; ++i)
+    for (int i = 0; i < zones.size(); ++i)
         painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth * zones[i] / maxRad, squareWidth * zones[i] / maxRad);
 
     //painter.translate (100, 100);

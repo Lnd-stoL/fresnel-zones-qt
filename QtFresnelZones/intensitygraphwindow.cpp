@@ -119,6 +119,14 @@ IntensityGraphWindow::IntensityGraphWindow (QWidget *parent) :
     connect (ui->spin_HoleRadius, SIGNAL(valueChanged(int)), this, SLOT(spin_HoleRadius_Changed(int)));
     connect (ui->spin_WaveLength, SIGNAL(valueChanged(int)), this, SLOT(spin_WaveLength_Changed(int)));
 
+    connect (ui->spin_xDistance,  SIGNAL(editingFinished()), this, SLOT(slider_Released()));
+    connect (ui->spin_HoleRadius, SIGNAL(editingFinished()), this, SLOT(slider_Released()));
+    connect (ui->spin_WaveLength, SIGNAL(editingFinished()), this, SLOT(slider_Released()));
+
+    connect (ui->slider_HoleRadius, SIGNAL(sliderReleased()), this, SLOT(slider_Released()));
+    connect (ui->slider_xDistance,  SIGNAL(sliderReleased()), this, SLOT(slider_Released()));
+    connect (ui->slider_WaveLength, SIGNAL(sliderReleased()), this, SLOT(slider_Released()));
+
 
     int minWaveLength = 100, maxWaveLength = 1000, defaultWaveLength = 500;
     int minHoleRadius = 0.001 * 10e+6, maxHoleRadius = 0.5 * 10e+6, defaultHoleRadius = 0.01 * 10e+6;
@@ -194,7 +202,7 @@ void IntensityGraphWindow::updateGraph()
         {
             QCPItemLine* xLine = new QCPItemLine(ui->widget_Graph);
             QPen linePen(Qt::red);
-            linePen.setWidth(3);
+            linePen.setWidth(5);
             xLine->setPen (linePen);
             ui->widget_Graph->addItem (xLine);
         }
@@ -245,7 +253,7 @@ void IntensityGraphWindow::updateGraphHole (Fresnel& fresnel)
 {
     double lowest = 10e-6 * ui->slider_HoleRadius->minimum();
     double highest = 10e-6 * ui->slider_HoleRadius->maximum();
-    double step = 10e-6 * 100;
+    double step = 10e-6 * 20000;
 
     QVector<double> plotX, plotY;
     double current = fresnel.holeRadius;
@@ -266,11 +274,29 @@ void IntensityGraphWindow::updateGraphHole (Fresnel& fresnel)
     ui->widget_Graph->addGraph();
     ui->widget_Graph->graph(0)->setData (plotX, plotY);
 
-    ui->widget_Graph->xAxis->setLabel ("Размер отверстия (Нм)");
+    ui->widget_Graph->xAxis->setLabel ("Размер отверстия (нм)");
     ui->widget_Graph->yAxis->setLabel ("Интенсивность");
 
     ui->widget_Graph->xAxis->setRange (lowest, highest);
     ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
+
+    //ui->widget_Graph->removeItem ()
+    //if (!ui->widget_Graph->itemCount())
+    {
+        double nextZone = 0;
+        for (int n = 0; nextZone < highest && n < 50; ++n)
+        {
+            double nextZone = fresnel.zoneOuterRadius (n);
+
+            QCPItemLine* xLine = new QCPItemLine(ui->widget_Graph);
+            QPen linePen(Qt::red);
+            linePen.setWidth(1);
+            xLine->setPen (linePen);
+            xLine->start->setCoords (nextZone, 0);
+            xLine->end->setCoords (nextZone, maximum (plotY));
+            ui->widget_Graph->addItem (xLine);
+        }
+    }
 
     ui->widget_Graph->xAxis->setLabelFont (QFont ("Arial", 15));
     ui->widget_Graph->yAxis->setLabelFont (QFont ("Arial", 20));
@@ -293,18 +319,20 @@ void IntensityGraphWindow::button_Back_Pressed()
 void IntensityGraphWindow::slider_xDistance_Changed (int value)
 {
     ui->spin_xDistance->setValue (value);
-    updateGraph();
 }
 
 void IntensityGraphWindow::slider_WaveLength_Changed (int value)
 {
     ui->spin_WaveLength->setValue (value);
-    updateGraph();
 }
 
 void IntensityGraphWindow::slider_HoleRadius_Changed (int value)
 {
     ui->spin_HoleRadius->setValue (value);
+}
+
+void IntensityGraphWindow::slider_Released()
+{
     updateGraph();
 }
 
@@ -312,7 +340,7 @@ void IntensityGraphWindow::slider_HoleRadius_Changed (int value)
 void IntensityGraphWindow::spin_xDistance_Changed (int value)
 {
     ui->slider_xDistance->setValue (value);
-    updateGraph();
+    //updateGraph();
 }
 
 void IntensityGraphWindow::spin_WaveLength_Changed (int value)
