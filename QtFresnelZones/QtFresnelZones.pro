@@ -20,7 +20,10 @@ SOURCES += main.cpp\
     titlewindow.cpp \
     intensitygraphwindow.cpp \
     complex.cpp \
-    fresnel.cpp
+    fresnel.cpp \
+    fontscalablelabel.cpp \
+    fontscalablespinbox.cpp \
+    fontscalableradiobutton.cpp
 
 HEADERS  += mainwindow.h \
     qcustomplot.h \
@@ -29,7 +32,10 @@ HEADERS  += mainwindow.h \
     titlewindow.h \
     intensitygraphwindow.h \
     complex.h \
-    fresnel.h
+    fresnel.h \
+    fontscalablelabel.h \
+    fontscalablespinbox.h \
+    fontscalableradiobutton.h
 
 FORMS    += mainwindow.ui \
     titlewindow.ui \
