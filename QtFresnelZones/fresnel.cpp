@@ -76,7 +76,7 @@ Complex Fresnel::amplitude(double innerR,
     double r, dr, d, arg, p, phi;
     double R = outerR - innerR;
 
-    dr = this->accuracyPlot;
+    dr = this->accuracyPlot < R ? this->accuracyPlot : R / 2.0;
     n = R / dr;
 
     double l = this->waveLength;
@@ -124,13 +124,7 @@ unsigned Fresnel::fresnelNumber(double r)
     }
     double b = this->observerDistance;
     double l = this->waveLength;
-    //return (unsigned int) (2.0 * (-b*b + sqrt(b*b + r*r)) / l);
-    unsigned n = 0;
-    double x = 0;
-    while (x < r) {
-        x = zoneOuterRadius(n++);
-    }
-    return n;
+    return (unsigned int) (2.0 * (sqrt(b*b + r*r) - b) / l);
 }
 
 void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
@@ -147,7 +141,7 @@ void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
     double dr = 0;
     Complex sp;
 
-    for (unsigned n = 0; n < fn; ++n) {
+    for (unsigned n = 0; n < fn + 1; ++n) {
         outerR = this->zoneOuterRadius(n);
         dr = (outerR - innerR) / accuracySpiral;
 
