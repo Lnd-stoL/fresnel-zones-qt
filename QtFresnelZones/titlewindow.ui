@@ -18,7 +18,13 @@
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout">
       <item row="7" column="1">
-       <widget class="QPushButton" name="pushButton_IntensityGraph">
+       <widget class="FontScalablePushButton" name="pushButton_IntensityGraph">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -30,6 +36,10 @@
           <family>Arial</family>
           <pointsize>26</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-top:15%;
+padding-bottom:15%</string>
         </property>
         <property name="text">
          <string>Исследование интенсивности</string>
@@ -66,11 +76,17 @@
        </widget>
       </item>
       <item row="5" column="1">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="FontScalablePushButton" name="pushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>70</height>
+          <height>0</height>
          </size>
         </property>
         <property name="font">
@@ -79,8 +95,21 @@
           <pointsize>26</pointsize>
          </font>
         </property>
+        <property name="toolTipDuration">
+         <number>-1</number>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-top:15%;
+padding-bottom:15%</string>
+        </property>
         <property name="text">
          <string>Построение зон Френеля</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -111,7 +140,7 @@
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>70</height>
+          <height>60</height>
          </size>
         </property>
        </spacer>
@@ -125,35 +154,32 @@
          </size>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="FontScalablePushButton" name="pushButton_Exit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_Exit">
            <property name="minimumSize">
             <size>
-             <width>150</width>
-             <height>60</height>
+             <width>0</width>
+             <height>0</height>
             </size>
            </property>
            <property name="font">
             <font>
              <family>Arial</family>
-             <pointsize>24</pointsize>
+             <pointsize>23</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton {background-color:rgb(230, 230, 230);}</string>
+            <string notr="true">background-color:rgb(230, 230, 230);
+padding-top:10%;
+padding-bottom:10%;
+padding-left:10%;
+padding-right:10%</string>
            </property>
            <property name="text">
             <string>Выход</string>
@@ -162,19 +188,6 @@
             <bool>true</bool>
            </property>
           </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </widget>
@@ -271,13 +284,19 @@
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>50</height>
+          <height>45</height>
          </size>
         </property>
        </spacer>
       </item>
       <item row="9" column="1">
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="FontScalablePushButton" name="pushButton_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -289,6 +308,10 @@
           <family>Arial</family>
           <pointsize>26</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-top:15%;
+padding-bottom:15%</string>
         </property>
         <property name="text">
          <string>Амплитудная пластинка</string>
@@ -305,6 +328,11 @@
    <class>FontScalableLabel</class>
    <extends>QLabel</extends>
    <header>fontscalablelabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FontScalablePushButton</class>
+   <extends>QPushButton</extends>
+   <header>fontscalablepushbutton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

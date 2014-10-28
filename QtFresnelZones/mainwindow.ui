@@ -235,13 +235,13 @@
           <property name="title">
            <string>Вид графика</string>
           </property>
-          <widget class="QWidget" name="">
+          <widget class="QWidget" name="layoutWidget">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>49</y>
              <width>495</width>
-             <height>61</height>
+             <height>74</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -345,8 +345,6 @@
          <zorder>label_3</zorder>
          <zorder>horizontalSlider</zorder>
          <zorder>label_4</zorder>
-         <zorder>label_6</zorder>
-         <zorder>horizontalSlider_2</zorder>
          <zorder>horizontalSlider_3</zorder>
          <zorder>label_7</zorder>
          <zorder>groupBox_2</zorder>

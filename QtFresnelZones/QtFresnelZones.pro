@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     fresnel.cpp \
     fontscalablelabel.cpp \
     fontscalablespinbox.cpp \
-    fontscalableradiobutton.cpp
+    fontscalableradiobutton.cpp \
+    fontscalablepushbutton.cpp
 
 HEADERS  += mainwindow.h \
     qcustomplot.h \
@@ -35,7 +36,8 @@ HEADERS  += mainwindow.h \
     fresnel.h \
     fontscalablelabel.h \
     fontscalablespinbox.h \
-    fontscalableradiobutton.h
+    fontscalableradiobutton.h \
+    fontscalablepushbutton.h
 
 FORMS    += mainwindow.ui \
     titlewindow.ui \
