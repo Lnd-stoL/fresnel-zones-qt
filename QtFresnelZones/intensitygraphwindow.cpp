@@ -166,6 +166,8 @@ void IntensityGraphWindow::updateGraph()
         double highest = (double) 10e-6 * ui->slider_xDistance->maximum();
         double step = (double) 10e-6 * 50000;
 
+        double valueAtX = fresnel.intensity();
+
         //qDebug() << "started";
         QVector<double> plotX, plotY;
         double current = fresnel.observerDistance;
@@ -188,6 +190,17 @@ void IntensityGraphWindow::updateGraph()
         ui->widget_Graph->xAxis->setRange (lowest, highest);
         ui->widget_Graph->yAxis->setRange (0, maximum (plotY));
 
+        if (!ui->widget_Graph->itemCount())
+        {
+            QCPItemLine* xLine = new QCPItemLine(ui->widget_Graph);
+            QPen linePen(Qt::red);
+            linePen.setWidth(3);
+            xLine->setPen (linePen);
+            ui->widget_Graph->addItem (xLine);
+        }
+
+        ((QCPItemLine*)ui->widget_Graph->item(0))->start->setCoords(fresnel.observerDistance, 0);
+        ((QCPItemLine*)ui->widget_Graph->item(0))->end->setCoords(fresnel.observerDistance, valueAtX);
 
         double k1 = (double) QApplication::desktop()->screenGeometry().height() / 768.0;
         double k2 = (double) QApplication::desktop()->screenGeometry().width() / 1024.0;
