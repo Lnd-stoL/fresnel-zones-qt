@@ -30,6 +30,8 @@ private slots:
     void slider_WaveLength_Changed (int value);
     void slider_HoleRadius_Changed (int value);
 
+    void slider_Released();
+
     void spin_xDistance_Changed  (int value);
     void spin_WaveLength_Changed (int value);
     void spin_HoleRadius_Changed (int value);

@@ -186,7 +186,7 @@ padding-left:5%;
 padding-right:5%</string>
             </property>
             <property name="text">
-             <string>ВПЕРЁД</string>
+             <string>ВПЕРЕД</string>
             </property>
             <property name="flat">
              <bool>false</bool>
