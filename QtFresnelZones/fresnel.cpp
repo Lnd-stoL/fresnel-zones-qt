@@ -43,11 +43,11 @@ Fresnel::Fresnel(double initialAmplitude,
 void Fresnel::setDefaults()
 {
     this->initialAmplitude    = 100;
-    this->waveLength          = 500e-6;
-    this->holeRadius          = 0.01;
-    this->observerDistance    = 0.5;
+    this->waveLength          = wave_def;
+    this->holeRadius          = radius_def;
+    this->observerDistance    = dist_def;
     this->sourceDistance      = 0.05;
-    this->accuracyPlot        = 0.001;
+    this->accuracyPlot        = 0.0001;
     this->accuracySpiral      = 10;
     this->waveNumber          = 2.0 * M_PI / waveLength;
     this->amplitudePlate      = false;
