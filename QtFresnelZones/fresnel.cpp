@@ -73,11 +73,12 @@ Complex Fresnel::amplitude(double innerR,
 
     Complex amp;
     unsigned n;
-    double r, dr, d, arg, p, phi;
+    double r, dr, ddr, d, arg, p, phi;
     double R = outerR - innerR;
 
     dr = this->accuracyPlot < R ? this->accuracyPlot : R / 2.0;
-    n = R / dr;
+    n = R / dr + 1;
+    dr = R / n;
 
     double l = this->waveLength;
     double a = this->sourceDistance;
@@ -91,6 +92,7 @@ Complex Fresnel::amplitude(double innerR,
         d = sqrt(r*r + b2);
         phi = atan(r / a) + atan(r / b);
 
+        p = 1.0;
         p = 1.0 / d;            // Sphere wave factor
         p *= r;                 // Jacobian
         p *= cos(phi) + 1.0;    // K(phi)
