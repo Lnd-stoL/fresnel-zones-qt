@@ -41,7 +41,7 @@ void Fresnel::setDefaults()
     this->accuracySpiral      = 10;
     this->waveNumber          = 2.0 * M_PI / waveLength;
     this->amplitudePlate      = false;
-    this->phasePlate          = false;
+    this->phasePlate          = true;
     this->openedZones         = QVector<bool>(this->fresnelNumber() + 1, true);
 }
 
@@ -151,7 +151,7 @@ Complex Fresnel::amplitude(double innerR,
         p *= cos(phi) + 1.0;    // K(phi)
         p *= amplitudeOnPlate(r);
 
-        arg = -k * (d - b);     // Phase
+        arg = -k * (d - b) + phaseOnPlate(r);     // Phase
         amp.re += -p * sin(arg);
         amp.im += p * cos(arg);
     }
@@ -163,10 +163,20 @@ Complex Fresnel::amplitude(double innerR,
 double Fresnel::amplitudeOnPlate(double r)
 {
     unsigned fn = fresnelNumber(r);
-    if (fn < openedZones.count()) {
+    if (amplitudePlate && fn < openedZones.count()) {
         return openedZones[fn] ? initialAmplitude : 0.0;
     } else {
         return initialAmplitude;
+    }
+}
+
+double Fresnel::phaseOnPlate(double r)
+{
+    unsigned fn = fresnelNumber(r);
+    if (phasePlate && fn < openedZones.count()) {
+        return openedZones[fn] ? 0.0 : M_PI;
+    } else {
+        return 0.0;
     }
 }
 
