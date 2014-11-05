@@ -2,21 +2,6 @@
 #include <QDebug>
 #include <cmath>
 
-double Fresnel::getWaveLength() const
-{
-    return waveLength;
-}
-
-void Fresnel::setWaveLength(double value)
-{
-    waveLength = value;
-    waveNumber = 2.0 * M_PI / waveLength;
-}
-Fresnel::Fresnel()
-{
-    this->setDefaults();
-}
-
 Fresnel::Fresnel(double initialAmplitude,
                  double waveLength,
                  double holeRadius,
@@ -40,18 +25,86 @@ Fresnel::Fresnel(double initialAmplitude,
 
 }
 
+Fresnel::Fresnel()
+{
+    this->setDefaults();
+}
+
 void Fresnel::setDefaults()
 {
     this->initialAmplitude    = 100;
-    this->waveLength          = 500e-6;
-    this->holeRadius          = 0.01;
-    this->observerDistance    = 0.5;
+    this->waveLength          = wave_def;
+    this->holeRadius          = radius_def;
+    this->observerDistance    = dist_def;
     this->sourceDistance      = 0.05;
-    this->accuracyPlot        = 0.001;
+    this->accuracyPlot        = 0.0001;
     this->accuracySpiral      = 10;
     this->waveNumber          = 2.0 * M_PI / waveLength;
     this->amplitudePlate      = false;
-    this->phasePlate          = false;
+    this->phasePlate          = true;
+    this->openedZones         = QVector<bool>(this->fresnelNumber() + 1, true);
+}
+
+double Fresnel::getWaveLength() const
+{
+    return waveLength;
+}
+
+void Fresnel::setWaveLength(double value)
+{
+    int oldFN = fresnelNumber();
+    waveLength = value;
+    waveNumber = 2.0 * M_PI / waveLength;
+    updateAmplitudePlate(oldFN);
+}
+
+double Fresnel::getHoleRadius() const
+{
+    return holeRadius;
+}
+
+void Fresnel::setHoleRadius(double value)
+{
+    int oldFN = fresnelNumber();
+    holeRadius = value;
+    updateAmplitudePlate(oldFN);
+}
+
+double Fresnel::getObserverDistance() const
+{
+    return observerDistance;
+}
+
+void Fresnel::setObserverDistance(double value)
+{
+    int oldFN = fresnelNumber();
+    observerDistance = value;
+    updateAmplitudePlate(oldFN);
+}
+
+bool Fresnel::isZoneOpened(unsigned i)
+{
+    return i < openedZones.count() ? openedZones[i] : false;
+}
+
+void Fresnel::setZoneOpenness(unsigned i, bool isOpen)
+{
+    if (i < openedZones.count()) {
+        openedZones[i] = isOpen;
+    }
+}
+
+void Fresnel::updateAmplitudePlate(int oldFN)
+{
+    int currentFN = fresnelNumber();
+
+    if (currentFN > oldFN) {
+        for (int i = 0; i < currentFN - oldFN; ++i) {
+            openedZones.push_back(true);
+        }
+    } else {
+        openedZones.remove(openedZones.count() - (oldFN - currentFN), oldFN - currentFN);
+    }
 }
 
 double Fresnel::intensity()
@@ -77,26 +130,28 @@ Complex Fresnel::amplitude(double innerR,
     double R = outerR - innerR;
 
     dr = this->accuracyPlot < R ? this->accuracyPlot : R / 2.0;
-    n = R / dr;
+    n = R / dr + 1;
+    dr = R / n;
 
     double l = this->waveLength;
     double a = this->sourceDistance;
     double k = this->waveNumber;
     double b = this->observerDistance;
     double b2 = b * b;
-    double intK = M_PI / l * R / n;
+    double intK = M_PI / l * dr;
 
     for (unsigned i = 0; i < n; ++i) {
         r = innerR + i * dr;
         d = sqrt(r*r + b2);
         phi = atan(r / a) + atan(r / b);
 
+        p = 1.0;
         p = 1.0 / d;            // Sphere wave factor
         p *= r;                 // Jacobian
         p *= cos(phi) + 1.0;    // K(phi)
         p *= amplitudeOnPlate(r);
 
-        arg = -k * (d - b);     // Phase
+        arg = -k * (d - b) + phaseOnPlate(r);     // Phase
         amp.re += -p * sin(arg);
         amp.im += p * cos(arg);
     }
@@ -107,7 +162,22 @@ Complex Fresnel::amplitude(double innerR,
 
 double Fresnel::amplitudeOnPlate(double r)
 {
-    return this->initialAmplitude;
+    unsigned fn = fresnelNumber(r);
+    if (amplitudePlate && fn < openedZones.count()) {
+        return openedZones[fn] ? initialAmplitude : 0.0;
+    } else {
+        return initialAmplitude;
+    }
+}
+
+double Fresnel::phaseOnPlate(double r)
+{
+    unsigned fn = fresnelNumber(r);
+    if (phasePlate && fn < openedZones.count()) {
+        return openedZones[fn] ? 0.0 : M_PI;
+    } else {
+        return 0.0;
+    }
 }
 
 double Fresnel::zoneOuterRadius(unsigned n)
@@ -136,9 +206,9 @@ void Fresnel::spiral(DoubleVector &spiralX, DoubleVector &spiralY)
 
     unsigned fn = this->fresnelNumber();
     double R = this->holeRadius;
-    double innerR = 0;
-    double outerR = 0;
-    double dr = 0;
+    double innerR = 0.0;
+    double outerR = 0.0;
+    double dr = 0.0;
     Complex sp;
 
     for (unsigned n = 0; n < fn + 1; ++n) {

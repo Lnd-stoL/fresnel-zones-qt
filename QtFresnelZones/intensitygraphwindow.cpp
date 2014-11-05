@@ -128,9 +128,16 @@ IntensityGraphWindow::IntensityGraphWindow (QWidget *parent) :
     connect (ui->slider_WaveLength, SIGNAL(sliderReleased()), this, SLOT(slider_Released()));
 
 
-    int minWaveLength = 100, maxWaveLength = 1000, defaultWaveLength = 500;
-    int minHoleRadius = 0.001 * 10e+6, maxHoleRadius = 0.5 * 10e+6, defaultHoleRadius = 0.01 * 10e+6;
-    int minxDistance  = 0.1 * 10e+6, maxxDistance = 2 * 10e+6, defaultxDistance = 0.5 * 10e+6;
+    double scaling = Fresnel::scale_to_nano_exp;
+    int minWaveLength = Fresnel::wave_min * scaling;
+    int maxWaveLength = Fresnel::wave_max * scaling;
+    int defaultWaveLength = Fresnel::wave_def * scaling;
+    int minHoleRadius = Fresnel::radius_min * scaling;
+    int maxHoleRadius = Fresnel::radius_max * scaling;
+    int defaultHoleRadius = Fresnel::radius_def * scaling;
+    int minxDistance = Fresnel::dist_min * scaling;
+    int maxxDistance = Fresnel::dist_max * scaling;
+    int defaultxDistance = Fresnel::dist_def * scaling;
 
     ui->slider_HoleRadius->setRange (minHoleRadius, maxHoleRadius);
     ui->spin_HoleRadius->setRange (minHoleRadius, maxHoleRadius);
@@ -163,30 +170,31 @@ void IntensityGraphWindow::updateGraph()
     if (!readyToDrawGraphs) return;
 
     Fresnel fresnel;
-    fresnel.observerDistance = 10e-6 * ui->slider_xDistance->value();
-    fresnel.holeRadius = 10e-6 * ui->slider_HoleRadius->value();
-    fresnel.setWaveLength (10e-6 * ui->slider_WaveLength->value());
+    double scaling = Fresnel::nano_to_scale_exp;
+    fresnel.setObserverDistance(scaling * ui->slider_xDistance->value());
+    fresnel.setHoleRadius(scaling * ui->slider_HoleRadius->value());
+    fresnel.setWaveLength (scaling * ui->slider_WaveLength->value());
 
     if (holeDependance) updateGraphHole (fresnel);
     else
     {
-        double lowest  = (double) 10e-6 * ui->slider_xDistance->minimum();
-        double highest = (double) 10e-6 * ui->slider_xDistance->maximum();
-        double step = (double) 10e-6 * 50000;
+        double lowest  = (double) scaling * ui->slider_xDistance->minimum();
+        double highest = (double) scaling * ui->slider_xDistance->maximum();
+        double step = (double) scaling * 500;
 
         double valueAtX = fresnel.intensity();
 
         //qDebug() << "started";
         QVector<double> plotX, plotY;
-        double current = fresnel.observerDistance;
+        double current = fresnel.getObserverDistance();
         for (double x = lowest; x < highest; x += step)
         {
             //qDebug() << "calculating for " << highest - x;
-            fresnel.observerDistance = x;
+            fresnel.setObserverDistance(x);
             plotX.push_back (x);
             plotY.push_back (fresnel.intensity());
         }
-        fresnel.observerDistance = current;
+        fresnel.setObserverDistance(current);
         qDebug() << "finished";
 
         ui->widget_Graph->addGraph();
@@ -207,8 +215,8 @@ void IntensityGraphWindow::updateGraph()
             ui->widget_Graph->addItem (xLine);
         }
 
-        ((QCPItemLine*)ui->widget_Graph->item(0))->start->setCoords(fresnel.observerDistance, 0);
-        ((QCPItemLine*)ui->widget_Graph->item(0))->end->setCoords(fresnel.observerDistance, valueAtX);
+        ((QCPItemLine*)ui->widget_Graph->item(0))->start->setCoords(fresnel.getObserverDistance(), 0);
+        ((QCPItemLine*)ui->widget_Graph->item(0))->end->setCoords(fresnel.getObserverDistance(), valueAtX);
 
         double k1 = (double) QApplication::desktop()->screenGeometry().height() / 768.0;
         double k2 = (double) QApplication::desktop()->screenGeometry().width() / 1024.0;
@@ -242,7 +250,7 @@ void IntensityGraphWindow::updateGraph()
 
     double cr, cg, cb;
     spectral_color (cr, cg, cb, ui->slider_WaveLength->value());
-    ui->widget_Zones->holeRadius = fresnel.holeRadius;
+    ui->widget_Zones->holeRadius = fresnel.getHoleRadius();
     ui->widget_Zones->backgroundColor = QColor (cr * 255, cg * 255, cb * 255);
     //ui->widget_Zones->backgroundColor = waveLengthToRGB (ui->slider_WaveLength->value());
     ui->widget_Zones->repaint();
@@ -251,20 +259,21 @@ void IntensityGraphWindow::updateGraph()
 
 void IntensityGraphWindow::updateGraphHole (Fresnel& fresnel)
 {
-    double lowest = 10e-6 * ui->slider_HoleRadius->minimum();
-    double highest = 10e-6 * ui->slider_HoleRadius->maximum();
-    double step = 10e-6 * 20000;
+    double scaling = Fresnel::nano_to_scale_exp;
+    double lowest = scaling * ui->slider_HoleRadius->minimum();
+    double highest = scaling * ui->slider_HoleRadius->maximum();
+    double step = scaling * 100;
 
     QVector<double> plotX, plotY;
-    double current = fresnel.holeRadius;
+    double current = fresnel.getHoleRadius();
     for (double x = lowest; x < highest; x += step)
     {
         //qDebug() << "calculating for " << x;
-        fresnel.holeRadius = x;
+        fresnel.setHoleRadius(x);
         plotX.push_back (x);
         plotY.push_back (fresnel.intensity());
     }
-    fresnel.holeRadius = current;
+    fresnel.setHoleRadius(current);
     //qDebug() << "finished";
 
     //ui->widget_Graph->yAxis->setAutoTickLabels (false);
