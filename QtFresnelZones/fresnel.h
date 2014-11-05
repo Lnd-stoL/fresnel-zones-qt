@@ -70,6 +70,7 @@ public:
     Complex     amplitude(double innerR    = 0.0,
                           double outerR    = -1.0);
     double      amplitudeOnPlate(double r);
+    double      phaseOnPlate(double r);
     double      zoneOuterRadius(unsigned n);
     unsigned    fresnelNumber(double r = -1.0);
     void        spiral(DoubleVector &spiralX, DoubleVector &doubleY);
