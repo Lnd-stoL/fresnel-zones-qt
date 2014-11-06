@@ -2,29 +2,6 @@
 #include <QDebug>
 #include <cmath>
 
-Fresnel::Fresnel(double initialAmplitude,
-                 double waveLength,
-                 double holeRadius,
-                 double observerDistance,
-                 double sourceDistance,
-                 double accuracyPlot,
-                 double accuracySpiral,
-                 bool   amplitudePlate,
-                 bool   phasePlate) :
-    initialAmplitude(initialAmplitude),     // E0
-    waveLength(waveLength),                 // l
-    holeRadius(holeRadius),                 // R
-    observerDistance(observerDistance),     // b
-    sourceDistance(sourceDistance),         // a
-    accuracyPlot(accuracyPlot),             // dr in plot integral
-    accuracySpiral(accuracySpiral),         // Number of spiral vectors in one zone
-    waveNumber(2.0 * M_PI / waveLength),    // k
-    amplitudePlate(amplitudePlate),
-    phasePlate(phasePlate)
-{
-
-}
-
 Fresnel::Fresnel()
 {
     this->setDefaults();
@@ -32,16 +9,18 @@ Fresnel::Fresnel()
 
 void Fresnel::setDefaults()
 {
-    this->initialAmplitude    = 100;
-    this->waveLength          = wave_def;
-    this->holeRadius          = radius_def;
-    this->observerDistance    = dist_def;
-    this->sourceDistance      = 0.05;
-    this->accuracyPlot        = 0.0001;
-    this->accuracySpiral      = 10;
-    this->waveNumber          = 2.0 * M_PI / waveLength;
+    this->initialAmplitude    = 100;                        // E0
+    this->waveLength          = wave_def;                   // l
+    this->holeRadius          = radius_def;                 // R
+    this->observerDistance    = dist_def;                   // b
+    this->sourceDistance      = 0.05;                       // a
+    this->accuracyPlot        = 0.0001;                     // dr in plot integral
+    this->accuracySpiral      = 10;                         // Number of spiral vectors in one zone
+    this->waveNumber          = 2.0 * M_PI / waveLength;    // k
+    this->refractiveIndex     = 2.0;                        // n
+    this->phasePlateType      = PhasePlate::LENS;
     this->amplitudePlate      = false;
-    this->phasePlate          = true;
+    this->phasePlate          = false;
     this->openedZones         = QVector<bool>(this->fresnelNumber() + 1, true);
 }
 
@@ -172,12 +151,44 @@ double Fresnel::amplitudeOnPlate(double r)
 
 double Fresnel::phaseOnPlate(double r)
 {
-    unsigned fn = fresnelNumber(r);
-    if (phasePlate && fn < openedZones.count()) {
-        return openedZones[fn] ? 0.0 : M_PI;
-    } else {
+    if (!phasePlate) {
         return 0.0;
     }
+
+    double n = refractiveIndex;
+    double k = waveNumber;
+    double deltaPhase = n * k * getPhasePlateWidthOnRing(r);
+
+    return deltaPhase;
+}
+
+double Fresnel::getPhasePlateWidthOnRing(double r)
+{
+    double n = refractiveIndex;
+    double k = waveNumber;
+    double b = observerDistance;
+    double width = 0.0;
+
+    if (phasePlateType == PhasePlate::SIMPLE) {
+        unsigned zoneNumber = fresnelNumber(r);
+        if (zoneNumber & 1) {
+            width = M_PI / n / k;
+        }
+    }
+
+    if (phasePlateType == PhasePlate::STAGING) {
+        unsigned fn = fresnelNumber();
+        unsigned zoneNumber = fresnelNumber(r);
+        double dWidth = M_PI / n / k;
+
+        width = (fn - zoneNumber + fn & 1 + 2) * dWidth;
+    }
+
+    if (phasePlateType == PhasePlate::LENS) {
+        width = (3.0 / 2.0 * M_PI + k * (sqrt(b*b + r*r) - b)) / n / k;
+    }
+
+    return width;
 }
 
 double Fresnel::zoneOuterRadius(unsigned n)
