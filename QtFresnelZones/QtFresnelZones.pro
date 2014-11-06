@@ -25,7 +25,11 @@ SOURCES += main.cpp\
     fontscalablelabel.cpp \
     fontscalablespinbox.cpp \
     fontscalableradiobutton.cpp \
-    fontscalablepushbutton.cpp
+    fontscalablepushbutton.cpp \
+    amplitudeplatewindow.cpp \
+    colortransform.cpp \
+    intensityplot.cpp \
+    hidpiscaler.cpp
 
 HEADERS  += mainwindow.h \
     qcustomplot.h \
@@ -38,8 +42,14 @@ HEADERS  += mainwindow.h \
     fontscalablelabel.h \
     fontscalablespinbox.h \
     fontscalableradiobutton.h \
-    fontscalablepushbutton.h
+    fontscalablepushbutton.h \
+    amplitudeplatewindow.h \
+    colortransform.h \
+    qvectormax.h \
+    intensityplot.h \
+    hidpiscaler.h
 
 FORMS    += mainwindow.ui \
     titlewindow.ui \
-    intensitygraphwindow.ui
+    intensitygraphwindow.ui \
+    amplitudeplatewindow.ui
