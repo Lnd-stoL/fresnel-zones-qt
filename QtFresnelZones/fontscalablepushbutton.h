@@ -10,17 +10,13 @@ class FontScalablePushButton : public QPushButton
     Q_OBJECT
 
 protected:
-    bool fontAdjusted;
-    QString labelText;
+    bool _fontAdjusted = false;
+
+protected:
     virtual void resizeEvent (QResizeEvent* evt);
 
 public:
-    explicit FontScalablePushButton(QWidget *parent = 0);
-
-signals:
-
-public slots:
-
+    explicit FontScalablePushButton (QWidget *parent = 0);
 };
 
 #endif // FONTSCALABLEPUSHBUTTON_H

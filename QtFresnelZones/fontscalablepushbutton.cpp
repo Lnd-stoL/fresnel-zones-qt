@@ -1,29 +1,27 @@
+
 #include "fontscalablepushbutton.h"
-#include <QApplication>
-#include <QDesktopWidget>
+#include "hidpiscaler.h"
+
 #include <stdlib.h>
 
 
-void FontScalablePushButton::resizeEvent(QResizeEvent *evt)
+void FontScalablePushButton::resizeEvent (QResizeEvent *evt)
 {
     QPushButton::resizeEvent (evt);
-    if (fontAdjusted)  return;
+    if (_fontAdjusted)  return;
 
-    QFont oldFont = this->font();
-    int fontSize = 1;
-    QRect cRect = this->contentsRect();
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
+    auto mutableFont = this->font();
+    mutableFont.setPixelSize (std::min (dpiScaling.x(), dpiScaling.y()) * 0.9 * this->fontMetrics().height());
 
-    double k1 = (double) QApplication::desktop()->screenGeometry().height() / 768.0;
-    double k2 = (double) QApplication::desktop()->screenGeometry().width() / 1024.0;
-    oldFont.setPixelSize (std::min (k1, k2) * 0.95 * this->fontMetrics().height());
-    this->setFont(oldFont);
+    this->setFont (mutableFont);
+    this->adjustSize();
 
-    fontAdjusted = true;
+    _fontAdjusted = true;
 }
 
 
-FontScalablePushButton::FontScalablePushButton(QWidget *parent) :
-    QPushButton(parent),
-    fontAdjusted(false)
+FontScalablePushButton::FontScalablePushButton (QWidget *parent) :
+    QPushButton (parent)
 {
 }
