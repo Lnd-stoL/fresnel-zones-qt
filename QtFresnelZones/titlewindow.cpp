@@ -1,7 +1,6 @@
 #include "titlewindow.h"
 #include "ui_titlewindow.h"
 #include "intensitygraphwindow.h"
-#include "mainwindow.h"
 #include "amplitudeplatewindow.h"
 
 #include <QDebug>

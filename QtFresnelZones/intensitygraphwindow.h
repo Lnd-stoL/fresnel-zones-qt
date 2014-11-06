@@ -20,9 +20,15 @@ public:
 
 
 private:
-    Fresnel* _fresnel = nullptr;
+    Fresnel *_fresnel = nullptr;
     bool _xDependenceMode = true;
+
+    bool _xDistance_ChangedSinceLastUpdate  = true;
+    bool _holeRadius_ChangedSinceLastUpdate = true;
+    bool _waveLength_ChangedSinceLastUpdate = true;
+
     void _update();
+    void _initFresnelBasedSliders();
 
     void _update_FresnelModel();
     void _updateZoneGraph();

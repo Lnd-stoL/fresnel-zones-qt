@@ -418,7 +418,7 @@ padding-right:5%</string>
                 </widget>
                </item>
                <item row="0" column="1">
-                <widget class="FontScalableLabel" name="label_2">
+                <widget class="FontScalableLabel" name="label_xMode">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -429,6 +429,7 @@ padding-right:5%</string>
                   <font>
                    <family>Arial</family>
                    <pointsize>16</pointsize>
+                   <underline>true</underline>
                   </font>
                  </property>
                  <property name="text">
@@ -455,7 +456,7 @@ padding-right:5%</string>
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="FontScalableLabel" name="label_3">
+                <widget class="FontScalableLabel" name="label_hMode">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
                    <horstretch>0</horstretch>

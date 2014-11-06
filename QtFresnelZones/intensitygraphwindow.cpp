@@ -5,8 +5,6 @@
 #include "colortransform.h"
 
 #include <QDebug>
-#include <QDesktopWidget>
-#include <QApplication>
 
 
 IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
@@ -37,15 +35,29 @@ IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
     connect (ui->slider_xDistance,  SIGNAL(sliderReleased()), this, SLOT(update_Needed()));
     connect (ui->slider_WaveLength, SIGNAL(sliderReleased()), this, SLOT(update_Needed()));
 
+    _initFresnelBasedSliders();
+    _update();
+}
 
-    // Fresnel-based sliders ranges and values setting
+
+IntensityGraphWindow::~IntensityGraphWindow()
+{
+    delete ui;
+}
+
+
+void IntensityGraphWindow::_initFresnelBasedSliders()
+{
     double scaling = Fresnel::scale_to_nano_exp;
+
     int minWaveLength = Fresnel::wave_min * scaling;
     int maxWaveLength = Fresnel::wave_max * scaling;
     int defaultWaveLength = Fresnel::wave_def * scaling;
+
     int minHoleRadius = Fresnel::radius_min * scaling;
     int maxHoleRadius = Fresnel::radius_max * scaling;
     int defaultHoleRadius = Fresnel::radius_def * scaling;
+
     int minxDistance = Fresnel::dist_min * scaling;
     int maxxDistance = Fresnel::dist_max * scaling;
     int defaultxDistance = Fresnel::dist_def * scaling;
@@ -64,28 +76,21 @@ IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
     ui->spin_xDistance->setRange (minxDistance, maxxDistance);
     ui->spin_xDistance->setValue (defaultxDistance);
     ui->slider_xDistance->setValue (defaultxDistance);
-
-    _update();
-}
-
-
-IntensityGraphWindow::~IntensityGraphWindow()
-{
-    delete ui;
 }
 
 
 void IntensityGraphWindow::_updateZoneGraph()
 {
     ui->widget_Zones->zones.clear();
-    for (unsigned n = 0; n < _fresnel->fresnelNumber(); ++n)
+    unsigned fresnelNumber = _fresnel->fresnelNumber();
+    for (unsigned n = 0; n < fresnelNumber; ++n)
     {
         double nextZone = _fresnel->zoneOuterRadius (n);
         ui->widget_Zones->zones.push_back (nextZone);
     }
 
     ui->widget_Zones->holeRadius = _fresnel->getHoleRadius();
-    ui->widget_Zones->backgroundColor = ColorTransform::getRGBfromLambda (_fresnel->getWaveLength());
+    ui->widget_Zones->backgroundColor = ColorTransform::getRGBfromLambda (_fresnel->getWaveLength() / Fresnel::nano_to_scale_exp);
     ui->widget_Zones->repaint();
 }
 
@@ -100,8 +105,13 @@ void IntensityGraphWindow::_updateSpiralGraph()
 void IntensityGraphWindow::_update()
 {
     _update_FresnelModel();
-    ui->widget_Graph->useMode (_xDependenceMode);
-    ui->widget_Graph->update (_fresnel);
+    if (_waveLength_ChangedSinceLastUpdate ||
+        _xDependenceMode && _holeRadius_ChangedSinceLastUpdate ||
+        (!_xDependenceMode) && _xDistance_ChangedSinceLastUpdate)
+    {
+        ui->widget_Graph->useMode (_xDependenceMode);
+        ui->widget_Graph->update (_fresnel);
+    }
 
     _updateSpiralGraph();
     _updateZoneGraph();
@@ -112,9 +122,17 @@ void IntensityGraphWindow::_update_FresnelModel()
 {
     double scaling = Fresnel::nano_to_scale_exp;
 
-    _fresnel->setObserverDistance (scaling * ui->slider_xDistance->value());
-    _fresnel->setHoleRadius (scaling * ui->slider_HoleRadius->value());
-    _fresnel->setWaveLength (scaling * ui->slider_WaveLength->value());
+    double newXDistance = scaling * ui->slider_xDistance->value();
+    double newHoleRadius = scaling * ui->slider_HoleRadius->value();
+    double newWaveLength = scaling * ui->slider_WaveLength->value();
+
+    _xDistance_ChangedSinceLastUpdate  = _fresnel->getObserverDistance() == newXDistance;
+    _holeRadius_ChangedSinceLastUpdate = _fresnel->getHoleRadius()       == newHoleRadius;
+    _waveLength_ChangedSinceLastUpdate = _fresnel->getWaveLength()       == newWaveLength;
+
+    _fresnel->setObserverDistance (newXDistance);
+    _fresnel->setHoleRadius (newHoleRadius);
+    _fresnel->setWaveLength (newWaveLength);
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -169,6 +187,14 @@ void IntensityGraphWindow::radio_xDependence()
         _xDependenceMode = true;
         this->_update();
     }
+
+    auto f = ui->label_xMode->font();
+    f.setUnderline (true);
+    ui->label_xMode->setFont (f);
+
+    f = ui->label_hMode->font();
+    f.setUnderline (false);
+    ui->label_hMode->setFont (f);
 }
 
 
@@ -179,4 +205,12 @@ void IntensityGraphWindow::radio_holeDependence()
         _xDependenceMode = false;
         this->_update();
     }
+
+    auto f = ui->label_hMode->font();
+    f.setUnderline (true);
+    ui->label_hMode->setFont (f);
+
+    f = ui->label_xMode->font();
+    f.setUnderline (false);
+    ui->label_xMode->setFont (f);
 }
