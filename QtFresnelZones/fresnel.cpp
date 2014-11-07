@@ -188,6 +188,10 @@ double Fresnel::getPhasePlateWidthOnRing(double r)
         width = (3.0 / 2.0 * M_PI + k * (sqrt(b*b + r*r) - b)) / n / k;
     }
 
+    if (phasePlateType == PhasePlate::FLAT_LENS) {
+        width = fmod(3.0 / 2.0 * M_PI + k * (sqrt(b*b + r*r) - b), 2.0 * M_PI) / n / k;
+    }
+
     return width;
 }
 
