@@ -230,26 +230,34 @@ void Fresnel::spiral (DoubleVector &spiralX, DoubleVector &spiralY) const
 
     Complex sp;
 
-    int fn        = currentFresnelNumber;
+    int    fn     = currentFresnelNumber;
     double R      = holeRadius;
+    double b      = observerDistance;
+    double b2     = b * b;
     double innerR = 0.0;
     double outerR = 0.0;
-    double dr     = 0.0;
+    double innerD = b;
+    double outerD = 0.0;
+    double dd     = 0.0;
 
     for (int n = 0; n < fn + 1; ++n) {
         outerR = zoneOuterRadius (n);
-        dr = (outerR - innerR) / accuracySpiral;
+        outerD = sqrt (outerR*outerR + b2);
+        dd = (outerD - innerD) / accuracySpiral;
 
         for (int i = 0; i < accuracySpiral; ++i) {
+            innerR = sqrt (innerD*innerD - b2);
+
             if (innerR > R) {
                 break;
             }
 
-            sp += amplitude (innerR, innerR + dr);
+            innerD += dd;
+            outerR = sqrt (innerD*innerD - b2);
+
+            sp += amplitude (innerR, outerR);
             spiralX.push_back (sp.im);
             spiralY.push_back (sp.re);
-
-            innerR += dr;
         }
     }
 }
