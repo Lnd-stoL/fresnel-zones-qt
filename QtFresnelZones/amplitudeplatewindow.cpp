@@ -18,6 +18,9 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     connect (ui->checkBox_Zone4, SIGNAL(clicked()), this, SLOT(_update()));
     connect (ui->checkBox_Zone5, SIGNAL(clicked()), this, SLOT(_update()));
 
+    _fresnel->amplitudePlate = true;
+    _fresnel->phasePlate = false;
+
     ui->widget_Graph->useMode (true);
     this->_update();
 }

@@ -72,7 +72,6 @@ void IntensityPlot::_updateGraphData (double highest, double step, double lowest
     double maxY = 0;
     for (double x = lowest; i < valuesCount; x += step, ++i)
     {
-        fresnel->setObserverDistance (x);
         _plotX[i] = x;
         _plotY[i] = calculator (x);
 
