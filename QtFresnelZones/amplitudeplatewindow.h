@@ -2,20 +2,27 @@
 #define AMPLITUDEPLATEWINDOW_H
 
 #include <QMainWindow>
+#include "fresnel.h"
+
 
 namespace Ui {
 class AmplitudePlateWindow;
 }
+
 
 class AmplitudePlateWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit AmplitudePlateWindow(QWidget *parent = 0);
+    explicit AmplitudePlateWindow (Fresnel *fresnel);
     ~AmplitudePlateWindow();
 
+protected:
+    Fresnel *_fresnel;
+
 private slots:
+    void _update();
     void button_Back_Pressed();
 
 private:

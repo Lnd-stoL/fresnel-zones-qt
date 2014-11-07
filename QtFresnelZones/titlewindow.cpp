@@ -36,7 +36,7 @@ void TitleWindow::openIntensityGraphWindow()
 
 void TitleWindow::openAmplitudePlateWindow()
 {
-    AmplitudePlateWindow *wnd = new AmplitudePlateWindow();
+    AmplitudePlateWindow *wnd = new AmplitudePlateWindow (&fresnel);
     wnd->setAttribute (Qt::WA_DeleteOnClose);
     wnd->showFullScreen();
 }

@@ -6,7 +6,7 @@
 #include <QDebug>
 
 
-ZonesGraph::ZonesGraph(QWidget *parent) :
+ZonesGraph::ZonesGraph (QWidget *parent) :
     QWidget (parent),
     holeRadius (0)
 {
@@ -21,9 +21,7 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
 
     int width = size().width();
     int height = size().height();
-    //qDebug() << width << height;
     double squareWidth = std::min ((height/2), (width/2));
-    //qDebug() << squareWidth;
 
     double maxRad = holeRadius;
 
