@@ -1,5 +1,4 @@
 
-#include "mainwindow.h"
 #include "fresnel.h"
 #include <QApplication>
 #include "titlewindow.h"

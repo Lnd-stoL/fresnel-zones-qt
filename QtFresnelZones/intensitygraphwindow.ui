@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1124</width>
+    <width>1024</width>
     <height>768</height>
    </rect>
   </property>
@@ -197,7 +197,7 @@ padding-right:5%</string>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QCustomPlot" name="widget_Graph" native="true">
+        <widget class="IntensityPlot" name="widget_Graph" native="true">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -418,7 +418,7 @@ padding-right:5%</string>
                 </widget>
                </item>
                <item row="0" column="1">
-                <widget class="FontScalableLabel" name="label_2">
+                <widget class="FontScalableLabel" name="label_xMode">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -429,6 +429,7 @@ padding-right:5%</string>
                   <font>
                    <family>Arial</family>
                    <pointsize>16</pointsize>
+                   <underline>true</underline>
                   </font>
                  </property>
                  <property name="text">
@@ -455,7 +456,7 @@ padding-right:5%</string>
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="FontScalableLabel" name="label_3">
+                <widget class="FontScalableLabel" name="label_hMode">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -797,12 +798,6 @@ padding-right:5%</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QCustomPlot</class>
-   <extends>QWidget</extends>
-   <header>qcustomplot.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
@@ -828,6 +823,12 @@ padding-right:5%</string>
    <class>FontScalablePushButton</class>
    <extends>QPushButton</extends>
    <header>fontscalablepushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>IntensityPlot</class>
+   <extends>QWidget</extends>
+   <header>intensityplot.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

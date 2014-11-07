@@ -1,53 +1,29 @@
+
 #include "fontscalablelabel.h"
+#include "hidpiscaler.h"
+
 #include <QDebug>
 #include <QResizeEvent>
-#include <QApplication>
-#include <QScreen>
-#include <QDesktopWidget>
 #include <stdlib.h>
 
 
-void FontScalableLabel::resizeEvent(QResizeEvent *evt)
+void FontScalableLabel::resizeEvent (QResizeEvent *evt)
 {
     QLabel::resizeEvent (evt);
-    if (fontAdjusted)  return;
-    //labelText = text();
-    //setText ("T");
-    //adjustSize ();
+    if (_fontAdjusted)  return;
 
-    QFont oldFont = this->font();
-    int fontSize = 1;
-    QRect cRect = this->rect();
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
+    auto mutableFont = this->font();
+    mutableFont.setPixelSize (std::min (dpiScaling.x(), dpiScaling.y()) * 0.9 * this->fontMetrics().height());
 
-/*
-    int oldFontSize = oldFont.pixelSize();
-    for (int i = 0; i < oldFont.pixelSize() + 5; ++i)
-    {
-        oldFont.setPixelSize(fontSize);
-        QRect r = QFontMetrics(oldFont).boundingRect(labelText);
-        qDebug() << "testing " << fontSize << " | " << r.width() << " " << cRect.width() << " | " << r.height() << " " << cRect.height();
-        if (r.height() < cRect.height() && r.width() < cRect.width() - 10) fontSize++;
-        else break;
-    }
-*/
-    //qDebug() << (0.71) * this->fontMetrics ().height ();
-    double k1 = (double) QApplication::desktop ()->screenGeometry().height() / 768.0;
-    double k2 = (double) QApplication::desktop ()->screenGeometry().width() / 1024.0;
-    oldFont.setPixelSize (std::min (k1, k2) * 0.95 * this->fontMetrics ().height ());
-    this->setFont(oldFont);
+    this->setFont (mutableFont);
     this->adjustSize();
-    //this->setText (labelText);
-    fontAdjusted = true;
 
-    //qDebug() << cRect.width() << " " << cRect.height();
-    //qDebug() << "resize " << evt->size().width() << " " << evt->size().height() << " from " << evt->oldSize().width() << " " << evt->oldSize().height();
+    _fontAdjusted = true;
 }
 
 
-FontScalableLabel::FontScalableLabel(QWidget *parent) :
-    QLabel(parent),
-    fontAdjusted(false),
-    labelText ("testttesttteststestest")
+FontScalableLabel::FontScalableLabel (QWidget *parent) :
+    QLabel (parent)
 {
-    //setText ("T");
 }

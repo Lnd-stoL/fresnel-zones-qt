@@ -9,16 +9,13 @@ class FontScalableSpinBox : public QSpinBox
     Q_OBJECT
 
 protected:
-    bool fontAdjusted;
+    bool _fontAdjusted = false;
+
+protected:
     virtual void resizeEvent (QResizeEvent* evt);
 
 public:
-    explicit FontScalableSpinBox(QWidget *parent = 0);
-
-signals:
-
-public slots:
-
+    explicit FontScalableSpinBox (QWidget *parent = 0);
 };
 
 #endif // FONTSCALABLESPINBOX_H

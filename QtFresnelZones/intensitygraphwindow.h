@@ -3,24 +3,36 @@
 
 #include <QMainWindow>
 #include "fresnel.h"
+#include "qcustomplot.h"
 
 namespace Ui {
 class IntensityGraphWindow;
 }
+
 
 class IntensityGraphWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit IntensityGraphWindow(QWidget *parent = 0);
+    explicit IntensityGraphWindow (Fresnel *fresnel);
     ~IntensityGraphWindow();
 
+
 private:
-    bool holeDependance = false;
-    bool readyToDrawGraphs;
-    void updateGraph();
-    void updateGraphHole (Fresnel& fresnel);
+    Fresnel *_fresnel = nullptr;
+    bool _xDependenceMode = true;
+
+    bool _xDistance_ChangedSinceLastUpdate  = true;
+    bool _holeRadius_ChangedSinceLastUpdate = true;
+    bool _waveLength_ChangedSinceLastUpdate = true;
+
+    void _update();
+    void _initFresnelBasedSliders();
+
+    void _update_FresnelModel();
+    void _updateZoneGraph();
+    void _updateSpiralGraph();
 
 
 private slots:
@@ -30,14 +42,14 @@ private slots:
     void slider_WaveLength_Changed (int value);
     void slider_HoleRadius_Changed (int value);
 
-    void slider_Released();
+    void update_Needed();
 
     void spin_xDistance_Changed  (int value);
     void spin_WaveLength_Changed (int value);
     void spin_HoleRadius_Changed (int value);
 
-    void radio_xDependance();
-    void radio_holeDependance();
+    void radio_xDependence();
+    void radio_holeDependence();
 
 
 private:

@@ -35,10 +35,10 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     painter.begin (this);
     painter.setRenderHint (QPainter::Antialiasing);
 
-    int width = size().width();
-    int height = size().height();
+    unsigned width = size().width();
+    unsigned height = size().height();
 
-    painter.setBrush (QBrush (QColor (255, 255, 255)));  // Background
+    painter.setBrush (QBrush (QColor (250, 250, 250)));  // Background
     painter.drawRect (0, 0, width, height);
 
     painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2));
@@ -55,24 +55,22 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
         if (fabs (spiralY[i]) > maxY)  maxY = fabs (spiralY[i]);
     }
 
-    int dispX = width / 2;
-    int dispY = height;
+    unsigned squareSide = std::min (width, height);\
+    unsigned dispX = width/2;
+    unsigned dispY = height;
+
     int prevX = 0, prevY = 0;
     for (int i = 0; i < spiralX.size(); ++i)
     {
-        int nextX = (spiralX[i] / maxX) * ((double)width/2  - 30.0);
-        int nextY = (spiralY[i] / maxY) * ((double)height - 30.0);
+        int nextX = (spiralX[i] / maxX) * ((double)squareSide/2  - 30.0);
+        int nextY = (spiralY[i] / maxY) * ((double)squareSide - 30.0);
 
         drawArrow (painter, prevX + dispX, dispY - prevY, nextX + dispX, dispY - nextY);
+
         prevX = nextX;
         prevY = nextY;
     }
 
-    //drawArrow (painter, width/2, height/2, width/2 + 50, height/5 + 50);
-    //painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
-    //painter.drawEllipse (QPoint (width / 2, height / 2), 100, 100);
-
-    //painter.translate (100, 100);
     painter.setFont (QFont ("Times", 25));
     //painter.drawText (QRect (0, 0, this->size().width(), this->size().height()), Qt::AlignCenter, QStringLiteral ("Qttest"));
 

@@ -14,7 +14,6 @@ TEMPLATE = app
 CONFIG += c++11
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     qcustomplot.cpp \
     spiralgraph.cpp \
     zonesgraph.cpp \
@@ -24,10 +23,13 @@ SOURCES += main.cpp\
     fresnel.cpp \
     fontscalablelabel.cpp \
     fontscalablespinbox.cpp \
-    fontscalableradiobutton.cpp \
-    fontscalablepushbutton.cpp
+    fontscalablepushbutton.cpp \
+    amplitudeplatewindow.cpp \
+    colortransform.cpp \
+    intensityplot.cpp \
+    hidpiscaler.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     qcustomplot.h \
     spiralgraph.h \
     zonesgraph.h \
@@ -37,9 +39,14 @@ HEADERS  += mainwindow.h \
     fresnel.h \
     fontscalablelabel.h \
     fontscalablespinbox.h \
-    fontscalableradiobutton.h \
-    fontscalablepushbutton.h
+    fontscalablepushbutton.h \
+    amplitudeplatewindow.h \
+    colortransform.h \
+    qvectormax.h \
+    intensityplot.h \
+    hidpiscaler.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     titlewindow.ui \
-    intensitygraphwindow.ui
+    intensitygraphwindow.ui \
+    amplitudeplatewindow.ui
