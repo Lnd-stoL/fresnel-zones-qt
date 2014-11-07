@@ -2,7 +2,6 @@
 #include "fresnel.h"
 #include "ui_intensitygraphwindow.h"
 #include "qvectormax.h"
-#include "colortransform.h"
 
 #include <QDebug>
 
@@ -84,17 +83,7 @@ void IntensityGraphWindow::_initFresnelBasedSliders()
 
 void IntensityGraphWindow::_updateZoneGraph()
 {
-    ui->widget_Zones->zones.clear();
-    unsigned fresnelNumber = _fresnel->fresnelNumber();
-    for (unsigned n = 0; n < fresnelNumber; ++n)
-    {
-        double nextZone = _fresnel->zoneOuterRadius (n);
-        ui->widget_Zones->zones.push_back (nextZone);
-    }
-
-    ui->widget_Zones->holeRadius = _fresnel->getHoleRadius();
-    ui->widget_Zones->backgroundColor = ColorTransform::getRGBfromLambda (_fresnel->getWaveLength() / Fresnel::nano_to_scale_exp);
-    ui->widget_Zones->repaint();
+    ui->widget_Zones->update (_fresnel);
 }
 
 

@@ -2,19 +2,28 @@
 #include "zonesgraph.h"
 #include <QPainter>
 #include <stdio.h>
+#include "colortransform.h"
 
 #include <QDebug>
 
 
 ZonesGraph::ZonesGraph (QWidget *parent) :
-    QWidget (parent),
-    holeRadius (0)
+    QWidget (parent)
 {
+}
+
+
+void ZonesGraph::update (Fresnel *fresnel)
+{
+    _fresnel = fresnel;
+    this->repaint();
 }
 
 
 void ZonesGraph::paintEvent (QPaintEvent *event)
 {
+    if (_fresnel == nullptr)  return;
+
     QPainter painter;
     painter.begin (this);
     painter.setRenderHint (QPainter::Antialiasing);
@@ -23,24 +32,19 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     int height = size().height();
     double squareWidth = std::min ((height/2), (width/2));
 
-    double maxRad = holeRadius;
-
-    painter.setBrush (QBrush (backgroundColor));  // Background
+    double maxRad = _fresnel->getHoleRadius();
+    painter.setBrush (QBrush (ColorTransform::getRGBfromLambda (_fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)));
     painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth, squareWidth);
-
-    painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 1, Qt::DashDotDotLine));
-    //painter.drawLine (width/2, 0, width/2, height);
-    //painter.drawLine (0, height/2, width, height/2);
 
     painter.setPen (QPen (QBrush (QColor (255, 255, 255)), 3));
     painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
 
-    for (int i = 0; i < zones.size(); ++i)
-        painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth * zones[i] / maxRad, squareWidth * zones[i] / maxRad);
-
-    //painter.translate (100, 100);
-    painter.setFont (QFont ("Times", 25));
-    //painter.drawText (QRect (0, 0, this->size().width(), this->size().height()), Qt::AlignCenter, QStringLiteral ("Qttest"));
+    unsigned fresnelNumber = _fresnel->fresnelNumber();
+    for (int n = fresnelNumber-1; n >= 0; --n)
+    {
+        double nextZone = _fresnel->zoneOuterRadius (n);
+        painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth * nextZone / maxRad, squareWidth * nextZone / maxRad);
+    }
 
     painter.end();
 }

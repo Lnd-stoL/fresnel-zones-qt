@@ -2,18 +2,19 @@
 #define ZONESGRAPH_H
 
 #include <QWidget>
+#include "fresnel.h"
 
 class ZonesGraph : public QWidget
 {
     Q_OBJECT
 
-public:
-    QVector<double> zones;
-    QColor backgroundColor;
-    double holeRadius;
+protected:
+    Fresnel *_fresnel = nullptr;
 
 public:
-    explicit ZonesGraph(QWidget *parent = 0);
+    explicit ZonesGraph (QWidget *parent = 0);
+    void update (Fresnel *fresnel);
+
 
 signals:
 

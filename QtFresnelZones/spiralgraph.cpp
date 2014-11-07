@@ -47,32 +47,28 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
 
     painter.setPen (QPen (QBrush (QColor (255, 50, 50)), 3));
 
-    double maxX = 0;
-    double maxY = 0;
+    double maxVal = 0;
     for (int i = 0; i < spiralX.size(); ++i)
     {
-        if (fabs (spiralX[i]) > maxX)  maxX = fabs (spiralX[i]);
-        if (fabs (spiralY[i]) > maxY)  maxY = fabs (spiralY[i]);
+        if (fabs (spiralX[i]) > maxVal)  maxVal = fabs (spiralX[i]);
+        if (fabs (spiralY[i]) > maxVal)  maxVal = fabs (spiralY[i]);
     }
 
-    unsigned squareSide = std::min (width, height);\
+    unsigned squareSide = std::min (width, height);
     unsigned dispX = width/2;
     unsigned dispY = height;
 
     int prevX = 0, prevY = 0;
     for (int i = 0; i < spiralX.size(); ++i)
     {
-        int nextX = (spiralX[i] / maxX) * ((double)squareSide/2  - 30.0);
-        int nextY = (spiralY[i] / maxY) * ((double)squareSide - 30.0);
+        int nextX = (spiralX[i]*2 / maxVal) * ((double)squareSide/2  - 20.0);
+        int nextY = (spiralY[i] / maxVal) * ((double)squareSide    - 20.0);
 
         drawArrow (painter, prevX + dispX, dispY - prevY, nextX + dispX, dispY - nextY);
 
         prevX = nextX;
         prevY = nextY;
     }
-
-    painter.setFont (QFont ("Times", 25));
-    //painter.drawText (QRect (0, 0, this->size().width(), this->size().height()), Qt::AlignCenter, QStringLiteral ("Qttest"));
 
     painter.end();
 }
