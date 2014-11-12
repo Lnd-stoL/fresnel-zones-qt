@@ -2,9 +2,9 @@
 #define FONTSCALABLESPINBOX_H
 
 #include <QWidget>
-#include <QSpinBox>
+#include <QDoubleSpinBox>
 
-class FontScalableSpinBox : public QSpinBox
+class FontScalableSpinBox : public QDoubleSpinBox
 {
     Q_OBJECT
 
@@ -13,6 +13,7 @@ protected:
 
 protected:
     virtual void resizeEvent (QResizeEvent* evt);
+    virtual QString textFromValue();
 
 public:
     explicit FontScalableSpinBox (QWidget *parent = 0);

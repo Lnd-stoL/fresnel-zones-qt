@@ -7,7 +7,7 @@
 
 void FontScalableSpinBox::resizeEvent(QResizeEvent *evt)
 {
-    QSpinBox::resizeEvent (evt);
+    QDoubleSpinBox::resizeEvent (evt);
     if (_fontAdjusted)  return;
 
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
@@ -21,7 +21,13 @@ void FontScalableSpinBox::resizeEvent(QResizeEvent *evt)
 }
 
 
+QString FontScalableSpinBox::textFromValue()
+{
+    return QString::number (this->value(), 'g', 2);
+}
+
+
 FontScalableSpinBox::FontScalableSpinBox (QWidget *parent) :
-    QSpinBox (parent)
+    QDoubleSpinBox (parent)
 {
 }

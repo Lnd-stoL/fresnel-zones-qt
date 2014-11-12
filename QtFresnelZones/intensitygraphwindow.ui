@@ -590,7 +590,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string>нм</string>
+                 <string> мкм</string>
                 </property>
                </widget>
               </item>
@@ -677,7 +677,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string>нм</string>
+                 <string> мкм</string>
                 </property>
                </widget>
               </item>
@@ -762,7 +762,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string>нм</string>
+                 <string> мкм</string>
                 </property>
                </widget>
               </item>
