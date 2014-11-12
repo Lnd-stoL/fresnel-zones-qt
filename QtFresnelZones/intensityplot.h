@@ -22,6 +22,8 @@ protected:
     QCPItemLine *_zoneLines[ZoneLinesMax];
     unsigned _zoneLinesActive = 0;
 
+    const double _scaling = Fresnel::scale_to_micro_exp;
+
     void _switchToXDependence();
     void _switchToRDependence();
     void _updateXDependence (Fresnel *fresnel);
