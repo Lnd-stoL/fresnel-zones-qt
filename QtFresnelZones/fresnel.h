@@ -32,9 +32,9 @@ private:
     void        updateAmplitudePlate (int oldFN);
 
 public:
-    static constexpr double nano_to_si_exp      = 10e-9;
-    static constexpr double milli_to_si_exp     = 10e-3;
-    static constexpr double micro_to_si_exp     = 10e-6;
+    static constexpr double nano_to_si_exp      = 1e-9;
+    static constexpr double milli_to_si_exp     = 1e-3;
+    static constexpr double micro_to_si_exp     = 1e-6;
 
     //
     //-------------- 'scale' = milli -----------------
@@ -60,7 +60,7 @@ public:
     static constexpr double radius_def = 0.02;
     static constexpr double dist_min   = 0.1;
     static constexpr double dist_max   = 2;
-    static constexpr double dist_def   = 0.15;
+    static constexpr double dist_def   = 0.55;
     static constexpr double wave_min   = 300 * nano_to_scale_exp;
     static constexpr double wave_max   = 800 * nano_to_scale_exp;
     static constexpr double wave_def   = 500 * nano_to_scale_exp;
@@ -153,6 +153,9 @@ public:
     // - Retrive   X-coordinate [0, maximum plate width]
     //
     double      getPhasePlateWidthOnRing (double r) const;
+
+
+    double      getObserverDistanceForZone (unsigned d) const;
 };
 
 #endif // FRESNEL_H

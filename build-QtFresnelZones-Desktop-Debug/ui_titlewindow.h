@@ -36,6 +36,7 @@ public:
     FontScalableLabel *label;
     FontScalablePushButton *pushButton;
     QSpacerItem *verticalSpacer_5;
+    FontScalablePushButton *pushButton_PhasePlate;
     QSpacerItem *verticalSpacer_2;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
@@ -47,13 +48,14 @@ public:
     QSpacerItem *verticalSpacer_4;
     QFrame *line;
     QSpacerItem *verticalSpacer_7;
-    FontScalablePushButton *pushButton_3;
+    FontScalablePushButton *pushButton_AmplitudePlate;
+    QSpacerItem *verticalSpacer_8;
 
     void setupUi(QMainWindow *TitleWindow)
     {
         if (TitleWindow->objectName().isEmpty())
             TitleWindow->setObjectName(QStringLiteral("TitleWindow"));
-        TitleWindow->resize(1066, 780);
+        TitleWindow->resize(1024, 780);
         centralwidget = new QWidget(TitleWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout_2 = new QGridLayout(centralwidget);
@@ -79,7 +81,7 @@ public:
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addItem(verticalSpacer, 10, 1, 1, 1);
+        gridLayout->addItem(verticalSpacer, 12, 1, 1, 1);
 
         label = new FontScalableLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
@@ -111,6 +113,17 @@ public:
 
         gridLayout->addItem(verticalSpacer_5, 6, 1, 1, 1);
 
+        pushButton_PhasePlate = new FontScalablePushButton(centralwidget);
+        pushButton_PhasePlate->setObjectName(QStringLiteral("pushButton_PhasePlate"));
+        sizePolicy.setHeightForWidth(pushButton_PhasePlate->sizePolicy().hasHeightForWidth());
+        pushButton_PhasePlate->setSizePolicy(sizePolicy);
+        pushButton_PhasePlate->setMinimumSize(QSize(0, 70));
+        pushButton_PhasePlate->setFont(font);
+        pushButton_PhasePlate->setStyleSheet(QLatin1String("padding-top:15%;\n"
+"padding-bottom:15%"));
+
+        gridLayout->addWidget(pushButton_PhasePlate, 11, 1, 1, 1);
+
         verticalSpacer_2 = new QSpacerItem(20, 60, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         gridLayout->addItem(verticalSpacer_2, 0, 1, 1, 1);
@@ -139,7 +152,7 @@ public:
         horizontalLayout->addWidget(pushButton_Exit, 0, Qt::AlignHCenter);
 
 
-        gridLayout->addWidget(widget, 11, 1, 1, 1);
+        gridLayout->addWidget(widget, 13, 1, 1, 1);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -170,18 +183,22 @@ public:
 
         verticalSpacer_7 = new QSpacerItem(20, 45, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        gridLayout->addItem(verticalSpacer_7, 12, 1, 1, 1);
+        gridLayout->addItem(verticalSpacer_7, 14, 1, 1, 1);
 
-        pushButton_3 = new FontScalablePushButton(centralwidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy);
-        pushButton_3->setMinimumSize(QSize(0, 70));
-        pushButton_3->setFont(font);
-        pushButton_3->setStyleSheet(QLatin1String("padding-top:15%;\n"
+        pushButton_AmplitudePlate = new FontScalablePushButton(centralwidget);
+        pushButton_AmplitudePlate->setObjectName(QStringLiteral("pushButton_AmplitudePlate"));
+        sizePolicy.setHeightForWidth(pushButton_AmplitudePlate->sizePolicy().hasHeightForWidth());
+        pushButton_AmplitudePlate->setSizePolicy(sizePolicy);
+        pushButton_AmplitudePlate->setMinimumSize(QSize(0, 70));
+        pushButton_AmplitudePlate->setFont(font);
+        pushButton_AmplitudePlate->setStyleSheet(QLatin1String("padding-top:15%;\n"
 "padding-bottom:15%"));
 
-        gridLayout->addWidget(pushButton_3, 9, 1, 1, 1);
+        gridLayout->addWidget(pushButton_AmplitudePlate, 9, 1, 1, 1);
+
+        verticalSpacer_8 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout->addItem(verticalSpacer_8, 10, 1, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
@@ -199,8 +216,9 @@ public:
         pushButton_IntensityGraph->setText(QApplication::translate("TitleWindow", "\320\230\321\201\321\201\320\273\320\265\320\264\320\276\320\262\320\260\320\275\320\270\320\265 \320\270\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\320\270", 0));
         label->setText(QApplication::translate("TitleWindow", "\320\227\320\276\320\275\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
         pushButton->setText(QApplication::translate("TitleWindow", "\320\237\320\276\321\201\321\202\321\200\320\276\320\265\320\275\320\270\320\265 \320\267\320\276\320\275 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
+        pushButton_PhasePlate->setText(QApplication::translate("TitleWindow", "\320\244\320\260\320\267\320\276\320\262\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
         pushButton_Exit->setText(QApplication::translate("TitleWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
-        pushButton_3->setText(QApplication::translate("TitleWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
+        pushButton_AmplitudePlate->setText(QApplication::translate("TitleWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
     } // retranslateUi
 
 };

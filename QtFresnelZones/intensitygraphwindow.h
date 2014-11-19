@@ -36,6 +36,9 @@ private:
     void _updateZoneGraph();
     void _updateSpiralGraph();
 
+    void _changeParameters (double xDistance, double holeRadius, double waveLength);
+    void _changeParams_ZoneOpened (unsigned zoneNum);
+
 
 private slots:
     void button_Back_Pressed();
@@ -52,6 +55,13 @@ private slots:
 
     void radio_xDependence();
     void radio_holeDependence();
+
+    void parametersSet1();
+    void parametersSet2();
+    void parametersSet3();
+    void parametersSet4();
+    void parametersSet5();
+    void parametersSetDefault();
 
 
 private:

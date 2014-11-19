@@ -46,12 +46,17 @@ void IntensityPlot::_switchToXDependence()
 
     this->clearItems();
 
-    _xLine = new QCPItemLine (this);
+    _backLine = new QCPItemLine (this);
+    QPen backLinePen (QColor (255, 100, 100, 100));
+    backLinePen.setWidth(5);
+    _backLine->setPen (backLinePen);
+    this->addItem (_backLine);
+
+    _line = new QCPItemLine (this);
     QPen linePen (Qt::red);
     linePen.setWidth(5);
-    _xLine->setPen (linePen);
-
-    this->addItem (_xLine);
+    _line->setPen (linePen);
+    this->addItem (_line);
 }
 
 
@@ -99,9 +104,11 @@ void IntensityPlot::_updateXDependence (Fresnel *fresnel)
     });
     fresnel->setObserverDistance (oldDistance);
 
-    double xLineCoord = fresnel->getObserverDistance() * _scaling;
-    _xLine->start->setCoords (xLineCoord, 0);
-    _xLine->end->setCoords (xLineCoord, fresnel->intensity());
+    _backLine->start->setCoords (fresnel->getObserverDistance() * _scaling, 0);
+    _backLine->end->setCoords (fresnel->getObserverDistance() * _scaling, yAxis->range ().size ());
+
+    _line->start->setCoords (fresnel->getObserverDistance() * _scaling, 0);
+    _line->end->setCoords (fresnel->getObserverDistance() * _scaling, fresnel->intensity());
 }
 
 
@@ -121,14 +128,14 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
 
     this->clearItems();
 
-    QPen linePen (Qt::red);
-    linePen.setWidth (1);
+    QPen zoneLinePen (QColor (100, 100, 100));
+    zoneLinePen.setWidth (1);
 
     double nextZone = 0;
     for (int n = 0; nextZone < highest && n < ZoneLinesMax; ++n)
     {
         _zoneLines[n] = new QCPItemLine (this);
-        _zoneLines[n]->setPen (linePen);
+        _zoneLines[n]->setPen (zoneLinePen);
 
         double nextZone = fresnel->zoneOuterRadius (n);
         nextZone *= _scaling;
@@ -136,6 +143,24 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
         _zoneLines[n]->end->setCoords (nextZone, yAxis->range().size());
         this->addItem (_zoneLines[n]);
     }
+
+     _backLine = new QCPItemLine (this);
+    QPen backLinePen (QColor (255, 100, 100, 100));
+    backLinePen.setWidth(5);
+    _backLine->setPen (backLinePen);
+    this->addItem (_backLine);
+
+    _line = new QCPItemLine (this);
+    QPen linePen (Qt::red);
+    linePen.setWidth(5);
+    _line->setPen (linePen);
+    this->addItem (_line);
+
+    _backLine->start->setCoords (fresnel->getHoleRadius() * _scaling, 0);
+    _backLine->end->setCoords (fresnel->getHoleRadius() * _scaling, yAxis->range().size());
+
+    _line->start->setCoords (fresnel->getHoleRadius() * _scaling, 0);
+    _line->end->setCoords (fresnel->getHoleRadius() * _scaling, fresnel->intensity());
 }
 
 

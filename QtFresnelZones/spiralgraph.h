@@ -1,6 +1,10 @@
 #ifndef SPIRALGRAPH_H
 #define SPIRALGRAPH_H
 
+#include <drawer.h>
+
+#include "fresnel.h"
+
 #include <QWidget>
 #include <QGLWidget>
 
@@ -12,12 +16,13 @@ public:
     QVector<double> spiralX;
     QVector<double> spiralY;
 
+    Fresnel        *fresnel = nullptr;
+
 
 public:
     explicit SpiralGraph (QWidget *parent = 0);
 
 protected:
-    void drawArrow (QPainter& painter, unsigned x0, unsigned y0, unsigned x1, unsigned y1);
 
 signals:
 

@@ -15,7 +15,8 @@ protected:
     QVector<double> _plotX;
     QVector<double> _plotY;
 
-    QCPItemLine *_xLine = nullptr;
+    QCPItemLine *_line = nullptr;
+    QCPItemLine *_backLine = nullptr;
     bool _xDependenceMode = true;
 
     static const int ZoneLinesMax = 200;

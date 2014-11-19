@@ -34,6 +34,13 @@ IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
     connect (ui->slider_xDistance,  SIGNAL(sliderReleased()), this, SLOT(update_Needed()));
     connect (ui->slider_WaveLength, SIGNAL(sliderReleased()), this, SLOT(update_Needed()));
 
+    connect (ui->pushButton_params1, SIGNAL(clicked()), this, SLOT(parametersSet1()));
+    connect (ui->pushButton_params2, SIGNAL(clicked()), this, SLOT(parametersSet2()));
+    connect (ui->pushButton_params3, SIGNAL(clicked()), this, SLOT(parametersSet3()));
+    connect (ui->pushButton_params4, SIGNAL(clicked()), this, SLOT(parametersSet4()));
+    connect (ui->pushButton_params5, SIGNAL(clicked()), this, SLOT(parametersSet5()));
+    connect (ui->pushButton_paramsDefault, SIGNAL(clicked()), this, SLOT(parametersSetDefault()));
+
     _fresnel->amplitudePlate = false;
     _fresnel->phasePlate     = false;
 
@@ -91,6 +98,22 @@ void IntensityGraphWindow::_updateSpiralGraph()
 {
     _fresnel->spiral (ui->widget_spiralGraph->spiralX, ui->widget_spiralGraph->spiralY);
     ui->widget_spiralGraph->repaint();
+}
+
+
+void IntensityGraphWindow::_changeParameters (double xDistance, double holeRadius, double waveLength)
+{
+    double scaling = Fresnel::scale_to_micro_exp;
+
+    double scaledWaveLength = waveLength * scaling;
+    double scaledHoleRadius = holeRadius * scaling;
+    double scaledxDistance  = xDistance * scaling;
+
+    ui->spin_HoleRadius->setValue (scaledHoleRadius);
+    ui->spin_WaveLength->setValue (scaledWaveLength);
+    ui->spin_xDistance->setValue  (scaledxDistance);
+
+    _update();
 }
 
 
@@ -205,4 +228,47 @@ void IntensityGraphWindow::radio_holeDependence()
     f = ui->label_xMode->font();
     f.setUnderline (false);
     ui->label_xMode->setFont (f);
+}
+
+
+void IntensityGraphWindow::_changeParams_ZoneOpened (unsigned zoneNum)
+{
+    _changeParameters (_fresnel->getObserverDistanceForZone (zoneNum) * 1.0003,
+                       _fresnel->getHoleRadius(), _fresnel->getWaveLength());
+}
+
+
+void IntensityGraphWindow::parametersSet1()
+{
+    _changeParams_ZoneOpened (0);
+}
+
+
+void IntensityGraphWindow::parametersSet2()
+{
+    _changeParams_ZoneOpened (1);
+}
+
+
+void IntensityGraphWindow::parametersSet3()
+{
+    _changeParams_ZoneOpened (2);
+}
+
+
+void IntensityGraphWindow::parametersSet4()
+{
+   _changeParams_ZoneOpened (3);
+}
+
+
+void IntensityGraphWindow::parametersSet5()
+{
+   _changeParams_ZoneOpened (4);
+}
+
+
+void IntensityGraphWindow::parametersSetDefault()
+{
+    _changeParameters (Fresnel::dist_def, Fresnel::radius_def, Fresnel::wave_def);
 }

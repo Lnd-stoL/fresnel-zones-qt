@@ -23,6 +23,7 @@ public:
 private slots:
     void openIntensityGraphWindow();
     void openAmplitudePlateWindow();
+    void openPhasePlateWindow();
     void exitApplication();
 
 private:

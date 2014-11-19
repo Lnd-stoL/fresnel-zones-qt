@@ -60,7 +60,7 @@ void FontScalableSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
 }
 
 const QMetaObject FontScalableSpinBox::staticMetaObject = {
-    { &QSpinBox::staticMetaObject, qt_meta_stringdata_FontScalableSpinBox.data,
+    { &QDoubleSpinBox::staticMetaObject, qt_meta_stringdata_FontScalableSpinBox.data,
       qt_meta_data_FontScalableSpinBox,  qt_static_metacall, 0, 0}
 };
 
@@ -75,12 +75,12 @@ void *FontScalableSpinBox::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_FontScalableSpinBox.stringdata))
         return static_cast<void*>(const_cast< FontScalableSpinBox*>(this));
-    return QSpinBox::qt_metacast(_clname);
+    return QDoubleSpinBox::qt_metacast(_clname);
 }
 
 int FontScalableSpinBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QSpinBox::qt_metacall(_c, _id, _a);
+    _id = QDoubleSpinBox::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

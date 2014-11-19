@@ -2,6 +2,7 @@
 #include "spiralgraph.h"
 #include <math.h>
 #include <QDebug>
+#include "drawer.h"
 
 
 SpiralGraph::SpiralGraph (QWidget *parent) :
@@ -9,25 +10,6 @@ SpiralGraph::SpiralGraph (QWidget *parent) :
 {
     //setAutoFillBackground (false);
 }
-
-
-void SpiralGraph::drawArrow (QPainter& painter, unsigned x0, unsigned y0, unsigned x1, unsigned y1)
-{
-    double tx = (double)x1 - (double)x0;
-    double ty = (double)y1 - (double)y0;
-    double length = sqrt (tx*tx + ty*ty);
-
-    double ptx = -ty / 15.0;
-    double pty = tx / 15.0;
-
-    double anchor_x = (double)x1 - tx/10.0;
-    double anchor_y = (double)y1 - ty/10.0;
-
-    painter.drawLine (x0, y0, x1, y1);
-    painter.drawLine (x1, y1, anchor_x + ptx, anchor_y + pty);
-    painter.drawLine (x1, y1, anchor_x - ptx, anchor_y - pty);
-}
-
 
 void SpiralGraph::paintEvent (QPaintEvent *event)
 {
@@ -41,12 +23,6 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     painter.setBrush (QBrush (QColor (250, 250, 250)));  // Background
     painter.drawRect (0, 0, width, height);
 
-    painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2));
-    painter.drawLine (width/2, 0, width/2, height);
-    painter.drawLine (0, height/2, width, height/2);
-
-    painter.setPen (QPen (QBrush (QColor (255, 50, 50)), 3));
-
     double maxVal = 0;
     for (int i = 0; i < spiralX.size(); ++i)
     {
@@ -54,21 +30,40 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
         if (fabs (spiralY[i]) > maxVal)  maxVal = fabs (spiralY[i]);
     }
 
-    unsigned squareSide = std::min (width, height);
+    unsigned squareSide = std::min (width, height);;
+
+    if (fresnel) {
+        if (fresnel->phasePlate || fresnel->amplitudePlate) {
+            squareSide = height;
+        }
+    }
     unsigned dispX = width/2;
     unsigned dispY = height;
 
+    painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2));
+    if (spiralY.length() < 6)
+        painter.drawLine (0, height/2, width, height/2);
+    else {
+        double ty = dispY - spiralY[5] / maxVal * ((double)squareSide - 20.0);
+        painter.drawLine (0, ty, width, ty);
+    }
+    painter.drawLine (width/2, 0, width/2, height);
+
+    painter.setPen (QPen (QBrush (QColor (255, 50, 50)), 3));
     int prevX = 0, prevY = 0;
     for (int i = 0; i < spiralX.size(); ++i)
     {
         int nextX = (spiralX[i]*2 / maxVal) * ((double)squareSide/2  - 20.0);
         int nextY = (spiralY[i] / maxVal) * ((double)squareSide    - 20.0);
 
-        drawArrow (painter, prevX + dispX, dispY - prevY, nextX + dispX, dispY - nextY);
+        Drawer::drawArrow (painter, prevX + dispX, dispY - prevY, nextX + dispX, dispY - nextY);
 
         prevX = nextX;
         prevY = nextY;
     }
+
+    painter.setPen (QPen (QBrush (QColor (30, 30, 255)), 4));
+    Drawer::drawArrow (painter, width/2, height, prevX + dispX, dispY - prevY, 80, 20);
 
     painter.end();
 }
