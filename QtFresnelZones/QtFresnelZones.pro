@@ -27,7 +27,10 @@ SOURCES += main.cpp\
     amplitudeplatewindow.cpp \
     colortransform.cpp \
     intensityplot.cpp \
-    hidpiscaler.cpp
+    hidpiscaler.cpp \
+    phaseplatewindow.cpp \
+    schemegraph.cpp \
+    drawer.cpp
 
 HEADERS  += \
     qcustomplot.h \
@@ -44,9 +47,13 @@ HEADERS  += \
     colortransform.h \
     qvectormax.h \
     intensityplot.h \
-    hidpiscaler.h
+    hidpiscaler.h \
+    phaseplatewindow.h \
+    schemegraph.h \
+    drawer.h
 
 FORMS    += \
     titlewindow.ui \
     intensitygraphwindow.ui \
-    amplitudeplatewindow.ui
+    amplitudeplatewindow.ui \
+    phaseplatewindow.ui

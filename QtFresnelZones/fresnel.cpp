@@ -123,18 +123,18 @@ Complex Fresnel::amplitude (double innerR,
     double intK = M_PI / l * dr;
 
     for (int i = 0; i < n; ++i) {
-        r = innerR + i * dr;
-        d = sqrt (r*r + b2);
+        r   = innerR + i * dr;
+        d   = sqrt (r*r + b2);
         phi = atan (r / a) + atan (r / b);
 
-        p = 1.0 / d;                // Sphere wave factor
+        p  = 1.0 / d;               // Sphere wave factor
         p *= r;                     // Jacobian
         p *= cos (phi) + 1.0;       // K(phi)
         p *= amplitudeOnPlate (r);
 
-        arg = -k * (d - b) + phaseOnPlate (r);     // Phase
+        arg     = -(k * (d - b) + phaseOnPlate (r));     // Phase
         amp.re += -p * sin (arg);
-        amp.im += p * cos (arg);
+        amp.im +=  p * cos (arg);
     }
 
     amp *= intK;
@@ -169,15 +169,16 @@ double Fresnel::getPhasePlateWidthOnRing (double r) const
 {
     r = fabs (r);
 
-    double n     = refractiveIndex;
-    double k     = waveNumber;
-    double b     = observerDistance;
-    double width = 0.0;
+    double n        = refractiveIndex;
+    double k        = waveNumber;
+    double b        = observerDistance;
+    double l        = waveLength;
+    double width    = 0.0;
 
     if (phasePlateType == PhasePlate::SIMPLE) {
         int zoneNumber = fresnelNumber (r);
         if (zoneNumber & 1) {
-            width = M_PI / n / k;
+            width  = M_PI / n / k;
         }
     }
 
@@ -186,15 +187,23 @@ double Fresnel::getPhasePlateWidthOnRing (double r) const
         int zoneNumber = fresnelNumber (r);
         double dWidth  = M_PI / n / k;
 
-        width = (fn - zoneNumber + (fn & 1) + 2) * dWidth;
+        width  = fn - zoneNumber + (fn & 1) + 2;
+        width *= dWidth;
     }
 
-    if (phasePlateType == PhasePlate::LENS) {
-        width = (3.0 / 2.0 * M_PI + k * (sqrt (b*b + r*r) - b)) / n / k;
-    }
+    if (phasePlateType == PhasePlate::LENS || phasePlateType == PhasePlate::FLAT_LENS) {
+        double minWidth = M_PI / 2.0 - k * (sqrt (b*b + holeRadius*holeRadius) - b);
+        width           = M_PI / 2.0 - k * (sqrt (b*b + r*r) - b);
+        width          += ceil (fabs (minWidth) / (2.0 * M_PI)) * 2.0 * M_PI;
 
-    if (phasePlateType == PhasePlate::FLAT_LENS) {
-        width = fmod (3.0 / 2.0 * M_PI + k * (sqrt (b*b + r*r) - b), 2.0 * M_PI) / n / k;
+        if (phasePlateType == PhasePlate::LENS) {
+        }
+
+        if (phasePlateType == PhasePlate::FLAT_LENS) {
+            width = fmod (width, 2.0 * M_PI);
+        }
+
+        width /= n * k;
     }
 
     return width;
@@ -216,9 +225,10 @@ int Fresnel::fresnelNumber (double r) const
     if (r < 0) {
         return currentFresnelNumber;
     }
-    double b = observerDistance;
-    double l = waveLength;
-    return (int) (2.0 * (sqrt (b*b + r*r) - b) / l);
+    double b  = observerDistance;
+    double l  = waveLength;
+    int    fn = (int) (2.0 * (sqrt (b*b + r*r) - b) / l);
+    return fn;
 }
 
 void Fresnel::spiral (DoubleVector &spiralX, DoubleVector &spiralY) const
@@ -243,7 +253,7 @@ void Fresnel::spiral (DoubleVector &spiralX, DoubleVector &spiralY) const
     for (int n = 0; n < fn + 1; ++n) {
         outerR = zoneOuterRadius (n);
         outerD = sqrt (outerR*outerR + b2);
-        dd = (outerD - innerD) / accuracySpiral;
+        dd     = (outerD - innerD) / accuracySpiral;
 
         for (int i = 0; i < accuracySpiral; ++i) {
             innerR = sqrt (innerD*innerD - b2);
@@ -253,7 +263,7 @@ void Fresnel::spiral (DoubleVector &spiralX, DoubleVector &spiralY) const
             }
 
             innerD += dd;
-            outerR = sqrt (innerD*innerD - b2);
+            outerR  = sqrt (innerD*innerD - b2);
 
             sp += amplitude (innerR, outerR);
             spiralX.push_back (sp.im);

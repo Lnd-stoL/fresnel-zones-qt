@@ -26,7 +26,7 @@
 #include "fontscalablelabel.h"
 #include "fontscalablepushbutton.h"
 #include "fontscalablespinbox.h"
-#include "qcustomplot.h"
+#include "intensityplot.h"
 #include "spiralgraph.h"
 #include "zonesgraph.h"
 
@@ -46,7 +46,7 @@ public:
     FontScalableLabel *label;
     QSpacerItem *horizontalSpacer;
     FontScalablePushButton *pushButton_Back_2;
-    QCustomPlot *widget_Graph;
+    IntensityPlot *widget_Graph;
     QFrame *frame_2;
     QGridLayout *gridLayout_5;
     SpiralGraph *widget_spiralGraph;
@@ -63,9 +63,9 @@ public:
     QGridLayout *gridLayout_8;
     QGridLayout *gridLayout_7;
     QRadioButton *radioButton_xDependance;
-    FontScalableLabel *label_2;
+    FontScalableLabel *label_xMode;
     QRadioButton *radioButton_holeDependance;
-    FontScalableLabel *label_3;
+    FontScalableLabel *label_hMode;
     QFrame *frame_6;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_2;
@@ -92,7 +92,7 @@ public:
     {
         if (IntensityGraphWindow->objectName().isEmpty())
             IntensityGraphWindow->setObjectName(QStringLiteral("IntensityGraphWindow"));
-        IntensityGraphWindow->resize(1124, 768);
+        IntensityGraphWindow->resize(1024, 768);
         IntensityGraphWindow->setStyleSheet(QStringLiteral("background-color: rgb(230, 230, 230);"));
         centralwidget = new QWidget(IntensityGraphWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
@@ -180,7 +180,7 @@ public:
 
         gridLayout_3->addWidget(widget, 0, 0, 1, 1);
 
-        widget_Graph = new QCustomPlot(frame_3);
+        widget_Graph = new IntensityPlot(frame_3);
         widget_Graph->setObjectName(QStringLiteral("widget_Graph"));
         widget_Graph->setMaximumSize(QSize(16777215, 16000000));
 
@@ -293,16 +293,17 @@ public:
 
         gridLayout_7->addWidget(radioButton_xDependance, 0, 0, 1, 1);
 
-        label_2 = new FontScalableLabel(widget_2);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy2);
+        label_xMode = new FontScalableLabel(widget_2);
+        label_xMode->setObjectName(QStringLiteral("label_xMode"));
+        sizePolicy2.setHeightForWidth(label_xMode->sizePolicy().hasHeightForWidth());
+        label_xMode->setSizePolicy(sizePolicy2);
         QFont font4;
         font4.setFamily(QStringLiteral("Arial"));
         font4.setPointSize(16);
-        label_2->setFont(font4);
+        font4.setUnderline(true);
+        label_xMode->setFont(font4);
 
-        gridLayout_7->addWidget(label_2, 0, 1, 1, 1);
+        gridLayout_7->addWidget(label_xMode, 0, 1, 1, 1);
 
         radioButton_holeDependance = new QRadioButton(widget_2);
         radioButton_holeDependance->setObjectName(QStringLiteral("radioButton_holeDependance"));
@@ -312,13 +313,16 @@ public:
 
         gridLayout_7->addWidget(radioButton_holeDependance, 1, 0, 1, 1);
 
-        label_3 = new FontScalableLabel(widget_2);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        sizePolicy2.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
-        label_3->setSizePolicy(sizePolicy2);
-        label_3->setFont(font4);
+        label_hMode = new FontScalableLabel(widget_2);
+        label_hMode->setObjectName(QStringLiteral("label_hMode"));
+        sizePolicy2.setHeightForWidth(label_hMode->sizePolicy().hasHeightForWidth());
+        label_hMode->setSizePolicy(sizePolicy2);
+        QFont font5;
+        font5.setFamily(QStringLiteral("Arial"));
+        font5.setPointSize(16);
+        label_hMode->setFont(font5);
 
-        gridLayout_7->addWidget(label_3, 1, 1, 1, 1);
+        gridLayout_7->addWidget(label_hMode, 1, 1, 1, 1);
 
 
         gridLayout_8->addLayout(gridLayout_7, 0, 0, 1, 1);
@@ -350,11 +354,11 @@ public:
         sizePolicy5.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
         label_4->setSizePolicy(sizePolicy5);
         label_4->setMaximumSize(QSize(500, 36));
-        QFont font5;
-        font5.setFamily(QStringLiteral("Arial"));
-        font5.setPointSize(16);
-        font5.setItalic(true);
-        label_4->setFont(font5);
+        QFont font6;
+        font6.setFamily(QStringLiteral("Arial"));
+        font6.setPointSize(16);
+        font6.setItalic(true);
+        label_4->setFont(font6);
         label_4->setScaledContents(false);
         label_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
@@ -377,9 +381,9 @@ public:
         sizePolicy6.setHeightForWidth(spin_xDistance->sizePolicy().hasHeightForWidth());
         spin_xDistance->setSizePolicy(sizePolicy6);
         spin_xDistance->setMinimumSize(QSize(0, 0));
-        QFont font6;
-        font6.setPointSize(15);
-        spin_xDistance->setFont(font6);
+        QFont font7;
+        font7.setPointSize(15);
+        spin_xDistance->setFont(font7);
         spin_xDistance->setAutoFillBackground(false);
         spin_xDistance->setStyleSheet(QStringLiteral("background-color: white;"));
 
@@ -409,7 +413,7 @@ public:
         sizePolicy7.setHeightForWidth(label_holeRadius->sizePolicy().hasHeightForWidth());
         label_holeRadius->setSizePolicy(sizePolicy7);
         label_holeRadius->setMaximumSize(QSize(500, 16777215));
-        label_holeRadius->setFont(font5);
+        label_holeRadius->setFont(font6);
         label_holeRadius->setScaledContents(false);
         label_holeRadius->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
@@ -432,7 +436,7 @@ public:
         sizePolicy8.setHeightForWidth(spin_HoleRadius->sizePolicy().hasHeightForWidth());
         spin_HoleRadius->setSizePolicy(sizePolicy8);
         spin_HoleRadius->setMinimumSize(QSize(0, 0));
-        spin_HoleRadius->setFont(font6);
+        spin_HoleRadius->setFont(font7);
         spin_HoleRadius->setStyleSheet(QStringLiteral("background-color: white;"));
 
         horizontalLayout_3->addWidget(spin_HoleRadius);
@@ -457,13 +461,13 @@ public:
         label_WaveLength->setObjectName(QStringLiteral("label_WaveLength"));
         sizePolicy5.setHeightForWidth(label_WaveLength->sizePolicy().hasHeightForWidth());
         label_WaveLength->setSizePolicy(sizePolicy5);
-        QFont font7;
-        font7.setFamily(QStringLiteral("Arial"));
-        font7.setPointSize(16);
-        font7.setBold(false);
-        font7.setItalic(true);
-        font7.setWeight(50);
-        label_WaveLength->setFont(font7);
+        QFont font8;
+        font8.setFamily(QStringLiteral("Arial"));
+        font8.setPointSize(16);
+        font8.setBold(false);
+        font8.setItalic(true);
+        font8.setWeight(50);
+        label_WaveLength->setFont(font8);
         label_WaveLength->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         verticalLayout_4->addWidget(label_WaveLength);
@@ -473,7 +477,7 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         slider_WaveLength = new QSlider(frame_6);
         slider_WaveLength->setObjectName(QStringLiteral("slider_WaveLength"));
-        slider_WaveLength->setFont(font6);
+        slider_WaveLength->setFont(font7);
         slider_WaveLength->setOrientation(Qt::Horizontal);
 
         horizontalLayout_2->addWidget(slider_WaveLength);
@@ -483,7 +487,7 @@ public:
         sizePolicy8.setHeightForWidth(spin_WaveLength->sizePolicy().hasHeightForWidth());
         spin_WaveLength->setSizePolicy(sizePolicy8);
         spin_WaveLength->setMinimumSize(QSize(0, 0));
-        spin_WaveLength->setFont(font6);
+        spin_WaveLength->setFont(font7);
         spin_WaveLength->setStyleSheet(QStringLiteral("background-color: white;"));
 
         horizontalLayout_2->addWidget(spin_WaveLength);
@@ -528,9 +532,9 @@ public:
         pushButton_Back_2->setText(QApplication::translate("IntensityGraphWindow", "\320\222\320\237\320\225\320\240\320\225\320\224", 0));
         label_5->setText(QApplication::translate("IntensityGraphWindow", "\320\227\320\260\320\262\320\270\321\201\320\270\320\274\320\276\321\201\321\202\321\214 \320\276\321\202:", 0));
         radioButton_xDependance->setText(QString());
-        label_2->setText(QApplication::translate("IntensityGraphWindow", " \321\200\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\321\217 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
+        label_xMode->setText(QApplication::translate("IntensityGraphWindow", " \321\200\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\321\217 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
         radioButton_holeDependance->setText(QString());
-        label_3->setText(QApplication::translate("IntensityGraphWindow", " \321\200\320\260\320\264\320\270\321\203\321\201\320\260 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
+        label_hMode->setText(QApplication::translate("IntensityGraphWindow", " \321\200\320\260\320\264\320\270\321\203\321\201\320\260 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
         label_4->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
         spin_xDistance->setSuffix(QApplication::translate("IntensityGraphWindow", "\320\275\320\274", 0));
         label_holeRadius->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\320\264\320\270\321\203\321\201 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));

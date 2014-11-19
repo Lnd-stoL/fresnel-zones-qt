@@ -34,8 +34,8 @@ IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
     connect (ui->slider_xDistance,  SIGNAL(sliderReleased()), this, SLOT(update_Needed()));
     connect (ui->slider_WaveLength, SIGNAL(sliderReleased()), this, SLOT(update_Needed()));
 
-    _fresnel->amplitudePlate = false;
-    _fresnel->phasePlate     = false;
+    //_fresnel->amplitudePlate = false;
+    //_fresnel->phasePlate     = false;
 
     _initFresnelBasedSliders();
     _update();

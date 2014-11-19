@@ -32,8 +32,8 @@ private:
     void        updateAmplitudePlate (int oldFN);
 
 public:
-    static constexpr double nano_to_si_exp      = 10e-9;
-    static constexpr double milli_to_si_exp     = 10e-3;
+    static constexpr double nano_to_si_exp      = 1e-9;
+    static constexpr double milli_to_si_exp     = 1e-3;
 
     //
     //-------------- 'scale' = milli -----------------
@@ -54,7 +54,7 @@ public:
     //
     static constexpr double radius_min = 0.001;
     static constexpr double radius_max = 0.1;
-    static constexpr double radius_def = 0.01;
+    static constexpr double radius_def = 0.05;
     static constexpr double dist_min   = 0.1;
     static constexpr double dist_max   = 2;
     static constexpr double dist_def   = 0.5;

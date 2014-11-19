@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_IntensityGraphWindow_t {
     QByteArrayData data[13];
-    char stringdata[252];
+    char stringdata[250];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,20 +36,20 @@ QT_MOC_LITERAL(3, 42, 24),
 QT_MOC_LITERAL(4, 67, 5),
 QT_MOC_LITERAL(5, 73, 25),
 QT_MOC_LITERAL(6, 99, 25),
-QT_MOC_LITERAL(7, 125, 15),
-QT_MOC_LITERAL(8, 141, 22),
-QT_MOC_LITERAL(9, 164, 23),
-QT_MOC_LITERAL(10, 188, 23),
-QT_MOC_LITERAL(11, 212, 17),
-QT_MOC_LITERAL(12, 230, 20)
+QT_MOC_LITERAL(7, 125, 13),
+QT_MOC_LITERAL(8, 139, 22),
+QT_MOC_LITERAL(9, 162, 23),
+QT_MOC_LITERAL(10, 186, 23),
+QT_MOC_LITERAL(11, 210, 17),
+QT_MOC_LITERAL(12, 228, 20)
     },
     "IntensityGraphWindow\0button_Back_Pressed\0"
     "\0slider_xDistance_Changed\0value\0"
     "slider_WaveLength_Changed\0"
-    "slider_HoleRadius_Changed\0slider_Released\0"
+    "slider_HoleRadius_Changed\0update_Needed\0"
     "spin_xDistance_Changed\0spin_WaveLength_Changed\0"
-    "spin_HoleRadius_Changed\0radio_xDependance\0"
-    "radio_holeDependance\0"
+    "spin_HoleRadius_Changed\0radio_xDependence\0"
+    "radio_holeDependence\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -102,12 +102,12 @@ void IntensityGraphWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 1: _t->slider_xDistance_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 2: _t->slider_WaveLength_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->slider_HoleRadius_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->slider_Released(); break;
+        case 4: _t->update_Needed(); break;
         case 5: _t->spin_xDistance_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 6: _t->spin_WaveLength_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->spin_HoleRadius_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->radio_xDependance(); break;
-        case 9: _t->radio_holeDependance(); break;
+        case 8: _t->radio_xDependence(); break;
+        case 9: _t->radio_holeDependence(); break;
         default: ;
         }
     }
