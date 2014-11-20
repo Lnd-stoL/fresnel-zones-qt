@@ -113,6 +113,8 @@ public:
         QFont font;
         font.setFamily(QStringLiteral("Arial"));
         font.setPointSize(14);
+        font.setBold(true);
+        font.setWeight(75);
         pushButton_Back->setFont(font);
         pushButton_Back->setStyleSheet(QLatin1String("background-color:white;\n"
 "padding-top:5%;\n"
@@ -334,10 +336,6 @@ public:
 
         horizontalLayout_3->addWidget(frame_10);
 
-        radioButton_stagingPlate->raise();
-        radioButton_lensPlate->raise();
-        frame_9->raise();
-        frame_10->raise();
 
         verticalLayout_3->addWidget(frame_8);
 
@@ -386,9 +384,9 @@ public:
     void retranslateUi(QMainWindow *PhasePlateWindow)
     {
         PhasePlateWindow->setWindowTitle(QApplication::translate("PhasePlateWindow", "MainWindow", 0));
-        pushButton_Back->setText(QApplication::translate("PhasePlateWindow", "\320\222\320\253\320\245\320\236\320\224", 0));
+        pushButton_Back->setText(QApplication::translate("PhasePlateWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("PhasePlateWindow", "\320\244\320\260\320\267\320\276\320\262\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
-        pushButton_Back_2->setText(QApplication::translate("PhasePlateWindow", "\320\222\320\237\320\225\320\240\320\225\320\224", 0));
+        pushButton_Back_2->setText(QApplication::translate("PhasePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
         label_3->setText(QApplication::translate("PhasePlateWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\262 \321\202\320\276\321\207\320\272\320\265 \320\275\320\260\320\261\320\273\321\216\320\264\320\265\320\275\320\270\321\217", 0));
         label_2->setText(QApplication::translate("PhasePlateWindow", "\320\242\320\270\320\277 \321\204\320\260\320\267\320\276\320\262\320\276\320\271 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\270:", 0));
         radioButton_simplePlate->setText(QString());

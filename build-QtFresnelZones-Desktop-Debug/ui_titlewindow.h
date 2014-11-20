@@ -18,7 +18,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 #include "fontscalablelabel.h"
@@ -37,7 +36,7 @@ public:
     FontScalableLabel *label;
     FontScalablePushButton *pushButton;
     QSpacerItem *verticalSpacer_5;
-    QPushButton *pushButton_PhasePlate;
+    FontScalablePushButton *pushButton_PhasePlate;
     QSpacerItem *verticalSpacer_2;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
@@ -114,12 +113,14 @@ public:
 
         gridLayout->addItem(verticalSpacer_5, 6, 1, 1, 1);
 
-        pushButton_PhasePlate = new QPushButton(centralwidget);
+        pushButton_PhasePlate = new FontScalablePushButton(centralwidget);
         pushButton_PhasePlate->setObjectName(QStringLiteral("pushButton_PhasePlate"));
         sizePolicy.setHeightForWidth(pushButton_PhasePlate->sizePolicy().hasHeightForWidth());
         pushButton_PhasePlate->setSizePolicy(sizePolicy);
         pushButton_PhasePlate->setMinimumSize(QSize(0, 70));
         pushButton_PhasePlate->setFont(font);
+        pushButton_PhasePlate->setStyleSheet(QLatin1String("padding-top:15%;\n"
+"padding-bottom:15%"));
 
         gridLayout->addWidget(pushButton_PhasePlate, 11, 1, 1, 1);
 

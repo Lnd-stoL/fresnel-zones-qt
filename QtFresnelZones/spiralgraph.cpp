@@ -2,6 +2,7 @@
 #include "spiralgraph.h"
 #include <math.h>
 #include <QDebug>
+#include "drawer.h"
 
 
 SpiralGraph::SpiralGraph (QWidget *parent) :
@@ -60,6 +61,9 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
         prevX = nextX;
         prevY = nextY;
     }
+
+    painter.setPen (QPen (QBrush (QColor (30, 30, 255)), 4));
+    Drawer::drawArrow (painter, width/2, height, prevX + dispX, dispY - prevY, 80, 20);
 
     painter.end();
 }

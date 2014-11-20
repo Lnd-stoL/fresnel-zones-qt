@@ -86,7 +86,14 @@ public:
     QSlider *slider_WaveLength;
     FontScalableSpinBox *spin_WaveLength;
     QFrame *frame_7;
-    QVBoxLayout *verticalLayout_5;
+    QHBoxLayout *horizontalLayout_5;
+    FontScalablePushButton *pushButton_params1;
+    FontScalablePushButton *pushButton_params2;
+    FontScalablePushButton *pushButton_params3;
+    FontScalablePushButton *pushButton_params4;
+    FontScalablePushButton *pushButton_params5;
+    QSpacerItem *horizontalSpacer_3;
+    FontScalablePushButton *pushButton_paramsDefault;
 
     void setupUi(QMainWindow *IntensityGraphWindow)
     {
@@ -103,8 +110,9 @@ public:
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
         gridLayout_3 = new QGridLayout(frame_3);
-        gridLayout_3->setSpacing(0);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setHorizontalSpacing(0);
+        gridLayout_3->setVerticalSpacing(6);
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
         widget = new QWidget(frame_3);
         widget->setObjectName(QStringLiteral("widget"));
@@ -114,9 +122,9 @@ public:
         sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
         widget->setSizePolicy(sizePolicy);
         horizontalLayout_4 = new QHBoxLayout(widget);
-        horizontalLayout_4->setSpacing(5);
+        horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        horizontalLayout_4->setContentsMargins(5, 5, 5, 10);
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
         pushButton_Back = new FontScalablePushButton(widget);
         pushButton_Back->setObjectName(QStringLiteral("pushButton_Back"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Expanding);
@@ -128,6 +136,8 @@ public:
         QFont font;
         font.setFamily(QStringLiteral("Arial"));
         font.setPointSize(14);
+        font.setBold(true);
+        font.setWeight(75);
         pushButton_Back->setFont(font);
         pushButton_Back->setStyleSheet(QLatin1String("background-color:white;\n"
 "padding-top:5%;\n"
@@ -255,7 +265,7 @@ public:
         verticalLayout = new QVBoxLayout(frame_5);
         verticalLayout->setSpacing(5);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(6, 6, 6, 6);
+        verticalLayout->setContentsMargins(6, 0, 6, 6);
         label_5 = new FontScalableLabel(frame_5);
         label_5->setObjectName(QStringLiteral("label_5"));
         QFont font2;
@@ -335,8 +345,8 @@ public:
 
         frame_6 = new QFrame(frame_4);
         frame_6->setObjectName(QStringLiteral("frame_6"));
-        sizePolicy1.setHeightForWidth(frame_6->sizePolicy().hasHeightForWidth());
-        frame_6->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(frame_6->sizePolicy().hasHeightForWidth());
+        frame_6->setSizePolicy(sizePolicy);
         frame_6->setMinimumSize(QSize(0, 200));
         frame_6->setFrameShape(QFrame::StyledPanel);
         frame_6->setFrameShadow(QFrame::Raised);
@@ -507,10 +517,76 @@ public:
         frame_7->setSizePolicy(sizePolicy1);
         frame_7->setFrameShape(QFrame::StyledPanel);
         frame_7->setFrameShadow(QFrame::Raised);
-        verticalLayout_5 = new QVBoxLayout(frame_7);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        horizontalLayout_5 = new QHBoxLayout(frame_7);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(6, 6, 6, 6);
+        pushButton_params1 = new FontScalablePushButton(frame_7);
+        pushButton_params1->setObjectName(QStringLiteral("pushButton_params1"));
+        sizePolicy6.setHeightForWidth(pushButton_params1->sizePolicy().hasHeightForWidth());
+        pushButton_params1->setSizePolicy(sizePolicy6);
+        pushButton_params1->setMinimumSize(QSize(30, 0));
+        QFont font9;
+        font9.setFamily(QStringLiteral("Arial Black"));
+        font9.setPointSize(11);
+        pushButton_params1->setFont(font9);
 
-        gridLayout_6->addWidget(frame_7, 1, 0, 1, 1);
+        horizontalLayout_5->addWidget(pushButton_params1);
+
+        pushButton_params2 = new FontScalablePushButton(frame_7);
+        pushButton_params2->setObjectName(QStringLiteral("pushButton_params2"));
+        sizePolicy6.setHeightForWidth(pushButton_params2->sizePolicy().hasHeightForWidth());
+        pushButton_params2->setSizePolicy(sizePolicy6);
+        pushButton_params2->setMinimumSize(QSize(30, 0));
+        pushButton_params2->setFont(font9);
+
+        horizontalLayout_5->addWidget(pushButton_params2);
+
+        pushButton_params3 = new FontScalablePushButton(frame_7);
+        pushButton_params3->setObjectName(QStringLiteral("pushButton_params3"));
+        sizePolicy6.setHeightForWidth(pushButton_params3->sizePolicy().hasHeightForWidth());
+        pushButton_params3->setSizePolicy(sizePolicy6);
+        pushButton_params3->setMinimumSize(QSize(30, 0));
+        pushButton_params3->setFont(font9);
+
+        horizontalLayout_5->addWidget(pushButton_params3);
+
+        pushButton_params4 = new FontScalablePushButton(frame_7);
+        pushButton_params4->setObjectName(QStringLiteral("pushButton_params4"));
+        sizePolicy6.setHeightForWidth(pushButton_params4->sizePolicy().hasHeightForWidth());
+        pushButton_params4->setSizePolicy(sizePolicy6);
+        pushButton_params4->setMinimumSize(QSize(30, 0));
+        pushButton_params4->setFont(font9);
+
+        horizontalLayout_5->addWidget(pushButton_params4);
+
+        pushButton_params5 = new FontScalablePushButton(frame_7);
+        pushButton_params5->setObjectName(QStringLiteral("pushButton_params5"));
+        sizePolicy6.setHeightForWidth(pushButton_params5->sizePolicy().hasHeightForWidth());
+        pushButton_params5->setSizePolicy(sizePolicy6);
+        pushButton_params5->setMinimumSize(QSize(30, 0));
+        pushButton_params5->setFont(font9);
+
+        horizontalLayout_5->addWidget(pushButton_params5);
+
+        horizontalSpacer_3 = new QSpacerItem(200, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_3);
+
+        pushButton_paramsDefault = new FontScalablePushButton(frame_7);
+        pushButton_paramsDefault->setObjectName(QStringLiteral("pushButton_paramsDefault"));
+        sizePolicy6.setHeightForWidth(pushButton_paramsDefault->sizePolicy().hasHeightForWidth());
+        pushButton_paramsDefault->setSizePolicy(sizePolicy6);
+        pushButton_paramsDefault->setMinimumSize(QSize(100, 0));
+        QFont font10;
+        font10.setFamily(QStringLiteral("Arial Black"));
+        pushButton_paramsDefault->setFont(font10);
+        pushButton_paramsDefault->setStyleSheet(QLatin1String("padding-left:5%;\n"
+"padding-right:5%;"));
+
+        horizontalLayout_5->addWidget(pushButton_paramsDefault);
+
+
+        gridLayout_6->addWidget(frame_7, 1, 0, 1, 1, Qt::AlignBottom);
 
 
         gridLayout_2->addWidget(frame_4, 3, 1, 1, 1);
@@ -527,20 +603,26 @@ public:
     void retranslateUi(QMainWindow *IntensityGraphWindow)
     {
         IntensityGraphWindow->setWindowTitle(QApplication::translate("IntensityGraphWindow", "MainWindow", 0));
-        pushButton_Back->setText(QApplication::translate("IntensityGraphWindow", "\320\222\320\253\320\245\320\236\320\224", 0));
+        pushButton_Back->setText(QApplication::translate("IntensityGraphWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("IntensityGraphWindow", "\320\230\321\201\321\201\320\273\320\265\320\264\320\276\320\262\320\260\320\275\320\270\320\265 \320\270\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\320\270 \320\275\320\260 \321\206\320\265\320\275\321\202\321\200\320\260\320\273\321\214\320\275\320\276\320\271 \320\276\321\201\320\270", 0));
-        pushButton_Back_2->setText(QApplication::translate("IntensityGraphWindow", "\320\222\320\237\320\225\320\240\320\225\320\224", 0));
+        pushButton_Back_2->setText(QApplication::translate("IntensityGraphWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
         label_5->setText(QApplication::translate("IntensityGraphWindow", "\320\227\320\260\320\262\320\270\321\201\320\270\320\274\320\276\321\201\321\202\321\214 \320\276\321\202:", 0));
         radioButton_xDependance->setText(QString());
         label_xMode->setText(QApplication::translate("IntensityGraphWindow", " \321\200\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\321\217 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
         radioButton_holeDependance->setText(QString());
         label_hMode->setText(QApplication::translate("IntensityGraphWindow", " \321\200\320\260\320\264\320\270\321\203\321\201\320\260 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
         label_4->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
-        spin_xDistance->setSuffix(QApplication::translate("IntensityGraphWindow", "\320\275\320\274", 0));
+        spin_xDistance->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\274\320\272\320\274", 0));
         label_holeRadius->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\320\264\320\270\321\203\321\201 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
-        spin_HoleRadius->setSuffix(QApplication::translate("IntensityGraphWindow", "\320\275\320\274", 0));
+        spin_HoleRadius->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\274\320\272\320\274", 0));
         label_WaveLength->setText(QApplication::translate("IntensityGraphWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
-        spin_WaveLength->setSuffix(QApplication::translate("IntensityGraphWindow", "\320\275\320\274", 0));
+        spin_WaveLength->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\274\320\272\320\274", 0));
+        pushButton_params1->setText(QApplication::translate("IntensityGraphWindow", "1", 0));
+        pushButton_params2->setText(QApplication::translate("IntensityGraphWindow", "2", 0));
+        pushButton_params3->setText(QApplication::translate("IntensityGraphWindow", "3", 0));
+        pushButton_params4->setText(QApplication::translate("IntensityGraphWindow", "4", 0));
+        pushButton_params5->setText(QApplication::translate("IntensityGraphWindow", "5", 0));
+        pushButton_paramsDefault->setText(QApplication::translate("IntensityGraphWindow", "\320\241\320\261\321\200\320\276\321\201\320\270\321\202\321\214", 0));
     } // retranslateUi
 
 };

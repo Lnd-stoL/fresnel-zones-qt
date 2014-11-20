@@ -8,10 +8,11 @@ IntensityPlot::IntensityPlot (QWidget *parent) :
     this->addGraph();
 
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
-    QFont labelFont ("Arial", std::min (dpiScaling.x(), dpiScaling.y()) * 15);
+    QFont labelFont ("Arial", std::min (dpiScaling.x(), dpiScaling.y()) * 14);
     QPen axisPen(QBrush (QColor (0, 0, 0)), 2);
     xAxis->setLabelFont (labelFont);
     yAxis->setLabelFont (labelFont);
+    xAxis->setTickLabelFont (labelFont);
     xAxis->setBasePen (axisPen);
     yAxis->setBasePen (axisPen);
     yAxis->setTickLabels (false);
@@ -41,7 +42,7 @@ void IntensityPlot::useMode (bool xDependence)
 
 void IntensityPlot::_switchToXDependence()
 {
-    xAxis->setLabel ("Расстояние (нм)");
+    xAxis->setLabel ("Расстояние (мкм)");
 
     this->clearItems();
 
@@ -61,7 +62,7 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    xAxis->setLabel ("Размер отверстия (нм)");
+    xAxis->setLabel ("Размер отверстия (мкм)");
     this->clearItems();
 }
 
@@ -77,7 +78,7 @@ void IntensityPlot::_updateGraphData (double highest, double step, double lowest
     double maxY = 0;
     for (double x = lowest; i < valuesCount; x += step, ++i)
     {
-        _plotX[i] = x;
+        _plotX[i] = x * _scaling;
         _plotY[i] = calculator (x);
 
         if (_plotY[i] > maxY)  maxY = _plotY[i];
@@ -85,7 +86,7 @@ void IntensityPlot::_updateGraphData (double highest, double step, double lowest
 
     this->graph(0)->setData (_plotX, _plotY);
 
-    xAxis->setRange (lowest, highest);
+    xAxis->setRange (lowest * _scaling, highest * _scaling);
     yAxis->setRange (0, maxY * 1.05);
 }
 
@@ -103,11 +104,11 @@ void IntensityPlot::_updateXDependence (Fresnel *fresnel)
     });
     fresnel->setObserverDistance (oldDistance);
 
-    _backLine->start->setCoords (fresnel->getObserverDistance(), 0);
-    _backLine->end->setCoords (fresnel->getObserverDistance(), yAxis->range ().size ());
+    _backLine->start->setCoords (fresnel->getObserverDistance() * _scaling, 0);
+    _backLine->end->setCoords (fresnel->getObserverDistance() * _scaling, yAxis->range ().size ());
 
-    _line->start->setCoords (fresnel->getObserverDistance(), 0);
-    _line->end->setCoords (fresnel->getObserverDistance(), fresnel->intensity());
+    _line->start->setCoords (fresnel->getObserverDistance() * _scaling, 0);
+    _line->end->setCoords (fresnel->getObserverDistance() * _scaling, fresnel->intensity());
 }
 
 
@@ -137,12 +138,13 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
         _zoneLines[n]->setPen (zoneLinePen);
 
         double nextZone = fresnel->zoneOuterRadius (n);
+        nextZone *= _scaling;
         _zoneLines[n]->start->setCoords (nextZone, 0);
         _zoneLines[n]->end->setCoords (nextZone, yAxis->range().size());
         this->addItem (_zoneLines[n]);
     }
 
-    _backLine = new QCPItemLine (this);
+     _backLine = new QCPItemLine (this);
     QPen backLinePen (QColor (255, 100, 100, 100));
     backLinePen.setWidth(5);
     _backLine->setPen (backLinePen);
@@ -154,11 +156,11 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
     _line->setPen (linePen);
     this->addItem (_line);
 
-    _backLine->start->setCoords (fresnel->getHoleRadius (), 0);
-    _backLine->end->setCoords (fresnel->getHoleRadius (), yAxis->range ().size ());
+    _backLine->start->setCoords (fresnel->getHoleRadius() * _scaling, 0);
+    _backLine->end->setCoords (fresnel->getHoleRadius() * _scaling, yAxis->range().size());
 
-    _line->start->setCoords (fresnel->getHoleRadius (), 0);
-    _line->end->setCoords (fresnel->getHoleRadius (), fresnel->intensity());
+    _line->start->setCoords (fresnel->getHoleRadius() * _scaling, 0);
+    _line->end->setCoords (fresnel->getHoleRadius() * _scaling, fresnel->intensity());
 }
 
 

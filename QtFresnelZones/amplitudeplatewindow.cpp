@@ -21,7 +21,6 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     _fresnel->amplitudePlate = true;
     _fresnel->phasePlate = false;
 
-    ui->widget_Graph->useMode (true);
     this->_update();
 }
 
@@ -41,7 +40,7 @@ void AmplitudePlateWindow::_update()
     _fresnel->setZoneOpenness (4, ui->checkBox_Zone4->isChecked());
     _fresnel->setZoneOpenness (5, ui->checkBox_Zone5->isChecked());
 
-    ui->widget_Graph->update (_fresnel);
+    ui->widget_Zones->update (_fresnel);
 
     _fresnel->spiral (ui->widget_spiralGraph->spiralX, ui->widget_spiralGraph->spiralY);
     ui->widget_spiralGraph->repaint();

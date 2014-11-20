@@ -23,6 +23,8 @@ private:
     Fresnel *_fresnel = nullptr;
     bool _xDependenceMode = true;
 
+    const double _sliderScaling = 10;
+
     bool _xDistance_ChangedSinceLastUpdate  = true;
     bool _holeRadius_ChangedSinceLastUpdate = true;
     bool _waveLength_ChangedSinceLastUpdate = true;
@@ -34,6 +36,9 @@ private:
     void _updateZoneGraph();
     void _updateSpiralGraph();
 
+    void _changeParameters (double xDistance, double holeRadius, double waveLength);
+    void _changeParams_ZoneOpened (unsigned zoneNum);
+
 
 private slots:
     void button_Back_Pressed();
@@ -44,12 +49,19 @@ private slots:
 
     void update_Needed();
 
-    void spin_xDistance_Changed  (int value);
-    void spin_WaveLength_Changed (int value);
-    void spin_HoleRadius_Changed (int value);
+    void spin_xDistance_Changed  (double value);
+    void spin_WaveLength_Changed (double value);
+    void spin_HoleRadius_Changed (double value);
 
     void radio_xDependence();
     void radio_holeDependence();
+
+    void parametersSet1();
+    void parametersSet2();
+    void parametersSet3();
+    void parametersSet4();
+    void parametersSet5();
+    void parametersSetDefault();
 
 
 private:

@@ -33,10 +33,16 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     double squareWidth = std::min ((height/2), (width/2));
 
     double maxRad = _fresnel->getHoleRadius();
-    painter.setBrush (QBrush (ColorTransform::getRGBfromLambda (_fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)));
+    QBrush colorBrush (ColorTransform::getRGBfromLambda (_fresnel->getWaveLength() * Fresnel::scale_to_nano_exp));
+    QBrush blackBrush (QColor (0, 0, 0));
+
+    if (_fresnel->isZoneOpened (_fresnel->fresnelNumber()))  painter.setBrush (colorBrush);
+    else  painter.setBrush (blackBrush);
+
     painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth, squareWidth);
 
-    painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
+    painter.setPen (QPen (QBrush (QColor (255, 255, 255)), 3));
+
     QFont font = QFont ("Arial", 14);
     font.setBold (true);
     painter.setFont (font);
@@ -47,11 +53,15 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     {
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;
-        painter.setPen (QPen (QBrush (QColor (255, 255, 255)), 3));
-        painter.drawEllipse (QPointF (width / 2, height / 2), radius, radius);
+
+        if (_fresnel->isZoneOpened (n))  painter.setBrush (colorBrush);
+        else  painter.setBrush (blackBrush);
+
+        painter.drawEllipse (QPoint (width / 2, height / 2), radius, radius);
     }
 
-    for (int n = 0; n < fresnelNumber; ++n) {
+    for (int n = 0; n < fresnelNumber; ++n)
+    {
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;
         painter.setPen (QPen (QBrush (QColor (40, 40, 40)), 3));

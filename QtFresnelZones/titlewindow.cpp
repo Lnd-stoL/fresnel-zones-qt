@@ -51,6 +51,7 @@ void TitleWindow::openPhasePlateWindow()
     wnd->showFullScreen();
 }
 
+
 void TitleWindow::exitApplication()
 {
     this->close();

@@ -34,6 +34,7 @@ private:
 public:
     static constexpr double nano_to_si_exp      = 1e-9;
     static constexpr double milli_to_si_exp     = 1e-3;
+    static constexpr double micro_to_si_exp     = 1e-6;
 
     //
     //-------------- 'scale' = milli -----------------
@@ -41,10 +42,12 @@ public:
     //
     static constexpr double scale_to_si_exp     = milli_to_si_exp;                    // scale -> System International (meter)
     static constexpr double scale_to_nano_exp   = scale_to_si_exp / nano_to_si_exp;   // scale -> nano
+    static constexpr double scale_to_micro_exp  = scale_to_si_exp / micro_to_si_exp;   // scale -> nano
     static constexpr double scale_to_milli_exp  = scale_to_si_exp / milli_to_si_exp;  // scale -> milli
 
     static constexpr double si_to_scale_exp     = 1.0 / scale_to_si_exp;
     static constexpr double nano_to_scale_exp   = nano_to_si_exp * si_to_scale_exp;   // nano -> scale
+    static constexpr double micro_to_scale_exp  = micro_to_si_exp * si_to_scale_exp;   // nano -> scale
     static constexpr double milli_to_scale_exp  = milli_to_si_exp * si_to_scale_exp;  // milli -> scale
 
     //
@@ -54,12 +57,12 @@ public:
     //
     static constexpr double radius_min = 0.001;
     static constexpr double radius_max = 0.1;
-    static constexpr double radius_def = 0.05;
+    static constexpr double radius_def = 0.02;
     static constexpr double dist_min   = 0.1;
     static constexpr double dist_max   = 2;
-    static constexpr double dist_def   = 0.5;
-    static constexpr double wave_min   = 100 * nano_to_scale_exp;
-    static constexpr double wave_max   = 1000 * nano_to_scale_exp;
+    static constexpr double dist_def   = 0.55;
+    static constexpr double wave_min   = 300 * nano_to_scale_exp;
+    static constexpr double wave_max   = 800 * nano_to_scale_exp;
     static constexpr double wave_def   = 500 * nano_to_scale_exp;
 
     double      accuracyPlot;       // dr in amplitude integral
@@ -150,6 +153,9 @@ public:
     // - Retrive   X-coordinate [0, maximum plate width]
     //
     double      getPhasePlateWidthOnRing (double r) const;
+
+
+    double      getObserverDistanceForZone (unsigned d) const;
 };
 
 #endif // FRESNEL_H

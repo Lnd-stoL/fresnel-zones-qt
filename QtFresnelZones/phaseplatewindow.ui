@@ -66,6 +66,8 @@
              <font>
               <family>Arial</family>
               <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -76,7 +78,7 @@ padding-left:5%;
 padding-right:5%</string>
             </property>
             <property name="text">
-             <string>ВЫХОД</string>
+             <string>Выход</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -158,6 +160,8 @@ padding-right:5%</string>
              <font>
               <family>Arial</family>
               <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -168,7 +172,7 @@ padding-left:5%;
 padding-right:5%</string>
             </property>
             <property name="text">
-             <string>ВПЕРЕД</string>
+             <string>Вперед</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -503,10 +507,6 @@ padding-right:5%</string>
                     </widget>
                    </item>
                   </layout>
-                  <zorder>radioButton_stagingPlate</zorder>
-                  <zorder>radioButton_lensPlate</zorder>
-                  <zorder>frame_9</zorder>
-                  <zorder>frame_10</zorder>
                  </widget>
                 </item>
                </layout>
@@ -554,12 +554,6 @@ padding-right:5%</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SpiralGraph</class>
-   <extends>QWidget</extends>
-   <header>spiralgraph.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>FontScalableLabel</class>
    <extends>QLabel</extends>
    <header>fontscalablelabel.h</header>
@@ -568,6 +562,12 @@ padding-right:5%</string>
    <class>FontScalablePushButton</class>
    <extends>QPushButton</extends>
    <header>fontscalablepushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SpiralGraph</class>
+   <extends>QWidget</extends>
+   <header>spiralgraph.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>SchemeGraph</class>

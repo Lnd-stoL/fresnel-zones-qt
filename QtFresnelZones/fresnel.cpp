@@ -209,6 +209,16 @@ double Fresnel::getPhasePlateWidthOnRing (double r) const
     return width;
 }
 
+
+double Fresnel::getObserverDistanceForZone (unsigned n) const
+{
+    double fact1 = (n + 1) * waveLength;
+    double sqH = holeRadius * holeRadius;
+
+    return sqH / fact1 - 0.25 * fact1;
+}
+
+
 double Fresnel::zoneOuterRadius (int n) const
 {
     if (n < 0) {
