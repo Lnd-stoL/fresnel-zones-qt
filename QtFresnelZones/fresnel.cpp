@@ -110,11 +110,12 @@ Complex Fresnel::amplitude (double innerR,
     }
 
     Complex amp;
-    double r, d, arg, p, phi;
+    double d, arg, p, phi;
 
     double R    = outerR - innerR;
-    int    n    = R / (accuracyPlot < R ? accuracyPlot : R / 2.0) + 1;
+    int    n    = R / (accuracyPlot < R ? accuracyPlot : R / 2.0);
     double dr   = R / n;
+    double r    = innerR + dr / 2.0;
     double l    = waveLength;
     double a    = sourceDistance;
     double k    = waveNumber;
@@ -123,7 +124,6 @@ Complex Fresnel::amplitude (double innerR,
     double intK = M_PI / l * dr;
 
     for (int i = 0; i < n; ++i) {
-        r   = innerR + i * dr;
         d   = sqrt (r*r + b2);
         phi = atan (r / a) + atan (r / b);
 
@@ -135,6 +135,7 @@ Complex Fresnel::amplitude (double innerR,
         arg     = -(k * (d - b) + phaseOnPlate (r));     // Phase
         amp.re += -p * sin (arg);
         amp.im +=  p * cos (arg);
+        r  += dr;
     }
 
     amp *= intK;
@@ -210,12 +211,12 @@ double Fresnel::getPhasePlateWidthOnRing (double r) const
 }
 
 
-double Fresnel::getObserverDistanceForZone (unsigned n) const
+double Fresnel::getObserverDistanceForZone (int n) const
 {
-    double fact1 = (n + 1) * waveLength;
-    double sqH = holeRadius * holeRadius;
+    double factor = (n + 1) * waveLength;
+    double r2 = holeRadius * holeRadius;
 
-    return sqH / fact1 - 0.25 * fact1;
+    return r2 / factor - 0.25 * factor;
 }
 
 
@@ -268,12 +269,12 @@ void Fresnel::spiral (DoubleVector &spiralX, DoubleVector &spiralY) const
         for (int i = 0; i < accuracySpiral; ++i) {
             innerR = sqrt (innerD*innerD - b2);
 
-            if (innerR > R) {
-                break;
-            }
-
             innerD += dd;
             outerR  = sqrt (innerD*innerD - b2);
+
+            if (outerR >= R) {
+                break;
+            }
 
             sp += amplitude (innerR, outerR);
             spiralX.push_back (sp.im);

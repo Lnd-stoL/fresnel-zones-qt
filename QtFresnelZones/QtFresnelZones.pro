@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     hidpiscaler.cpp \
     phaseplatewindow.cpp \
     schemegraph.cpp \
-    drawer.cpp
+    drawer.cpp \
+    introwindow.cpp
 
 HEADERS  += \
     qcustomplot.h \
@@ -50,10 +51,12 @@ HEADERS  += \
     hidpiscaler.h \
     phaseplatewindow.h \
     schemegraph.h \
-    drawer.h
+    drawer.h \
+    introwindow.h
 
 FORMS    += \
     titlewindow.ui \
     intensitygraphwindow.ui \
     amplitudeplatewindow.ui \
-    phaseplatewindow.ui
+    phaseplatewindow.ui \
+    introwindow.ui

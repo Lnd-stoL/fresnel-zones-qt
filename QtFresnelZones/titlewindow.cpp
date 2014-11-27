@@ -1,5 +1,6 @@
 #include "titlewindow.h"
 #include "ui_titlewindow.h"
+#include "introwindow.h"
 #include "intensitygraphwindow.h"
 #include "amplitudeplatewindow.h"
 #include "phaseplatewindow.h"
@@ -14,6 +15,7 @@ TitleWindow::TitleWindow (QWidget *parent) :
 {
     ui->setupUi (this);
 
+    connect (ui->pushButton_Intro, SIGNAL(clicked()), this, SLOT(openIntroWindow()));
     connect (ui->pushButton_IntensityGraph, SIGNAL(clicked()), this, SLOT(openIntensityGraphWindow()));
     connect (ui->pushButton_AmplitudePlate, SIGNAL(clicked()), this, SLOT(openAmplitudePlateWindow()));
     connect (ui->pushButton_PhasePlate, SIGNAL(clicked()), this, SLOT(openPhasePlateWindow()));
@@ -27,6 +29,13 @@ TitleWindow::~TitleWindow()
     delete ui;
 }
 
+
+void TitleWindow::openIntroWindow()
+{
+    IntroWindow *wnd = new IntroWindow (&fresnel);
+    wnd->setAttribute (Qt::WA_DeleteOnClose);
+    wnd->showFullScreen();
+}
 
 void TitleWindow::openIntensityGraphWindow()
 {

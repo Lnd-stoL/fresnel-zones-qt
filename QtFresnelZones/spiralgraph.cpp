@@ -32,7 +32,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
 
     unsigned squareSide = std::min (width, height);;
 
-    if (fresnel) {
+    if (fresnel != nullptr) {
         if (fresnel->phasePlate || fresnel->amplitudePlate) {
             squareSide = height;
         }

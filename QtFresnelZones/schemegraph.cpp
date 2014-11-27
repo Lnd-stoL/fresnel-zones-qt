@@ -1,6 +1,7 @@
 #include "schemegraph.h"
 #include "qvectormax.h"
 #include "colortransform.h"
+#include "hidpiscaler.h"
 
 #include <QDebug>
 
@@ -19,11 +20,12 @@ void SchemeGraph::drawScheme (QPainter& painter)
     if (fresnel->phasePlate) {
         drawPlate (painter);
     }
-    drawWall (painter);
     drawAxis (painter);
     drawEye (painter);
     drawSourceRays (painter);
     drawDiffractedRays (painter);
+    //drawFresnelZoneRays (painter);
+    drawWall (painter);
 }
 
 void SchemeGraph::drawWall (QPainter &painter)
@@ -105,9 +107,18 @@ void SchemeGraph::drawSourceRays (QPainter &painter)
 
     painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
                     axisPenWidth));
+
+    for (double topY = y; topY > 0; topY -= deltaY) {
+        Drawer::drawArrow (painter, 0.0, topY, holeCenterPosition.x () - 10, topY);
+    }
+
     for (int i = -oneSideRayCount; i < oneSideRayCount; ++i) {
         Drawer::drawArrow (painter, 0.0, y, holeCenterPosition.x () - 10, y);
         y += deltaY;
+    }
+    y = holeBottom.y () - deltaY / 2.0;
+    for (double bottomY = y; bottomY < height; bottomY += deltaY) {
+        Drawer::drawArrow (painter, 0.0, bottomY, holeCenterPosition.x () - 10, bottomY);
     }
 }
 
@@ -135,6 +146,75 @@ void SchemeGraph::drawDiffractedRays (QPainter &painter)
     }
 }
 
+void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
+{
+    double  width           = size ().width ();
+    double  height          = size ().height ();
+    double  holeRadius      = height * holeRelativeSize / 2.0;
+    double  centerY         = holeCenterPosition.y ();
+    QPointF holeTop           (holeCenterPosition.x (), centerY - (holeRadius + wallPenWidth / 2.0));
+    QPointF holeBottom        (holeCenterPosition.x (), centerY + (holeRadius + wallPenWidth / 2.0));
+    double  deltaY          = (holeBottom.y () - holeTop.y ()) / (oneSideRayCount * 2);
+    double  x               = fresnel->phasePlate ? maximum (plateX) : holeCenterPosition.x ();
+    double  y               = holeTop.y () + deltaY / 2.0;
+    int     showingZonesCount = fresnel->fresnelNumber ();// >= 2 ? 2 : fresnel->fresnelNumber ();
+    double  eyeDeltaY       = eyeRelativeSize * height / (showingZonesCount * 2);
+    double  eyeY            = eyePosition.y ();
+    double  scaling         = holeRadius / fresnel->getHoleRadius ();
+    double  zoneOuterEdges[showingZonesCount + 1];
+    zoneOuterEdges[0] = centerY;
+    for (int i = 1; i < showingZonesCount + 1; ++i) {
+        zoneOuterEdges[i] = centerY - fresnel->zoneOuterRadius (i - 1) * scaling;
+    }
+
+    QFont font = QFont ("Arial");
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors ();
+    font.setPixelSize (std::min (dpiScaling.x(), dpiScaling.y()) * 0.9 * this->fontMetrics().height());
+    font.setBold (true);
+    painter.setFont (font);
+
+    painter.setPen (QPen (QBrush (QColor (150, 150, 150)), axisPenWidth));
+    painter.drawLine (holeTop, holeBottom);
+
+    for (int i = 0; i < showingZonesCount + 1; ++i) {
+
+        if (i < 3) {
+            painter.setPen (QPen (QBrush (QColor (50, 50, 50)), axisPenWidth));
+            painter.drawLine(x + 15, zoneOuterEdges[i], eyePosition.x () - 5, eyeY);
+
+            QString text = "x";
+            if (i > 0) {
+                text += " + ";
+                if (i > 1) {
+                    text += QString::number (i);
+                }
+                text += "λ/2";
+            }
+            painter.drawText (x + 15, zoneOuterEdges[i] - 5, text);
+        }
+
+        painter.setPen (QPen (QBrush (QColor (100, 100, 100)), axisPenWidth));
+        painter.drawLine (holeCenterPosition.x () - 10, zoneOuterEdges[i], holeCenterPosition.x () + 10, zoneOuterEdges[i]);
+        painter.drawLine (holeCenterPosition.x () - 10, height - zoneOuterEdges[i], holeCenterPosition.x () + 10, height - zoneOuterEdges[i]);
+    }
+}
+
+double SchemeGraph::getScaling ()
+{
+    return holeRelativeSize * size ().height () / fresnel->getHoleRadius () / 2.0;
+}
+
+double SchemeGraph::getStretch ()
+{
+    double maxX     = maximum (plateX);
+    double maxY     = maximum (plateY);
+    double k        = 5.0;
+    if (fresnel->phasePlateType == Fresnel::PhasePlate::STAGING) {
+        k = 3.0;
+    }
+    return maxY / k / maxX;
+}
+
 void SchemeGraph::drawPlate (QPainter& painter)
 {
     if (!fresnel) {
@@ -145,7 +225,7 @@ void SchemeGraph::drawPlate (QPainter& painter)
     double height   = size ().height ();
     double centerX  = holeCenterPosition.x ();
     double centerY  = holeCenterPosition.y ();
-    double scaling  = holeRelativeSize * height / fresnel->getHoleRadius () / 2.0;
+    double scaling  = getScaling ();
     double x        = 0.0;
     double radius   = fresnel->getHoleRadius();
     double step     = radius / 1000;
@@ -166,13 +246,7 @@ void SchemeGraph::drawPlate (QPainter& painter)
     plateX.push_back (0);
     plateY.push_back (radius * scaling);
 
-    double maxX     = maximum (plateX);
-    double maxY     = maximum (plateY);
-    double k        = 5.0;
-    if (fresnel->phasePlateType == Fresnel::PhasePlate::STAGING) {
-        k = 3.0;
-    }
-    double stretch  = maxY / k / maxX;
+    double stretch = getStretch ();
 
     painter.setPen (QPen (QBrush (QColor (60, 60, 178)), platePenWidth));
 
@@ -188,6 +262,9 @@ void SchemeGraph::drawPlate (QPainter& painter)
 
 void SchemeGraph::paintEvent (QPaintEvent *event)
 {
+    if (fresnel == nullptr) {
+        return;
+    }
     QPainter painter;
     double height = size ().height ();
     double width  = size ().width ();

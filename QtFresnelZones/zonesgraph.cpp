@@ -1,11 +1,11 @@
-
 #include "zonesgraph.h"
-#include <QPainter>
-#include <stdio.h>
 #include "colortransform.h"
+#include "hidpiscaler.h"
 
 #include <QDebug>
+#include <QPainter>
 
+#include <stdio.h>
 
 ZonesGraph::ZonesGraph (QWidget *parent) :
     QWidget (parent)
@@ -40,12 +40,7 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     else  painter.setBrush (blackBrush);
 
     painter.drawEllipse (QPoint (width / 2, height / 2), squareWidth, squareWidth);
-
     painter.setPen (QPen (QBrush (QColor (255, 255, 255)), 3));
-
-    QFont font = QFont ("Arial", 14);
-    font.setBold (true);
-    painter.setFont (font);
 
     unsigned fresnelNumber = _fresnel->fresnelNumber();
     double   prevRadius    = 0.0;
@@ -60,13 +55,21 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
         painter.drawEllipse (QPoint (width / 2, height / 2), radius, radius);
     }
 
-    for (int n = 0; n < fresnelNumber; ++n)
-    {
-        double nextZone = _fresnel->zoneOuterRadius (n);
-        double radius   = squareWidth * nextZone / maxRad;
-        painter.setPen (QPen (QBrush (QColor (40, 40, 40)), 3));
-        painter.drawText (QPointF (width / 2 + radius - (radius - prevRadius) / 2.0 - 5, height / 2), QString::number (n));
-        prevRadius      = radius;
+    if (_fresnel->fresnelNumber () < 10) {
+        QFont font = QFont ("Arial");
+        QVector2D dpiScaling = HiDpiScaler::scalingFactors ();
+        font.setPixelSize (std::min (dpiScaling.x(), dpiScaling.y()) * 0.9 * this->fontMetrics().height());
+        font.setBold (true);
+        painter.setFont (font);
+
+        for (int n = 0; n < fresnelNumber; ++n)
+        {
+            double nextZone = _fresnel->zoneOuterRadius (n);
+            double radius   = squareWidth * nextZone / maxRad;
+            painter.setPen (QPen (QBrush (QColor (40, 40, 40)), 3));
+            painter.drawText (QPointF (width / 2 + radius - (radius - prevRadius) / 2.0 - 5, height / 2), QString::number (n));
+            prevRadius      = radius;
+        }
     }
 
     painter.end();

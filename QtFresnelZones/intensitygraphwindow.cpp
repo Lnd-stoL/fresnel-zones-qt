@@ -233,7 +233,7 @@ void IntensityGraphWindow::radio_holeDependence()
 
 void IntensityGraphWindow::_changeParams_ZoneOpened (unsigned zoneNum)
 {
-    _changeParameters (_fresnel->getObserverDistanceForZone (zoneNum) * 1.0003,
+    _changeParameters (_fresnel->getObserverDistanceForZone (zoneNum),
                        _fresnel->getHoleRadius(), _fresnel->getWaveLength());
 }
 

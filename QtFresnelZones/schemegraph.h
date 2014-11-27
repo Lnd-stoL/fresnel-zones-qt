@@ -17,7 +17,7 @@ public:
     QPointF         eyePosition;
     double          holeCenterXRelativePosition         = 0.2;     // Hole center position relative to graph width
     double          eyeCenterXRelativePosition          = 0.8;     // Eye position relative to graph width
-    double          holeRelativeSize                    = 0.8;     // Hole size relative to graph height
+    double          holeRelativeSize                    = 0.6;     // Hole size relative to graph height
     double          eyeRelativeSize                     = 0.1;     // Eye size relative to graph height
     int             platePenWidth                       = 3;
     int             wallPenWidth                        = 8;
@@ -31,12 +31,16 @@ public:
 public:
     explicit SchemeGraph (QWidget *parent = 0);
 
-    void     drawWall  (QPainter& painter);
+    double   getScaling ();
+    double   getStretch ();
+
+    void     drawWall (QPainter& painter);
     void     drawPlate (QPainter& painter);
     void     drawEye (QPainter& painter);
     void     drawAxis (QPainter& painter);
     void     drawSourceRays (QPainter& painter);
     void     drawDiffractedRays (QPainter& painter);
+    void     drawFresnelZoneRays (QPainter& painter);
 
     void     drawScheme (QPainter& painter);
 

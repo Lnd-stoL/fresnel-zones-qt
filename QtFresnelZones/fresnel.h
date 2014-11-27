@@ -155,7 +155,7 @@ public:
     double      getPhasePlateWidthOnRing (double r) const;
 
 
-    double      getObserverDistanceForZone (unsigned d) const;
+    double      getObserverDistanceForZone (int d) const;
 };
 
 #endif // FRESNEL_H

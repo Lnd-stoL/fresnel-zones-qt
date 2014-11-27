@@ -21,6 +21,7 @@ public:
     ~TitleWindow();
 
 private slots:
+    void openIntroWindow();
     void openIntensityGraphWindow();
     void openAmplitudePlateWindow();
     void openPhasePlateWindow();
