@@ -8,24 +8,49 @@
 SchemeGraph::SchemeGraph (QWidget *parent) :
     QGLWidget  (QGLFormat (QGL::SampleBuffers), parent)
 {
-    double width  = size ().width ();
-    double height = size ().height ();
-
-    holeCenterPosition = QPointF (width * holeCenterXRelativePosition, height / 2.0);
-    eyePosition        = QPointF (width * eyeCenterXRelativePosition, height / 2.0);
+    double scaling = HiDpiScaler::scalingFactors().y();
+    platePenWidth = (double) platePenWidth * scaling;
+    wallPenWidth = (double) wallPenWidth * scaling;
+    eyePenWidth = (double) eyePenWidth * scaling;
+    axisPenWidth = (double) axisPenWidth * scaling;
 }
 
-void SchemeGraph::drawScheme (QPainter& painter)
+void SchemeGraph::drawPhasePlateScheme (QPainter& painter)
 {
-    if (fresnel->phasePlate) {
-        drawPlate (painter);
-    }
+    drawPlate (painter);
     drawAxis (painter);
     drawEye (painter);
     drawSourceRays (painter);
     //drawDiffractedRays (painter);
     drawFresnelZoneRays (painter);
     drawWall (painter);
+}
+
+void SchemeGraph::drawAmplitudePlateScheme(QPainter &painter)
+{
+    drawPlate (painter);
+    drawWall (painter);
+}
+
+void SchemeGraph::drawMovingScheme (QPainter& painter)
+{
+    drawAxis (painter);
+    drawEye (painter);
+    drawSourceRays (painter);
+    //drawDiffractedRays (painter);
+    drawFresnelZoneRays (painter);
+    drawWall (painter);
+}
+
+bool SchemeGraph::isMouseOnEye(QPoint cursor)
+{
+    double eyeSize = size ().height () * eyeRelativeSize;
+    if (fabs(cursor.x () - eyePosition.x()) <= eyeSize &&
+        fabs(cursor.y () - eyePosition.y()) <= eyeSize) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 void SchemeGraph::drawWall (QPainter &painter)
@@ -76,12 +101,16 @@ void SchemeGraph::drawEye (QPainter &painter)
     double  orbRadius       = eyeSize / 6.0;
     double  eyeCenterRadius = orbRadius / 2.0;
     double  eyeCenterSize   = orbSize / 2.0;
-    QPointF lidTop            (centerX, centerY + eyeSize / 2.0);
-    QPointF lidBottom         (centerX, centerY - eyeSize / 2.0);
+    QPointF lidTop            (centerX, centerY - eyeSize / 2.0);
+    QPointF lidBottom         (centerX, centerY + eyeSize / 2.0);
     QPointF lidEnd            (centerX + eyeSize, centerY);
     QPointF orbPosition       (centerX + orbRadius, centerY);
     QPointF eyeCenterPosition (centerX + eyeCenterRadius, centerY);
     QColor  color             (80, 80, 80);
+
+    painter.setPen (QPen (QBrush (QColor (255, 255, 255)), eyePenWidth * 2));
+    painter.setBrush(QBrush (QColor (255, 255, 255)));
+    painter.drawRect(lidTop.x(), lidTop.y(), eyeSize, eyeSize);
 
     painter.setPen (QPen (QBrush (color), eyePenWidth * 2));
     painter.drawLine (lidTop, lidEnd);
@@ -135,6 +164,7 @@ void SchemeGraph::drawDiffractedRays (QPainter &painter)
     double  y               = holeTop.y () + deltaY / 2.0;
     double  eyeDeltaY       = eyeRelativeSize * height / (oneSideRayCount * 2);
     double  eyeY            = eyePosition.y () - eyeRelativeSize * height / 2.0 + eyeDeltaY / 2.0;
+    int     fn              = fresnel->fresnelNumber();
 
     for (int i = -oneSideRayCount; i < oneSideRayCount; ++i) {
         painter.setPen (QPen (QBrush (QColor (50, 50, 50)), axisPenWidth));
@@ -149,8 +179,12 @@ void SchemeGraph::drawDiffractedRays (QPainter &painter)
         }
         painter.drawText (x + 15, y + (i > 0 ? 10 : -10), text);
 
-        painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
-                        axisPenWidth));
+        if (abs(i) <= fn) {
+            painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
+                            axisPenWidth));
+        } else {
+            painter.setPen (QPen (QBrush (QColor (100, 100, 100, 100)), axisPenWidth));
+        }
         Drawer::drawArrow (painter, x + 10, y, eyePosition.x () - 15, eyeY, 120, 30);
         y    += deltaY;
         eyeY += eyeDeltaY;
@@ -168,7 +202,8 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
     double  deltaY          = (holeBottom.y () - holeTop.y ()) / (oneSideRayCount * 2);
     double  x               = fresnel->phasePlate ? maximum (plateX) : holeCenterPosition.x ();
     double  y               = holeTop.y () + deltaY / 2.0;
-    int     showingZonesCount = fresnel->fresnelNumber ();// >= 2 ? 2 : fresnel->fresnelNumber ();
+    int     fn              = fresnel->fresnelNumber ();
+    int     showingZonesCount = schemeType == SchemeType::MovingScheme ? 4 : fn;// >= 2 ? 2 : fresnel->fresnelNumber ();
     double  eyeDeltaY       = eyeRelativeSize * height / (showingZonesCount * 2);
     double  eyeY            = eyePosition.y ();
     double  scaling         = holeRadius / fresnel->getHoleRadius ();
@@ -188,8 +223,13 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
     painter.drawLine (holeTop, holeBottom);
 
     for (int i = showingZonesCount; i >= 0; --i) {
-        painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
-                        axisPenWidth));
+        if (abs(i) <= fn) {
+            painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
+                            axisPenWidth));
+        } else {
+            painter.setPen (QPen (QBrush (QColor (100, 100, 100, 100)), axisPenWidth));
+        }
+
         Drawer::drawArrow(painter, x + 15, zoneOuterEdges[i], eyePosition.x () - 15, eyeY - i * eyeDeltaY, 220, 50);
         Drawer::drawArrow(painter, x + 15, height - zoneOuterEdges[i], eyePosition.x () - 15, eyeY + i * eyeDeltaY, 220, 50);
 
@@ -288,13 +328,80 @@ void SchemeGraph::paintEvent (QPaintEvent *event)
     painter.begin (this);
     painter.setRenderHint (QPainter::Antialiasing);
 
-    painter.setBrush (QBrush (QColor (250, 250, 250)));  // Background
+    painter.setBrush (QBrush (QColor (255, 255, 255)));  // Background
     painter.drawRect (0, 0, width, height);
 
-    if (!animating) {
-        holeCenterPosition = QPointF (width * holeCenterXRelativePosition, height / 2.0);
+    switch (schemeType) {
+    case SchemeType::MovingScheme:
+        holeCenterXRelativePosition = 0.04;
+        drawMovingScheme (painter);
+        break;
+
+    case SchemeType::PhasePlateScheme:
+        drawPhasePlateScheme (painter);
+        break;
+
+    case SchemeType::AmplitudePlateScheme:
+        drawAmplitudePlateScheme (painter);
+        break;
+    }
+
+    painter.end ();
+}
+
+void SchemeGraph::mousePressEvent(QMouseEvent *event)
+{
+    if (schemeType == SchemeType::MovingScheme) {
+        cursorOld = event->pos ();
+        if (isMouseOnEye(cursorOld)) {
+            isMousePressed = true;
+        }
+    }
+}
+
+void SchemeGraph::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (isMousePressed) {
+        emit fresnelChanged();
+    }
+    isMousePressed = false;
+}
+
+void SchemeGraph::mouseMoveEvent(QMouseEvent *event)
+{
+    double width  = size ().width ();
+    double height = size ().height ();
+
+    if (isMousePressed &&
+        (eyePosition.x () +  event->pos().x () - cursorOld.x () > holeCenterPosition.x () + 40.0) &&
+         eyePosition.x () +  event->pos().x () - cursorOld.x () < width - 40.0) {
+
+        double  eyeSize = height * eyeRelativeSize;
+        eyePosition.setX (eyePosition.x () +  event->pos().x () - cursorOld.x ());
+        fresnel->setObserverDistance (Fresnel::dist_min +
+                                      (eyePosition.x () - holeCenterXRelativePosition * width) /
+                                      (width - holeCenterXRelativePosition * width - eyeSize) *
+                                      (Fresnel::dist_max - Fresnel::dist_min));
+        cursorOld = event->pos ();
+        this->repaint ();
+    }
+}
+
+void SchemeGraph::resizeEvent(QResizeEvent *event)
+{
+    double width  = size ().width ();
+    double height = size ().height ();
+
+    holeCenterPosition = QPointF (width * holeCenterXRelativePosition, height / 2.0);
+    if (schemeType == SchemeType::MovingScheme) {
+        double eyeSize = height * eyeRelativeSize;
+        eyePosition = QPointF ((fresnel->getObserverDistance() - Fresnel::dist_min) /
+                               (Fresnel::dist_max - Fresnel::dist_min) *
+                               (width - holeCenterXRelativePosition * width - eyeSize) +
+                               holeCenterXRelativePosition * width,
+
+                               height / 2.0);
+    } else {
         eyePosition        = QPointF (width * eyeCenterXRelativePosition, height / 2.0);
     }
-    drawScheme (painter);
-    painter.end ();
 }

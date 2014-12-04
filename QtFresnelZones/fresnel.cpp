@@ -265,15 +265,17 @@ void Fresnel::spiral (DoubleVector &spiralX, DoubleVector &spiralY) const
         outerR = zoneOuterRadius (n);
         outerD = sqrt (outerR*outerR + b2);
         dd     = (outerD - innerD) / accuracySpiral;
+        bool stop = false;
 
-        for (int i = 0; i < accuracySpiral; ++i) {
+        for (int i = 0; i < accuracySpiral && !stop; ++i) {
             innerR = sqrt (innerD*innerD - b2);
 
             innerD += dd;
             outerR  = sqrt (innerD*innerD - b2);
 
-            if (outerR >= R) {
-                break;
+            if (outerR > R) {
+                outerR = R;
+                stop = true;
             }
 
             sp += amplitude (innerR, outerR);

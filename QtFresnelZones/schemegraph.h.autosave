@@ -52,6 +52,7 @@ public:
     void     drawFresnelZoneRays (QPainter& painter);
 
     void     drawPhasePlateScheme (QPainter& painter);
+    void     drawAmplitudePlateScheme (QPainter& painter);
     void     drawMovingScheme (QPainter& painter);
 
 signals:
