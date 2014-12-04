@@ -46,6 +46,7 @@ public:
     IntensityPlot *widget_intensityPlot;
     ZonesGraph *widget_zonesGraph;
     SchemeGraph *widget_schemeGraph;
+    FontScalableLabel *label_2;
 
     void setupUi(QMainWindow *IntroWindow)
     {
@@ -138,6 +139,7 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         gridLayout = new QGridLayout(frame);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(7, -1, -1, -1);
         widget_intensityPlot = new IntensityPlot(frame);
         widget_intensityPlot->setObjectName(QStringLiteral("widget_intensityPlot"));
 
@@ -152,6 +154,19 @@ public:
         widget_schemeGraph->setObjectName(QStringLiteral("widget_schemeGraph"));
 
         gridLayout->addWidget(widget_schemeGraph, 1, 1, 1, 1);
+
+        label_2 = new FontScalableLabel(frame);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(16);
+        font2.setBold(true);
+        font2.setWeight(75);
+        label_2->setFont(font2);
+        label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        label_2->setWordWrap(true);
+
+        gridLayout->addWidget(label_2, 0, 0, 1, 1);
 
         gridLayout->setColumnStretch(0, 1);
         gridLayout->setColumnStretch(1, 2);
@@ -171,6 +186,7 @@ public:
         pushButton_Back->setText(QApplication::translate("IntroWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("IntroWindow", "\320\237\320\276\321\201\321\202\321\200\320\276\320\265\320\275\320\270\320\265 \320\267\320\276\320\275 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
         pushButton_Back_2->setText(QApplication::translate("IntroWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
+        label_2->setText(QApplication::translate("IntroWindow", "\320\237\320\265\321\200\320\265\320\274\320\265\321\211\320\260\320\271\321\202\320\265 \320\275\320\260\320\261\320\273\321\216\320\264\320\260\321\202\320\265\320\273\321\217 \320\272\321\203\321\200\321\201\320\276\321\200\320\276\320\274 \320\264\320\273\321\217 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217 \321\200\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\321\217 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
     } // retranslateUi
 
 };

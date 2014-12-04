@@ -41,6 +41,7 @@ IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
     connect (ui->pushButton_params5, SIGNAL(clicked()), this, SLOT(parametersSet5()));
     connect (ui->pushButton_paramsDefault, SIGNAL(clicked()), this, SLOT(parametersSetDefault()));
 
+    _fresnel->setDefaults();
     _fresnel->amplitudePlate = false;
     _fresnel->phasePlate     = false;
 

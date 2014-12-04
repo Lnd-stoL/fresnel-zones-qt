@@ -198,10 +198,15 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
     double  x               = fresnel->phasePlate ? maximum (plateX) : holeCenterPosition.x ();
     double  y               = holeTop.y () + deltaY / 2.0;
     int     fn              = fresnel->fresnelNumber ();
-    int     showingZonesCount = schemeType == SchemeType::MovingScheme ? 4 : fn;// >= 2 ? 2 : fresnel->fresnelNumber ();
+    double  scaling         = holeRadius / fresnel->getHoleRadius ();
+    int     showingZonesCount = fn;
+
+    if (schemeType == SchemeType::MovingScheme) {
+        showingZonesCount = 0;
+        while (centerY + fresnel->zoneOuterRadius(showingZonesCount++) * scaling < height);
+    }
     double  eyeDeltaY       = eyeRelativeSize * height / (showingZonesCount * 2);
     double  eyeY            = eyePosition.y ();
-    double  scaling         = holeRadius / fresnel->getHoleRadius ();
     double  zoneOuterEdges[showingZonesCount + 1];
     zoneOuterEdges[0] = centerY;
     for (int i = 1; i < showingZonesCount + 1; ++i) {
@@ -229,7 +234,12 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
         Drawer::drawArrow(painter, x + 15, height - zoneOuterEdges[i], eyePosition.x () - 15, eyeY + i * eyeDeltaY, 220, 50);
 
         if (i < 3) {
-            QString text = "x";
+            QString text;
+            if (i == 0) {
+                text = "Ход луча: х";
+            } else {
+                text = "x";
+            }
             if (i > 0) {
                 text += " + ";
                 if (i > 1) {
@@ -315,7 +325,8 @@ void SchemeGraph::drawPlate (QPainter& painter)
     if (schemeType == SchemeType::AmplitudePlateScheme) {
         int fn = fresnel->fresnelNumber();
         double r1, r2;
-        for (int i = 0; i <= fn; ++i) {
+
+        for (int i = 0; i < fn; ++i) {
             r1 = scaling * (i == 0 ? 0 : fresnel->zoneOuterRadius(i - 1));
 
             if (i > 0) {
@@ -361,6 +372,7 @@ void SchemeGraph::paintEvent (QPaintEvent *event)
         break;
 
     case SchemeType::AmplitudePlateScheme:
+        holeRelativeSize = 0.8;
         holeCenterXRelativePosition = 0.5;
         drawAmplitudePlateScheme (painter);
         break;

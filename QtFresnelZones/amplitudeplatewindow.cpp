@@ -28,6 +28,7 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     ui->spin_WaveLength->setValue (defaultWaveLength);
     ui->widget_spiralGraph->fresnel  = _fresnel;
 
+    _fresnel->setHoleRadius (Fresnel::radius_max * 0.85);
     _progressBarHigh = _fresnel->intensity() * 50;
     button_Tune_Pressed();
     ui->widget_schemeGraph->fresnel  = _fresnel;
@@ -187,7 +188,7 @@ void AmplitudePlateWindow::button_OpenOdd_Pressed()
 
 void AmplitudePlateWindow::button_Tune_Pressed()
 {
-    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (8));
+    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (7));
     _update();
 }
 

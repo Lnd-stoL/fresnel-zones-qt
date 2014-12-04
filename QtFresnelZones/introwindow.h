@@ -21,6 +21,7 @@ public:
     ~IntroWindow();
 
 private slots:
+    void button_Back_Pressed();
     void fresnelChanged();
 
 private:

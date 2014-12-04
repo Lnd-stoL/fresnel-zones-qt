@@ -10,9 +10,12 @@ IntroWindow::IntroWindow(Fresnel *fresnel) :
 
     fresnel->amplitudePlate = false;
     fresnel->phasePlate = false;
-    fresnel->setObserverDistance(1.25);
+    fresnel->setObserverDistance(Fresnel::dist_max * 0.5);
+    fresnel->setHoleRadius(Fresnel::radius_max);
     ui->widget_schemeGraph->fresnel = _fresnel;
     ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::MovingScheme;
+
+    connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
     connect(ui->widget_schemeGraph, SIGNAL(fresnelChanged()), this, SLOT(fresnelChanged()));
 
     this->_update();
@@ -21,6 +24,11 @@ IntroWindow::IntroWindow(Fresnel *fresnel) :
 IntroWindow::~IntroWindow()
 {
     delete ui;
+}
+
+void IntroWindow::button_Back_Pressed()
+{
+    this->close();
 }
 
 void IntroWindow::fresnelChanged()
