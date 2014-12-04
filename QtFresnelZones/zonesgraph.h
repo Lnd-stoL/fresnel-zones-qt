@@ -12,6 +12,14 @@ protected:
     Fresnel *_fresnel = nullptr;
 
 
+protected:
+    void _drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double squareWidth, double maxRad,
+                              QBrush &colorBrush, QBrush &blackBrush);
+
+    void _drawPhasePlate (QPainter &painter, QPen &dashedPen, double squareWidth, double maxRad,
+                          QBrush &colorBrush, QBrush &blackBrush);
+
+
 public:
     explicit ZonesGraph (QWidget *parent = 0);
     void update (Fresnel *fresnel);

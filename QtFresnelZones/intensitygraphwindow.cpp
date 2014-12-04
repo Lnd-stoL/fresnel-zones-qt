@@ -110,8 +110,9 @@ void IntensityGraphWindow::_changeParameters (double xDistance, double holeRadiu
 
     ui->spin_HoleRadius->setValue (scaledHoleRadius);
     ui->spin_WaveLength->setValue (scaledWaveLength);
-    ui->spin_xDistance->setValue  (scaledxDistance);
+    ui->spin_xDistance->setValue  (scaledxDistance * 0.981);
 
+    //_fresnel->setObserverDistance (xDistance * 0.9999);
     _update();
 }
 
