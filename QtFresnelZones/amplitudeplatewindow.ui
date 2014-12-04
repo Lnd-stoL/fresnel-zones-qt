@@ -20,7 +20,7 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QGridLayout" name="gridLayout" columnstretch="0,2,2">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="0,3,2">
     <item row="1" column="1">
      <widget class="QFrame" name="frame_4">
       <property name="sizePolicy">
@@ -116,22 +116,6 @@
          </layout>
         </widget>
        </item>
-       <item row="2" column="0" colspan="2">
-        <widget class="ZonesGraph" name="widget_Zones" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0" alignment="Qt::AlignTop">
         <widget class="QWidget" name="widget_4" native="true">
          <property name="sizePolicy">
@@ -219,6 +203,52 @@
              </layout>
             </item>
            </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QWidget" name="widget_5" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="SchemeGraph" name="widget_6" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color:#ffffff;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ZonesGraph" name="widget_Zones" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <zorder>widget_6</zorder>
+            <zorder>widget_6</zorder>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -1052,6 +1082,11 @@ padding-right:8%;
    <class>FontScalableSpinBox</class>
    <extends>QSpinBox</extends>
    <header>fontscalablespinbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SchemeGraph</class>
+   <extends>QWidget</extends>
+   <header>schemegraph.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
