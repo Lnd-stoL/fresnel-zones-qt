@@ -110,16 +110,20 @@ void IntensityGraphWindow::_changeParameters (double xDistance, double holeRadiu
 
     ui->spin_HoleRadius->setValue (scaledHoleRadius);
     ui->spin_WaveLength->setValue (scaledWaveLength);
-    ui->spin_xDistance->setValue  (scaledxDistance * 0.981);
+    ui->spin_xDistance->setValue  (scaledxDistance);
 
-    //_fresnel->setObserverDistance (xDistance * 0.9999);
+    _fresnel->setObserverDistance (xDistance);
+    _fresnel->setWaveLength (waveLength);
+    _fresnel->setHoleRadius (holeRadius);
+
     _update();
 }
 
 
 void IntensityGraphWindow::_update()
 {
-    _update_FresnelModel();
+    //_update_FresnelModel();
+
     if (_waveLength_ChangedSinceLastUpdate ||
         _xDependenceMode && _holeRadius_ChangedSinceLastUpdate ||
         (!_xDependenceMode) && _xDistance_ChangedSinceLastUpdate)
@@ -136,17 +140,17 @@ void IntensityGraphWindow::_update()
 
 void IntensityGraphWindow::_update_FresnelModel()
 {
-    double newXDistance = Fresnel::milli_to_scale_exp * ui->slider_xDistance->value() / _sliderScaling;
+    double newXDistance  = Fresnel::milli_to_scale_exp * ui->slider_xDistance->value()  / _sliderScaling;
     double newHoleRadius = Fresnel::milli_to_scale_exp * ui->slider_HoleRadius->value() / _sliderScaling;
-    double newWaveLength = Fresnel::nano_to_scale_exp * ui->spin_WaveLength->value();
+    double newWaveLength = Fresnel::nano_to_scale_exp  * ui->spin_WaveLength->value();
 
     _xDistance_ChangedSinceLastUpdate  = _fresnel->getObserverDistance() == newXDistance;
     _holeRadius_ChangedSinceLastUpdate = _fresnel->getHoleRadius()       == newHoleRadius;
     _waveLength_ChangedSinceLastUpdate = _fresnel->getWaveLength()       == newWaveLength;
 
-    _fresnel->setObserverDistance (newXDistance);
-    _fresnel->setHoleRadius (newHoleRadius);
-    _fresnel->setWaveLength (newWaveLength);
+    //_fresnel->setObserverDistance (newXDistance);
+    //_fresnel->setHoleRadius (newHoleRadius);
+    //_fresnel->setWaveLength (newWaveLength);
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -159,18 +163,25 @@ void IntensityGraphWindow::button_Back_Pressed()
 
 void IntensityGraphWindow::slider_xDistance_Changed (int value)
 {
-    ui->spin_xDistance->setValue ((double)value / _sliderScaling);
+    double val = (double) value / _sliderScaling;
+    ui->spin_xDistance->setValue (val);
+    _fresnel->setObserverDistance (Fresnel::milli_to_scale_exp * val);
 }
 
 void IntensityGraphWindow::slider_WaveLength_Changed (int value)
 {
-    ui->spin_WaveLength->setValue ((double)value);
+    double val = (double) value;
+    ui->spin_WaveLength->setValue (val);
+    _fresnel->setWaveLength (Fresnel::nano_to_scale_exp * val);
 }
 
 void IntensityGraphWindow::slider_HoleRadius_Changed (int value)
 {
-    ui->spin_HoleRadius->setValue ((double)value / _sliderScaling);
+    double val = (double) value / _sliderScaling;
+    ui->spin_HoleRadius->setValue (val);
+    _fresnel->setHoleRadius (Fresnel::milli_to_scale_exp * val);
 }
+
 
 void IntensityGraphWindow::update_Needed()
 {
