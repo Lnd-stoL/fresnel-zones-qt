@@ -587,6 +587,7 @@ padding-right:5%</string>
                 </property>
                 <property name="font">
                  <font>
+                  <family>Trebuchet MS</family>
                   <pointsize>15</pointsize>
                  </font>
                 </property>
@@ -597,7 +598,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string> мкм</string>
+                 <string>  мм</string>
                 </property>
                </widget>
               </item>
@@ -677,6 +678,7 @@ padding-right:5%</string>
                 </property>
                 <property name="font">
                  <font>
+                  <family>Trebuchet MS</family>
                   <pointsize>15</pointsize>
                  </font>
                 </property>
@@ -684,7 +686,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string> мкм</string>
+                 <string>  мм</string>
                 </property>
                </widget>
               </item>
@@ -762,6 +764,7 @@ padding-right:5%</string>
                 </property>
                 <property name="font">
                  <font>
+                  <family>Trebuchet MS</family>
                   <pointsize>15</pointsize>
                  </font>
                 </property>
@@ -769,7 +772,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string> мкм</string>
+                 <string> нм</string>
                 </property>
                </widget>
               </item>
@@ -948,7 +951,7 @@ padding-right:5%</string>
           <item>
            <widget class="FontScalablePushButton" name="pushButton_paramsDefault">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -962,14 +965,14 @@ padding-right:5%</string>
             <property name="font">
              <font>
               <family>Arial Black</family>
+              <pointsize>11</pointsize>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">padding-left:5%;
-padding-right:5%;</string>
+             <string notr="true"/>
             </property>
             <property name="text">
-             <string>Сбросить</string>
+             <string>   Сбросить   </string>
             </property>
            </widget>
           </item>

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "fresnel.h"
 #include "qcustomplot.h"
+#include <QPushButton>
 
 namespace Ui {
 class IntensityGraphWindow;
@@ -23,7 +24,7 @@ private:
     Fresnel *_fresnel = nullptr;
     bool _xDependenceMode = true;
 
-    const double _sliderScaling = 10;
+    const double _sliderScaling = 10000;
 
     bool _xDistance_ChangedSinceLastUpdate  = true;
     bool _holeRadius_ChangedSinceLastUpdate = true;
@@ -38,6 +39,8 @@ private:
 
     void _changeParameters (double xDistance, double holeRadius, double waveLength);
     void _changeParams_ZoneOpened (unsigned zoneNum);
+    void _updateParamsSetButtons();
+    void _updateParamsSetButton (QPushButton *button, unsigned zone);
 
 
 private slots:

@@ -23,8 +23,8 @@ void SchemeGraph::drawScheme (QPainter& painter)
     drawAxis (painter);
     drawEye (painter);
     drawSourceRays (painter);
-    drawDiffractedRays (painter);
-    //drawFresnelZoneRays (painter);
+    //drawDiffractedRays (painter);
+    drawFresnelZoneRays (painter);
     drawWall (painter);
 }
 
@@ -136,10 +136,21 @@ void SchemeGraph::drawDiffractedRays (QPainter &painter)
     double  eyeDeltaY       = eyeRelativeSize * height / (oneSideRayCount * 2);
     double  eyeY            = eyePosition.y () - eyeRelativeSize * height / 2.0 + eyeDeltaY / 2.0;
 
-    painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
-                    axisPenWidth));
-
     for (int i = -oneSideRayCount; i < oneSideRayCount; ++i) {
+        painter.setPen (QPen (QBrush (QColor (50, 50, 50)), axisPenWidth));
+
+        QString text = "x";
+        if (i != 0) {
+            text += " + ";
+            if (i > 1 || i < -1) {
+                text += QString::number (i < 0 ? -i : i);
+            }
+            text += "λ/2";
+        }
+        painter.drawText (x + 15, y + (i > 0 ? 10 : -10), text);
+
+        painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
+                        axisPenWidth));
         Drawer::drawArrow (painter, x + 10, y, eyePosition.x () - 15, eyeY, 120, 30);
         y    += deltaY;
         eyeY += eyeDeltaY;
@@ -169,19 +180,20 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
 
     QFont font = QFont ("Arial");
     QVector2D dpiScaling = HiDpiScaler::scalingFactors ();
-    font.setPixelSize (std::min (dpiScaling.x(), dpiScaling.y()) * 0.9 * this->fontMetrics().height());
+    font.setPixelSize (std::min (dpiScaling.x(), dpiScaling.y()) * 1.3 * this->fontMetrics().height());
     font.setBold (true);
     painter.setFont (font);
 
     painter.setPen (QPen (QBrush (QColor (150, 150, 150)), axisPenWidth));
     painter.drawLine (holeTop, holeBottom);
 
-    for (int i = 0; i < showingZonesCount + 1; ++i) {
+    for (int i = showingZonesCount; i >= 0; --i) {
+        painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
+                        axisPenWidth));
+        Drawer::drawArrow(painter, x + 15, zoneOuterEdges[i], eyePosition.x () - 15, eyeY - i * eyeDeltaY, 220, 50);
+        Drawer::drawArrow(painter, x + 15, height - zoneOuterEdges[i], eyePosition.x () - 15, eyeY + i * eyeDeltaY, 220, 50);
 
         if (i < 3) {
-            painter.setPen (QPen (QBrush (QColor (50, 50, 50)), axisPenWidth));
-            painter.drawLine(x + 15, zoneOuterEdges[i], eyePosition.x () - 5, eyeY);
-
             QString text = "x";
             if (i > 0) {
                 text += " + ";
@@ -190,10 +202,14 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
                 }
                 text += "λ/2";
             }
+            painter.setPen (QPen (QBrush (QColor (50, 50, 50)), axisPenWidth));
             painter.drawText (x + 15, zoneOuterEdges[i] - 5, text);
+            if (i != 0) {
+                painter.drawText (x + 15, height - (zoneOuterEdges[i] + 5), text);
+            }
         }
 
-        painter.setPen (QPen (QBrush (QColor (100, 100, 100)), axisPenWidth));
+        painter.setPen (QPen (QBrush (QColor (50, 50, 50)), axisPenWidth));
         painter.drawLine (holeCenterPosition.x () - 10, zoneOuterEdges[i], holeCenterPosition.x () + 10, zoneOuterEdges[i]);
         painter.drawLine (holeCenterPosition.x () - 10, height - zoneOuterEdges[i], holeCenterPosition.x () + 10, height - zoneOuterEdges[i]);
     }

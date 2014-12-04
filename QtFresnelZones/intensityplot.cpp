@@ -1,3 +1,4 @@
+
 #include "intensityplot.h"
 #include "hidpiscaler.h"
 
@@ -42,7 +43,7 @@ void IntensityPlot::useMode (bool xDependence)
 
 void IntensityPlot::_switchToXDependence()
 {
-    xAxis->setLabel ("Расстояние (мкм)");
+    xAxis->setLabel ("Расстояние (мм)");
 
     this->clearItems();
 
@@ -62,7 +63,7 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    xAxis->setLabel ("Размер отверстия (мкм)");
+    xAxis->setLabel ("Размер отверстия (мм)");
     this->clearItems();
 }
 
@@ -95,7 +96,7 @@ void IntensityPlot::_updateXDependence (Fresnel *fresnel)
 {
     double lowest  = Fresnel::dist_min;
     double highest = Fresnel::dist_max;
-    double step = (double) Fresnel::nano_to_scale_exp * 500;
+    double step = (double) Fresnel::nano_to_scale_exp * 600;
 
     double oldDistance = fresnel->getObserverDistance();    // this is to save the current observer distance
     _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {

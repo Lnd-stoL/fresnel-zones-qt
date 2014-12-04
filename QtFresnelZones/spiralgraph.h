@@ -21,6 +21,8 @@ public:
 
 public:
     explicit SpiralGraph (QWidget *parent = 0);
+    void useFresnel (Fresnel *fresnel_);
+
 
 protected:
 

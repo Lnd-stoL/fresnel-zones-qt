@@ -44,6 +44,9 @@ IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
     _fresnel->amplitudePlate = false;
     _fresnel->phasePlate     = false;
 
+    ui->spin_WaveLength->displayIntegerPartOnly();
+    ui->widget_spiralGraph->useFresnel (_fresnel);
+
     _initFresnelBasedSliders();
     _update();
 }
@@ -57,34 +60,32 @@ IntensityGraphWindow::~IntensityGraphWindow()
 
 void IntensityGraphWindow::_initFresnelBasedSliders()
 {
-    double scaling = Fresnel::scale_to_micro_exp;
+    double minWaveLength = Fresnel::wave_min * Fresnel::scale_to_nano_exp;
+    double maxWaveLength = Fresnel::wave_max * Fresnel::scale_to_nano_exp;
+    double defaultWaveLength = Fresnel::wave_def * Fresnel::scale_to_nano_exp;
 
-    double minWaveLength = Fresnel::wave_min * scaling;
-    double maxWaveLength = Fresnel::wave_max * scaling;
-    double defaultWaveLength = Fresnel::wave_def * scaling;
+    double minHoleRadius = Fresnel::radius_min  * Fresnel::scale_to_milli_exp;
+    double maxHoleRadius = Fresnel::radius_max  * Fresnel::scale_to_milli_exp;
+    double defaultHoleRadius = Fresnel::radius_def  * Fresnel::scale_to_milli_exp;
 
-    double minHoleRadius = Fresnel::radius_min * scaling;
-    double maxHoleRadius = Fresnel::radius_max * scaling;
-    double defaultHoleRadius = Fresnel::radius_def * scaling;
-
-    double minxDistance = Fresnel::dist_min * scaling;
-    double maxxDistance = Fresnel::dist_max * scaling;
-    double defaultxDistance = Fresnel::dist_def * scaling;
+    double minxDistance = Fresnel::dist_min * Fresnel::scale_to_milli_exp;
+    double maxxDistance = Fresnel::dist_max * Fresnel::scale_to_milli_exp;
+    double defaultxDistance = Fresnel::dist_def *Fresnel::scale_to_milli_exp;
 
     ui->slider_HoleRadius->setRange (minHoleRadius * _sliderScaling, maxHoleRadius * _sliderScaling);
     ui->slider_HoleRadius->setValue (defaultHoleRadius * _sliderScaling);
-    ui->spin_HoleRadius->setValue (defaultHoleRadius);
-    ui->spin_HoleRadius->setRange (minHoleRadius, maxHoleRadius);
+    ui->spin_HoleRadius->setValue (defaultHoleRadius  * Fresnel::scale_to_milli_exp);
+    ui->spin_HoleRadius->setRange (minHoleRadius  * Fresnel::scale_to_milli_exp, maxHoleRadius  * Fresnel::scale_to_milli_exp);
 
-    ui->slider_WaveLength->setRange (minWaveLength * _sliderScaling * 10, maxWaveLength * _sliderScaling * 10);
-    ui->slider_WaveLength->setValue (defaultWaveLength * _sliderScaling * 10);
+    ui->slider_WaveLength->setRange (minWaveLength, maxWaveLength);
+    ui->slider_WaveLength->setValue (defaultWaveLength);
     ui->spin_WaveLength->setRange (minWaveLength, maxWaveLength);
     ui->spin_WaveLength->setValue (defaultWaveLength);
 
     ui->slider_xDistance->setRange (minxDistance * _sliderScaling, maxxDistance * _sliderScaling);
     ui->slider_xDistance->setValue (defaultxDistance * _sliderScaling);
-    ui->spin_xDistance->setRange (minxDistance, maxxDistance);
-    ui->spin_xDistance->setValue (defaultxDistance);
+    ui->spin_xDistance->setRange (minxDistance * Fresnel::scale_to_milli_exp, maxxDistance * Fresnel::scale_to_milli_exp);
+    ui->spin_xDistance->setValue (defaultxDistance * Fresnel::scale_to_milli_exp);
 }
 
 
@@ -103,11 +104,9 @@ void IntensityGraphWindow::_updateSpiralGraph()
 
 void IntensityGraphWindow::_changeParameters (double xDistance, double holeRadius, double waveLength)
 {
-    double scaling = Fresnel::scale_to_micro_exp;
-
-    double scaledWaveLength = waveLength * scaling;
-    double scaledHoleRadius = holeRadius * scaling;
-    double scaledxDistance  = xDistance * scaling;
+    double scaledWaveLength = waveLength * Fresnel::scale_to_nano_exp;
+    double scaledHoleRadius = holeRadius * Fresnel::scale_to_milli_exp;
+    double scaledxDistance  = xDistance * Fresnel::scale_to_milli_exp;
 
     ui->spin_HoleRadius->setValue (scaledHoleRadius);
     ui->spin_WaveLength->setValue (scaledWaveLength);
@@ -130,16 +129,15 @@ void IntensityGraphWindow::_update()
 
     _updateSpiralGraph();
     _updateZoneGraph();
+    _updateParamsSetButtons();
 }
 
 
 void IntensityGraphWindow::_update_FresnelModel()
 {
-    double scaling = Fresnel::micro_to_scale_exp;
-
-    double newXDistance = scaling * ui->spin_xDistance->value();
-    double newHoleRadius = scaling * ui->spin_HoleRadius->value();
-    double newWaveLength = scaling * ui->spin_WaveLength->value();
+    double newXDistance = Fresnel::milli_to_scale_exp * ui->slider_xDistance->value() / _sliderScaling;
+    double newHoleRadius = Fresnel::milli_to_scale_exp * ui->slider_HoleRadius->value() / _sliderScaling;
+    double newWaveLength = Fresnel::nano_to_scale_exp * ui->spin_WaveLength->value();
 
     _xDistance_ChangedSinceLastUpdate  = _fresnel->getObserverDistance() == newXDistance;
     _holeRadius_ChangedSinceLastUpdate = _fresnel->getHoleRadius()       == newHoleRadius;
@@ -165,7 +163,7 @@ void IntensityGraphWindow::slider_xDistance_Changed (int value)
 
 void IntensityGraphWindow::slider_WaveLength_Changed (int value)
 {
-    ui->spin_WaveLength->setValue ((double)value / (_sliderScaling * 10));
+    ui->spin_WaveLength->setValue ((double)value);
 }
 
 void IntensityGraphWindow::slider_HoleRadius_Changed (int value)
@@ -186,7 +184,7 @@ void IntensityGraphWindow::spin_xDistance_Changed (double value)
 
 void IntensityGraphWindow::spin_WaveLength_Changed (double value)
 {
-    ui->slider_WaveLength->setValue (value * _sliderScaling * 10);
+    ui->slider_WaveLength->setValue (value);
 }
 
 void IntensityGraphWindow::spin_HoleRadius_Changed (double value)
@@ -235,6 +233,24 @@ void IntensityGraphWindow::_changeParams_ZoneOpened (unsigned zoneNum)
 {
     _changeParameters (_fresnel->getObserverDistanceForZone (zoneNum),
                        _fresnel->getHoleRadius(), _fresnel->getWaveLength());
+}
+
+
+void IntensityGraphWindow::_updateParamsSetButtons()
+{
+    _updateParamsSetButton (ui->pushButton_params1, 0);
+    _updateParamsSetButton (ui->pushButton_params2, 1);
+    _updateParamsSetButton (ui->pushButton_params3, 2);
+    _updateParamsSetButton (ui->pushButton_params4, 3);
+    _updateParamsSetButton (ui->pushButton_params5, 4);
+}
+
+
+void IntensityGraphWindow::_updateParamsSetButton (QPushButton *button, unsigned zone)
+{
+    double observerDist =_fresnel->getObserverDistanceForZone (zone);
+    if (observerDist < Fresnel::dist_min || observerDist > Fresnel::dist_max)  button->setEnabled (false);
+    else button->setEnabled (true);
 }
 
 

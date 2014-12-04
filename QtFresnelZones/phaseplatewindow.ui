@@ -24,6 +24,24 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_2" rowstretch="2,1" columnstretch="2,1">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="horizontalSpacing">
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>10</number>
+       </property>
        <item row="0" column="0" colspan="2">
         <widget class="QWidget" name="widget" native="true">
          <property name="sizePolicy">
@@ -31,6 +49,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
@@ -212,6 +233,21 @@ padding-right:5%</string>
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="SchemeGraph" name="widget_schemeGraph" native="true">
                <property name="sizePolicy">
@@ -240,6 +276,21 @@ padding-right:5%</string>
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item alignment="Qt::AlignTop">
               <widget class="QFrame" name="frame_7">
                <property name="frameShape">
@@ -320,6 +371,18 @@ padding-right:5%</string>
                    <enum>QFrame::Raised</enum>
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <property name="spacing">
+                    <number>6</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>6</number>
+                   </property>
                    <item>
                     <widget class="QFrame" name="frame_9">
                      <property name="sizePolicy">
@@ -363,6 +426,9 @@ padding-right:5%</string>
                         </property>
                         <property name="text">
                          <string/>
+                        </property>
+                        <property name="checked">
+                         <bool>true</bool>
                         </property>
                        </widget>
                       </item>
@@ -529,6 +595,21 @@ padding-right:5%</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="SpiralGraph" name="widget_spiralGraph" native="true">
             <property name="sizePolicy">
@@ -543,6 +624,9 @@ padding-right:5%</string>
         </widget>
        </item>
       </layout>
+      <zorder>frame</zorder>
+      <zorder>frame_2</zorder>
+      <zorder>widget</zorder>
      </widget>
     </item>
    </layout>

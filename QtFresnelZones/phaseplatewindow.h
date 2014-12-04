@@ -17,6 +17,7 @@ class PhasePlateWindow : public QMainWindow
 public:
     explicit PhasePlateWindow (Fresnel *fresnel);
     ~PhasePlateWindow();
+    void _updateProgressBar();
 
 protected:
     Fresnel *_fresnel;

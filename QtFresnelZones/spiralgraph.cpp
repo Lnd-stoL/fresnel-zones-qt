@@ -11,6 +11,13 @@ SpiralGraph::SpiralGraph (QWidget *parent) :
     //setAutoFillBackground (false);
 }
 
+
+void SpiralGraph::useFresnel (Fresnel *fresnel_)
+{
+    fresnel = fresnel_;
+}
+
+
 void SpiralGraph::paintEvent (QPaintEvent *event)
 {
     QPainter painter;
@@ -26,19 +33,21 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     double maxVal = 0;
     for (int i = 0; i < spiralX.size(); ++i)
     {
-        if (fabs (spiralX[i]) > maxVal)  maxVal = fabs (spiralX[i]);
-        if (fabs (spiralY[i]) > maxVal)  maxVal = fabs (spiralY[i]);
+        if (fabs (spiralX[i]*2) > maxVal)  maxVal = fabs (2*spiralX[i]);
+        if (fabs (spiralY[i]) > maxVal)    maxVal = fabs (spiralY[i]);
     }
 
     unsigned squareSide = std::min (width, height);;
 
     if (fresnel != nullptr) {
-        if (fresnel->phasePlate || fresnel->amplitudePlate) {
-            squareSide = height;
+        if (fresnel->phasePlate) {
+            squareSide = height * 0.9;
         }
     }
     unsigned dispX = width/2;
     unsigned dispY = height;
+
+    if (fresnel->amplitudePlate) dispY -= 50;
 
     painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2));
     if (spiralY.length() < 6)
@@ -49,6 +58,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     }
     painter.drawLine (width/2, 0, width/2, height);
 
+    if (maxVal == 0) maxVal = 1;
     painter.setPen (QPen (QBrush (QColor (255, 50, 50)), 3));
     int prevX = 0, prevY = 0;
     for (int i = 0; i < spiralX.size(); ++i)
@@ -56,14 +66,14 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
         int nextX = (spiralX[i]*2 / maxVal) * ((double)squareSide/2  - 20.0);
         int nextY = (spiralY[i] / maxVal) * ((double)squareSide    - 20.0);
 
-        Drawer::drawArrow (painter, prevX + dispX, dispY - prevY, nextX + dispX, dispY - nextY);
+        Drawer::drawArrow (painter, prevX + dispX, dispY - prevY, nextX + dispX, dispY - nextY, 10, 5);
 
         prevX = nextX;
         prevY = nextY;
     }
 
-    painter.setPen (QPen (QBrush (QColor (30, 30, 255)), 4));
-    Drawer::drawArrow (painter, width/2, height, prevX + dispX, dispY - prevY, 80, 20);
+    painter.setPen (QPen (QBrush (QColor (30, 30, 255, 128)), 4));
+    Drawer::drawArrow (painter, width/2, dispY, prevX + dispX, dispY - prevY, 80, 20);
 
     painter.end();
 }

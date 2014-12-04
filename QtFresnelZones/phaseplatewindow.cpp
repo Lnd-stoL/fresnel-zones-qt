@@ -1,5 +1,6 @@
 
 #include "phaseplatewindow.h"
+#include "colortransform.h"
 #include "ui_phaseplatewindow.h"
 
 #include <QDebug>
@@ -18,8 +19,10 @@ PhasePlateWindow::PhasePlateWindow (Fresnel *fresnel) :
     connect (ui->radioButton_flatLensPlate, SIGNAL(clicked()), this, SLOT(button_FlatLensPlate_Pressed()));
     _fresnel->amplitudePlate         = false;
     _fresnel->phasePlate             = true;
+    _fresnel->phasePlateType = Fresnel::PhasePlate::SIMPLE;
     ui->widget_spiralGraph->fresnel  = _fresnel;
     ui->widget_schemeGraph->fresnel  = _fresnel;
+    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (5));
 
     this->_update();
 }
@@ -30,6 +33,28 @@ PhasePlateWindow::~PhasePlateWindow()
     delete ui;
 }
 
+void PhasePlateWindow::_updateProgressBar()
+{
+    QRect r = ui->progressBar_intensity->geometry();
+    QColor barColor = ColorTransform::getRGBfromLambda (_fresnel->getWaveLength() * Fresnel::scale_to_nano_exp);
+
+    QString st = QString (
+                "QProgressBar::chunk {"
+                "background-color:rgb(%1,%2,%3);"
+                 "}").arg (QString::number (barColor.red()),
+                           QString::number (barColor.green()),
+                           QString::number (barColor.blue()));
+
+    st.append ("QProgressBar {"
+               "border: 2px solid grey;"
+               "border-radius: 2px;"
+               "text-align: center;"
+               "background: #eeeeee;"
+               "}");
+
+    ui->progressBar_intensity->setStyleSheet (st);
+    ui->progressBar_intensity->setGeometry (r.x(), r.y() + 3, r.width(), r.height() - 6);
+}
 
 void PhasePlateWindow::_update()
 {
@@ -46,6 +71,7 @@ void PhasePlateWindow::_update()
 
     ui->progressBar_intensity->setValue ((int) (intensity / maxIntensity * 100.0));
     ui->progressBar_intensity->update ();
+    _updateProgressBar();
 }
 
 

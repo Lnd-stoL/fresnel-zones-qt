@@ -11,6 +11,7 @@ class ZonesGraph : public QWidget
 protected:
     Fresnel *_fresnel = nullptr;
 
+
 public:
     explicit ZonesGraph (QWidget *parent = 0);
     void update (Fresnel *fresnel);

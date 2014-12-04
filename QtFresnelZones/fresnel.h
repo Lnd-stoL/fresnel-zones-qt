@@ -63,7 +63,7 @@ public:
     static constexpr double dist_def   = 0.55;
     static constexpr double wave_min   = 300 * nano_to_scale_exp;
     static constexpr double wave_max   = 800 * nano_to_scale_exp;
-    static constexpr double wave_def   = 500 * nano_to_scale_exp;
+    static constexpr double wave_def   = 495 * nano_to_scale_exp;
 
     double      accuracyPlot;       // dr in amplitude integral
     double      accuracySpiral;     // Number of spiral vectors in one zone

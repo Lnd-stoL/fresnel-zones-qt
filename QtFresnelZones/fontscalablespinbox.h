@@ -10,12 +10,14 @@ class FontScalableSpinBox : public QDoubleSpinBox
 
 protected:
     bool _fontAdjusted = false;
+    bool _integerPartOnly = false;
 
 protected:
     virtual void resizeEvent (QResizeEvent* evt);
-    virtual QString textFromValue();
+    virtual QString textFromValue (double) const;
 
 public:
+    void displayIntegerPartOnly();
     explicit FontScalableSpinBox (QWidget *parent = 0);
 };
 
