@@ -25,6 +25,8 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
     unsigned fresnelNumber = _fresnel->fresnelNumber();
     double   prevRadius    = 0.0;
     painter.setPen (dashedPen);
+    unsigned startWithZone = fresnelNumber;
+    //if (fresnelNumber )
     for (unsigned n = fresnelNumber; n != 0; --n)
     {
         double nextZone = _fresnel->zoneOuterRadius (n);

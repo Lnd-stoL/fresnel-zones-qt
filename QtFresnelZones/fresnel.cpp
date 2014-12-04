@@ -273,7 +273,7 @@ void Fresnel::spiral (DoubleVector &spiralX, DoubleVector &spiralY) const
             innerD += dd;
             outerR  = sqrt (innerD*innerD - b2);
 
-            if (outerR > R) {
+            if (outerR >= R) {
                 outerR = R;
                 stop = true;
             }
