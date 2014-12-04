@@ -28,9 +28,11 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     ui->spin_WaveLength->setValue (defaultWaveLength);
     ui->widget_spiralGraph->fresnel  = _fresnel;
 
-    _progressBarHigh = _fresnel->intensity() * 30;
+    _progressBarHigh = _fresnel->intensity() * 40;
     button_Tune_Pressed();
     _update();
+
+    ui->widget_schemeGraph->fresnel  = _fresnel;
 }
 
 

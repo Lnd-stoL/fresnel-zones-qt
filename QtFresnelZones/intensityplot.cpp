@@ -9,8 +9,8 @@ IntensityPlot::IntensityPlot (QWidget *parent) :
     this->addGraph();
 
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
-    QFont labelFont ("Arial", std::min (dpiScaling.x(), dpiScaling.y()) * 14);
-    QPen axisPen(QBrush (QColor (0, 0, 0)), 2);
+    QFont labelFont ("Arial", std::min (dpiScaling.x(), dpiScaling.y()) * 16);
+    QPen axisPen(QBrush (QColor (0, 0, 0)), 2 * dpiScaling.y());
     xAxis->setLabelFont (labelFont);
     yAxis->setLabelFont (labelFont);
     xAxis->setTickLabelFont (labelFont);
@@ -18,7 +18,7 @@ IntensityPlot::IntensityPlot (QWidget *parent) :
     yAxis->setBasePen (axisPen);
     yAxis->setTickLabels (false);
 
-    this->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3));
+    this->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3 * dpiScaling.y()));
     yAxis->setLabel ("Интенсивность");
 
     _switchToXDependence();
@@ -47,9 +47,11 @@ void IntensityPlot::_switchToXDependence()
 
     this->clearItems();
 
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
+
     _backLine = new QCPItemLine (this);
     QPen backLinePen (QColor (255, 100, 100, 100));
-    backLinePen.setWidth(5);
+    backLinePen.setWidth (5 * dpiScaling.y());
     _backLine->setPen (backLinePen);
     this->addItem (_backLine);
 
@@ -145,15 +147,17 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
         this->addItem (_zoneLines[n]);
     }
 
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
+
      _backLine = new QCPItemLine (this);
     QPen backLinePen (QColor (255, 100, 100, 100));
-    backLinePen.setWidth(5);
+    backLinePen.setWidth (5 * dpiScaling.y());
     _backLine->setPen (backLinePen);
     this->addItem (_backLine);
 
     _line = new QCPItemLine (this);
     QPen linePen (Qt::red);
-    linePen.setWidth(5);
+    linePen.setWidth (5 * dpiScaling.y());
     _line->setPen (linePen);
     this->addItem (_line);
 
