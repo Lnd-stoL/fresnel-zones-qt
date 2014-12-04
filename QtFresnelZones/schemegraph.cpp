@@ -278,10 +278,10 @@ void SchemeGraph::drawPlate (QPainter& painter)
     double x        = 0.0;
     double radius   = fresnel->getHoleRadius();
     double step     = radius / 1000;
+    double centerX  = holeCenterPosition.x ();
+    double centerY  = holeCenterPosition.y ();
 
     if (schemeType == SchemeType::PhasePlateScheme) {
-        double centerX  = holeCenterPosition.x ();
-        double centerY  = holeCenterPosition.y ();
         plateX.clear ();
         plateY.clear ();
 
@@ -313,7 +313,25 @@ void SchemeGraph::drawPlate (QPainter& painter)
     }
 
     if (schemeType == SchemeType::AmplitudePlateScheme) {
+        int fn = fresnel->fresnelNumber();
+        double r1, r2;
+        for (int i = 0; i <= fn; ++i) {
+            r1 = scaling * (i == 0 ? 0 : fresnel->zoneOuterRadius(i - 1));
 
+            if (i > 0) {
+                painter.setPen (QPen (QBrush (QColor (150, 150, 150)), axisPenWidth));
+                painter.drawLine (centerX - 10, centerY + r1, centerX + 10, centerY + r1);
+                painter.drawLine (centerX - 10, centerY - r1, centerX + 10, centerY - r1);
+            }
+
+            if (!fresnel->isZoneOpened(i)) {
+                r1 += wallPenWidth / 2;
+                r2 = scaling * fresnel->zoneOuterRadius(i) - wallPenWidth / 2;
+                painter.setPen (QPen (QBrush (QColor (60, 60, 60)), wallPenWidth));
+                painter.drawLine (centerX, centerY + r1, centerX, centerY + r2);
+                painter.drawLine (centerX, centerY - r1, centerX, centerY - r2);
+            }
+        }
     }
 }
 

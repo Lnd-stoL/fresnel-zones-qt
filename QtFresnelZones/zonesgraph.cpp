@@ -30,7 +30,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;
 
-        if (_fresnel->isZoneOpened (n))
+        if (_fresnel->isZoneOpened (n - 1))
         {
             if (n == fresnelNumber)  painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
             else  painter.setBrush (colorBrush);

@@ -23,8 +23,8 @@
 #include <QtWidgets/QWidget>
 #include "fontscalablelabel.h"
 #include "fontscalablepushbutton.h"
+#include "intensityplot.h"
 #include "schemegraph.h"
-#include "spiralgraph.h"
 #include "zonesgraph.h"
 
 QT_BEGIN_NAMESPACE
@@ -43,18 +43,9 @@ public:
     FontScalablePushButton *pushButton_Back_2;
     QFrame *frame;
     QGridLayout *gridLayout;
-    QFrame *frame_2;
-    QVBoxLayout *verticalLayout_2;
-    SchemeGraph *widget_scheme;
-    FontScalableLabel *label_scheme;
-    QFrame *frame_3;
-    QVBoxLayout *verticalLayout_3;
-    ZonesGraph *widget_zones;
-    FontScalableLabel *label_zones;
-    QFrame *frame_4;
-    QVBoxLayout *verticalLayout_4;
-    SpiralGraph *widget_spiral;
-    FontScalableLabel *label_spiral;
+    IntensityPlot *widget_intensityPlot;
+    ZonesGraph *widget_zonesGraph;
+    SchemeGraph *widget_schemeGraph;
 
     void setupUi(QMainWindow *IntroWindow)
     {
@@ -147,76 +138,23 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         gridLayout = new QGridLayout(frame);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        frame_2 = new QFrame(frame);
-        frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setFrameShape(QFrame::StyledPanel);
-        frame_2->setFrameShadow(QFrame::Raised);
-        verticalLayout_2 = new QVBoxLayout(frame_2);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        widget_scheme = new SchemeGraph(frame_2);
-        widget_scheme->setObjectName(QStringLiteral("widget_scheme"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(widget_scheme->sizePolicy().hasHeightForWidth());
-        widget_scheme->setSizePolicy(sizePolicy2);
+        widget_intensityPlot = new IntensityPlot(frame);
+        widget_intensityPlot->setObjectName(QStringLiteral("widget_intensityPlot"));
 
-        verticalLayout_2->addWidget(widget_scheme);
+        gridLayout->addWidget(widget_intensityPlot, 0, 1, 1, 1);
 
-        label_scheme = new FontScalableLabel(frame_2);
-        label_scheme->setObjectName(QStringLiteral("label_scheme"));
-        sizePolicy.setHeightForWidth(label_scheme->sizePolicy().hasHeightForWidth());
-        label_scheme->setSizePolicy(sizePolicy);
+        widget_zonesGraph = new ZonesGraph(frame);
+        widget_zonesGraph->setObjectName(QStringLiteral("widget_zonesGraph"));
 
-        verticalLayout_2->addWidget(label_scheme);
+        gridLayout->addWidget(widget_zonesGraph, 1, 0, 1, 1);
 
+        widget_schemeGraph = new SchemeGraph(frame);
+        widget_schemeGraph->setObjectName(QStringLiteral("widget_schemeGraph"));
 
-        gridLayout->addWidget(frame_2, 0, 0, 1, 2);
+        gridLayout->addWidget(widget_schemeGraph, 1, 1, 1, 1);
 
-        frame_3 = new QFrame(frame);
-        frame_3->setObjectName(QStringLiteral("frame_3"));
-        frame_3->setFrameShape(QFrame::StyledPanel);
-        frame_3->setFrameShadow(QFrame::Raised);
-        verticalLayout_3 = new QVBoxLayout(frame_3);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        widget_zones = new ZonesGraph(frame_3);
-        widget_zones->setObjectName(QStringLiteral("widget_zones"));
-
-        verticalLayout_3->addWidget(widget_zones);
-
-        label_zones = new FontScalableLabel(frame_3);
-        label_zones->setObjectName(QStringLiteral("label_zones"));
-        sizePolicy.setHeightForWidth(label_zones->sizePolicy().hasHeightForWidth());
-        label_zones->setSizePolicy(sizePolicy);
-
-        verticalLayout_3->addWidget(label_zones);
-
-
-        gridLayout->addWidget(frame_3, 1, 0, 1, 1);
-
-        frame_4 = new QFrame(frame);
-        frame_4->setObjectName(QStringLiteral("frame_4"));
-        frame_4->setFrameShape(QFrame::StyledPanel);
-        frame_4->setFrameShadow(QFrame::Raised);
-        verticalLayout_4 = new QVBoxLayout(frame_4);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        widget_spiral = new SpiralGraph(frame_4);
-        widget_spiral->setObjectName(QStringLiteral("widget_spiral"));
-
-        verticalLayout_4->addWidget(widget_spiral);
-
-        label_spiral = new FontScalableLabel(frame_4);
-        label_spiral->setObjectName(QStringLiteral("label_spiral"));
-        sizePolicy.setHeightForWidth(label_spiral->sizePolicy().hasHeightForWidth());
-        label_spiral->setSizePolicy(sizePolicy);
-
-        verticalLayout_4->addWidget(label_spiral);
-
-
-        gridLayout->addWidget(frame_4, 1, 1, 1, 1);
-
-        gridLayout->setRowStretch(0, 2);
-        gridLayout->setRowStretch(1, 1);
+        gridLayout->setColumnStretch(0, 1);
+        gridLayout->setColumnStretch(1, 2);
 
         verticalLayout->addWidget(frame);
 
@@ -233,9 +171,6 @@ public:
         pushButton_Back->setText(QApplication::translate("IntroWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("IntroWindow", "\320\237\320\276\321\201\321\202\321\200\320\276\320\265\320\275\320\270\320\265 \320\267\320\276\320\275 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
         pushButton_Back_2->setText(QApplication::translate("IntroWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
-        label_scheme->setText(QApplication::translate("IntroWindow", "\320\241\321\205\320\265\320\274\320\260", 0));
-        label_zones->setText(QApplication::translate("IntroWindow", "\320\227\320\276\320\275\321\213", 0));
-        label_spiral->setText(QApplication::translate("IntroWindow", "\320\241\320\277\320\270\321\200\320\260\320\273\321\214", 0));
     } // retranslateUi
 
 };

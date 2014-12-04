@@ -10,6 +10,7 @@ IntroWindow::IntroWindow(Fresnel *fresnel) :
 
     fresnel->amplitudePlate = false;
     fresnel->phasePlate = false;
+    fresnel->setObserverDistance(1.25);
     ui->widget_schemeGraph->fresnel = _fresnel;
     ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::MovingScheme;
     connect(ui->widget_schemeGraph, SIGNAL(fresnelChanged()), this, SLOT(fresnelChanged()));

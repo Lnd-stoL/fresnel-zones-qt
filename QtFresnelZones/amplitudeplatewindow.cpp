@@ -147,6 +147,7 @@ void AmplitudePlateWindow::_update()
 
     _fresnel->spiral (ui->widget_spiralGraph->spiralX, ui->widget_spiralGraph->spiralY);
     ui->widget_spiralGraph->repaint();
+    ui->widget_schemeGraph->repaint();
 
     _updateProgressBar();
 }
