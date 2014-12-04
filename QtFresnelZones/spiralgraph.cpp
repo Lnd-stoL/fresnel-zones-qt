@@ -2,7 +2,9 @@
 #include "spiralgraph.h"
 #include <math.h>
 #include <QDebug>
+
 #include "drawer.h"
+#include "hidpiscaler.h"
 
 
 SpiralGraph::SpiralGraph (QWidget *parent) :
@@ -20,6 +22,8 @@ void SpiralGraph::useFresnel (Fresnel *fresnel_)
 
 void SpiralGraph::paintEvent (QPaintEvent *event)
 {
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
+
     QPainter painter;
     painter.begin (this);
     painter.setRenderHint (QPainter::Antialiasing);
@@ -49,7 +53,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
 
     if (fresnel->amplitudePlate) dispY -= 50;
 
-    painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2));
+    painter.setPen (QPen (QBrush (QColor (128, 128, 128)), 2 * dpiScaling.y()));
     if (spiralY.length() < 6)
         painter.drawLine (0, height/2, width, height/2);
     else {
@@ -59,7 +63,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     painter.drawLine (width/2, 0, width/2, height);
 
     if (maxVal == 0) maxVal = 1;
-    painter.setPen (QPen (QBrush (QColor (255, 50, 50)), 3));
+    painter.setPen (QPen (QBrush (QColor (255, 50, 50)), 2 * dpiScaling.y()));
     int prevX = 0, prevY = 0;
     for (int i = 0; i < spiralX.size(); ++i)
     {
@@ -72,7 +76,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
         prevY = nextY;
     }
 
-    painter.setPen (QPen (QBrush (QColor (30, 30, 255, 128)), 4));
+    painter.setPen (QPen (QBrush (QColor (30, 30, 255, 128)), 3 * dpiScaling.y()));
     Drawer::drawArrow (painter, width/2, dispY, prevX + dispX, dispY - prevY, 80, 20);
 
     painter.end();

@@ -2,9 +2,11 @@
 #include "zonesgraph.h"
 #include <QPainter>
 #include <stdio.h>
-#include "colortransform.h"
-
 #include <QDebug>
+
+#include "colortransform.h"
+#include "hidpiscaler.h"
+
 
 
 ZonesGraph::ZonesGraph (QWidget *parent) :
@@ -24,13 +26,15 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
 {
     if (_fresnel == nullptr)  return;
 
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
+
     QPainter painter;
     painter.begin (this);
     painter.setRenderHint (QPainter::Antialiasing);
 
     int width = size().width();
     int height = size().height();
-    double squareWidth = std::min ((height/2), (width/2)) - 10;
+    double squareWidth = std::min ((height/2), (width/2)) - 5;
 
     double maxRad = _fresnel->getHoleRadius();
     maxRad = Fresnel::radius_max;
@@ -40,15 +44,15 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
     painter.setBrush (blackBrush);
     painter.drawRect (0, 0, width, height);
 
-    QPen dashedPen (QBrush (QColor (255, 255, 255)), 3, Qt::PenStyle::DashLine);
+    QPen dashedPen (QBrush (QColor (255, 255, 255)), 3 * dpiScaling.y(), Qt::PenStyle::DashLine);
     if (_fresnel->isZoneOpened (_fresnel->fresnelNumber())) painter.setBrush (colorBrush);
     else painter.setBrush (blackBrush);
 
     float wholeRad = squareWidth * (_fresnel->getHoleRadius() / maxRad);
     painter.drawEllipse (QPoint (width / 2, height / 2), wholeRad, wholeRad);
 
-    QPen zonesPen (QBrush (QColor (255, 255, 255)), 3);
-    QFont font = QFont ("Arial", 14);
+    QPen zonesPen (QBrush (QColor (255, 255, 255)), 3 * dpiScaling.y());
+    QFont font = QFont ("Arial", 14 * dpiScaling.y());
     font.setBold (true);
     painter.setFont (font);
 
@@ -71,11 +75,11 @@ void ZonesGraph::paintEvent (QPaintEvent *event)
         painter.setPen (zonesPen);
     }
 
-    for (int n = 0; n < fresnelNumber && n < 10; ++n)
+    for (int n = 0; n < fresnelNumber && n < 5; ++n)
     {
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;
-        painter.setPen (QPen (QBrush (QColor (50, 50, 50)), 3));
+        painter.setPen (QPen (QBrush (QColor (50, 50, 50)), 3 * dpiScaling.y()));
         painter.drawText (QPointF (width / 2 + radius - (radius - prevRadius) / 2.0 - 5, height / 2), QString::number (n));
         prevRadius      = radius;
     }

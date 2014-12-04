@@ -211,7 +211,7 @@
         <widget class="QWidget" name="widget_5" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,6">
           <property name="spacing">
-           <number>0</number>
+           <number>7</number>
           </property>
           <property name="leftMargin">
            <number>0</number>
@@ -226,7 +226,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="SchemeGraph" name="widget_6" native="true">
+           <widget class="SchemeGraph" name="widget_schemeGraph" native="true">
             <property name="styleSheet">
              <string notr="true">background-color:#ffffff;</string>
             </property>
@@ -246,8 +246,8 @@
               <height>0</height>
              </size>
             </property>
-            <zorder>widget_6</zorder>
-            <zorder>widget_6</zorder>
+            <zorder>widget_schemeGraph</zorder>
+            <zorder>widget_schemeGraph</zorder>
            </widget>
           </item>
          </layout>

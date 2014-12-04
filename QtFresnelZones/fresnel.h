@@ -56,7 +56,7 @@ public:
     // * To convert values MULTIPLY, NOT DIVIDE by appropriate exp defined above to avoid confusions
     //
     static constexpr double radius_min = 0.007;
-    static constexpr double radius_max = 0.05;
+    static constexpr double radius_max = 0.034;
     static constexpr double radius_def = 0.023;
     static constexpr double dist_min   = 0.2;
     static constexpr double dist_max   = 2;
