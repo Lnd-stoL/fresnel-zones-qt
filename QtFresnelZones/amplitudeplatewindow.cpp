@@ -9,7 +9,7 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     _fresnel (fresnel)
 {
     ui->setupUi (this);
-    connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
+    //connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
 
     connect (ui->checkBox_Zone0, SIGNAL(clicked()), this, SLOT(_update()));
     connect (ui->checkBox_Zone1, SIGNAL(clicked()), this, SLOT(_update()));
@@ -21,6 +21,7 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     _fresnel->amplitudePlate = true;
     _fresnel->phasePlate = false;
 
+    button_Back_Pressed();
     this->_update();
 }
 

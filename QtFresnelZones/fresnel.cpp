@@ -19,7 +19,7 @@ void Fresnel::setDefaults ()
     waveNumber            = 2.0 * M_PI / waveLength;    // k
     currentFresnelNumber  = fresnelNumber (holeRadius); // fn
     refractiveIndex       = 2.0;                        // n
-    phasePlateType        = PhasePlate::LENS;
+    phasePlateType        = PhasePlate::SIMPLE;
     amplitudePlate        = false;
     phasePlate            = false;
     openedZones           = QVector<bool> (currentFresnelNumber + 1, true);
