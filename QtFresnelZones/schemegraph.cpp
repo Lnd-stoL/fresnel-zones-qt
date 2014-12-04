@@ -8,11 +8,6 @@
 SchemeGraph::SchemeGraph (QWidget *parent) :
     QGLWidget  (QGLFormat (QGL::SampleBuffers), parent)
 {
-    double scaling = HiDpiScaler::scalingFactors().y();
-    platePenWidth = (double) platePenWidth * scaling;
-    wallPenWidth = (double) wallPenWidth * scaling;
-    eyePenWidth = (double) eyePenWidth * scaling;
-    axisPenWidth = (double) axisPenWidth * scaling;
 }
 
 void SchemeGraph::drawPhasePlateScheme (QPainter& painter)
@@ -279,40 +274,46 @@ void SchemeGraph::drawPlate (QPainter& painter)
 
     double width    = size ().width ();
     double height   = size ().height ();
-    double centerX  = holeCenterPosition.x ();
-    double centerY  = holeCenterPosition.y ();
     double scaling  = getScaling ();
     double x        = 0.0;
     double radius   = fresnel->getHoleRadius();
     double step     = radius / 1000;
 
-    plateX.clear ();
-    plateY.clear ();
+    if (schemeType == SchemeType::PhasePlateScheme) {
+        double centerX  = holeCenterPosition.x ();
+        double centerY  = holeCenterPosition.y ();
+        plateX.clear ();
+        plateY.clear ();
 
-    plateX.push_back (0);
-    plateY.push_back (radius * scaling);
-    plateX.push_back (0);
-    plateY.push_back (-radius * scaling);
+        plateX.push_back (0);
+        plateY.push_back (radius * scaling);
+        plateX.push_back (0);
+        plateY.push_back (-radius * scaling);
 
-    for (double y = -radius; y <= radius; y += step) {
-        x = fresnel->getPhasePlateWidthOnRing (y);
-        plateX.push_back (x * scaling);
-        plateY.push_back (y * scaling);
+        for (double y = -radius; y <= radius; y += step) {
+            x = fresnel->getPhasePlateWidthOnRing (y);
+            plateX.push_back (x * scaling);
+            plateY.push_back (y * scaling);
+        }
+        plateX.push_back (0);
+        plateY.push_back (radius * scaling);
+
+        double stretch = getStretch ();
+
+        painter.setPen (QPen (QBrush (QColor (60, 60, 178)), platePenWidth));
+
+        for (int i = 0; i < plateX.length(); ++i) {
+            plateX[i] = centerX + plateX[i] * stretch;
+            plateY[i] = centerY + plateY[i];
+        }
+
+        for (int i = 0; i < plateX.length() - 1; ++i) {
+            painter.drawLine (plateX[i], plateY[i], plateX[i + 1], plateY[i + 1]);
+        }
     }
-    plateX.push_back (0);
-    plateY.push_back (radius * scaling);
 
-    double stretch = getStretch ();
+    if (schemeType == SchemeType::AmplitudePlateScheme) {
 
-    painter.setPen (QPen (QBrush (QColor (60, 60, 178)), platePenWidth));
-
-    for (int i = 0; i < plateX.length(); ++i) {
-        plateX[i] = centerX + plateX[i] * stretch;
-        plateY[i] = centerY + plateY[i];
-    }
-
-    for (int i = 0; i < plateX.length() - 1; ++i) {
-        painter.drawLine (plateX[i], plateY[i], plateX[i + 1], plateY[i + 1]);
     }
 }
 
@@ -342,6 +343,7 @@ void SchemeGraph::paintEvent (QPaintEvent *event)
         break;
 
     case SchemeType::AmplitudePlateScheme:
+        holeCenterXRelativePosition = 0.5;
         drawAmplitudePlateScheme (painter);
         break;
     }

@@ -33,6 +33,7 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     _update();
 
     ui->widget_schemeGraph->fresnel  = _fresnel;
+    ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::AmplitudePlateScheme;
 }
 
 
