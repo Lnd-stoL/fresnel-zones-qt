@@ -9,7 +9,7 @@ Fresnel::Fresnel ()
 
 void Fresnel::setDefaults ()
 {
-    initialAmplitude      = 100;                        // E0
+    initialAmplitude      = 0.1;                        // E0
     waveLength            = wave_def;                   // l
     holeRadius            = radius_def;                 // R
     observerDistance      = dist_def;                   // b

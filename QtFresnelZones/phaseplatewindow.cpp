@@ -58,6 +58,8 @@ void PhasePlateWindow::_updateProgressBar()
 
 void PhasePlateWindow::_update()
 {
+    ui->widget_zonesGraph->update (_fresnel);
+
     ui->widget_schemeGraph->repaint();
     _updateSpiralGraph();
 

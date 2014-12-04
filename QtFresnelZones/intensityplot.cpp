@@ -131,8 +131,9 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
 
     this->clearItems();
 
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
     QPen zoneLinePen (QColor (100, 100, 100));
-    zoneLinePen.setWidth (1);
+    zoneLinePen.setWidth (2 * dpiScaling.y());
 
     double nextZone = 0;
     for (int n = 0; nextZone < highest && n < ZoneLinesMax; ++n)
@@ -146,8 +147,6 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
         _zoneLines[n]->end->setCoords (nextZone, yAxis->range().size());
         this->addItem (_zoneLines[n]);
     }
-
-    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
 
      _backLine = new QCPItemLine (this);
     QPen backLinePen (QColor (255, 100, 100, 100));

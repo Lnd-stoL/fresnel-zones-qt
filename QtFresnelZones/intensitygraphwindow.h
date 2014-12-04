@@ -24,7 +24,7 @@ private:
     Fresnel *_fresnel = nullptr;
     bool _xDependenceMode = true;
 
-    const double _sliderScaling = 10000;
+    const double _sliderScaling = 10000000;
 
     bool _xDistance_ChangedSinceLastUpdate  = true;
     bool _holeRadius_ChangedSinceLastUpdate = true;
