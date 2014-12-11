@@ -58,6 +58,7 @@ public:
     QFrame *frame_2;
     QGridLayout *gridLayout_4;
     SpiralGraph *widget_spiralGraph;
+    FontScalableLabel *label_2;
     QFrame *frame_3;
     QGridLayout *gridLayout_2;
     QWidget *widget;
@@ -249,8 +250,6 @@ public:
         sizePolicy.setHeightForWidth(widget_Zones->sizePolicy().hasHeightForWidth());
         widget_Zones->setSizePolicy(sizePolicy);
         widget_Zones->setMinimumSize(QSize(0, 0));
-        widget_schemeGraph->raise();
-        widget_schemeGraph->raise();
 
         horizontalLayout_13->addWidget(widget_Zones);
 
@@ -281,7 +280,17 @@ public:
         sizePolicy.setHeightForWidth(widget_spiralGraph->sizePolicy().hasHeightForWidth());
         widget_spiralGraph->setSizePolicy(sizePolicy);
 
-        gridLayout_4->addWidget(widget_spiralGraph, 0, 0, 1, 1);
+        gridLayout_4->addWidget(widget_spiralGraph, 1, 0, 1, 1);
+
+        label_2 = new FontScalableLabel(frame_2);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy1);
+        label_2->setFont(font);
+        label_2->setStyleSheet(QStringLiteral("padding-bottom:10;"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout_4->addWidget(label_2, 0, 0, 1, 1);
 
 
         gridLayout->addWidget(frame_2, 1, 2, 1, 1);
@@ -696,33 +705,34 @@ public:
         label_13->setText(QApplication::translate("AmplitudePlateWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\262 \321\202\320\276\321\207\320\272\320\265 \320\275\320\260\320\261\320\273\321\216\320\264\320\265\320\275\320\270\321\217:", 0));
         label_WaveLength->setText(QApplication::translate("AmplitudePlateWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
         spin_WaveLength->setSuffix(QApplication::translate("AmplitudePlateWindow", " \320\275\320\274", 0));
+        label_2->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\264\320\270\321\202\321\203\320\264\320\260 \320\275\320\260 \320\276\321\201\320\270", 0));
         pushButton_Back->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
         pushButton_Back_2->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
         pushButton_closeAll->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \320\262\321\201\320\265", 0));
         pushButton_openAll->setText(QApplication::translate("AmplitudePlateWindow", "\320\236\321\202\320\272\321\200\321\213\321\202\321\214 \320\262\321\201\320\265", 0));
-        pushButton_OpenOdd->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \320\275\320\265\321\207\321\221\321\202\320\275\321\213\320\265", 0));
+        pushButton_OpenOdd->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \321\207\321\221\321\202\320\275\321\213\320\265", 0));
         label_8->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\276\320\275\321\213 \320\244\321\200\320\265\320\275\320\265\320\273\321\217:", 0));
         checkBox_Zone0->setText(QString());
-        label_zone0->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 0", 0));
+        label_zone0->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 1", 0));
         checkBox_Zone1->setText(QString());
-        label_zone1->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 1", 0));
+        label_zone1->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 2", 0));
         checkBox_Zone2->setText(QString());
-        label_zone2->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 2", 0));
+        label_zone2->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 3", 0));
         checkBox_Zone3->setText(QString());
-        label_zone3->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 3", 0));
+        label_zone3->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 4", 0));
         checkBox_Zone4->setText(QString());
-        label_zone4->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 4", 0));
+        label_zone4->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 5", 0));
         checkBox_Zone5->setText(QString());
-        label_zone5->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 5", 0));
+        label_zone5->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 6", 0));
         checkBox_Zone6->setText(QString());
-        label_zone6->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 6", 0));
+        label_zone6->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 7", 0));
         checkBox_Zone7->setText(QString());
-        label_zone7->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 7", 0));
+        label_zone7->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 8", 0));
         checkBox_Zone8->setText(QString());
-        label_zone8->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 8", 0));
+        label_zone8->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 9", 0));
         checkBox_Zone9->setText(QString());
-        label_zone9->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 9", 0));
+        label_zone9->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 10", 0));
     } // retranslateUi
 
 };

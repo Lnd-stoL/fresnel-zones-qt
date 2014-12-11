@@ -80,8 +80,8 @@ void SchemeGraph::drawAxis (QPainter &painter)
                                     centerY)
                          : holeCenterPosition;
 
-    painter.setPen (QPen (QBrush (QColor (160, 160, 160)), axisPenWidth));
-    painter.drawLine (holePosition, eyePosition);
+    painter.setPen (QPen (QBrush (QColor (160, 160, 160)), axisPenWidth, Qt::PenStyle::DashLine));
+    painter.drawLine (holePosition, QPointF (width, height / 2.0));
 }
 
 void SchemeGraph::drawEye (QPainter &painter)
@@ -236,7 +236,7 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
         if (i < 3) {
             QString text;
             if (i == 0) {
-                text = "Ход луча: х";
+                text = "Луч: х";
             } else {
                 text = "x";
             }

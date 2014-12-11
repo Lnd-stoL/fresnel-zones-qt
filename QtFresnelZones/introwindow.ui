@@ -205,7 +205,7 @@ padding-right:5%</string>
           </font>
          </property>
          <property name="text">
-          <string>Перемещайте наблюдателя курсором для изменения расстояния до отверстия</string>
+          <string>Перемещайте  наблюдателя (глаз) курсором для изменения расстояния до отверстия</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>

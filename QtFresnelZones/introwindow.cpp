@@ -11,7 +11,7 @@ IntroWindow::IntroWindow(Fresnel *fresnel) :
     fresnel->amplitudePlate = false;
     fresnel->phasePlate = false;
     fresnel->setObserverDistance(Fresnel::dist_max * 0.5);
-    fresnel->setHoleRadius(Fresnel::radius_max);
+    fresnel->setHoleRadius(Fresnel::radius_def);
     ui->widget_schemeGraph->fresnel = _fresnel;
     ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::MovingScheme;
 
