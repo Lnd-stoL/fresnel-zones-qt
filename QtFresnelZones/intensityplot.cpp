@@ -14,7 +14,7 @@ IntensityPlot::IntensityPlot (QWidget *parent) :
     QPen axisPen(QBrush (QColor (0, 0, 0)), 2 * dpiScaling.y());
     xAxis->setLabelFont (labelFont);
     yAxis->setLabelFont (labelFont);
-    xAxis->setTickLabelFont (labelFont);
+    //xAxis->setTickLabelFont (labelFont);
     xAxis->setBasePen (axisPen);
     yAxis->setBasePen (axisPen);
     yAxis->setTickLabels (false);
@@ -44,7 +44,7 @@ void IntensityPlot::useMode (bool xDependence)
 
 void IntensityPlot::_switchToXDependence()
 {
-    xAxis->setLabel ("Расстояние (мм)");
+    //xAxis->setLabel ("Расстояние (мм)");
 
     this->clearItems();
 
@@ -66,7 +66,7 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    xAxis->setLabel ("Размер отверстия (мм)");
+    //xAxis->setLabel ("Размер отверстия (мм)");
     this->clearItems();
 }
 

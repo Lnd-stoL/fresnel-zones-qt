@@ -27,14 +27,14 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
     painter.setPen (dashedPen);
     unsigned startWithZone = fresnelNumber;
 
-    for (unsigned n = fresnelNumber; n != 0; --n)
+    for (unsigned n = fresnelNumber+1; n != 0; --n)
     {
-        double nextZone = _fresnel->zoneOuterRadius (n);
+        double nextZone = _fresnel->zoneOuterRadius (n - 1);
         double radius   = squareWidth * nextZone / maxRad;
 
         if (_fresnel->isZoneOpened (n - 1))
         {
-            if (n == fresnelNumber)  painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
+            if (n == fresnelNumber+1)  painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
             else  painter.setBrush (colorBrush);
         }
         else  painter.setBrush (blackBrush);
@@ -44,12 +44,12 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
     }
 
     prevRadius = 0;
-    for (unsigned n = 1; n <= fresnelNumber && n < 5 || n == 1; ++n)
+    for (unsigned n = 0; n <= fresnelNumber && n < 5 || n == 1; ++n)
     {
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;
         painter.setPen (QPen (QBrush (QColor (50, 50, 50)), 3 * dpiScaling.y()));
-        painter.drawText (QPointF (width / 2 + radius - (radius - prevRadius) / 2.0 - 5, height / 2), QString::number (n));
+        painter.drawText (QPointF (width / 2 + radius - (radius - prevRadius) / 2.0 - 5, height / 2), QString::number (n + 1));
         prevRadius      = radius;
     }
 }
