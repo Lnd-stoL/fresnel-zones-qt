@@ -72,7 +72,7 @@ void Fresnel::updateAmplitudePlate (int oldFN)
     }
 
     if (currentFresnelNumber > oldFN) {
-        for (int i = 0; i < currentFresnelNumber - oldFN; ++i) {
+        for (int i = 0; i <= currentFresnelNumber - oldFN; ++i) {
             openedZones.push_back (true);
         }
     } else {

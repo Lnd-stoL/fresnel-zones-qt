@@ -32,7 +32,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;
 
-        if (_fresnel->isZoneOpened (n))
+        if (_fresnel->isZoneOpened (n - 1))
         {
             if (n == fresnelNumber)  painter.setBrush (QBrush (QColor (0, 0, 0, 0)));
             else  painter.setBrush (colorBrush);
@@ -69,7 +69,7 @@ void ZonesGraph::_drawPhasePlate (QPainter &painter, QPen &dashedPen, double squ
 
     unsigned fresnelNumber = _fresnel->fresnelNumber();
     double   prevRadius    = 0.0;
-    painter.setPen (dashedPen);
+    painter.setPen (QPen (QColor (255, 255, 255), 5 * dpiScaling.y()));
     float wholeRad = squareWidth * (_fresnel->getHoleRadius() / maxRad);
     painter.drawEllipse (QPoint (width / 2, height / 2), wholeRad, wholeRad);
 

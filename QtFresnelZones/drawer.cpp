@@ -6,7 +6,7 @@ Drawer::Drawer()
 }
 
 
-void Drawer::drawArrow (QPainter& painter, unsigned x0, unsigned y0, unsigned x1, unsigned y1, double k1, double k2)
+void Drawer::drawArrow (QPainter& painter, double x0, double y0, double x1, double y1, double k1, double k2)
 {
     double tx = (double)x1 - (double)x0;
     double ty = (double)y1 - (double)y0;

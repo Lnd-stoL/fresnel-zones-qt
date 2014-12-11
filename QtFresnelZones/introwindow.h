@@ -20,9 +20,15 @@ public:
     explicit IntroWindow(Fresnel *fresnel);
     ~IntroWindow();
 
+private slots:
+    void button_Back_Pressed();
+    void fresnelChanged();
+
 private:
     Fresnel *_fresnel = nullptr;
     Ui::IntroWindow *ui;
+
+    void _update();
 };
 
 #endif // INTROWINDOW_H

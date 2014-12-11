@@ -3,14 +3,19 @@
 
 #include "fresnel.h"
 #include "drawer.h"
+#include "introwindow.h"
 
 #include <QWidget>
 #include <QGLWidget>
+#include <QMouseEvent>
+#include <QResizeEvent>
 
 class SchemeGraph : public QGLWidget
 {
     Q_OBJECT
 public:
+    enum SchemeType { MovingScheme, PhasePlateScheme, AmplitudePlateScheme };
+
     QVector<double> plateX;
     QVector<double> plateY;
     QPointF         holeCenterPosition;
@@ -19,12 +24,16 @@ public:
     double          eyeCenterXRelativePosition          = 0.8;     // Eye position relative to graph width
     double          holeRelativeSize                    = 0.6;     // Hole size relative to graph height
     double          eyeRelativeSize                     = 0.1;     // Eye size relative to graph height
-    int             platePenWidth                       = 3;
+    int             platePenWidth                       = 4;
     int             wallPenWidth                        = 8;
-    int             eyePenWidth                         = 1;
-    int             axisPenWidth                        = 2;
+    int             eyePenWidth                         = 2;
+    int             axisPenWidth                        = 3;
     int             oneSideRayCount                     = 2;
     bool            animating                           = false;
+    SchemeType      schemeType                          = SchemeType::PhasePlateScheme;
+
+    bool            isMousePressed                      = false;
+    QPoint          cursorOld;
 
     Fresnel        *fresnel = nullptr;
 
@@ -42,14 +51,24 @@ public:
     void     drawDiffractedRays (QPainter& painter);
     void     drawFresnelZoneRays (QPainter& painter);
 
-    void     drawScheme (QPainter& painter);
+    void     drawPhasePlateScheme (QPainter& painter);
+    void     drawAmplitudePlateScheme (QPainter& painter);
+    void     drawMovingScheme (QPainter& painter);
 
 signals:
+    void     fresnelChanged();
 
 public slots:
 
+private:
+    bool isMouseOnEye(QPoint cursor);
+
 protected:
     void paintEvent (QPaintEvent *event);
+    void mousePressEvent (QMouseEvent *event);
+    void mouseReleaseEvent (QMouseEvent *event);
+    void mouseMoveEvent (QMouseEvent *event);
+    void resizeEvent (QResizeEvent *event);
 
 };
 

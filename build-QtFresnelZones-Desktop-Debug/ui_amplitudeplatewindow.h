@@ -27,6 +27,7 @@
 #include "fontscalablelabel.h"
 #include "fontscalablepushbutton.h"
 #include "fontscalablespinbox.h"
+#include "schemegraph.h"
 #include "spiralgraph.h"
 #include "zonesgraph.h"
 
@@ -43,7 +44,6 @@ public:
     QVBoxLayout *verticalLayout_3;
     FontScalableLabel *label_13;
     QProgressBar *progressBar;
-    ZonesGraph *widget_Zones;
     QWidget *widget_4;
     QGridLayout *gridLayout_6;
     QVBoxLayout *verticalLayout_4;
@@ -51,6 +51,10 @@ public:
     QHBoxLayout *horizontalLayout_12;
     QSlider *slider_WaveLength;
     FontScalableSpinBox *spin_WaveLength;
+    QWidget *widget_5;
+    QHBoxLayout *horizontalLayout_13;
+    SchemeGraph *widget_schemeGraph;
+    ZonesGraph *widget_Zones;
     QFrame *frame_2;
     QGridLayout *gridLayout_4;
     SpiralGraph *widget_spiralGraph;
@@ -167,14 +171,6 @@ public:
 
         gridLayout_5->addWidget(widget_3, 0, 0, 1, 2, Qt::AlignTop);
 
-        widget_Zones = new ZonesGraph(frame_4);
-        widget_Zones->setObjectName(QStringLiteral("widget_Zones"));
-        sizePolicy.setHeightForWidth(widget_Zones->sizePolicy().hasHeightForWidth());
-        widget_Zones->setSizePolicy(sizePolicy);
-        widget_Zones->setMinimumSize(QSize(0, 0));
-
-        gridLayout_5->addWidget(widget_Zones, 2, 0, 1, 2);
-
         widget_4 = new QWidget(frame_4);
         widget_4->setObjectName(QStringLiteral("widget_4"));
         QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -235,6 +231,33 @@ public:
 
 
         gridLayout_5->addWidget(widget_4, 1, 0, 1, 1, Qt::AlignTop);
+
+        widget_5 = new QWidget(frame_4);
+        widget_5->setObjectName(QStringLiteral("widget_5"));
+        horizontalLayout_13 = new QHBoxLayout(widget_5);
+        horizontalLayout_13->setSpacing(7);
+        horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
+        horizontalLayout_13->setContentsMargins(0, 0, 0, 0);
+        widget_schemeGraph = new SchemeGraph(widget_5);
+        widget_schemeGraph->setObjectName(QStringLiteral("widget_schemeGraph"));
+        widget_schemeGraph->setStyleSheet(QStringLiteral("background-color:#ffffff;"));
+
+        horizontalLayout_13->addWidget(widget_schemeGraph);
+
+        widget_Zones = new ZonesGraph(widget_5);
+        widget_Zones->setObjectName(QStringLiteral("widget_Zones"));
+        sizePolicy.setHeightForWidth(widget_Zones->sizePolicy().hasHeightForWidth());
+        widget_Zones->setSizePolicy(sizePolicy);
+        widget_Zones->setMinimumSize(QSize(0, 0));
+        widget_schemeGraph->raise();
+        widget_schemeGraph->raise();
+
+        horizontalLayout_13->addWidget(widget_Zones);
+
+        horizontalLayout_13->setStretch(0, 2);
+        horizontalLayout_13->setStretch(1, 6);
+
+        gridLayout_5->addWidget(widget_5, 2, 0, 1, 1);
 
         gridLayout_5->setRowStretch(0, 1);
         gridLayout_5->setRowStretch(1, 1);
@@ -658,7 +681,7 @@ public:
 
         gridLayout->addWidget(frame, 1, 0, 1, 1, Qt::AlignLeft);
 
-        gridLayout->setColumnStretch(1, 2);
+        gridLayout->setColumnStretch(1, 3);
         gridLayout->setColumnStretch(2, 2);
         AmplitudePlateWindow->setCentralWidget(centralwidget);
 
