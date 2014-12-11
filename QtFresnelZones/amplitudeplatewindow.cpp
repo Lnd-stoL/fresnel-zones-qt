@@ -29,10 +29,12 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     ui->widget_spiralGraph->fresnel  = _fresnel;
 
     _fresnel->setHoleRadius (Fresnel::radius_max * 0.85);
-    _progressBarHigh = _fresnel->intensity() * 50;
     button_Tune_Pressed();
     ui->widget_schemeGraph->fresnel  = _fresnel;
     ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::AmplitudePlateScheme;
+
+    //_fresnel->setHoleRadius (_fresnel->zoneOuterRadius(6));
+    _progressBarHigh = _fresnel->intensity();
     _update();
 }
 
@@ -126,7 +128,7 @@ void AmplitudePlateWindow::_updateProgressBar()
     ui->progressBar->setStyleSheet (st);
     ui->progressBar->setGeometry (r.x(), r.y() + 3, r.width(), r.height() - 6);
 
-    unsigned progress = (_fresnel->intensity() / _progressBarHigh) * 100;
+    unsigned progress = (_fresnel->intensity() / (_progressBarHigh * 15.9)) * 100;
     if (progress < 0)    progress = -progress;
     if (progress > 100)  progress = 100;
 
@@ -148,6 +150,8 @@ void AmplitudePlateWindow::_update()
     _fresnel->spiral (ui->widget_spiralGraph->spiralX, ui->widget_spiralGraph->spiralY);
     ui->widget_spiralGraph->repaint();
     ui->widget_schemeGraph->repaint();
+    ui->label_intensity->setText("Интенсивность в точке наблюдения: " +
+                                 QString::number ((int)round (_fresnel->intensity() / this->_progressBarHigh)) + " Io");
 
     _updateProgressBar();
 }
@@ -188,7 +192,7 @@ void AmplitudePlateWindow::button_OpenOdd_Pressed()
 
 void AmplitudePlateWindow::button_Tune_Pressed()
 {
-    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (7));
+    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (6));
     _update();
 }
 

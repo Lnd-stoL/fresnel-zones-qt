@@ -67,7 +67,7 @@
            <number>15</number>
           </property>
           <item>
-           <widget class="FontScalableLabel" name="label_13">
+           <widget class="FontScalableLabel" name="label_intensity">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -76,12 +76,14 @@
             </property>
             <property name="font">
              <font>
-              <family>Arial</family>
+              <family>Times New Roman</family>
               <pointsize>16</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>Интенсивность в точке наблюдения:</string>
+             <string>Интенсивность в точке наблюдения: 1 Io</string>
             </property>
            </widget>
           </item>
@@ -1090,26 +1092,26 @@ padding-right:8%;
    <header>fontscalablepushbutton.h</header>
   </customwidget>
   <customwidget>
-   <class>SpiralGraph</class>
-   <extends>QWidget</extends>
-   <header>spiralgraph.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ZonesGraph</class>
    <extends>QWidget</extends>
    <header>zonesgraph.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>FontScalableSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>fontscalablespinbox.h</header>
-  </customwidget>
-  <customwidget>
    <class>SchemeGraph</class>
    <extends>QWidget</extends>
    <header>schemegraph.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SpiralGraph</class>
+   <extends>QWidget</extends>
+   <header>spiralgraph.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FontScalableSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>fontscalablespinbox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
