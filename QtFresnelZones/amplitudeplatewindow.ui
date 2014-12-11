@@ -246,8 +246,6 @@
               <height>0</height>
              </size>
             </property>
-            <zorder>widget_schemeGraph</zorder>
-            <zorder>widget_schemeGraph</zorder>
            </widget>
           </item>
          </layout>
@@ -280,13 +278,38 @@
        <property name="spacing">
         <number>0</number>
        </property>
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="SpiralGraph" name="widget_spiralGraph" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="FontScalableLabel" name="label_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-bottom:10;</string>
+         </property>
+         <property name="text">
+          <string>Ампдитуда на оси</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -654,7 +677,7 @@ padding-right:8%;
 </string>
             </property>
             <property name="text">
-             <string>Закрыть нечётные</string>
+             <string>Закрыть чётные</string>
             </property>
            </widget>
           </item>
@@ -717,7 +740,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 0</string>
+              <string>зона 1</string>
              </property>
             </widget>
            </item>
@@ -753,7 +776,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 1</string>
+              <string>зона 2</string>
              </property>
             </widget>
            </item>
@@ -789,7 +812,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 2</string>
+              <string>зона 3</string>
              </property>
             </widget>
            </item>
@@ -825,7 +848,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 3</string>
+              <string>зона 4</string>
              </property>
             </widget>
            </item>
@@ -861,7 +884,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 4</string>
+              <string>зона 5</string>
              </property>
             </widget>
            </item>
@@ -897,7 +920,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 5</string>
+              <string>зона 6</string>
              </property>
             </widget>
            </item>
@@ -933,7 +956,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 6</string>
+              <string>зона 7</string>
              </property>
             </widget>
            </item>
@@ -969,7 +992,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 7</string>
+              <string>зона 8</string>
              </property>
             </widget>
            </item>
@@ -1005,7 +1028,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 8</string>
+              <string>зона 9</string>
              </property>
             </widget>
            </item>
@@ -1041,7 +1064,7 @@ padding-right:8%;
               </font>
              </property>
              <property name="text">
-              <string>зона 9</string>
+              <string>зона 10</string>
              </property>
             </widget>
            </item>

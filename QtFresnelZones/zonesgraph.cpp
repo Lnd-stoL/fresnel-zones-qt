@@ -18,7 +18,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
 
     QPen zonesPen (QBrush (QColor (255, 255, 255)), 3 * dpiScaling.y());
-    QFont font = QFont ("Arial", 14 * dpiScaling.y());
+    QFont font = QFont ("Arial", 13 * dpiScaling.y());
     //font.setBold (true);
     painter.setFont (font);
 
@@ -26,7 +26,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
     double   prevRadius    = 0.0;
     painter.setPen (dashedPen);
     unsigned startWithZone = fresnelNumber;
-    //if (fresnelNumber )
+
     for (unsigned n = fresnelNumber; n != 0; --n)
     {
         double nextZone = _fresnel->zoneOuterRadius (n);
@@ -43,7 +43,8 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double
         painter.setPen (zonesPen);
     }
 
-    for (unsigned n = 0; n < fresnelNumber && n < 5; ++n)
+    prevRadius = 0;
+    for (unsigned n = 1; n <= fresnelNumber && n < 5 || n == 1; ++n)
     {
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;

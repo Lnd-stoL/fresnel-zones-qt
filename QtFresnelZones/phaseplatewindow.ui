@@ -114,7 +114,7 @@
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,2">
+            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,3">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -130,6 +130,16 @@
              <property name="bottomMargin">
               <number>0</number>
              </property>
+             <item>
+              <widget class="ZonesGraph" name="widget_zonesGraph" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
              <item alignment="Qt::AlignTop">
               <widget class="QFrame" name="frame_7">
                <property name="frameShape">
@@ -361,7 +371,7 @@
                          </font>
                         </property>
                         <property name="text">
-                         <string>Зубчатая</string>
+                         <string>Полуволновая</string>
                         </property>
                        </widget>
                       </item>
@@ -413,9 +423,6 @@
                </layout>
               </widget>
              </item>
-             <item>
-              <widget class="ZonesGraph" name="widget_zonesGraph" native="true"/>
-             </item>
             </layout>
            </widget>
           </item>
@@ -452,6 +459,32 @@
           <property name="bottomMargin">
            <number>0</number>
           </property>
+          <item>
+           <widget class="FontScalableLabel" name="label_8">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">padding-bottom:10;
+</string>
+            </property>
+            <property name="text">
+             <string>Амплитуда на оси</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="SpiralGraph" name="widget_spiralGraph" native="true">
             <property name="sizePolicy">
@@ -627,9 +660,6 @@ padding-right:5%</string>
         </widget>
        </item>
       </layout>
-      <zorder>frame</zorder>
-      <zorder>frame_2</zorder>
-      <zorder>widget</zorder>
      </widget>
     </item>
    </layout>

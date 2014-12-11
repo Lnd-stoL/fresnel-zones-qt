@@ -1,6 +1,7 @@
 
 #include "intensityplot.h"
 #include "hidpiscaler.h"
+#include "colortransform.h"
 
 
 IntensityPlot::IntensityPlot (QWidget *parent) :
@@ -18,7 +19,7 @@ IntensityPlot::IntensityPlot (QWidget *parent) :
     yAxis->setBasePen (axisPen);
     yAxis->setTickLabels (false);
 
-    this->graph(0)->setPen (QPen (QBrush (QColor (60, 60, 255)), 3 * dpiScaling.y()));
+
     yAxis->setLabel ("Интенсивность");
 
     _switchToXDependence();
@@ -170,6 +171,10 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
 
 void IntensityPlot::update (Fresnel *fresnel)
 {
+    QVector2D dpiScaling = HiDpiScaler::scalingFactors();
+    this->graph(0)->setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
+                                  3 * dpiScaling.y()));
+
     if (_xDependenceMode)  _updateXDependence (fresnel);
     else                   _updateRDependence (fresnel);
 
