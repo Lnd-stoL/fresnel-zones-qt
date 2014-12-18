@@ -47,7 +47,7 @@ public:
     QSpacerItem *verticalSpacer_8;
     FontScalableLabel *label_3;
     QSpacerItem *verticalSpacer_2;
-    FontScalablePushButton *pushButton_PhasePlate_2;
+    FontScalablePushButton *pushButton_Authors;
     FontScalablePushButton *pushButton_AmplitudePlate;
     QSpacerItem *verticalSpacer_9;
     QWidget *widget_2;
@@ -179,16 +179,16 @@ public:
 
         gridLayout->addItem(verticalSpacer_2, 0, 1, 1, 1);
 
-        pushButton_PhasePlate_2 = new FontScalablePushButton(centralwidget);
-        pushButton_PhasePlate_2->setObjectName(QStringLiteral("pushButton_PhasePlate_2"));
-        sizePolicy.setHeightForWidth(pushButton_PhasePlate_2->sizePolicy().hasHeightForWidth());
-        pushButton_PhasePlate_2->setSizePolicy(sizePolicy);
-        pushButton_PhasePlate_2->setMinimumSize(QSize(0, 70));
-        pushButton_PhasePlate_2->setFont(font);
-        pushButton_PhasePlate_2->setStyleSheet(QLatin1String("padding-top:15%;\n"
+        pushButton_Authors = new FontScalablePushButton(centralwidget);
+        pushButton_Authors->setObjectName(QStringLiteral("pushButton_Authors"));
+        sizePolicy.setHeightForWidth(pushButton_Authors->sizePolicy().hasHeightForWidth());
+        pushButton_Authors->setSizePolicy(sizePolicy);
+        pushButton_Authors->setMinimumSize(QSize(0, 70));
+        pushButton_Authors->setFont(font);
+        pushButton_Authors->setStyleSheet(QLatin1String("padding-top:15%;\n"
 "padding-bottom:15%"));
 
-        gridLayout->addWidget(pushButton_PhasePlate_2, 13, 1, 1, 1);
+        gridLayout->addWidget(pushButton_Authors, 13, 1, 1, 1);
 
         pushButton_AmplitudePlate = new FontScalablePushButton(centralwidget);
         pushButton_AmplitudePlate->setObjectName(QStringLiteral("pushButton_AmplitudePlate"));
@@ -236,7 +236,7 @@ public:
         pushButton_Exit->setText(QApplication::translate("TitleWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label_3->setText(QApplication::translate("TitleWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">\320\234\320\276\321\201\320\272\320\276\320\262\321\201\320\272\320\270\320\271 \320\223\320\276\321\201\321\203\320\264\320\260\321\200\321\201\321\202\320\262\320\265\320\275\320\275\321\213\320\271 \320\243\320\275\320\270\320\262\320\265\321\200\321\201\320\270\321\202\320\265\321\202 \320\270\320\274. \320\234.\320\222. \320\233\320\276\320\274\320\276\320\275\320\276\321\201\320\276\320\262\320\260</span></p><p align=\"center\"><span style=\" font-size:18pt;\">\320\232\320\276\320\274\320\277\321\214\321\216\321\202\320\265\321\200\320\275\321\213\320\265 \320\264\320\265\320\274\320\276\320\275\321\201\321\202\321\200\320\260\321\206\320\270\320\270 \320\277\320\276 \320\272\321\203\321\200\321\201\321\203 \320\273\320\265\320\272\321\206\320\270\320\271 &quot;\320\244\320\270\320\267\320\270\320\272\320\260 \320\262\320\276\320\273\320\275\320\276\320\262\321\213\321\205 \320\277\321\200\320\276\321\206\320\265\321\201\321\201\320"
                         "\276\320\262&quot;</span></p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-size:36pt; font-weight:600;\">\320\227\320\276\320\275\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260 \320\244\321\200\320\265\320\275\320\265\320\273\321\217</span></p></body></html>", 0));
-        pushButton_PhasePlate_2->setText(QApplication::translate("TitleWindow", "\320\220\320\262\321\202\320\276\321\200\321\213", 0));
+        pushButton_Authors->setText(QApplication::translate("TitleWindow", "\320\220\320\262\321\202\320\276\321\200\321\213", 0));
         pushButton_AmplitudePlate->setText(QApplication::translate("TitleWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
     } // retranslateUi
 

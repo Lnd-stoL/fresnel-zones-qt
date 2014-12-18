@@ -5,6 +5,7 @@
 #include "intensitygraphwindow.h"
 #include "amplitudeplatewindow.h"
 #include "phaseplatewindow.h"
+#include "qmessagebox.h"
 
 #include <QDebug>
 #include <QApplication>
@@ -20,6 +21,7 @@ TitleWindow::TitleWindow (QWidget *parent) :
     connect (ui->pushButton_IntensityGraph, SIGNAL(clicked()), this, SLOT(openIntensityGraphWindow()));
     connect (ui->pushButton_AmplitudePlate, SIGNAL(clicked()), this, SLOT(openAmplitudePlateWindow()));
     connect (ui->pushButton_PhasePlate, SIGNAL(clicked()), this, SLOT(openPhasePlateWindow()));
+    connect (ui->pushButton_Authors, SIGNAL(clicked()), this, SLOT(openAuthorsWindow()));
 
     connect (ui->pushButton_Exit, SIGNAL(clicked()), this, SLOT(exitApplication()));
 }
@@ -59,6 +61,14 @@ void TitleWindow::openPhasePlateWindow()
     PhasePlateWindow *wnd = new PhasePlateWindow (&fresnel, this);
     wnd->setAttribute (Qt::WA_DeleteOnClose);
     wnd->showFullScreen();
+}
+
+void TitleWindow::openAuthorsWindow()
+{
+    QMessageBox authors;
+    authors.setWindowTitle ("Зонная пластинка Френеля");
+    authors.setText ("Александр Царьков\nЛеонид Столяров\n\nВМК МГУ 2014");
+    authors.exec ();
 }
 
 

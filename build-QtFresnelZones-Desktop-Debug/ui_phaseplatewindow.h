@@ -435,7 +435,7 @@ public:
         label_8->setText(QApplication::translate("PhasePlateWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\260 \320\275\320\260 \320\276\321\201\320\270", 0));
         pushButton_Back->setText(QApplication::translate("PhasePlateWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("PhasePlateWindow", "\320\244\320\260\320\267\320\276\320\262\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
-        pushButton_Next->setText(QApplication::translate("PhasePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
+        pushButton_Next->setText(QApplication::translate("PhasePlateWindow", "\320\222 \320\275\320\260\321\207\320\260\320\273\320\276", 0));
     } // retranslateUi
 
 };

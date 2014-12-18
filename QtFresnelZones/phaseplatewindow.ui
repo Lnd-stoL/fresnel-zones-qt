@@ -649,7 +649,7 @@ padding-left:5%;
 padding-right:5%</string>
             </property>
             <property name="text">
-             <string>Вперед</string>
+             <string>В начало</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -683,15 +683,15 @@ padding-right:5%</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>SchemeGraph</class>
-   <extends>QWidget</extends>
-   <header>schemegraph.h</header>
-  </customwidget>
-  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SchemeGraph</class>
+   <extends>QWidget</extends>
+   <header>schemegraph.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
