@@ -15,14 +15,14 @@ class SpiralGraph : public QGLWidget
 public:
     QVector<double> spiralX;
     QVector<double> spiralY;
-
-    Fresnel        *fresnel = nullptr;
+    Fresnel         *fresnel = nullptr;
+    double          _maxValue = 0;
 
 
 public:
     explicit SpiralGraph (QWidget *parent = 0);
     void useFresnel (Fresnel *fresnel_);
-
+    void dontScale (double maxVal);
 
 protected:
 

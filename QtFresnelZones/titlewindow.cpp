@@ -1,3 +1,4 @@
+
 #include "titlewindow.h"
 #include "ui_titlewindow.h"
 #include "introwindow.h"
@@ -32,14 +33,14 @@ TitleWindow::~TitleWindow()
 
 void TitleWindow::openIntroWindow()
 {
-    IntroWindow *wnd = new IntroWindow (&fresnel);
+    IntroWindow *wnd = new IntroWindow (&fresnel, this);
     wnd->setAttribute (Qt::WA_DeleteOnClose);
     wnd->showFullScreen();
 }
 
 void TitleWindow::openIntensityGraphWindow()
 {
-    IntensityGraphWindow *wnd = new IntensityGraphWindow (&fresnel);
+    IntensityGraphWindow *wnd = new IntensityGraphWindow (&fresnel, this);
     wnd->setAttribute (Qt::WA_DeleteOnClose);
     wnd->showFullScreen();
 }
@@ -47,7 +48,7 @@ void TitleWindow::openIntensityGraphWindow()
 
 void TitleWindow::openAmplitudePlateWindow()
 {
-    AmplitudePlateWindow *wnd = new AmplitudePlateWindow (&fresnel);
+    AmplitudePlateWindow *wnd = new AmplitudePlateWindow (&fresnel, this);
     wnd->setAttribute (Qt::WA_DeleteOnClose);
     wnd->showFullScreen();
 }
@@ -55,7 +56,7 @@ void TitleWindow::openAmplitudePlateWindow()
 
 void TitleWindow::openPhasePlateWindow()
 {
-    PhasePlateWindow *wnd = new PhasePlateWindow (&fresnel);
+    PhasePlateWindow *wnd = new PhasePlateWindow (&fresnel, this);
     wnd->setAttribute (Qt::WA_DeleteOnClose);
     wnd->showFullScreen();
 }

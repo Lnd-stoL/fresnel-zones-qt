@@ -36,6 +36,10 @@ void IntensityPlot::useMode (bool xDependence)
 {
     if (xDependence == _xDependenceMode)  return;
 
+    _xDistance_SinceLastUpdate  = 0;
+    _holeRadius_SinceLastUpdate = 0;
+    _waveLength_SinceLastUpdate = 0;
+
     _xDependenceMode = xDependence;
     if (xDependence)   _switchToXDependence();
     else               _switchToRDependence();
@@ -98,19 +102,22 @@ void IntensityPlot::_updateGraphData (double highest, double step, double lowest
 void IntensityPlot::_updateXDependence (Fresnel *fresnel)
 {
     _scaling = Fresnel::scale_to_si_exp;
-    double lowest  = Fresnel::dist_min;
-    double highest = Fresnel::dist_max;
-    double step = (highest - lowest) / 1000.0;
+    if (_holeRadius_ChangedSinceLastUpdate || _waveLength_ChangedSinceLastUpdate)
+    {
+        double lowest  = Fresnel::dist_min;
+        double highest = Fresnel::dist_max;
+        double step = (double) (highest - lowest) / 1000.0;
 
-    double oldDistance = fresnel->getObserverDistance();    // this is to save the current observer distance
-    _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {
-        fresnel->setObserverDistance (x);
-        return fresnel->intensity();
-    });
-    fresnel->setObserverDistance (oldDistance);
+        double oldDistance = fresnel->getObserverDistance();    // this is to save the current observer distance
+        _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {
+            fresnel->setObserverDistance (x);
+            return fresnel->intensity();
+        });
+        fresnel->setObserverDistance (oldDistance);
+    }
 
     _backLine->start->setCoords (fresnel->getObserverDistance() * _scaling, 0);
-    _backLine->end->setCoords (fresnel->getObserverDistance() * _scaling, yAxis->range ().size ());
+    _backLine->end->setCoords (fresnel->getObserverDistance() * _scaling, yAxis->range().size());
 
     _line->start->setCoords (fresnel->getObserverDistance() * _scaling, 0);
     _line->end->setCoords (fresnel->getObserverDistance() * _scaling, fresnel->intensity());
@@ -122,15 +129,18 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
     _scaling = Fresnel::scale_to_milli_exp;
     double lowest  = Fresnel::radius_min;
     double highest = Fresnel::radius_max;
-    double step = (highest - lowest) / 1000.0;
 
-    double oldHoleRadius = fresnel->getHoleRadius();
-    _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {
-        fresnel->setHoleRadius (x);
-        return fresnel->intensity();
-    });
-    fresnel->setHoleRadius (oldHoleRadius);
+    if (_xDistance_ChangedSinceLastUpdate || _waveLength_ChangedSinceLastUpdate)
+    {
+        double step = (double) (highest - lowest) / 1000.0;
 
+        double oldHoleRadius = fresnel->getHoleRadius();
+        _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {
+            fresnel->setHoleRadius (x);
+            return fresnel->intensity();
+        });
+        fresnel->setHoleRadius (oldHoleRadius);
+    }
 
     this->clearItems();
 
@@ -176,6 +186,14 @@ void IntensityPlot::update (Fresnel *fresnel)
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
     this->graph(0)->setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
                                   3 * dpiScaling.y()));
+
+    _xDistance_ChangedSinceLastUpdate  = fresnel->getObserverDistance() != _xDistance_SinceLastUpdate;
+    _holeRadius_ChangedSinceLastUpdate = fresnel->getHoleRadius()       != _holeRadius_SinceLastUpdate;
+    _waveLength_ChangedSinceLastUpdate = fresnel->getWaveLength()       != _waveLength_SinceLastUpdate;
+
+    _xDistance_SinceLastUpdate  = fresnel->getObserverDistance();
+    _holeRadius_SinceLastUpdate = fresnel->getHoleRadius();
+    _waveLength_SinceLastUpdate = fresnel->getWaveLength();
 
     if (_xDependenceMode)  _updateXDependence (fresnel);
     else                   _updateRDependence (fresnel);

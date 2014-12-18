@@ -1,8 +1,10 @@
+
 #ifndef TITLEWINDOW_H
 #define TITLEWINDOW_H
 
 #include <QMainWindow>
 #include "fresnel.h"
+
 
 namespace Ui {
 class TitleWindow;
@@ -20,7 +22,7 @@ public:
     explicit TitleWindow (QWidget *parent = 0);
     ~TitleWindow();
 
-private slots:
+public slots:
     void openIntroWindow();
     void openIntensityGraphWindow();
     void openAmplitudePlateWindow();

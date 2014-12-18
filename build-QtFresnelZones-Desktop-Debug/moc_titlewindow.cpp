@@ -58,11 +58,11 @@ static const uint qt_meta_data_TitleWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x08,
-       3,    0,   40,    2, 0x08,
-       4,    0,   41,    2, 0x08,
-       5,    0,   42,    2, 0x08,
-       6,    0,   43,    2, 0x08,
+       1,    0,   39,    2, 0x0a,
+       3,    0,   40,    2, 0x0a,
+       4,    0,   41,    2, 0x0a,
+       5,    0,   42,    2, 0x0a,
+       6,    0,   43,    2, 0x0a,
 
  // slots: parameters
     QMetaType::Void,

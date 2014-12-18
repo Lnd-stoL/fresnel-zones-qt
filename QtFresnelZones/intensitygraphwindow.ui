@@ -143,7 +143,7 @@ padding-right:5%</string>
              </font>
             </property>
             <property name="text">
-             <string>Исследование интенсивности на центральной оси</string>
+             <string>Интенсивность на оси</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -164,7 +164,7 @@ padding-right:5%</string>
            </spacer>
           </item>
           <item>
-           <widget class="FontScalablePushButton" name="pushButton_Back_2">
+           <widget class="FontScalablePushButton" name="pushButton_Next">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -314,6 +314,8 @@ padding-right:5%</string>
                <font>
                 <family>Arial</family>
                 <pointsize>16</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
                 <underline>true</underline>
                </font>
               </property>
@@ -555,7 +557,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string>  мм</string>
+                 <string>  м</string>
                 </property>
                </widget>
               </item>
@@ -913,12 +915,12 @@ padding-right:5%</string>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <italic>true</italic>
           </font>
          </property>
          <property name="text">
-          <string>Установить число видимых зон:</string>
+          <string>Установить число зон в отверстии:</string>
          </property>
         </widget>
        </item>

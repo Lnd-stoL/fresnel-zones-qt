@@ -474,7 +474,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">padding-bottom:10;
+             <string notr="true">padding-bottom:6;
 </string>
             </property>
             <property name="text">
@@ -620,7 +620,7 @@ padding-right:5%</string>
            </spacer>
           </item>
           <item>
-           <widget class="FontScalablePushButton" name="pushButton_Back_2">
+           <widget class="FontScalablePushButton" name="pushButton_Next">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -677,12 +677,6 @@ padding-right:5%</string>
    <header>fontscalablepushbutton.h</header>
   </customwidget>
   <customwidget>
-   <class>SpiralGraph</class>
-   <extends>QWidget</extends>
-   <header>spiralgraph.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ZonesGraph</class>
    <extends>QWidget</extends>
    <header>zonesgraph.h</header>
@@ -692,6 +686,12 @@ padding-right:5%</string>
    <class>SchemeGraph</class>
    <extends>QWidget</extends>
    <header>schemegraph.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SpiralGraph</class>
+   <extends>QWidget</extends>
+   <header>spiralgraph.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -1,3 +1,4 @@
+
 #ifndef AMPLITUDEPLATEWINDOW_H
 #define AMPLITUDEPLATEWINDOW_H
 
@@ -11,20 +12,24 @@ namespace Ui {
 class AmplitudePlateWindow;
 }
 
+class TitleWindow;
+
 
 class AmplitudePlateWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit AmplitudePlateWindow (Fresnel *fresnel);
+    explicit AmplitudePlateWindow (Fresnel *fresnel, TitleWindow *tw);
     ~AmplitudePlateWindow();
 
 protected:
+    TitleWindow *titleWindow;
     Fresnel *_fresnel;
     double _progressBarHigh;
+    double _initialIntensity;
 
-    static const unsigned zoneCheckBoxesNum = 10;
+    static const unsigned zoneCheckBoxesNum = 9;
     QCheckBox* _zoneCheckBoxes[zoneCheckBoxesNum];
     QLabel* _zoneLabels[zoneCheckBoxesNum];
 
@@ -41,6 +46,7 @@ private slots:
     void _update();
 
     void button_Back_Pressed();
+    void button_Next_Pressed();
     void button_OpenAll_Pressed();
     void button_CloseAll_Pressed();
     void button_OpenOdd_Pressed();

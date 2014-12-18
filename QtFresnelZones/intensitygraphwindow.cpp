@@ -1,19 +1,24 @@
+
 #include "intensitygraphwindow.h"
 #include "fresnel.h"
 #include "ui_intensitygraphwindow.h"
 #include "qvectormax.h"
+#include "titlewindow.h"
 
 #include <QDebug>
+#include <QTimer>
 
 
-IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel) :
+IntensityGraphWindow::IntensityGraphWindow (Fresnel *fresnel, TitleWindow *tw) :
     QMainWindow (0),
     ui (new Ui::IntensityGraphWindow),
+    titleWindow (tw),
     _fresnel (fresnel)
 {
     ui->setupUi (this);
 
     connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
+    connect (ui->pushButton_Next, SIGNAL(clicked()), this, SLOT(button_Next_Pressed()));
     connect (ui->radioButton_xDependance, SIGNAL(clicked()), this, SLOT(radio_xDependence()));
     connect (ui->radioButton_holeDependance, SIGNAL(clicked()), this, SLOT(radio_holeDependence()));
 
@@ -123,15 +128,8 @@ void IntensityGraphWindow::_changeParameters (double xDistance, double holeRadiu
 
 void IntensityGraphWindow::_update()
 {
-    //_update_FresnelModel();
-
-    if (_waveLength_ChangedSinceLastUpdate ||
-        _xDependenceMode && _holeRadius_ChangedSinceLastUpdate ||
-        (!_xDependenceMode) && _xDistance_ChangedSinceLastUpdate)
-    {
-        ui->widget_Graph->useMode (_xDependenceMode);
-        ui->widget_Graph->update (_fresnel);
-    }
+    ui->widget_Graph->useMode (_xDependenceMode);
+    ui->widget_Graph->update (_fresnel);
 
     _updateSpiralGraph();
     _updateZoneGraph();
@@ -144,14 +142,6 @@ void IntensityGraphWindow::_update_FresnelModel()
     double newXDistance  = Fresnel::si_to_scale_exp * ui->slider_xDistance->value()  / _sliderScaling;
     double newHoleRadius = Fresnel::milli_to_scale_exp * ui->slider_HoleRadius->value() / _sliderScaling;
     double newWaveLength = Fresnel::nano_to_scale_exp  * ui->spin_WaveLength->value();
-
-    _xDistance_ChangedSinceLastUpdate  = _fresnel->getObserverDistance() == newXDistance;
-    _holeRadius_ChangedSinceLastUpdate = _fresnel->getHoleRadius()       == newHoleRadius;
-    _waveLength_ChangedSinceLastUpdate = _fresnel->getWaveLength()       == newWaveLength;
-
-    _fresnel->setObserverDistance (newXDistance);
-    _fresnel->setHoleRadius (newHoleRadius);
-    _fresnel->setWaveLength (newWaveLength);
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -162,12 +152,29 @@ void IntensityGraphWindow::button_Back_Pressed()
 }
 
 
+void IntensityGraphWindow::button_Next_Pressed()
+{
+    this->close();
+    titleWindow->openAmplitudePlateWindow();
+}
+
+
 void IntensityGraphWindow::slider_xDistance_Changed (int value)
 {
     double val = (double) value / _sliderScaling;
     ui->spin_xDistance->setValue (val);
     _fresnel->setObserverDistance (Fresnel::si_to_scale_exp * val);
+    if (_xDependenceMode)
+    {
+        if (_updateTimer == nullptr)
+        {
+            _updateTimer = new QTimer (this);
+            connect (_updateTimer, SIGNAL(timeout()), this, SLOT(update_Needed()));
+            _updateTimer->start (40);
+        }
+    }
 }
+
 
 void IntensityGraphWindow::slider_WaveLength_Changed (int value)
 {
@@ -176,17 +183,35 @@ void IntensityGraphWindow::slider_WaveLength_Changed (int value)
     _fresnel->setWaveLength (Fresnel::nano_to_scale_exp * val);
 }
 
+
 void IntensityGraphWindow::slider_HoleRadius_Changed (int value)
 {
     double val = (double) value / _sliderScaling;
     ui->spin_HoleRadius->setValue (val);
     _fresnel->setHoleRadius (Fresnel::milli_to_scale_exp * val);
+
+    if (!_xDependenceMode)
+    {
+        if (_updateTimer == nullptr)
+        {
+            _updateTimer = new QTimer (this);
+            connect (_updateTimer, SIGNAL(timeout()), this, SLOT(update_Needed()));
+            _updateTimer->start (40);
+        }
+    }
 }
 
 
 void IntensityGraphWindow::update_Needed()
 {
     _update();
+
+    if (_updateTimer != nullptr)
+    {
+        _updateTimer->stop();
+        delete _updateTimer;
+        _updateTimer = nullptr;
+    }
 }
 
 

@@ -1,12 +1,16 @@
+
 #include "introwindow.h"
 #include "ui_introwindow.h"
+#include "titlewindow.h"
 
-IntroWindow::IntroWindow(Fresnel *fresnel) :
-    QMainWindow(nullptr),
-    ui(new Ui::IntroWindow),
-    _fresnel(fresnel)
+
+IntroWindow::IntroWindow (Fresnel *fresnel, TitleWindow *tw) :
+    QMainWindow (nullptr),
+    ui (new Ui::IntroWindow),
+    titleWindow (tw),
+    _fresnel (fresnel)
 {
-    ui->setupUi(this);
+    ui->setupUi (this);
 
     fresnel->amplitudePlate = false;
     fresnel->phasePlate = false;
@@ -16,25 +20,37 @@ IntroWindow::IntroWindow(Fresnel *fresnel) :
     ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::MovingScheme;
 
     connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
-    connect(ui->widget_schemeGraph, SIGNAL(fresnelChanged()), this, SLOT(fresnelChanged()));
+    connect (ui->widget_schemeGraph, SIGNAL(fresnelChanged()), this, SLOT(fresnelChanged()));
+    connect (ui->pushButton_Next, SIGNAL(clicked()), this, SLOT(button_Next_Pressed()));
 
     this->_update();
 }
+
 
 IntroWindow::~IntroWindow()
 {
     delete ui;
 }
 
+
 void IntroWindow::button_Back_Pressed()
 {
     this->close();
 }
 
+
+void IntroWindow::button_Next_Pressed()
+{
+    this->close();
+    titleWindow->openIntensityGraphWindow();
+}
+
+
 void IntroWindow::fresnelChanged()
 {
     this->_update();
 }
+
 
 void IntroWindow::_update()
 {

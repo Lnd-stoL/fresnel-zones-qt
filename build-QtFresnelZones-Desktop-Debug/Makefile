@@ -3703,9 +3703,9 @@ ui_amplitudeplatewindow.h: ../QtFresnelZones/amplitudeplatewindow.ui \
 ui_phaseplatewindow.h: ../QtFresnelZones/phaseplatewindow.ui \
 		../QtFresnelZones/fontscalablelabel.h \
 		../QtFresnelZones/fontscalablepushbutton.h \
-		../QtFresnelZones/spiralgraph.h \
 		../QtFresnelZones/zonesgraph.h \
 		../QtFresnelZones/schemegraph.h \
+		../QtFresnelZones/spiralgraph.h \
 		/usr/include/qt5/QtWidgets/QLabel \
 		/usr/include/qt5/QtWidgets/qlabel.h \
 		/usr/include/qt5/QtWidgets/qframe.h \
@@ -3928,133 +3928,6 @@ ui_phaseplatewindow.h: ../QtFresnelZones/phaseplatewindow.ui \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
 		/usr/include/qt5/QtGui/qicon.h \
-		../QtFresnelZones/drawer.h \
-		/usr/include/qt5/QtGui/QPainter \
-		/usr/include/qt5/QtGui/qpainter.h \
-		/usr/include/qt5/QtCore/qnamespace.h \
-		/usr/include/qt5/QtCore/qglobal.h \
-		/usr/include/qt5/QtCore/qconfig.h \
-		/usr/include/qt5/QtCore/qfeatures.h \
-		/usr/include/qt5/QtCore/qsystemdetection.h \
-		/usr/include/qt5/QtCore/qprocessordetection.h \
-		/usr/include/qt5/QtCore/qcompilerdetection.h \
-		/usr/include/qt5/QtCore/qglobalstatic.h \
-		/usr/include/qt5/QtCore/qatomic.h \
-		/usr/include/qt5/QtCore/qbasicatomic.h \
-		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
-		/usr/include/qt5/QtCore/qgenericatomic.h \
-		/usr/include/qt5/QtCore/qatomic_msvc.h \
-		/usr/include/qt5/QtCore/qatomic_integrity.h \
-		/usr/include/qt5/QtCore/qoldbasicatomic.h \
-		/usr/include/qt5/QtCore/qatomic_vxworks.h \
-		/usr/include/qt5/QtCore/qatomic_power.h \
-		/usr/include/qt5/QtCore/qatomic_alpha.h \
-		/usr/include/qt5/QtCore/qatomic_armv7.h \
-		/usr/include/qt5/QtCore/qatomic_armv6.h \
-		/usr/include/qt5/QtCore/qatomic_armv5.h \
-		/usr/include/qt5/QtCore/qatomic_bfin.h \
-		/usr/include/qt5/QtCore/qatomic_ia64.h \
-		/usr/include/qt5/QtCore/qatomic_mips.h \
-		/usr/include/qt5/QtCore/qatomic_s390.h \
-		/usr/include/qt5/QtCore/qatomic_sh4a.h \
-		/usr/include/qt5/QtCore/qatomic_sparc.h \
-		/usr/include/qt5/QtCore/qatomic_gcc.h \
-		/usr/include/qt5/QtCore/qatomic_x86.h \
-		/usr/include/qt5/QtCore/qatomic_cxx11.h \
-		/usr/include/qt5/QtCore/qatomic_unix.h \
-		/usr/include/qt5/QtCore/qmutex.h \
-		/usr/include/qt5/QtCore/qlogging.h \
-		/usr/include/qt5/QtCore/qflags.h \
-		/usr/include/qt5/QtCore/qtypeinfo.h \
-		/usr/include/qt5/QtCore/qtypetraits.h \
-		/usr/include/qt5/QtCore/qsysinfo.h \
-		/usr/include/qt5/QtCore/qrect.h \
-		/usr/include/qt5/QtCore/qsize.h \
-		/usr/include/qt5/QtCore/qpoint.h \
-		/usr/include/qt5/QtCore/qscopedpointer.h \
-		/usr/include/qt5/QtGui/qpixmap.h \
-		/usr/include/qt5/QtGui/qpaintdevice.h \
-		/usr/include/qt5/QtGui/qwindowdefs.h \
-		/usr/include/qt5/QtCore/qobjectdefs.h \
-		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
-		/usr/include/qt5/QtGui/qwindowdefs_win.h \
-		/usr/include/qt5/QtGui/qcolor.h \
-		/usr/include/qt5/QtGui/qrgb.h \
-		/usr/include/qt5/QtCore/qstringlist.h \
-		/usr/include/qt5/QtCore/qalgorithms.h \
-		/usr/include/qt5/QtCore/qdatastream.h \
-		/usr/include/qt5/QtCore/qiodevice.h \
-		/usr/include/qt5/QtCore/qobject.h \
-		/usr/include/qt5/QtCore/qstring.h \
-		/usr/include/qt5/QtCore/qchar.h \
-		/usr/include/qt5/QtCore/qbytearray.h \
-		/usr/include/qt5/QtCore/qrefcount.h \
-		/usr/include/qt5/QtCore/qarraydata.h \
-		/usr/include/qt5/QtCore/qstringbuilder.h \
-		/usr/include/qt5/QtCore/qlist.h \
-		/usr/include/qt5/QtCore/qiterator.h \
-		/usr/include/qt5/QtCore/qcoreevent.h \
-		/usr/include/qt5/QtCore/qmetatype.h \
-		/usr/include/qt5/QtCore/qvarlengtharray.h \
-		/usr/include/qt5/QtCore/qcontainerfwd.h \
-		/usr/include/qt5/QtCore/qisenum.h \
-		/usr/include/qt5/QtCore/qobject_impl.h \
-		/usr/include/qt5/QtCore/qpair.h \
-		/usr/include/qt5/QtCore/qregexp.h \
-		/usr/include/qt5/QtCore/qstringmatcher.h \
-		/usr/include/qt5/QtCore/qsharedpointer.h \
-		/usr/include/qt5/QtCore/qshareddata.h \
-		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
-		/usr/include/qt5/QtCore/qhash.h \
-		/usr/include/qt5/QtGui/qimage.h \
-		/usr/include/qt5/QtGui/qtransform.h \
-		/usr/include/qt5/QtGui/qmatrix.h \
-		/usr/include/qt5/QtGui/qpolygon.h \
-		/usr/include/qt5/QtCore/qvector.h \
-		/usr/include/qt5/QtGui/qregion.h \
-		/usr/include/qt5/QtCore/qline.h \
-		/usr/include/qt5/QtGui/qpainterpath.h \
-		/usr/include/qt5/QtGui/qtextoption.h \
-		/usr/include/qt5/QtGui/qpen.h \
-		/usr/include/qt5/QtGui/qbrush.h \
-		/usr/include/qt5/QtGui/qfontinfo.h \
-		/usr/include/qt5/QtGui/qfont.h \
-		/usr/include/qt5/QtGui/qfontmetrics.h \
-		../QtFresnelZones/fresnel.h \
-		../QtFresnelZones/complex.h \
-		/usr/include/qt5/QtCore/QVector \
-		/usr/include/qt5/QtWidgets/QWidget \
-		/usr/include/qt5/QtWidgets/qwidget.h \
-		/usr/include/qt5/QtCore/qmargins.h \
-		/usr/include/qt5/QtGui/qpalette.h \
-		/usr/include/qt5/QtWidgets/qsizepolicy.h \
-		/usr/include/qt5/QtGui/qcursor.h \
-		/usr/include/qt5/QtGui/qkeysequence.h \
-		/usr/include/qt5/QtGui/qevent.h \
-		/usr/include/qt5/QtCore/qvariant.h \
-		/usr/include/qt5/QtCore/qmap.h \
-		/usr/include/qt5/QtCore/qdebug.h \
-		/usr/include/qt5/QtCore/qtextstream.h \
-		/usr/include/qt5/QtCore/qlocale.h \
-		/usr/include/qt5/QtCore/qset.h \
-		/usr/include/qt5/QtCore/qcontiguouscache.h \
-		/usr/include/qt5/QtCore/qurl.h \
-		/usr/include/qt5/QtCore/qurlquery.h \
-		/usr/include/qt5/QtCore/qfile.h \
-		/usr/include/qt5/QtCore/qfiledevice.h \
-		/usr/include/qt5/QtGui/qvector2d.h \
-		/usr/include/qt5/QtGui/qtouchdevice.h \
-		/usr/include/qt5/QtOpenGL/QGLWidget \
-		/usr/include/qt5/QtOpenGL/qgl.h \
-		/usr/include/qt5/QtGui/qopengl.h \
-		/usr/include/qt5/QtCore/qt_windows.h \
-		/usr/include/qt5/QtGui/qopengles2ext.h \
-		/usr/include/qt5/QtGui/qopenglext.h \
-		/usr/include/qt5/QtGui/qpaintengine.h \
-		/usr/include/qt5/QtOpenGL/qglcolormap.h \
-		/usr/include/qt5/QtOpenGL/qtopenglglobal.h \
-		/usr/include/qt5/QtGui/QSurfaceFormat \
-		/usr/include/qt5/QtGui/qsurfaceformat.h \
 		/usr/include/qt5/QtWidgets/QWidget \
 		/usr/include/qt5/QtWidgets/qwidget.h \
 		/usr/include/qt5/QtGui/qwindowdefs.h \
@@ -4302,7 +4175,134 @@ ui_phaseplatewindow.h: ../QtFresnelZones/phaseplatewindow.ui \
 		/usr/include/qt5/QtWidgets/QMainWindow \
 		/usr/include/qt5/QtWidgets/qmainwindow.h \
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
-		/usr/include/qt5/QtGui/qicon.h
+		/usr/include/qt5/QtGui/qicon.h \
+		../QtFresnelZones/drawer.h \
+		/usr/include/qt5/QtGui/QPainter \
+		/usr/include/qt5/QtGui/qpainter.h \
+		/usr/include/qt5/QtCore/qnamespace.h \
+		/usr/include/qt5/QtCore/qglobal.h \
+		/usr/include/qt5/QtCore/qconfig.h \
+		/usr/include/qt5/QtCore/qfeatures.h \
+		/usr/include/qt5/QtCore/qsystemdetection.h \
+		/usr/include/qt5/QtCore/qprocessordetection.h \
+		/usr/include/qt5/QtCore/qcompilerdetection.h \
+		/usr/include/qt5/QtCore/qglobalstatic.h \
+		/usr/include/qt5/QtCore/qatomic.h \
+		/usr/include/qt5/QtCore/qbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
+		/usr/include/qt5/QtCore/qgenericatomic.h \
+		/usr/include/qt5/QtCore/qatomic_msvc.h \
+		/usr/include/qt5/QtCore/qatomic_integrity.h \
+		/usr/include/qt5/QtCore/qoldbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_vxworks.h \
+		/usr/include/qt5/QtCore/qatomic_power.h \
+		/usr/include/qt5/QtCore/qatomic_alpha.h \
+		/usr/include/qt5/QtCore/qatomic_armv7.h \
+		/usr/include/qt5/QtCore/qatomic_armv6.h \
+		/usr/include/qt5/QtCore/qatomic_armv5.h \
+		/usr/include/qt5/QtCore/qatomic_bfin.h \
+		/usr/include/qt5/QtCore/qatomic_ia64.h \
+		/usr/include/qt5/QtCore/qatomic_mips.h \
+		/usr/include/qt5/QtCore/qatomic_s390.h \
+		/usr/include/qt5/QtCore/qatomic_sh4a.h \
+		/usr/include/qt5/QtCore/qatomic_sparc.h \
+		/usr/include/qt5/QtCore/qatomic_gcc.h \
+		/usr/include/qt5/QtCore/qatomic_x86.h \
+		/usr/include/qt5/QtCore/qatomic_cxx11.h \
+		/usr/include/qt5/QtCore/qatomic_unix.h \
+		/usr/include/qt5/QtCore/qmutex.h \
+		/usr/include/qt5/QtCore/qlogging.h \
+		/usr/include/qt5/QtCore/qflags.h \
+		/usr/include/qt5/QtCore/qtypeinfo.h \
+		/usr/include/qt5/QtCore/qtypetraits.h \
+		/usr/include/qt5/QtCore/qsysinfo.h \
+		/usr/include/qt5/QtCore/qrect.h \
+		/usr/include/qt5/QtCore/qsize.h \
+		/usr/include/qt5/QtCore/qpoint.h \
+		/usr/include/qt5/QtCore/qscopedpointer.h \
+		/usr/include/qt5/QtGui/qpixmap.h \
+		/usr/include/qt5/QtGui/qpaintdevice.h \
+		/usr/include/qt5/QtGui/qwindowdefs.h \
+		/usr/include/qt5/QtCore/qobjectdefs.h \
+		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtGui/qwindowdefs_win.h \
+		/usr/include/qt5/QtGui/qcolor.h \
+		/usr/include/qt5/QtGui/qrgb.h \
+		/usr/include/qt5/QtCore/qstringlist.h \
+		/usr/include/qt5/QtCore/qalgorithms.h \
+		/usr/include/qt5/QtCore/qdatastream.h \
+		/usr/include/qt5/QtCore/qiodevice.h \
+		/usr/include/qt5/QtCore/qobject.h \
+		/usr/include/qt5/QtCore/qstring.h \
+		/usr/include/qt5/QtCore/qchar.h \
+		/usr/include/qt5/QtCore/qbytearray.h \
+		/usr/include/qt5/QtCore/qrefcount.h \
+		/usr/include/qt5/QtCore/qarraydata.h \
+		/usr/include/qt5/QtCore/qstringbuilder.h \
+		/usr/include/qt5/QtCore/qlist.h \
+		/usr/include/qt5/QtCore/qiterator.h \
+		/usr/include/qt5/QtCore/qcoreevent.h \
+		/usr/include/qt5/QtCore/qmetatype.h \
+		/usr/include/qt5/QtCore/qvarlengtharray.h \
+		/usr/include/qt5/QtCore/qcontainerfwd.h \
+		/usr/include/qt5/QtCore/qisenum.h \
+		/usr/include/qt5/QtCore/qobject_impl.h \
+		/usr/include/qt5/QtCore/qpair.h \
+		/usr/include/qt5/QtCore/qregexp.h \
+		/usr/include/qt5/QtCore/qstringmatcher.h \
+		/usr/include/qt5/QtCore/qsharedpointer.h \
+		/usr/include/qt5/QtCore/qshareddata.h \
+		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
+		/usr/include/qt5/QtCore/qhash.h \
+		/usr/include/qt5/QtGui/qimage.h \
+		/usr/include/qt5/QtGui/qtransform.h \
+		/usr/include/qt5/QtGui/qmatrix.h \
+		/usr/include/qt5/QtGui/qpolygon.h \
+		/usr/include/qt5/QtCore/qvector.h \
+		/usr/include/qt5/QtGui/qregion.h \
+		/usr/include/qt5/QtCore/qline.h \
+		/usr/include/qt5/QtGui/qpainterpath.h \
+		/usr/include/qt5/QtGui/qtextoption.h \
+		/usr/include/qt5/QtGui/qpen.h \
+		/usr/include/qt5/QtGui/qbrush.h \
+		/usr/include/qt5/QtGui/qfontinfo.h \
+		/usr/include/qt5/QtGui/qfont.h \
+		/usr/include/qt5/QtGui/qfontmetrics.h \
+		../QtFresnelZones/fresnel.h \
+		../QtFresnelZones/complex.h \
+		/usr/include/qt5/QtCore/QVector \
+		/usr/include/qt5/QtWidgets/QWidget \
+		/usr/include/qt5/QtWidgets/qwidget.h \
+		/usr/include/qt5/QtCore/qmargins.h \
+		/usr/include/qt5/QtGui/qpalette.h \
+		/usr/include/qt5/QtWidgets/qsizepolicy.h \
+		/usr/include/qt5/QtGui/qcursor.h \
+		/usr/include/qt5/QtGui/qkeysequence.h \
+		/usr/include/qt5/QtGui/qevent.h \
+		/usr/include/qt5/QtCore/qvariant.h \
+		/usr/include/qt5/QtCore/qmap.h \
+		/usr/include/qt5/QtCore/qdebug.h \
+		/usr/include/qt5/QtCore/qtextstream.h \
+		/usr/include/qt5/QtCore/qlocale.h \
+		/usr/include/qt5/QtCore/qset.h \
+		/usr/include/qt5/QtCore/qcontiguouscache.h \
+		/usr/include/qt5/QtCore/qurl.h \
+		/usr/include/qt5/QtCore/qurlquery.h \
+		/usr/include/qt5/QtCore/qfile.h \
+		/usr/include/qt5/QtCore/qfiledevice.h \
+		/usr/include/qt5/QtGui/qvector2d.h \
+		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtOpenGL/QGLWidget \
+		/usr/include/qt5/QtOpenGL/qgl.h \
+		/usr/include/qt5/QtGui/qopengl.h \
+		/usr/include/qt5/QtCore/qt_windows.h \
+		/usr/include/qt5/QtGui/qopengles2ext.h \
+		/usr/include/qt5/QtGui/qopenglext.h \
+		/usr/include/qt5/QtGui/qpaintengine.h \
+		/usr/include/qt5/QtOpenGL/qglcolormap.h \
+		/usr/include/qt5/QtOpenGL/qtopenglglobal.h \
+		/usr/include/qt5/QtGui/QSurfaceFormat \
+		/usr/include/qt5/QtGui/qsurfaceformat.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../QtFresnelZones/phaseplatewindow.ui -o ui_phaseplatewindow.h
 
 ui_introwindow.h: ../QtFresnelZones/introwindow.ui \
@@ -5352,7 +5352,9 @@ spiralgraph.o: ../QtFresnelZones/spiralgraph.cpp ../QtFresnelZones/spiralgraph.h
 		/usr/include/qt5/QtGui/qsurfaceformat.h \
 		/usr/include/qt5/QtCore/QDebug \
 		../QtFresnelZones/hidpiscaler.h \
-		/usr/include/qt5/QtGui/QVector2D
+		/usr/include/qt5/QtGui/QVector2D \
+		../QtFresnelZones/colortransform.h \
+		/usr/include/qt5/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o spiralgraph.o ../QtFresnelZones/spiralgraph.cpp
 
 zonesgraph.o: ../QtFresnelZones/zonesgraph.cpp ../QtFresnelZones/zonesgraph.h \
@@ -5594,52 +5596,6 @@ titlewindow.o: ../QtFresnelZones/titlewindow.cpp ../QtFresnelZones/titlewindow.h
 		../QtFresnelZones/complex.h \
 		/usr/include/qt5/QtCore/QVector \
 		ui_titlewindow.h \
-		/usr/include/qt5/QtCore/QVariant \
-		/usr/include/qt5/QtWidgets/QAction \
-		/usr/include/qt5/QtWidgets/qaction.h \
-		/usr/include/qt5/QtWidgets/qactiongroup.h \
-		/usr/include/qt5/QtWidgets/QApplication \
-		/usr/include/qt5/QtWidgets/qapplication.h \
-		/usr/include/qt5/QtCore/qcoreapplication.h \
-		/usr/include/qt5/QtCore/qeventloop.h \
-		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/qt5/QtGui/qguiapplication.h \
-		/usr/include/qt5/QtGui/qinputmethod.h \
-		/usr/include/qt5/QtWidgets/QButtonGroup \
-		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QFrame \
-		/usr/include/qt5/QtWidgets/qframe.h \
-		/usr/include/qt5/QtWidgets/QGridLayout \
-		/usr/include/qt5/QtWidgets/qgridlayout.h \
-		/usr/include/qt5/QtWidgets/qlayout.h \
-		/usr/include/qt5/QtWidgets/qlayoutitem.h \
-		/usr/include/qt5/QtWidgets/qboxlayout.h \
-		/usr/include/qt5/QtWidgets/QHBoxLayout \
-		/usr/include/qt5/QtWidgets/QHeaderView \
-		/usr/include/qt5/QtWidgets/qheaderview.h \
-		/usr/include/qt5/QtWidgets/qabstractitemview.h \
-		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtCore/qabstractitemmodel.h \
-		/usr/include/qt5/QtCore/qitemselectionmodel.h \
-		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
-		/usr/include/qt5/QtWidgets/qstyleoption.h \
-		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
-		/usr/include/qt5/QtGui/qvalidator.h \
-		/usr/include/qt5/QtCore/qregularexpression.h \
-		/usr/include/qt5/QtWidgets/qslider.h \
-		/usr/include/qt5/QtWidgets/qabstractslider.h \
-		/usr/include/qt5/QtWidgets/qstyle.h \
-		/usr/include/qt5/QtWidgets/qtabbar.h \
-		/usr/include/qt5/QtWidgets/qrubberband.h \
-		/usr/include/qt5/QtWidgets/QSpacerItem \
-		/usr/include/qt5/QtWidgets/QWidget \
-		../QtFresnelZones/fontscalablelabel.h \
-		/usr/include/qt5/QtWidgets/QLabel \
-		/usr/include/qt5/QtWidgets/qlabel.h \
-		../QtFresnelZones/fontscalablepushbutton.h \
-		/usr/include/qt5/QtWidgets/QPushButton \
-		/usr/include/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/qt5/QtWidgets/qabstractbutton.h \
 		../QtFresnelZones/introwindow.h \
 		../QtFresnelZones/schemegraph.h \
 		../QtFresnelZones/drawer.h \
@@ -5647,6 +5603,7 @@ titlewindow.o: ../QtFresnelZones/titlewindow.cpp ../QtFresnelZones/titlewindow.h
 		/usr/include/qt5/QtGui/qpainter.h \
 		/usr/include/qt5/QtGui/qtextoption.h \
 		/usr/include/qt5/QtGui/qpen.h \
+		/usr/include/qt5/QtWidgets/QWidget \
 		/usr/include/qt5/QtOpenGL/QGLWidget \
 		/usr/include/qt5/QtOpenGL/qgl.h \
 		/usr/include/qt5/QtGui/qopengl.h \
@@ -5684,10 +5641,23 @@ titlewindow.o: ../QtFresnelZones/titlewindow.cpp ../QtFresnelZones/titlewindow.h
 		/usr/include/qt5/QtCore/qmath.h \
 		/usr/include/qt5/QtCore/qnumeric.h \
 		/usr/include/qt5/QtCore/QtNumeric \
+		/usr/include/qt5/QtWidgets/QPushButton \
+		/usr/include/qt5/QtWidgets/qpushbutton.h \
+		/usr/include/qt5/QtWidgets/qabstractbutton.h \
 		../QtFresnelZones/amplitudeplatewindow.h \
 		/usr/include/qt5/QtWidgets/QCheckBox \
 		/usr/include/qt5/QtWidgets/qcheckbox.h \
-		../QtFresnelZones/phaseplatewindow.h
+		/usr/include/qt5/QtWidgets/QLabel \
+		/usr/include/qt5/QtWidgets/qlabel.h \
+		/usr/include/qt5/QtWidgets/qframe.h \
+		../QtFresnelZones/phaseplatewindow.h \
+		/usr/include/qt5/QtWidgets/QApplication \
+		/usr/include/qt5/QtWidgets/qapplication.h \
+		/usr/include/qt5/QtCore/qcoreapplication.h \
+		/usr/include/qt5/QtCore/qeventloop.h \
+		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
+		/usr/include/qt5/QtGui/qguiapplication.h \
+		/usr/include/qt5/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o titlewindow.o ../QtFresnelZones/titlewindow.cpp
 
 intensitygraphwindow.o: ../QtFresnelZones/intensitygraphwindow.cpp ../QtFresnelZones/intensitygraphwindow.h \
@@ -5836,71 +5806,11 @@ intensitygraphwindow.o: ../QtFresnelZones/intensitygraphwindow.cpp ../QtFresnelZ
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
 		ui_intensitygraphwindow.h \
-		/usr/include/qt5/QtCore/QVariant \
-		/usr/include/qt5/QtWidgets/QAction \
-		/usr/include/qt5/QtWidgets/qaction.h \
-		/usr/include/qt5/QtWidgets/qactiongroup.h \
-		/usr/include/qt5/QtWidgets/QApplication \
-		/usr/include/qt5/QtWidgets/qapplication.h \
-		/usr/include/qt5/QtCore/qcoreapplication.h \
-		/usr/include/qt5/QtCore/qeventloop.h \
-		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/qt5/QtGui/qguiapplication.h \
-		/usr/include/qt5/QtGui/qinputmethod.h \
-		/usr/include/qt5/QtWidgets/QButtonGroup \
-		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QFrame \
-		/usr/include/qt5/QtWidgets/qframe.h \
-		/usr/include/qt5/QtWidgets/QGridLayout \
-		/usr/include/qt5/QtWidgets/qgridlayout.h \
-		/usr/include/qt5/QtWidgets/qlayout.h \
-		/usr/include/qt5/QtWidgets/qlayoutitem.h \
-		/usr/include/qt5/QtWidgets/qboxlayout.h \
-		/usr/include/qt5/QtWidgets/QHBoxLayout \
-		/usr/include/qt5/QtWidgets/QHeaderView \
-		/usr/include/qt5/QtWidgets/qheaderview.h \
-		/usr/include/qt5/QtWidgets/qabstractitemview.h \
-		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtCore/qabstractitemmodel.h \
-		/usr/include/qt5/QtCore/qitemselectionmodel.h \
-		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
-		/usr/include/qt5/QtWidgets/qstyleoption.h \
-		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
-		/usr/include/qt5/QtGui/qvalidator.h \
-		/usr/include/qt5/QtCore/qregularexpression.h \
-		/usr/include/qt5/QtWidgets/qslider.h \
-		/usr/include/qt5/QtWidgets/qabstractslider.h \
-		/usr/include/qt5/QtWidgets/qstyle.h \
-		/usr/include/qt5/QtWidgets/qtabbar.h \
-		/usr/include/qt5/QtWidgets/qrubberband.h \
-		/usr/include/qt5/QtWidgets/QRadioButton \
-		/usr/include/qt5/QtWidgets/qradiobutton.h \
-		/usr/include/qt5/QtWidgets/QSlider \
-		/usr/include/qt5/QtWidgets/QSpacerItem \
-		/usr/include/qt5/QtWidgets/QVBoxLayout \
-		../QtFresnelZones/fontscalablelabel.h \
-		/usr/include/qt5/QtWidgets/QLabel \
-		/usr/include/qt5/QtWidgets/qlabel.h \
-		../QtFresnelZones/fontscalablepushbutton.h \
-		../QtFresnelZones/fontscalablespinbox.h \
-		/usr/include/qt5/QtWidgets/QDoubleSpinBox \
-		/usr/include/qt5/QtWidgets/qspinbox.h \
-		../QtFresnelZones/intensityplot.h \
-		../QtFresnelZones/spiralgraph.h \
-		../QtFresnelZones/drawer.h \
-		/usr/include/qt5/QtOpenGL/QGLWidget \
-		/usr/include/qt5/QtOpenGL/qgl.h \
-		/usr/include/qt5/QtGui/qopengl.h \
-		/usr/include/qt5/QtCore/qt_windows.h \
-		/usr/include/qt5/QtGui/qopengles2ext.h \
-		/usr/include/qt5/QtGui/qopenglext.h \
-		/usr/include/qt5/QtGui/qpaintengine.h \
-		/usr/include/qt5/QtOpenGL/qglcolormap.h \
-		/usr/include/qt5/QtOpenGL/qtopenglglobal.h \
-		/usr/include/qt5/QtGui/QSurfaceFormat \
-		/usr/include/qt5/QtGui/qsurfaceformat.h \
-		../QtFresnelZones/zonesgraph.h \
-		../QtFresnelZones/qvectormax.h
+		../QtFresnelZones/qvectormax.h \
+		../QtFresnelZones/titlewindow.h \
+		/usr/include/qt5/QtCore/QTimer \
+		/usr/include/qt5/QtCore/qtimer.h \
+		/usr/include/qt5/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o intensitygraphwindow.o ../QtFresnelZones/intensitygraphwindow.cpp
 
 complex.o: ../QtFresnelZones/complex.cpp ../QtFresnelZones/complex.h
@@ -6460,79 +6370,9 @@ amplitudeplatewindow.o: ../QtFresnelZones/amplitudeplatewindow.cpp ../QtFresnelZ
 		/usr/include/qt5/QtWidgets/qlabel.h \
 		/usr/include/qt5/QtWidgets/qframe.h \
 		ui_amplitudeplatewindow.h \
-		/usr/include/qt5/QtCore/QVariant \
-		/usr/include/qt5/QtWidgets/QAction \
-		/usr/include/qt5/QtWidgets/qaction.h \
-		/usr/include/qt5/QtWidgets/qactiongroup.h \
-		/usr/include/qt5/QtWidgets/QApplication \
-		/usr/include/qt5/QtWidgets/qapplication.h \
-		/usr/include/qt5/QtCore/qcoreapplication.h \
-		/usr/include/qt5/QtCore/qeventloop.h \
-		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/qt5/QtGui/qguiapplication.h \
-		/usr/include/qt5/QtGui/qinputmethod.h \
-		/usr/include/qt5/QtWidgets/QButtonGroup \
-		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QFrame \
-		/usr/include/qt5/QtWidgets/QGridLayout \
-		/usr/include/qt5/QtWidgets/qgridlayout.h \
-		/usr/include/qt5/QtWidgets/qlayout.h \
-		/usr/include/qt5/QtWidgets/qlayoutitem.h \
-		/usr/include/qt5/QtWidgets/qboxlayout.h \
-		/usr/include/qt5/QtWidgets/QHBoxLayout \
-		/usr/include/qt5/QtWidgets/QHeaderView \
-		/usr/include/qt5/QtWidgets/qheaderview.h \
-		/usr/include/qt5/QtWidgets/qabstractitemview.h \
-		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtCore/qabstractitemmodel.h \
-		/usr/include/qt5/QtCore/qitemselectionmodel.h \
-		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
-		/usr/include/qt5/QtWidgets/qstyleoption.h \
-		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
-		/usr/include/qt5/QtGui/qvalidator.h \
-		/usr/include/qt5/QtCore/qregularexpression.h \
-		/usr/include/qt5/QtWidgets/qslider.h \
-		/usr/include/qt5/QtWidgets/qabstractslider.h \
-		/usr/include/qt5/QtWidgets/qstyle.h \
-		/usr/include/qt5/QtWidgets/qtabbar.h \
-		/usr/include/qt5/QtWidgets/qrubberband.h \
-		/usr/include/qt5/QtWidgets/QProgressBar \
-		/usr/include/qt5/QtWidgets/qprogressbar.h \
-		/usr/include/qt5/QtWidgets/QSlider \
-		/usr/include/qt5/QtWidgets/QSpacerItem \
-		/usr/include/qt5/QtWidgets/QVBoxLayout \
-		/usr/include/qt5/QtWidgets/QWidget \
-		../QtFresnelZones/fontscalablelabel.h \
-		../QtFresnelZones/fontscalablepushbutton.h \
-		/usr/include/qt5/QtWidgets/QPushButton \
-		/usr/include/qt5/QtWidgets/qpushbutton.h \
-		../QtFresnelZones/fontscalablespinbox.h \
-		/usr/include/qt5/QtWidgets/QDoubleSpinBox \
-		/usr/include/qt5/QtWidgets/qspinbox.h \
-		../QtFresnelZones/schemegraph.h \
-		../QtFresnelZones/drawer.h \
-		/usr/include/qt5/QtGui/QPainter \
-		/usr/include/qt5/QtGui/qpainter.h \
-		/usr/include/qt5/QtGui/qtextoption.h \
-		/usr/include/qt5/QtGui/qpen.h \
-		../QtFresnelZones/introwindow.h \
-		../QtFresnelZones/zonesgraph.h \
-		../QtFresnelZones/spiralgraph.h \
-		/usr/include/qt5/QtOpenGL/QGLWidget \
-		/usr/include/qt5/QtOpenGL/qgl.h \
-		/usr/include/qt5/QtGui/qopengl.h \
-		/usr/include/qt5/QtCore/qt_windows.h \
-		/usr/include/qt5/QtGui/qopengles2ext.h \
-		/usr/include/qt5/QtGui/qopenglext.h \
-		/usr/include/qt5/QtGui/qpaintengine.h \
-		/usr/include/qt5/QtOpenGL/qglcolormap.h \
-		/usr/include/qt5/QtOpenGL/qtopenglglobal.h \
-		/usr/include/qt5/QtGui/QSurfaceFormat \
-		/usr/include/qt5/QtGui/qsurfaceformat.h \
-		/usr/include/qt5/QtGui/QMouseEvent \
-		/usr/include/qt5/QtGui/QResizeEvent \
 		../QtFresnelZones/colortransform.h \
-		/usr/include/qt5/QtGui/QColor
+		/usr/include/qt5/QtGui/QColor \
+		../QtFresnelZones/titlewindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o amplitudeplatewindow.o ../QtFresnelZones/amplitudeplatewindow.cpp
 
 colortransform.o: ../QtFresnelZones/colortransform.cpp ../QtFresnelZones/colortransform.h \
@@ -6984,79 +6824,7 @@ phaseplatewindow.o: ../QtFresnelZones/phaseplatewindow.cpp ../QtFresnelZones/pha
 		../QtFresnelZones/colortransform.h \
 		/usr/include/qt5/QtGui/QColor \
 		ui_phaseplatewindow.h \
-		/usr/include/qt5/QtCore/QVariant \
-		/usr/include/qt5/QtWidgets/QAction \
-		/usr/include/qt5/QtWidgets/qaction.h \
-		/usr/include/qt5/QtWidgets/qactiongroup.h \
-		/usr/include/qt5/QtWidgets/QApplication \
-		/usr/include/qt5/QtWidgets/qapplication.h \
-		/usr/include/qt5/QtCore/qcoreapplication.h \
-		/usr/include/qt5/QtCore/qeventloop.h \
-		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/qt5/QtGui/qguiapplication.h \
-		/usr/include/qt5/QtGui/qinputmethod.h \
-		/usr/include/qt5/QtWidgets/QButtonGroup \
-		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QFrame \
-		/usr/include/qt5/QtWidgets/qframe.h \
-		/usr/include/qt5/QtWidgets/QGridLayout \
-		/usr/include/qt5/QtWidgets/qgridlayout.h \
-		/usr/include/qt5/QtWidgets/qlayout.h \
-		/usr/include/qt5/QtWidgets/qlayoutitem.h \
-		/usr/include/qt5/QtWidgets/qboxlayout.h \
-		/usr/include/qt5/QtWidgets/QHBoxLayout \
-		/usr/include/qt5/QtWidgets/QHeaderView \
-		/usr/include/qt5/QtWidgets/qheaderview.h \
-		/usr/include/qt5/QtWidgets/qabstractitemview.h \
-		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtCore/qabstractitemmodel.h \
-		/usr/include/qt5/QtCore/qitemselectionmodel.h \
-		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
-		/usr/include/qt5/QtWidgets/qstyleoption.h \
-		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
-		/usr/include/qt5/QtGui/qvalidator.h \
-		/usr/include/qt5/QtCore/qregularexpression.h \
-		/usr/include/qt5/QtWidgets/qslider.h \
-		/usr/include/qt5/QtWidgets/qabstractslider.h \
-		/usr/include/qt5/QtWidgets/qstyle.h \
-		/usr/include/qt5/QtWidgets/qtabbar.h \
-		/usr/include/qt5/QtWidgets/qrubberband.h \
-		/usr/include/qt5/QtWidgets/QProgressBar \
-		/usr/include/qt5/QtWidgets/qprogressbar.h \
-		/usr/include/qt5/QtWidgets/QRadioButton \
-		/usr/include/qt5/QtWidgets/qradiobutton.h \
-		/usr/include/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/qt5/QtWidgets/QSpacerItem \
-		/usr/include/qt5/QtWidgets/QVBoxLayout \
-		/usr/include/qt5/QtWidgets/QWidget \
-		../QtFresnelZones/fontscalablelabel.h \
-		/usr/include/qt5/QtWidgets/QLabel \
-		/usr/include/qt5/QtWidgets/qlabel.h \
-		../QtFresnelZones/fontscalablepushbutton.h \
-		/usr/include/qt5/QtWidgets/QPushButton \
-		/usr/include/qt5/QtWidgets/qpushbutton.h \
-		../QtFresnelZones/schemegraph.h \
-		../QtFresnelZones/drawer.h \
-		/usr/include/qt5/QtGui/QPainter \
-		/usr/include/qt5/QtGui/qpainter.h \
-		/usr/include/qt5/QtGui/qtextoption.h \
-		/usr/include/qt5/QtGui/qpen.h \
-		../QtFresnelZones/introwindow.h \
-		../QtFresnelZones/zonesgraph.h \
-		../QtFresnelZones/spiralgraph.h \
-		/usr/include/qt5/QtOpenGL/QGLWidget \
-		/usr/include/qt5/QtOpenGL/qgl.h \
-		/usr/include/qt5/QtGui/qopengl.h \
-		/usr/include/qt5/QtCore/qt_windows.h \
-		/usr/include/qt5/QtGui/qopengles2ext.h \
-		/usr/include/qt5/QtGui/qopenglext.h \
-		/usr/include/qt5/QtGui/qpaintengine.h \
-		/usr/include/qt5/QtOpenGL/qglcolormap.h \
-		/usr/include/qt5/QtOpenGL/qtopenglglobal.h \
-		/usr/include/qt5/QtGui/QSurfaceFormat \
-		/usr/include/qt5/QtGui/qsurfaceformat.h \
-		/usr/include/qt5/QtGui/QMouseEvent \
-		/usr/include/qt5/QtGui/QResizeEvent \
+		../QtFresnelZones/titlewindow.h \
 		/usr/include/qt5/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o phaseplatewindow.o ../QtFresnelZones/phaseplatewindow.cpp
 
@@ -7437,74 +7205,7 @@ introwindow.o: ../QtFresnelZones/introwindow.cpp ../QtFresnelZones/introwindow.h
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
 		/usr/include/qt5/QtGui/qicon.h \
 		ui_introwindow.h \
-		/usr/include/qt5/QtCore/QVariant \
-		/usr/include/qt5/QtWidgets/QAction \
-		/usr/include/qt5/QtWidgets/qaction.h \
-		/usr/include/qt5/QtWidgets/qactiongroup.h \
-		/usr/include/qt5/QtWidgets/QApplication \
-		/usr/include/qt5/QtWidgets/qapplication.h \
-		/usr/include/qt5/QtCore/qcoreapplication.h \
-		/usr/include/qt5/QtCore/qeventloop.h \
-		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/qt5/QtGui/qguiapplication.h \
-		/usr/include/qt5/QtGui/qinputmethod.h \
-		/usr/include/qt5/QtWidgets/QButtonGroup \
-		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QFrame \
-		/usr/include/qt5/QtWidgets/qframe.h \
-		/usr/include/qt5/QtWidgets/QGridLayout \
-		/usr/include/qt5/QtWidgets/qgridlayout.h \
-		/usr/include/qt5/QtWidgets/qlayout.h \
-		/usr/include/qt5/QtWidgets/qlayoutitem.h \
-		/usr/include/qt5/QtWidgets/qboxlayout.h \
-		/usr/include/qt5/QtWidgets/QHBoxLayout \
-		/usr/include/qt5/QtWidgets/QHeaderView \
-		/usr/include/qt5/QtWidgets/qheaderview.h \
-		/usr/include/qt5/QtWidgets/qabstractitemview.h \
-		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtCore/qabstractitemmodel.h \
-		/usr/include/qt5/QtCore/qitemselectionmodel.h \
-		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
-		/usr/include/qt5/QtWidgets/qstyleoption.h \
-		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
-		/usr/include/qt5/QtGui/qvalidator.h \
-		/usr/include/qt5/QtCore/qregularexpression.h \
-		/usr/include/qt5/QtWidgets/qslider.h \
-		/usr/include/qt5/QtWidgets/qabstractslider.h \
-		/usr/include/qt5/QtWidgets/qstyle.h \
-		/usr/include/qt5/QtWidgets/qtabbar.h \
-		/usr/include/qt5/QtWidgets/qrubberband.h \
-		/usr/include/qt5/QtWidgets/QSpacerItem \
-		/usr/include/qt5/QtWidgets/QVBoxLayout \
-		../QtFresnelZones/fontscalablelabel.h \
-		/usr/include/qt5/QtWidgets/QLabel \
-		/usr/include/qt5/QtWidgets/qlabel.h \
-		../QtFresnelZones/fontscalablepushbutton.h \
-		/usr/include/qt5/QtWidgets/QPushButton \
-		/usr/include/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/qt5/QtWidgets/qabstractbutton.h \
-		../QtFresnelZones/intensityplot.h \
-		../QtFresnelZones/qcustomplot.h \
-		/usr/include/qt5/QtCore/QObject \
-		/usr/include/qt5/QtCore/QPointer \
-		/usr/include/qt5/QtCore/qpointer.h \
-		/usr/include/qt5/QtGui/QPaintEvent \
-		/usr/include/qt5/QtGui/QPixmap \
-		/usr/include/qt5/QtCore/QString \
-		/usr/include/qt5/QtCore/QDateTime \
-		/usr/include/qt5/QtCore/qdatetime.h \
-		/usr/include/qt5/QtCore/QMultiMap \
-		/usr/include/qt5/QtCore/QFlags \
-		/usr/include/qt5/QtCore/QDebug \
-		/usr/include/qt5/QtGui/QVector2D \
-		/usr/include/qt5/QtCore/QStack \
-		/usr/include/qt5/QtCore/qstack.h \
-		/usr/include/qt5/QtCore/QCache \
-		/usr/include/qt5/QtCore/qcache.h \
-		/usr/include/qt5/QtCore/QMargins \
-		/usr/include/qt5/QtCore/qmath.h \
-		/usr/include/qt5/QtCore/qnumeric.h \
-		/usr/include/qt5/QtCore/QtNumeric
+		../QtFresnelZones/titlewindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o introwindow.o ../QtFresnelZones/introwindow.cpp
 
 qrc_icons.o: qrc_icons.cpp 

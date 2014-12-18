@@ -2,11 +2,13 @@
 #include "amplitudeplatewindow.h"
 #include "ui_amplitudeplatewindow.h"
 #include "colortransform.h"
+#include "titlewindow.h"
 
 
-AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
+AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel, TitleWindow *tw) :
     QMainWindow (nullptr),
     ui (new Ui::AmplitudePlateWindow),
+    titleWindow (tw),
     _fresnel (fresnel)
 {
     ui->setupUi (this);
@@ -33,8 +35,13 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel) :
     ui->widget_schemeGraph->fresnel  = _fresnel;
     ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::AmplitudePlateScheme;
 
-    //_fresnel->setHoleRadius (_fresnel->zoneOuterRadius(6));
-    _progressBarHigh = _fresnel->intensity();
+    for (unsigned i = 1; i < zoneCheckBoxesNum+1; ++i)  _fresnel->setZoneOpenness (i, false);
+    _fresnel->setZoneOpenness (0, true);
+    _initialIntensity = _fresnel->intensity() * 0.25;
+     _progressBarHigh = _initialIntensity * 90;
+    for (unsigned i = 1; i < zoneCheckBoxesNum+1; ++i)  _fresnel->setZoneOpenness (i, true);
+
+    ui->progressBar->setTextVisible (false);
     _update();
 }
 
@@ -50,7 +57,6 @@ void AmplitudePlateWindow::_initCheckBoxes()
     _zoneCheckBoxes[6] = ui->checkBox_Zone6;
     _zoneCheckBoxes[7] = ui->checkBox_Zone7;
     _zoneCheckBoxes[8] = ui->checkBox_Zone8;
-    _zoneCheckBoxes[9] = ui->checkBox_Zone9;
 
     _zoneLabels[0] = ui->label_zone0,
     _zoneLabels[1] = ui->label_zone1;
@@ -61,18 +67,17 @@ void AmplitudePlateWindow::_initCheckBoxes()
     _zoneLabels[6] = ui->label_zone6;
     _zoneLabels[7] = ui->label_zone7;
     _zoneLabels[8] = ui->label_zone8;
-    _zoneLabels[9] = ui->label_zone9;
 }
 
 
 void AmplitudePlateWindow::_setupSlots()
 {
     connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
+    connect (ui->pushButton_Next, SIGNAL(clicked()), this, SLOT(button_Next_Pressed()));
 
     connect (ui->pushButton_closeAll, SIGNAL(clicked()), this, SLOT(button_CloseAll_Pressed()));
     connect (ui->pushButton_openAll, SIGNAL(clicked()), this, SLOT(button_OpenAll_Pressed()));
     connect (ui->pushButton_OpenOdd, SIGNAL(clicked()), this, SLOT(button_OpenOdd_Pressed()));
-    //connect (ui->pushButton_tune, SIGNAL(clicked()), this, SLOT(button_Tune_Pressed()));
 
     for (unsigned i = 0; i < zoneCheckBoxesNum; ++i)
         connect (_zoneCheckBoxes[i], SIGNAL(clicked()), this, SLOT(_update()));
@@ -90,7 +95,7 @@ void AmplitudePlateWindow::_updateFresnel()
     double newWaveLength = Fresnel::nano_to_scale_exp * ui->spin_WaveLength->value();
     _fresnel->setWaveLength (newWaveLength);
 
-    unsigned zonesVisible = _fresnel->fresnelNumber();
+    unsigned zonesVisible = _fresnel->fresnelNumber() + 1;
     for (unsigned i = 0; i < zoneCheckBoxesNum; ++i)
     {
         bool enabled = i < zonesVisible;
@@ -128,11 +133,14 @@ void AmplitudePlateWindow::_updateProgressBar()
     ui->progressBar->setStyleSheet (st);
     ui->progressBar->setGeometry (r.x(), r.y() + 3, r.width(), r.height() - 6);
 
-    unsigned progress = (_fresnel->intensity() / (_progressBarHigh * 15.9)) * 100;
+    unsigned progress = round ((_fresnel->intensity() / _progressBarHigh) * 100);
     if (progress < 0)    progress = -progress;
     if (progress > 100)  progress = 100;
 
     ui->progressBar->setValue (progress);
+
+    ui->label_intensity->setText (QString ("Интенсивность на оси: ") +
+                                  QString::number (_fresnel->intensity() / _initialIntensity, 'g', 4) + " Io");
 }
 
 
@@ -160,6 +168,13 @@ void AmplitudePlateWindow::_update()
 void AmplitudePlateWindow::button_Back_Pressed()
 {
     this->close();
+}
+
+
+void AmplitudePlateWindow::button_Next_Pressed()
+{
+    this->close();
+    titleWindow->openPhasePlateWindow();
 }
 
 
@@ -192,14 +207,14 @@ void AmplitudePlateWindow::button_OpenOdd_Pressed()
 
 void AmplitudePlateWindow::button_Tune_Pressed()
 {
-    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (6));
+    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (8));
     _update();
 }
 
 
 void AmplitudePlateWindow::slider_WaveLength_Changed (int value)
 {
-    ui->spin_WaveLength->setValue ((double)value);
+    ui->spin_WaveLength->setValue ((double) value);
 }
 
 

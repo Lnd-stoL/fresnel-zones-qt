@@ -39,7 +39,8 @@ public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QFrame *frame_4;
-    QGridLayout *gridLayout_5;
+    QVBoxLayout *verticalLayout_5;
+    FontScalableLabel *label_3;
     QWidget *widget_3;
     QVBoxLayout *verticalLayout_3;
     FontScalableLabel *label_intensity;
@@ -67,7 +68,7 @@ public:
     QSpacerItem *horizontalSpacer_2;
     FontScalableLabel *label;
     QSpacerItem *horizontalSpacer;
-    FontScalablePushButton *pushButton_Back_2;
+    FontScalablePushButton *pushButton_Next;
     QFrame *frame;
     QGridLayout *gridLayout_3;
     QSpacerItem *verticalSpacer;
@@ -106,9 +107,6 @@ public:
     QHBoxLayout *horizontalLayout_10;
     QCheckBox *checkBox_Zone8;
     FontScalableLabel *label_zone8;
-    QHBoxLayout *horizontalLayout_11;
-    QCheckBox *checkBox_Zone9;
-    FontScalableLabel *label_zone9;
 
     void setupUi(QMainWindow *AmplitudePlateWindow)
     {
@@ -131,16 +129,30 @@ public:
         frame_4->setMinimumSize(QSize(200, 0));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
-        gridLayout_5 = new QGridLayout(frame_4);
-        gridLayout_5->setSpacing(0);
-        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
-        gridLayout_5->setContentsMargins(0, 10, 0, 0);
+        verticalLayout_5 = new QVBoxLayout(frame_4);
+        verticalLayout_5->setSpacing(0);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        label_3 = new FontScalableLabel(frame_4);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        QFont font;
+        font.setFamily(QStringLiteral("Courier New"));
+        font.setPointSize(14);
+        font.setBold(true);
+        font.setItalic(true);
+        font.setWeight(75);
+        label_3->setFont(font);
+        label_3->setStyleSheet(QLatin1String("padding-left:6;\n"
+""));
+
+        verticalLayout_5->addWidget(label_3);
+
         widget_3 = new QWidget(frame_4);
         widget_3->setObjectName(QStringLiteral("widget_3"));
         verticalLayout_3 = new QVBoxLayout(widget_3);
-        verticalLayout_3->setSpacing(15);
+        verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(-1, -1, -1, 15);
+        verticalLayout_3->setContentsMargins(6, 6, 6, 10);
         label_intensity = new FontScalableLabel(widget_3);
         label_intensity->setObjectName(QStringLiteral("label_intensity"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -148,12 +160,12 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(label_intensity->sizePolicy().hasHeightForWidth());
         label_intensity->setSizePolicy(sizePolicy1);
-        QFont font;
-        font.setFamily(QStringLiteral("Times New Roman"));
-        font.setPointSize(16);
-        font.setBold(true);
-        font.setWeight(75);
-        label_intensity->setFont(font);
+        QFont font1;
+        font1.setFamily(QStringLiteral("Courier New"));
+        font1.setPointSize(17);
+        font1.setBold(true);
+        font1.setWeight(75);
+        label_intensity->setFont(font1);
 
         verticalLayout_3->addWidget(label_intensity);
 
@@ -165,17 +177,17 @@ public:
         sizePolicy2.setHeightForWidth(progressBar->sizePolicy().hasHeightForWidth());
         progressBar->setSizePolicy(sizePolicy2);
         progressBar->setMinimumSize(QSize(30, 0));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial"));
-        font1.setPointSize(16);
-        progressBar->setFont(font1);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(16);
+        progressBar->setFont(font2);
         progressBar->setValue(24);
         progressBar->setOrientation(Qt::Horizontal);
 
         verticalLayout_3->addWidget(progressBar);
 
 
-        gridLayout_5->addWidget(widget_3, 0, 0, 1, 2, Qt::AlignTop);
+        verticalLayout_5->addWidget(widget_3);
 
         widget_4 = new QWidget(frame_4);
         widget_4->setObjectName(QStringLiteral("widget_4"));
@@ -193,13 +205,13 @@ public:
         label_WaveLength->setObjectName(QStringLiteral("label_WaveLength"));
         sizePolicy3.setHeightForWidth(label_WaveLength->sizePolicy().hasHeightForWidth());
         label_WaveLength->setSizePolicy(sizePolicy3);
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(16);
-        font2.setBold(false);
-        font2.setItalic(true);
-        font2.setWeight(50);
-        label_WaveLength->setFont(font2);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(16);
+        font3.setBold(false);
+        font3.setItalic(true);
+        font3.setWeight(50);
+        label_WaveLength->setFont(font3);
         label_WaveLength->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         verticalLayout_4->addWidget(label_WaveLength);
@@ -209,9 +221,9 @@ public:
         horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
         slider_WaveLength = new QSlider(widget_4);
         slider_WaveLength->setObjectName(QStringLiteral("slider_WaveLength"));
-        QFont font3;
-        font3.setPointSize(15);
-        slider_WaveLength->setFont(font3);
+        QFont font4;
+        font4.setPointSize(15);
+        slider_WaveLength->setFont(font4);
         slider_WaveLength->setOrientation(Qt::Horizontal);
 
         horizontalLayout_12->addWidget(slider_WaveLength);
@@ -221,10 +233,10 @@ public:
         sizePolicy.setHeightForWidth(spin_WaveLength->sizePolicy().hasHeightForWidth());
         spin_WaveLength->setSizePolicy(sizePolicy);
         spin_WaveLength->setMinimumSize(QSize(0, 0));
-        QFont font4;
-        font4.setFamily(QStringLiteral("Trebuchet MS"));
-        font4.setPointSize(15);
-        spin_WaveLength->setFont(font4);
+        QFont font5;
+        font5.setFamily(QStringLiteral("Trebuchet MS"));
+        font5.setPointSize(15);
+        spin_WaveLength->setFont(font5);
         spin_WaveLength->setStyleSheet(QStringLiteral("background-color: white;"));
 
         horizontalLayout_12->addWidget(spin_WaveLength);
@@ -236,7 +248,7 @@ public:
         gridLayout_6->addLayout(verticalLayout_4, 0, 0, 1, 1);
 
 
-        gridLayout_5->addWidget(widget_4, 1, 0, 1, 1, Qt::AlignTop);
+        verticalLayout_5->addWidget(widget_4);
 
         widget_5 = new QWidget(frame_4);
         widget_5->setObjectName(QStringLiteral("widget_5"));
@@ -261,14 +273,12 @@ public:
         horizontalLayout_13->setStretch(0, 2);
         horizontalLayout_13->setStretch(1, 6);
 
-        gridLayout_5->addWidget(widget_5, 2, 0, 1, 1);
+        verticalLayout_5->addWidget(widget_5);
 
-        gridLayout_5->setRowStretch(0, 1);
-        gridLayout_5->setRowStretch(1, 1);
-        gridLayout_5->setRowStretch(2, 4);
-        gridLayout_5->setRowMinimumHeight(0, 1);
-        gridLayout_5->setRowMinimumHeight(1, 1);
-        gridLayout_5->setRowMinimumHeight(2, 2);
+        verticalLayout_5->setStretch(0, 1);
+        verticalLayout_5->setStretch(1, 1);
+        verticalLayout_5->setStretch(2, 1);
+        verticalLayout_5->setStretch(3, 16);
 
         gridLayout->addWidget(frame_4, 1, 1, 1, 1);
 
@@ -291,8 +301,8 @@ public:
         label_2->setObjectName(QStringLiteral("label_2"));
         sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy1);
-        label_2->setFont(font1);
-        label_2->setStyleSheet(QStringLiteral("padding-bottom:10;"));
+        label_2->setFont(font2);
+        label_2->setStyleSheet(QStringLiteral("padding-bottom:6;"));
         label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_2, 0, 0, 1, 1);
@@ -327,12 +337,12 @@ public:
         sizePolicy4.setHeightForWidth(pushButton_Back->sizePolicy().hasHeightForWidth());
         pushButton_Back->setSizePolicy(sizePolicy4);
         pushButton_Back->setMinimumSize(QSize(0, 0));
-        QFont font5;
-        font5.setFamily(QStringLiteral("Arial"));
-        font5.setPointSize(14);
-        font5.setBold(true);
-        font5.setWeight(75);
-        pushButton_Back->setFont(font5);
+        QFont font6;
+        font6.setFamily(QStringLiteral("Arial"));
+        font6.setPointSize(14);
+        font6.setBold(true);
+        font6.setWeight(75);
+        pushButton_Back->setFont(font6);
         pushButton_Back->setStyleSheet(QLatin1String("background-color:white;\n"
 "padding-top:5%;\n"
 "padding-bottom:5%;\n"
@@ -351,13 +361,13 @@ public:
         label = new FontScalableLabel(widget);
         label->setObjectName(QStringLiteral("label"));
         label->setMaximumSize(QSize(16777215, 50));
-        QFont font6;
-        font6.setFamily(QStringLiteral("Arial"));
-        font6.setPointSize(22);
-        font6.setBold(true);
-        font6.setUnderline(true);
-        font6.setWeight(75);
-        label->setFont(font6);
+        QFont font7;
+        font7.setFamily(QStringLiteral("Arial"));
+        font7.setPointSize(22);
+        font7.setBold(true);
+        font7.setUnderline(true);
+        font7.setWeight(75);
+        label->setFont(font7);
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignVCenter);
@@ -366,20 +376,20 @@ public:
 
         horizontalLayout_4->addItem(horizontalSpacer);
 
-        pushButton_Back_2 = new FontScalablePushButton(widget);
-        pushButton_Back_2->setObjectName(QStringLiteral("pushButton_Back_2"));
-        sizePolicy4.setHeightForWidth(pushButton_Back_2->sizePolicy().hasHeightForWidth());
-        pushButton_Back_2->setSizePolicy(sizePolicy4);
-        pushButton_Back_2->setMinimumSize(QSize(0, 0));
-        pushButton_Back_2->setFont(font5);
-        pushButton_Back_2->setStyleSheet(QLatin1String("background-color:white;\n"
+        pushButton_Next = new FontScalablePushButton(widget);
+        pushButton_Next->setObjectName(QStringLiteral("pushButton_Next"));
+        sizePolicy4.setHeightForWidth(pushButton_Next->sizePolicy().hasHeightForWidth());
+        pushButton_Next->setSizePolicy(sizePolicy4);
+        pushButton_Next->setMinimumSize(QSize(0, 0));
+        pushButton_Next->setFont(font6);
+        pushButton_Next->setStyleSheet(QLatin1String("background-color:white;\n"
 "padding-top:5%;\n"
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
-        pushButton_Back_2->setFlat(false);
+        pushButton_Next->setFlat(false);
 
-        horizontalLayout_4->addWidget(pushButton_Back_2);
+        horizontalLayout_4->addWidget(pushButton_Next);
 
 
         gridLayout_2->addWidget(widget, 0, 0, 1, 1);
@@ -423,10 +433,10 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_closeAll->sizePolicy().hasHeightForWidth());
         pushButton_closeAll->setSizePolicy(sizePolicy1);
         pushButton_closeAll->setMinimumSize(QSize(100, 0));
-        QFont font7;
-        font7.setFamily(QStringLiteral("Arial"));
-        font7.setPointSize(14);
-        pushButton_closeAll->setFont(font7);
+        QFont font8;
+        font8.setFamily(QStringLiteral("Arial"));
+        font8.setPointSize(14);
+        pushButton_closeAll->setFont(font8);
         pushButton_closeAll->setStyleSheet(QLatin1String("padding-top:8%;\n"
 "padding-bottom:8%;\n"
 "padding-left:8%;\n"
@@ -440,7 +450,7 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_openAll->sizePolicy().hasHeightForWidth());
         pushButton_openAll->setSizePolicy(sizePolicy1);
         pushButton_openAll->setMinimumSize(QSize(100, 0));
-        pushButton_openAll->setFont(font7);
+        pushButton_openAll->setFont(font8);
         pushButton_openAll->setStyleSheet(QLatin1String("padding-top:8%;\n"
 "padding-bottom:8%;\n"
 "padding-left:8%;\n"
@@ -454,7 +464,7 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_OpenOdd->sizePolicy().hasHeightForWidth());
         pushButton_OpenOdd->setSizePolicy(sizePolicy1);
         pushButton_OpenOdd->setMinimumSize(QSize(100, 0));
-        pushButton_OpenOdd->setFont(font7);
+        pushButton_OpenOdd->setFont(font8);
         pushButton_OpenOdd->setStyleSheet(QLatin1String("padding-top:8%;\n"
 "padding-bottom:8%;\n"
 "padding-left:8%;\n"
@@ -474,12 +484,12 @@ public:
         label_8->setObjectName(QStringLiteral("label_8"));
         sizePolicy.setHeightForWidth(label_8->sizePolicy().hasHeightForWidth());
         label_8->setSizePolicy(sizePolicy);
-        QFont font8;
-        font8.setFamily(QStringLiteral("Arial"));
-        font8.setPointSize(16);
-        font8.setBold(true);
-        font8.setWeight(75);
-        label_8->setFont(font8);
+        QFont font9;
+        font9.setFamily(QStringLiteral("Arial"));
+        font9.setPointSize(16);
+        font9.setBold(true);
+        font9.setWeight(75);
+        label_8->setFont(font9);
 
         verticalLayout->addWidget(label_8, 0, Qt::AlignLeft);
 
@@ -499,10 +509,10 @@ public:
 
         label_zone0 = new FontScalableLabel(frame);
         label_zone0->setObjectName(QStringLiteral("label_zone0"));
-        QFont font9;
-        font9.setFamily(QStringLiteral("Trebuchet MS"));
-        font9.setPointSize(16);
-        label_zone0->setFont(font9);
+        QFont font10;
+        font10.setFamily(QStringLiteral("Trebuchet MS"));
+        font10.setPointSize(16);
+        label_zone0->setFont(font10);
 
         horizontalLayout->addWidget(label_zone0);
 
@@ -522,7 +532,7 @@ public:
 
         label_zone1 = new FontScalableLabel(frame);
         label_zone1->setObjectName(QStringLiteral("label_zone1"));
-        label_zone1->setFont(font9);
+        label_zone1->setFont(font10);
 
         horizontalLayout_2->addWidget(label_zone1);
 
@@ -542,7 +552,7 @@ public:
 
         label_zone2 = new FontScalableLabel(frame);
         label_zone2->setObjectName(QStringLiteral("label_zone2"));
-        label_zone2->setFont(font9);
+        label_zone2->setFont(font10);
 
         horizontalLayout_3->addWidget(label_zone2);
 
@@ -562,7 +572,7 @@ public:
 
         label_zone3 = new FontScalableLabel(frame);
         label_zone3->setObjectName(QStringLiteral("label_zone3"));
-        label_zone3->setFont(font9);
+        label_zone3->setFont(font10);
 
         horizontalLayout_5->addWidget(label_zone3);
 
@@ -582,7 +592,7 @@ public:
 
         label_zone4 = new FontScalableLabel(frame);
         label_zone4->setObjectName(QStringLiteral("label_zone4"));
-        label_zone4->setFont(font9);
+        label_zone4->setFont(font10);
 
         horizontalLayout_6->addWidget(label_zone4);
 
@@ -602,7 +612,7 @@ public:
 
         label_zone5 = new FontScalableLabel(frame);
         label_zone5->setObjectName(QStringLiteral("label_zone5"));
-        label_zone5->setFont(font9);
+        label_zone5->setFont(font10);
 
         horizontalLayout_7->addWidget(label_zone5);
 
@@ -622,7 +632,7 @@ public:
 
         label_zone6 = new FontScalableLabel(frame);
         label_zone6->setObjectName(QStringLiteral("label_zone6"));
-        label_zone6->setFont(font9);
+        label_zone6->setFont(font10);
 
         horizontalLayout_8->addWidget(label_zone6);
 
@@ -642,7 +652,7 @@ public:
 
         label_zone7 = new FontScalableLabel(frame);
         label_zone7->setObjectName(QStringLiteral("label_zone7"));
-        label_zone7->setFont(font9);
+        label_zone7->setFont(font10);
 
         horizontalLayout_9->addWidget(label_zone7);
 
@@ -662,32 +672,12 @@ public:
 
         label_zone8 = new FontScalableLabel(frame);
         label_zone8->setObjectName(QStringLiteral("label_zone8"));
-        label_zone8->setFont(font9);
+        label_zone8->setFont(font10);
 
         horizontalLayout_10->addWidget(label_zone8);
 
 
         verticalLayout->addLayout(horizontalLayout_10);
-
-        horizontalLayout_11 = new QHBoxLayout();
-        horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
-        horizontalLayout_11->setContentsMargins(10, -1, -1, -1);
-        checkBox_Zone9 = new QCheckBox(frame);
-        checkBox_Zone9->setObjectName(QStringLiteral("checkBox_Zone9"));
-        sizePolicy6.setHeightForWidth(checkBox_Zone9->sizePolicy().hasHeightForWidth());
-        checkBox_Zone9->setSizePolicy(sizePolicy6);
-        checkBox_Zone9->setChecked(true);
-
-        horizontalLayout_11->addWidget(checkBox_Zone9);
-
-        label_zone9 = new FontScalableLabel(frame);
-        label_zone9->setObjectName(QStringLiteral("label_zone9"));
-        label_zone9->setFont(font9);
-
-        horizontalLayout_11->addWidget(label_zone9);
-
-
-        verticalLayout->addLayout(horizontalLayout_11);
 
 
         gridLayout_3->addLayout(verticalLayout, 0, 0, 1, 1);
@@ -707,13 +697,14 @@ public:
     void retranslateUi(QMainWindow *AmplitudePlateWindow)
     {
         AmplitudePlateWindow->setWindowTitle(QApplication::translate("AmplitudePlateWindow", "MainWindow", 0));
-        label_intensity->setText(QApplication::translate("AmplitudePlateWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\262 \321\202\320\276\321\207\320\272\320\265 \320\275\320\260\320\261\320\273\321\216\320\264\320\265\320\275\320\270\321\217: 1 Io", 0));
+        label_3->setText(QApplication::translate("AmplitudePlateWindow", "Io - \320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\277\321\200\320\270 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
+        label_intensity->setText(QApplication::translate("AmplitudePlateWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\275\320\260 \320\276\321\201\320\270: Io", 0));
         label_WaveLength->setText(QApplication::translate("AmplitudePlateWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
         spin_WaveLength->setSuffix(QApplication::translate("AmplitudePlateWindow", " \320\275\320\274", 0));
         label_2->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\264\320\270\321\202\321\203\320\264\320\260 \320\275\320\260 \320\276\321\201\320\270", 0));
         pushButton_Back->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
-        pushButton_Back_2->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
+        pushButton_Next->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
         pushButton_closeAll->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \320\262\321\201\320\265", 0));
         pushButton_openAll->setText(QApplication::translate("AmplitudePlateWindow", "\320\236\321\202\320\272\321\200\321\213\321\202\321\214 \320\262\321\201\320\265", 0));
         pushButton_OpenOdd->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \321\207\321\221\321\202\320\275\321\213\320\265", 0));
@@ -736,8 +727,6 @@ public:
         label_zone7->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 8", 0));
         checkBox_Zone8->setText(QString());
         label_zone8->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 9", 0));
-        checkBox_Zone9->setText(QString());
-        label_zone9->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 10", 0));
     } // retranslateUi
 
 };

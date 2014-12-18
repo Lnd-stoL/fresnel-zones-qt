@@ -76,7 +76,7 @@ public:
     QSpacerItem *horizontalSpacer_2;
     FontScalableLabel *label;
     QSpacerItem *horizontalSpacer;
-    FontScalablePushButton *pushButton_Back_2;
+    FontScalablePushButton *pushButton_Next;
 
     void setupUi(QMainWindow *PhasePlateWindow)
     {
@@ -314,7 +314,7 @@ public:
         sizePolicy3.setHeightForWidth(label_8->sizePolicy().hasHeightForWidth());
         label_8->setSizePolicy(sizePolicy3);
         label_8->setFont(font1);
-        label_8->setStyleSheet(QLatin1String("padding-bottom:10;\n"
+        label_8->setStyleSheet(QLatin1String("padding-bottom:6;\n"
 ""));
         label_8->setAlignment(Qt::AlignCenter);
 
@@ -389,20 +389,20 @@ public:
 
         horizontalLayout_4->addItem(horizontalSpacer);
 
-        pushButton_Back_2 = new FontScalablePushButton(widget);
-        pushButton_Back_2->setObjectName(QStringLiteral("pushButton_Back_2"));
-        sizePolicy8.setHeightForWidth(pushButton_Back_2->sizePolicy().hasHeightForWidth());
-        pushButton_Back_2->setSizePolicy(sizePolicy8);
-        pushButton_Back_2->setMinimumSize(QSize(0, 0));
-        pushButton_Back_2->setFont(font2);
-        pushButton_Back_2->setStyleSheet(QLatin1String("background-color:white;\n"
+        pushButton_Next = new FontScalablePushButton(widget);
+        pushButton_Next->setObjectName(QStringLiteral("pushButton_Next"));
+        sizePolicy8.setHeightForWidth(pushButton_Next->sizePolicy().hasHeightForWidth());
+        pushButton_Next->setSizePolicy(sizePolicy8);
+        pushButton_Next->setMinimumSize(QSize(0, 0));
+        pushButton_Next->setFont(font2);
+        pushButton_Next->setStyleSheet(QLatin1String("background-color:white;\n"
 "padding-top:5%;\n"
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
-        pushButton_Back_2->setFlat(false);
+        pushButton_Next->setFlat(false);
 
-        horizontalLayout_4->addWidget(pushButton_Back_2);
+        horizontalLayout_4->addWidget(pushButton_Next);
 
 
         gridLayout_2->addWidget(widget, 0, 0, 1, 2);
@@ -435,7 +435,7 @@ public:
         label_8->setText(QApplication::translate("PhasePlateWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\260 \320\275\320\260 \320\276\321\201\320\270", 0));
         pushButton_Back->setText(QApplication::translate("PhasePlateWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("PhasePlateWindow", "\320\244\320\260\320\267\320\276\320\262\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
-        pushButton_Back_2->setText(QApplication::translate("PhasePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
+        pushButton_Next->setText(QApplication::translate("PhasePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
     } // retranslateUi
 
 };

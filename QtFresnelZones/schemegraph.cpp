@@ -412,6 +412,7 @@ void SchemeGraph::mouseMoveEvent(QMouseEvent *event)
                                       (Fresnel::dist_max - Fresnel::dist_min));
         cursorOld = event->pos ();
         this->repaint ();
+        emit fresnelChanged();
     }
 }
 

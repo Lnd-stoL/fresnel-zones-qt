@@ -134,7 +134,7 @@ padding-right:5%</string>
         </spacer>
        </item>
        <item>
-        <widget class="FontScalablePushButton" name="pushButton_Back_2">
+        <widget class="FontScalablePushButton" name="pushButton_Next">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -185,6 +185,18 @@ padding-right:5%</string>
        <property name="leftMargin">
         <number>7</number>
        </property>
+       <property name="topMargin">
+        <number>8</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>8</number>
+       </property>
        <item row="0" column="1">
         <widget class="IntensityPlot" name="widget_intensityPlot" native="true"/>
        </item>
@@ -200,8 +212,9 @@ padding-right:5%</string>
           <font>
            <family>Arial</family>
            <pointsize>16</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <weight>50</weight>
+           <italic>true</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="text">
