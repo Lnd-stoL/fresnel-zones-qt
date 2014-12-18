@@ -60,3 +60,6 @@ FORMS    += \
     amplitudeplatewindow.ui \
     phaseplatewindow.ui \
     introwindow.ui
+
+RESOURCES += \
+    icons.qrc

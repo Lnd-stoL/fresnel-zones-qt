@@ -995,11 +995,10 @@ padding-right:5%</string>
      </widget>
     </item>
    </layout>
+   <zorder>frame</zorder>
    <zorder>frame_3</zorder>
    <zorder>frame_2</zorder>
    <zorder>frame_4</zorder>
-   <zorder>label_xMode</zorder>
-   <zorder>radioButton_xDependance</zorder>
    <zorder>frame_5</zorder>
   </widget>
  </widget>

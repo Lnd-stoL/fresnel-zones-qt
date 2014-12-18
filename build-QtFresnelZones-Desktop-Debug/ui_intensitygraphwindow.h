@@ -596,11 +596,10 @@ public:
         gridLayout->addWidget(frame_2, 2, 2, 1, 1);
 
         IntensityGraphWindow->setCentralWidget(centralwidget);
+        frame->raise();
         frame_3->raise();
         frame_2->raise();
         frame_4->raise();
-        label_xMode->raise();
-        radioButton_xDependance->raise();
         frame_5->raise();
 
         retranslateUi(IntensityGraphWindow);

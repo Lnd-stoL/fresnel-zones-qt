@@ -10,11 +10,11 @@ IntensityPlot::IntensityPlot (QWidget *parent) :
     this->addGraph();
 
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
-    QFont labelFont ("Arial", std::min (dpiScaling.x(), dpiScaling.y()) * 16);
+    QFont labelFont ("Arial", std::min (dpiScaling.x(), dpiScaling.y()) * 20);
     QPen axisPen(QBrush (QColor (0, 0, 0)), 2 * dpiScaling.y());
     xAxis->setLabelFont (labelFont);
     yAxis->setLabelFont (labelFont);
-    //xAxis->setTickLabelFont (labelFont);
+    xAxis->setTickLabelFont (labelFont);
     xAxis->setBasePen (axisPen);
     yAxis->setBasePen (axisPen);
     yAxis->setTickLabels (false);
@@ -44,7 +44,7 @@ void IntensityPlot::useMode (bool xDependence)
 
 void IntensityPlot::_switchToXDependence()
 {
-    //xAxis->setLabel ("Расстояние (мм)");
+    xAxis->setLabel ("Расстояние (м)");
 
     this->clearItems();
 
@@ -66,7 +66,7 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    //xAxis->setLabel ("Размер отверстия (мм)");
+    xAxis->setLabel ("Радиус отверстия (мм)");
     this->clearItems();
 }
 
@@ -97,9 +97,10 @@ void IntensityPlot::_updateGraphData (double highest, double step, double lowest
 
 void IntensityPlot::_updateXDependence (Fresnel *fresnel)
 {
+    _scaling = Fresnel::scale_to_si_exp;
     double lowest  = Fresnel::dist_min;
     double highest = Fresnel::dist_max;
-    double step = (double) Fresnel::nano_to_scale_exp * 600;
+    double step = (highest - lowest) / 1000.0;
 
     double oldDistance = fresnel->getObserverDistance();    // this is to save the current observer distance
     _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {
@@ -118,9 +119,10 @@ void IntensityPlot::_updateXDependence (Fresnel *fresnel)
 
 void IntensityPlot::_updateRDependence (Fresnel *fresnel)
 {
+    _scaling = Fresnel::scale_to_milli_exp;
     double lowest  = Fresnel::radius_min;
     double highest = Fresnel::radius_max;
-    double step = (double) Fresnel::nano_to_scale_exp * 100;
+    double step = (highest - lowest) / 1000.0;
 
     double oldHoleRadius = fresnel->getHoleRadius();
     _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {

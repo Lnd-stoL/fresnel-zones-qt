@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>780</height>
+    <width>1289</width>
+    <height>1099</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,9 @@
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>26</pointsize>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -42,11 +44,11 @@
 padding-bottom:15%</string>
         </property>
         <property name="text">
-         <string>Исследование интенсивности</string>
+         <string>Интенсивность на оси</string>
         </property>
        </widget>
       </item>
-      <item row="12" column="1">
+      <item row="14" column="1">
        <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -58,22 +60,6 @@ padding-bottom:15%</string>
          </size>
         </property>
        </spacer>
-      </item>
-      <item row="1" column="1">
-       <widget class="FontScalableLabel" name="label">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>40</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-          <underline>true</underline>
-         </font>
-        </property>
-        <property name="text">
-         <string>Зонная пластинка Френеля</string>
-        </property>
-       </widget>
       </item>
       <item row="5" column="1">
        <widget class="FontScalablePushButton" name="pushButton_Intro">
@@ -92,7 +78,9 @@ padding-bottom:15%</string>
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>26</pointsize>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="toolTipDuration">
@@ -106,6 +94,9 @@ padding-bottom:15%</string>
          <string>Построение зон Френеля</string>
         </property>
         <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="default">
          <bool>false</bool>
         </property>
         <property name="flat">
@@ -146,7 +137,9 @@ padding-bottom:15%</string>
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>26</pointsize>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -158,23 +151,7 @@ padding-bottom:15%</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>60</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="13" column="1">
+      <item row="15" column="1">
        <widget class="QWidget" name="widget" native="true">
         <property name="minimumSize">
          <size>
@@ -200,7 +177,9 @@ padding-bottom:15%</string>
            <property name="font">
             <font>
              <family>Arial</family>
-             <pointsize>23</pointsize>
+             <pointsize>20</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -221,32 +200,6 @@ padding-right:10%</string>
         </layout>
        </widget>
       </item>
-      <item row="1" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="0">
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
       <item row="4" column="1">
        <spacer name="verticalSpacer_3">
         <property name="orientation">
@@ -258,7 +211,7 @@ padding-right:10%</string>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>40</height>
+          <height>20</height>
          </size>
         </property>
        </spacer>
@@ -302,7 +255,7 @@ padding-right:10%</string>
         </property>
        </widget>
       </item>
-      <item row="14" column="1">
+      <item row="16" column="1">
        <spacer name="verticalSpacer_7">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -313,10 +266,82 @@ padding-right:10%</string>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>45</height>
+          <height>20</height>
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="10" column="1">
+       <spacer name="verticalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="1">
+       <widget class="FontScalableLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Московский Государственный Университет им. М.В. Ломоносова&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Компьютерные демонстрации по курсу лекций &amp;quot;Физика волновых процессов&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:600;&quot;&gt;Зонная пластинка Френеля&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="13" column="1">
+       <widget class="FontScalablePushButton" name="pushButton_PhasePlate_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-top:15%;
+padding-bottom:15%</string>
+        </property>
+        <property name="text">
+         <string>Авторы</string>
+        </property>
+       </widget>
       </item>
       <item row="9" column="1">
        <widget class="FontScalablePushButton" name="pushButton_AmplitudePlate">
@@ -335,7 +360,9 @@ padding-right:10%</string>
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>26</pointsize>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -347,8 +374,8 @@ padding-bottom:15%</string>
         </property>
        </widget>
       </item>
-      <item row="10" column="1">
-       <spacer name="verticalSpacer_8">
+      <item row="12" column="1">
+       <spacer name="verticalSpacer_9">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -362,6 +389,20 @@ padding-bottom:15%</string>
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="1" column="0">
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/new/prefix1/cmc-logo.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QWidget" name="widget_3" native="true">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/new/prefix1/phys-logo.svg);</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

@@ -235,11 +235,7 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
 
         if (i < 3) {
             QString text;
-            if (i == 0) {
-                text = "Луч: х";
-            } else {
-                text = "x";
-            }
+            text = "x";
             if (i > 0) {
                 text += " + ";
                 if (i > 1) {
