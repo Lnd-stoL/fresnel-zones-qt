@@ -13,10 +13,10 @@ protected:
 
 
 protected:
-    void _drawAmplitudePlate (QPainter &painter, QPen &dashedPen, double squareWidth, double maxRad,
+    void _drawAmplitudePlate (QPainter &painter, double squareWidth, double maxRad,
                               QBrush &colorBrush, QBrush &blackBrush);
 
-    void _drawPhasePlate (QPainter &painter, QPen &dashedPen, double squareWidth, double maxRad,
+    void _drawPhasePlate (QPainter &painter, double squareWidth, double maxRad,
                           QBrush &colorBrush, QBrush &blackBrush);
 
 

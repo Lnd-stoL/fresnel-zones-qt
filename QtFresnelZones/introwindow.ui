@@ -185,6 +185,18 @@ padding-right:5%</string>
        <property name="leftMargin">
         <number>7</number>
        </property>
+       <property name="topMargin">
+        <number>8</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>8</number>
+       </property>
        <item row="0" column="1">
         <widget class="IntensityPlot" name="widget_intensityPlot" native="true"/>
        </item>
