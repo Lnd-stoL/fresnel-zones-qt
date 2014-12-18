@@ -41,12 +41,15 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QGridLayout" name="gridLayout_5" rowstretch="1,1,4" rowminimumheight="1,1,2">
+      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,1,1,16">
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <property name="leftMargin">
         <number>0</number>
        </property>
        <property name="topMargin">
-        <number>10</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
         <number>0</number>
@@ -54,20 +57,46 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item row="0" column="0" colspan="2" alignment="Qt::AlignTop">
+       <item>
+        <widget class="FontScalableLabel" name="label_3">
+         <property name="font">
+          <font>
+           <family>Courier New</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-left:6;
+</string>
+         </property>
+         <property name="text">
+          <string>Io - Интенсивность при отсутствии отверстия</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QWidget" name="widget_3" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <property name="spacing">
-           <number>15</number>
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>6</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>6</number>
           </property>
           <property name="bottomMargin">
-           <number>15</number>
+           <number>10</number>
           </property>
           <item>
-           <widget class="FontScalableLabel" name="label_13">
+           <widget class="FontScalableLabel" name="label_Intensity">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -76,12 +105,14 @@
             </property>
             <property name="font">
              <font>
-              <family>Arial</family>
-              <pointsize>16</pointsize>
+              <family>Courier New</family>
+              <pointsize>17</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>Интенсивность в точке наблюдения:</string>
+             <string>Интенсивность на оси: Io</string>
             </property>
            </widget>
           </item>
@@ -116,7 +147,7 @@
          </layout>
         </widget>
        </item>
-       <item row="1" column="0" alignment="Qt::AlignTop">
+       <item>
         <widget class="QWidget" name="widget_4" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -207,7 +238,7 @@
          </layout>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item>
         <widget class="QWidget" name="widget_5" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,6">
           <property name="spacing">
@@ -303,7 +334,7 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">padding-bottom:10;</string>
+          <string notr="true">padding-bottom:6;</string>
          </property>
          <property name="text">
           <string>Ампдитуда на оси</string>
@@ -468,7 +499,7 @@ padding-right:5%</string>
            </spacer>
           </item>
           <item>
-           <widget class="FontScalablePushButton" name="pushButton_Back_2">
+           <widget class="FontScalablePushButton" name="pushButton_Next">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -1034,42 +1065,6 @@ padding-right:8%;
            </item>
           </layout>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_11">
-           <property name="leftMargin">
-            <number>10</number>
-           </property>
-           <item>
-            <widget class="QCheckBox" name="checkBox_Zone9">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="checked">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="FontScalableLabel" name="label_zone9">
-             <property name="font">
-              <font>
-               <family>Trebuchet MS</family>
-               <pointsize>16</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>зона 10</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
         </layout>
        </item>
       </layout>
@@ -1090,26 +1085,26 @@ padding-right:8%;
    <header>fontscalablepushbutton.h</header>
   </customwidget>
   <customwidget>
-   <class>SpiralGraph</class>
-   <extends>QWidget</extends>
-   <header>spiralgraph.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ZonesGraph</class>
    <extends>QWidget</extends>
    <header>zonesgraph.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>FontScalableSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>fontscalablespinbox.h</header>
-  </customwidget>
-  <customwidget>
    <class>SchemeGraph</class>
    <extends>QWidget</extends>
    <header>schemegraph.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SpiralGraph</class>
+   <extends>QWidget</extends>
+   <header>spiralgraph.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FontScalableSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>fontscalablespinbox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

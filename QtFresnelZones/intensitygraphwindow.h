@@ -6,9 +6,14 @@
 #include "qcustomplot.h"
 #include <QPushButton>
 
+using namespace std;
+
+
 namespace Ui {
 class IntensityGraphWindow;
 }
+
+class TitleWindow;
 
 
 class IntensityGraphWindow : public QMainWindow
@@ -16,19 +21,18 @@ class IntensityGraphWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit IntensityGraphWindow (Fresnel *fresnel);
+    explicit IntensityGraphWindow (Fresnel *fresnel, TitleWindow *tw);
     ~IntensityGraphWindow();
 
 
 private:
+    TitleWindow *titleWindow;
     Fresnel *_fresnel = nullptr;
     bool _xDependenceMode = true;
 
-    const double _sliderScaling = 10000000;
+    QTimer *_updateTimer = nullptr;
 
-    bool _xDistance_ChangedSinceLastUpdate  = true;
-    bool _holeRadius_ChangedSinceLastUpdate = true;
-    bool _waveLength_ChangedSinceLastUpdate = true;
+    const double _sliderScaling = 10000000;
 
     void _update();
     void _initFresnelBasedSliders();
@@ -45,6 +49,7 @@ private:
 
 private slots:
     void button_Back_Pressed();
+    void button_Next_Pressed();
 
     void slider_xDistance_Changed  (int value);
     void slider_WaveLength_Changed (int value);

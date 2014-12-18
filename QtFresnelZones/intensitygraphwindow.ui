@@ -164,7 +164,7 @@ padding-right:5%</string>
            </spacer>
           </item>
           <item>
-           <widget class="FontScalablePushButton" name="pushButton_Back_2">
+           <widget class="FontScalablePushButton" name="pushButton_Next">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -997,27 +997,27 @@ padding-right:5%</string>
    <header>fontscalablepushbutton.h</header>
   </customwidget>
   <customwidget>
-   <class>SpiralGraph</class>
-   <extends>QWidget</extends>
-   <header>spiralgraph.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ZonesGraph</class>
    <extends>QWidget</extends>
    <header>zonesgraph.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>FontScalableSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>fontscalablespinbox.h</header>
-  </customwidget>
-  <customwidget>
    <class>IntensityPlot</class>
    <extends>QWidget</extends>
    <header>intensityplot.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SpiralGraph</class>
+   <extends>QWidget</extends>
+   <header>spiralgraph.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FontScalableSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>fontscalablespinbox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

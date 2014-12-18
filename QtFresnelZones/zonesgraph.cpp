@@ -28,7 +28,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
     float wholeRad = squareWidth * (_fresnel->getHoleRadius() / maxRad);
     painter.drawEllipse (QPoint (width / 2, height / 2), wholeRad, wholeRad);
 
-    QPen dashedPen (QBrush (QColor (150, 150, 150)), 2 * dpiScaling.y(), Qt::PenStyle::DashLine);
+    QPen dashedPen (QBrush (QColor (110, 110, 110)), 2 * dpiScaling.y(), Qt::PenStyle::DashLine);
     painter.setPen (dashedPen);
 
     double savedHoleRadius = _fresnel->getHoleRadius();
@@ -61,7 +61,8 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
         double nextZone = _fresnel->zoneOuterRadius (n);
         double radius   = squareWidth * nextZone / maxRad;
         painter.setPen (QPen (QBrush (QColor (50, 50, 50)), 3 * dpiScaling.y()));
-        painter.drawText (QPointF (width / 2 + radius - (radius - prevRadius) / 2.0 - 5, height / 2), QString::number (n + 1));
+        painter.drawText (QPointF (width / 2 + radius - (radius - prevRadius) / 2.0 - 5 * dpiScaling.x(), height / 2),
+                          QString::number (n + 1));
         prevRadius      = radius;
     }
 }
@@ -92,7 +93,7 @@ void ZonesGraph::_drawPhasePlate (QPainter &painter, double squareWidth, double 
     {
         double holeRad = (n / squareWidth) * maxRad;
         double colorIntensity = _fresnel->getPhasePlateWidthOnRing (holeRad);
-        colorIntensity = colorIntensity / maxIntensity;
+        colorIntensity = 1 - colorIntensity / maxIntensity;
 
         QColor clr = QColor (0, 150, 255);
         painter.setPen (QColor (clr.red() * colorIntensity, clr.green() * colorIntensity, clr.blue() * colorIntensity));

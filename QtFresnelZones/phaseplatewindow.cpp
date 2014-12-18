@@ -2,28 +2,38 @@
 #include "phaseplatewindow.h"
 #include "colortransform.h"
 #include "ui_phaseplatewindow.h"
+#include "titlewindow.h"
 
 #include <QDebug>
 
-PhasePlateWindow::PhasePlateWindow (Fresnel *fresnel) :
+
+PhasePlateWindow::PhasePlateWindow (Fresnel *fresnel, TitleWindow *tw) :
     QMainWindow (nullptr),
+    titleWindow (tw),
     ui (new Ui::PhasePlateWindow),
     _fresnel (fresnel)
 {
     ui->setupUi (this);
     connect (ui->pushButton_Back, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
+    connect (ui->pushButton_Next, SIGNAL(clicked()), this, SLOT(button_Back_Pressed()));
 
     connect (ui->radioButton_simplePlate, SIGNAL(clicked()), this, SLOT(button_SimplePlate_Pressed()));
     connect (ui->radioButton_stagingPlate, SIGNAL(clicked()), this, SLOT(button_StagingPlate_Pressed()));
     connect (ui->radioButton_lensPlate, SIGNAL(clicked()), this, SLOT(button_LensPlate_Pressed()));
     connect (ui->radioButton_flatLensPlate, SIGNAL(clicked()), this, SLOT(button_FlatLensPlate_Pressed()));
-    _fresnel->amplitudePlate         = false;
-    _fresnel->phasePlate             = true;
+
+    _fresnel->amplitudePlate        = false;
+    _fresnel->phasePlate            = true;
     _fresnel->phasePlateType = Fresnel::PhasePlate::SIMPLE;
-    ui->widget_spiralGraph->fresnel  = _fresnel;
-    ui->widget_schemeGraph->fresnel  = _fresnel;
+    ui->widget_spiralGraph->fresnel = _fresnel;
+    ui->widget_schemeGraph->fresnel = _fresnel;
     _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (5));
 
+    _fresnel->phasePlateType = Fresnel::PhasePlate::LENS;
+    _updateSpiralGraph();
+    ui->widget_spiralGraph->dontScale (ui->widget_spiralGraph->spiralY.last());
+
+    _fresnel->phasePlateType = Fresnel::PhasePlate::SIMPLE;
     this->_update();
 }
 
@@ -32,6 +42,7 @@ PhasePlateWindow::~PhasePlateWindow()
 {
     delete ui;
 }
+
 
 void PhasePlateWindow::_updateProgressBar()
 {
@@ -56,6 +67,7 @@ void PhasePlateWindow::_updateProgressBar()
     ui->progressBar_intensity->setGeometry (r.x(), r.y() + 3, r.width(), r.height() - 6);
 }
 
+
 void PhasePlateWindow::_update()
 {
     ui->widget_zonesGraph->update (_fresnel);
@@ -64,12 +76,12 @@ void PhasePlateWindow::_update()
     _updateSpiralGraph();
 
     Fresnel::PhasePlate currentPlate  = _fresnel->phasePlateType;
-    double intensity                  = _fresnel->intensity ();
+    double intensity                  = _fresnel->intensity();
     _fresnel->phasePlateType          = Fresnel::PhasePlate::LENS;
-    double maxIntensity               = _fresnel->intensity ();
+    double maxIntensity               = _fresnel->intensity();
     _fresnel->phasePlateType          = currentPlate;
 
-    qDebug () << intensity << maxIntensity;
+    //qDebug () << intensity << maxIntensity;
 
     ui->progressBar_intensity->setValue ((int) (intensity / maxIntensity * 100.0));
     ui->progressBar_intensity->update ();
@@ -83,31 +95,37 @@ void PhasePlateWindow::_updateSpiralGraph()
     ui->widget_spiralGraph->repaint ();
 }
 
+
 void PhasePlateWindow::button_Back_Pressed()
 {
+    ui->widget_spiralGraph->dontScale (0);
     this->close();
 }
+
 
 void PhasePlateWindow::button_SimplePlate_Pressed()
 {
     _fresnel->phasePlateType = Fresnel::PhasePlate::SIMPLE;
-    _update ();
+    _update();
 }
+
 
 void PhasePlateWindow::button_StagingPlate_Pressed()
 {
     _fresnel->phasePlateType = Fresnel::PhasePlate::STAGING;
-    _update ();
+    _update();
 }
+
 
 void PhasePlateWindow::button_LensPlate_Pressed()
 {
     _fresnel->phasePlateType = Fresnel::PhasePlate::LENS;
-    _update ();
+    _update();
 }
+
 
 void PhasePlateWindow::button_FlatLensPlate_Pressed()
 {
     _fresnel->phasePlateType = Fresnel::PhasePlate::FLAT_LENS;
-    _update ();
+    _update();
 }

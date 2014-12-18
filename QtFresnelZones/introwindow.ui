@@ -134,7 +134,7 @@ padding-right:5%</string>
         </spacer>
        </item>
        <item>
-        <widget class="FontScalablePushButton" name="pushButton_Back_2">
+        <widget class="FontScalablePushButton" name="pushButton_Next">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -212,8 +212,9 @@ padding-right:5%</string>
           <font>
            <family>Arial</family>
            <pointsize>16</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <weight>50</weight>
+           <italic>true</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="text">
