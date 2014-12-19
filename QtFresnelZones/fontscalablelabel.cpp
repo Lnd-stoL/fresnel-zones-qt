@@ -14,7 +14,7 @@ void FontScalableLabel::resizeEvent (QResizeEvent *evt)
 
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
     auto mutableFont = this->font();
-    mutableFont.setPixelSize (std::min (dpiScaling.x(), dpiScaling.y()) * 0.9 * this->fontMetrics().height());
+    mutableFont.setPixelSize (dpiScaling.x() * 0.9 * this->fontMetrics().height());
 
     this->setFont (mutableFont);
     this->adjustSize();

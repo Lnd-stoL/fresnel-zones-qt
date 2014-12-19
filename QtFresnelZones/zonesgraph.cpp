@@ -31,10 +31,15 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
     QPen dashedPen (QBrush (QColor (110, 110, 110)), 2 * dpiScaling.y(), Qt::PenStyle::DashLine);
     painter.setPen (dashedPen);
 
-    double savedHoleRadius = _fresnel->getHoleRadius();
-    _fresnel->setHoleRadius ((width/2) * maxRad / squareWidth);
-    unsigned zonesNumber   = _fresnel->fresnelNumber();
-    _fresnel->setHoleRadius (savedHoleRadius);
+    unsigned zonesNumber   = _fresnel->fresnelNumber() - 1;
+    if (!_fresnel->amplitudePlate)
+    {
+        double savedHoleRadius = _fresnel->getHoleRadius();
+        _fresnel->setHoleRadius ((width/2) * maxRad / squareWidth);
+        zonesNumber   = _fresnel->fresnelNumber();
+        _fresnel->setHoleRadius (savedHoleRadius);
+    }
+    else  painter.setPen (zonesPen);
 
     unsigned fresnelNumber = _fresnel->fresnelNumber();
     double   prevRadius    = 0.0;
