@@ -2,5 +2,7 @@
     <qresource prefix="/new/prefix1">
         <file>cmc-logo.svg</file>
         <file>phys-logo.svg</file>
+        <file>lenya.png</file>
+        <file>sanya.png</file>
     </qresource>
 </RCC>

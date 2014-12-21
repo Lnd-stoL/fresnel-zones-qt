@@ -65,7 +65,7 @@ public:
     {
         if (TitleWindow->objectName().isEmpty())
             TitleWindow->setObjectName(QStringLiteral("TitleWindow"));
-        TitleWindow->resize(1024, 802);
+        TitleWindow->resize(1024, 768);
         centralwidget = new QWidget(TitleWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout_2 = new QGridLayout(centralwidget);
@@ -265,6 +265,8 @@ public:
 
         label_2 = new FontScalableLabel(centralwidget);
         label_2->setObjectName(QStringLiteral("label_2"));
+        sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy2);
         label_2->setFont(font4);
         label_2->setAlignment(Qt::AlignCenter);
 
@@ -300,7 +302,7 @@ public:
         gridLayout->addWidget(pushButton_Exit, 15, 0, 1, 1);
 
         gridLayout->setColumnStretch(0, 1);
-        gridLayout->setColumnStretch(1, 2);
+        gridLayout->setColumnStretch(1, 3);
         gridLayout->setColumnStretch(2, 1);
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);

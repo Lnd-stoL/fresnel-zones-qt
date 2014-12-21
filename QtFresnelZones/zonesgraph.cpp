@@ -83,7 +83,7 @@ void ZonesGraph::_drawPhasePlate (QPainter &painter, double squareWidth, double 
     float wholeRad = squareWidth * (_fresnel->getHoleRadius() / maxRad);
     //painter.drawEllipse (QPoint (width / 2, height / 2), wholeRad, wholeRad);
 
-    double minIntensity = 10000000, maxIntensity = 0;
+    double minIntensity = 1e+8, maxIntensity = 0;
     for (double n = 0; n < wholeRad; n += 1)
     {
         double holeRad = (n / squareWidth) * maxRad;
@@ -98,7 +98,7 @@ void ZonesGraph::_drawPhasePlate (QPainter &painter, double squareWidth, double 
     {
         double holeRad = (n / squareWidth) * maxRad;
         double colorIntensity = _fresnel->getPhasePlateWidthOnRing (holeRad);
-        colorIntensity = 1 - colorIntensity / maxIntensity;
+        colorIntensity = (1 - colorIntensity / maxIntensity) * 0.75 + 0.25;
 
         QColor clr = QColor (0, 150, 255);
         painter.setPen (QColor (clr.red() * colorIntensity, clr.green() * colorIntensity, clr.blue() * colorIntensity));

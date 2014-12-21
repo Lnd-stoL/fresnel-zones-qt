@@ -322,7 +322,7 @@ void SchemeGraph::drawPlate (QPainter& painter)
         int fn = fresnel->fresnelNumber();
         double r1, r2;
 
-        for (int i = 0; i < fn; ++i) {
+        for (int i = 0; i <= fn; ++i) {
             r1 = scaling * (i == 0 ? 0 : fresnel->zoneOuterRadius(i - 1));
 
             if (i > 0) {

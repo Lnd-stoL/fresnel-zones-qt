@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     phaseplatewindow.cpp \
     schemegraph.cpp \
     drawer.cpp \
-    introwindow.cpp
+    introwindow.cpp \
+    authorswindow.cpp
 
 HEADERS  += \
     qcustomplot.h \
@@ -52,14 +53,16 @@ HEADERS  += \
     phaseplatewindow.h \
     schemegraph.h \
     drawer.h \
-    introwindow.h
+    introwindow.h \
+    authorswindow.h
 
 FORMS    += \
     titlewindow.ui \
     intensitygraphwindow.ui \
     amplitudeplatewindow.ui \
     phaseplatewindow.ui \
-    introwindow.ui
+    introwindow.ui \
+    authorswindow.ui
 
 RESOURCES += \
     icons.qrc

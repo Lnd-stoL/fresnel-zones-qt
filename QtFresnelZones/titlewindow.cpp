@@ -5,6 +5,7 @@
 #include "intensitygraphwindow.h"
 #include "amplitudeplatewindow.h"
 #include "phaseplatewindow.h"
+#include "authorswindow.h"
 #include "qmessagebox.h"
 
 #include <QDebug>
@@ -65,10 +66,9 @@ void TitleWindow::openPhasePlateWindow()
 
 void TitleWindow::openAuthorsWindow()
 {
-    QMessageBox authors;
-    authors.setWindowTitle ("Зонная пластинка Френеля");
-    authors.setText ("Александр Царьков\nЛеонид Столяров\n\nВМК МГУ 2014");
-    authors.exec ();
+    AuthorsWindow *wnd = new AuthorsWindow (this);
+    wnd->setAttribute (Qt::WA_DeleteOnClose);
+    wnd->showFullScreen();
 }
 
 

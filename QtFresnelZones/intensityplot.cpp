@@ -48,7 +48,7 @@ void IntensityPlot::useMode (bool xDependence)
 
 void IntensityPlot::_switchToXDependence()
 {
-    xAxis->setLabel ("Расстояние (м)");
+    xAxis->setLabel ("Расстояние, м");
 
     this->clearItems();
 
@@ -70,7 +70,7 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    xAxis->setLabel ("Радиус отверстия (мм)");
+    xAxis->setLabel ("Радиус отверстия, мм");
     this->clearItems();
 }
 

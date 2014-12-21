@@ -63,7 +63,7 @@ public:
     static constexpr double dist_max   = 8000;
     static constexpr double dist_def   = 1800;
     static constexpr double src_dist_def = 0.7;
-    static constexpr double wave_min   = 400 * nano_to_scale_exp;
+    static constexpr double wave_min   = 410 * nano_to_scale_exp;
     static constexpr double wave_max   = 650 * nano_to_scale_exp;
     static constexpr double wave_def   = 495 * nano_to_scale_exp;
     static constexpr double accuracyPlot = radius_max / 100.0;                     // dr in amplitude integral

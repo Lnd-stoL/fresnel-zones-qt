@@ -207,7 +207,7 @@ void AmplitudePlateWindow::button_OpenOdd_Pressed()
 
 void AmplitudePlateWindow::button_Tune_Pressed()
 {
-    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (8));
+    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (6));
     _update();
 }
 

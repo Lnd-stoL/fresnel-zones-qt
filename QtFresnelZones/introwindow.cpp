@@ -57,4 +57,8 @@ void IntroWindow::_update()
     ui->widget_intensityPlot->update(_fresnel);
     ui->widget_schemeGraph->update();
     ui->widget_zonesGraph->update(_fresnel);
+
+    ui->distance_label->setText (QString::number(_fresnel->getObserverDistance() * Fresnel::scale_to_si_exp, 'f', 2));
+    ui->radius_label->setText (QString::number(_fresnel->getHoleRadius() * Fresnel::scale_to_milli_exp, 'f', 2));
+    ui->waveLength_label->setText (QString::number(_fresnel->getWaveLength() * Fresnel::scale_to_nano_exp, 'f', 2));
 }

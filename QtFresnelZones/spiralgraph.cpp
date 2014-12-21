@@ -68,12 +68,8 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
 
     painter.setPen (QPen (QBrush (QColor (158, 158, 158)), 2 * dpiScaling.y()));
     if (!fresnel->phasePlate) {
-        if (spiralY.length() < 6)
-            painter.drawLine (0, height/2, width, height/2);
-        else {
-            double ty = dispY - spiralY[5] / maxVal * ((double)squareSide - 20.0);
-            painter.drawLine (0, ty, width, ty);
-        }
+        double ty = dispY - spiralY[0] / maxVal * ((double)squareSide - 20.0);
+        painter.drawLine (0, ty, width, ty);
     }
     painter.drawLine (width/2, 0, width/2, height);
 

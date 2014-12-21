@@ -40,11 +40,11 @@ public:
     QGridLayout *gridLayout;
     QFrame *frame_4;
     QVBoxLayout *verticalLayout_5;
-    FontScalableLabel *label_3;
     QWidget *widget_3;
     QVBoxLayout *verticalLayout_3;
-    FontScalableLabel *label_intensity;
     QProgressBar *progressBar;
+    FontScalableLabel *label_intensity;
+    FontScalableLabel *label_3;
     QWidget *widget_4;
     QGridLayout *gridLayout_6;
     QVBoxLayout *verticalLayout_4;
@@ -133,33 +133,36 @@ public:
         verticalLayout_5->setSpacing(0);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        label_3 = new FontScalableLabel(frame_4);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        QFont font;
-        font.setFamily(QStringLiteral("Courier New"));
-        font.setPointSize(14);
-        font.setBold(true);
-        font.setItalic(true);
-        font.setWeight(75);
-        label_3->setFont(font);
-        label_3->setStyleSheet(QLatin1String("padding-left:6;\n"
-""));
-
-        verticalLayout_5->addWidget(label_3);
-
         widget_3 = new QWidget(frame_4);
         widget_3->setObjectName(QStringLiteral("widget_3"));
         verticalLayout_3 = new QVBoxLayout(widget_3);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(6, 6, 6, 10);
-        label_intensity = new FontScalableLabel(widget_3);
-        label_intensity->setObjectName(QStringLiteral("label_intensity"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        progressBar = new QProgressBar(widget_3);
+        progressBar->setObjectName(QStringLiteral("progressBar"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label_intensity->sizePolicy().hasHeightForWidth());
-        label_intensity->setSizePolicy(sizePolicy1);
+        sizePolicy1.setHeightForWidth(progressBar->sizePolicy().hasHeightForWidth());
+        progressBar->setSizePolicy(sizePolicy1);
+        progressBar->setMinimumSize(QSize(30, 0));
+        QFont font;
+        font.setFamily(QStringLiteral("Arial"));
+        font.setPointSize(16);
+        progressBar->setFont(font);
+        progressBar->setValue(24);
+        progressBar->setOrientation(Qt::Horizontal);
+
+        verticalLayout_3->addWidget(progressBar);
+
+        label_intensity = new FontScalableLabel(widget_3);
+        label_intensity->setObjectName(QStringLiteral("label_intensity"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_intensity->sizePolicy().hasHeightForWidth());
+        label_intensity->setSizePolicy(sizePolicy2);
         QFont font1;
         font1.setFamily(QStringLiteral("Courier New"));
         font1.setPointSize(17);
@@ -169,22 +172,20 @@ public:
 
         verticalLayout_3->addWidget(label_intensity);
 
-        progressBar = new QProgressBar(widget_3);
-        progressBar->setObjectName(QStringLiteral("progressBar"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(progressBar->sizePolicy().hasHeightForWidth());
-        progressBar->setSizePolicy(sizePolicy2);
-        progressBar->setMinimumSize(QSize(30, 0));
+        label_3 = new FontScalableLabel(widget_3);
+        label_3->setObjectName(QStringLiteral("label_3"));
         QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(16);
-        progressBar->setFont(font2);
-        progressBar->setValue(24);
-        progressBar->setOrientation(Qt::Horizontal);
+        font2.setFamily(QStringLiteral("Courier New"));
+        font2.setPointSize(14);
+        font2.setBold(true);
+        font2.setItalic(true);
+        font2.setWeight(75);
+        label_3->setFont(font2);
+        label_3->setStyleSheet(QLatin1String("padding-left:0;\n"
+""));
+        label_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        verticalLayout_3->addWidget(progressBar);
+        verticalLayout_3->addWidget(label_3, 0, Qt::AlignLeft);
 
 
         verticalLayout_5->addWidget(widget_3);
@@ -277,8 +278,7 @@ public:
 
         verticalLayout_5->setStretch(0, 1);
         verticalLayout_5->setStretch(1, 1);
-        verticalLayout_5->setStretch(2, 1);
-        verticalLayout_5->setStretch(3, 16);
+        verticalLayout_5->setStretch(2, 16);
 
         gridLayout->addWidget(frame_4, 1, 1, 1, 1);
 
@@ -299,9 +299,9 @@ public:
 
         label_2 = new FontScalableLabel(frame_2);
         label_2->setObjectName(QStringLiteral("label_2"));
-        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy1);
-        label_2->setFont(font2);
+        sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy2);
+        label_2->setFont(font);
         label_2->setStyleSheet(QStringLiteral("padding-bottom:6;"));
         label_2->setAlignment(Qt::AlignCenter);
 
@@ -312,8 +312,8 @@ public:
 
         frame_3 = new QFrame(centralwidget);
         frame_3->setObjectName(QStringLiteral("frame_3"));
-        sizePolicy1.setHeightForWidth(frame_3->sizePolicy().hasHeightForWidth());
-        frame_3->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(frame_3->sizePolicy().hasHeightForWidth());
+        frame_3->setSizePolicy(sizePolicy2);
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
         gridLayout_2 = new QGridLayout(frame_3);
@@ -323,8 +323,8 @@ public:
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         widget = new QWidget(frame_3);
         widget->setObjectName(QStringLiteral("widget"));
-        sizePolicy1.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
-        widget->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
+        widget->setSizePolicy(sizePolicy2);
         horizontalLayout_4 = new QHBoxLayout(widget);
         horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
@@ -430,8 +430,8 @@ public:
 
         pushButton_closeAll = new FontScalablePushButton(widget_2);
         pushButton_closeAll->setObjectName(QStringLiteral("pushButton_closeAll"));
-        sizePolicy1.setHeightForWidth(pushButton_closeAll->sizePolicy().hasHeightForWidth());
-        pushButton_closeAll->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(pushButton_closeAll->sizePolicy().hasHeightForWidth());
+        pushButton_closeAll->setSizePolicy(sizePolicy2);
         pushButton_closeAll->setMinimumSize(QSize(100, 0));
         QFont font8;
         font8.setFamily(QStringLiteral("Arial"));
@@ -447,8 +447,8 @@ public:
 
         pushButton_openAll = new FontScalablePushButton(widget_2);
         pushButton_openAll->setObjectName(QStringLiteral("pushButton_openAll"));
-        sizePolicy1.setHeightForWidth(pushButton_openAll->sizePolicy().hasHeightForWidth());
-        pushButton_openAll->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(pushButton_openAll->sizePolicy().hasHeightForWidth());
+        pushButton_openAll->setSizePolicy(sizePolicy2);
         pushButton_openAll->setMinimumSize(QSize(100, 0));
         pushButton_openAll->setFont(font8);
         pushButton_openAll->setStyleSheet(QLatin1String("padding-top:8%;\n"
@@ -461,8 +461,8 @@ public:
 
         pushButton_OpenOdd = new FontScalablePushButton(widget_2);
         pushButton_OpenOdd->setObjectName(QStringLiteral("pushButton_OpenOdd"));
-        sizePolicy1.setHeightForWidth(pushButton_OpenOdd->sizePolicy().hasHeightForWidth());
-        pushButton_OpenOdd->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(pushButton_OpenOdd->sizePolicy().hasHeightForWidth());
+        pushButton_OpenOdd->setSizePolicy(sizePolicy2);
         pushButton_OpenOdd->setMinimumSize(QSize(100, 0));
         pushButton_OpenOdd->setFont(font8);
         pushButton_OpenOdd->setStyleSheet(QLatin1String("padding-top:8%;\n"
@@ -697,8 +697,8 @@ public:
     void retranslateUi(QMainWindow *AmplitudePlateWindow)
     {
         AmplitudePlateWindow->setWindowTitle(QApplication::translate("AmplitudePlateWindow", "MainWindow", 0));
-        label_3->setText(QApplication::translate("AmplitudePlateWindow", "Io - \320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\277\321\200\320\270 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
         label_intensity->setText(QApplication::translate("AmplitudePlateWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\275\320\260 \320\276\321\201\320\270: Io", 0));
+        label_3->setText(QApplication::translate("AmplitudePlateWindow", "<html><head/><body><p>Io - \320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\277\321\200\320\270 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217</p></body></html>", 0));
         label_WaveLength->setText(QApplication::translate("AmplitudePlateWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
         spin_WaveLength->setSuffix(QApplication::translate("AmplitudePlateWindow", " \320\275\320\274", 0));
         label_2->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\264\320\270\321\202\321\203\320\264\320\260 \320\275\320\260 \320\276\321\201\320\270", 0));
