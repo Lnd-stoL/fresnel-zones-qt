@@ -282,7 +282,7 @@ Mathematics and Cybernetics</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/sanya.png);</string>
+           <string notr="true">image: url(:/new/prefix1/sanya.jpg);</string>
           </property>
           <property name="locale">
            <locale language="English" country="UnitedStates"/>
@@ -304,7 +304,7 @@ Mathematics and Cybernetics</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/lenya.png);</string>
+           <string notr="true">image: url(:/new/prefix1/lenya.jpg);</string>
           </property>
           <property name="locale">
            <locale language="English" country="UnitedStates"/>
