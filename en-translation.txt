@@ -1,0 +1,30 @@
+1)  как в аналогичных демонстрациях
+    Fresnel zone plate
+    Construction of Fresnel zones
+    Intensity at the axis
+    Amplitude plate
+    Phase plate
+    Quit (?)
+    
+2)  Next / Back
+	Point of observation (eye) can be moved to change the distance from the screen
+	
+3)  Distance from the screen / Hole radius
+	Set the number of the zones in the hole
+	Wavelength
+	Reset
+	
+4)  I0 - intensity in the abscence of the screen with a hole
+	Intensity at the axis
+	Close all
+	Open all
+	Close even
+	
+5)  Intensity at the point of observation
+	Amplitude at the axis
+	Type of the phase plate
+	half-wavelength
+	stepwise
+	convex / concave (?) lens
+	flat Fresnel lens
+	

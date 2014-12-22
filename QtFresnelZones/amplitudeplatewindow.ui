@@ -35,6 +35,9 @@
         <height>0</height>
        </size>
       </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -59,6 +62,9 @@
        </property>
        <item>
         <widget class="QWidget" name="widget_3" native="true">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <property name="spacing">
            <number>6</number>
@@ -95,6 +101,9 @@
               <pointsize>16</pointsize>
              </font>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="value">
              <number>24</number>
             </property>
@@ -119,8 +128,11 @@
               <bold>true</bold>
              </font>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Интенсивность на оси: Io</string>
+             <string>Intensity at the axis: Io</string>
             </property>
            </widget>
           </item>
@@ -139,8 +151,11 @@
              <string notr="true">padding-left:0;
 </string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Io - Интенсивность при отсутствии отверстия&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Io - Intensity in the abscence of the screen with a hole&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -157,6 +172,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
          </property>
          <layout class="QGridLayout" name="gridLayout_6">
           <item row="0" column="0">
@@ -181,8 +199,11 @@
                 <bold>false</bold>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
               <property name="text">
-               <string>Длина волны:</string>
+               <string>Wavelength:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -200,6 +221,9 @@
                  <font>
                   <pointsize>15</pointsize>
                  </font>
+                </property>
+                <property name="locale">
+                 <locale language="English" country="UnitedStates"/>
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -229,8 +253,11 @@
                 <property name="styleSheet">
                  <string notr="true">background-color: white;</string>
                 </property>
+                <property name="locale">
+                 <locale language="English" country="UnitedStates"/>
+                </property>
                 <property name="suffix">
-                 <string> нм</string>
+                 <string> nm</string>
                 </property>
                </widget>
               </item>
@@ -243,6 +270,9 @@
        </item>
        <item>
         <widget class="QWidget" name="widget_5" native="true">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,6">
           <property name="spacing">
            <number>7</number>
@@ -264,6 +294,9 @@
             <property name="styleSheet">
              <string notr="true">background-color:#ffffff;</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
            </widget>
           </item>
           <item>
@@ -280,6 +313,9 @@
               <height>0</height>
              </size>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
            </widget>
           </item>
          </layout>
@@ -290,6 +326,9 @@
     </item>
     <item row="1" column="2">
      <widget class="QFrame" name="frame_2">
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -320,6 +359,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
         </widget>
        </item>
        <item row="0" column="0">
@@ -339,8 +381,11 @@
          <property name="styleSheet">
           <string notr="true">padding-bottom:6;</string>
          </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="text">
-          <string>Ампдитуда на оси</string>
+          <string>Amplitude at the axis</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -357,6 +402,9 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -390,6 +438,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
@@ -436,8 +487,11 @@ padding-bottom:5%;
 padding-left:5%;
 padding-right:5%</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Выход</string>
+             <string>Quit</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -452,6 +506,9 @@ padding-right:5%</string>
           </item>
           <item>
            <spacer name="horizontalSpacer_2">
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -480,8 +537,11 @@ padding-right:5%</string>
               <underline>true</underline>
              </font>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Амплитудная пластинка</string>
+             <string>Amplitude plate</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -490,6 +550,9 @@ padding-right:5%</string>
           </item>
           <item>
            <spacer name="horizontalSpacer">
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -530,8 +593,11 @@ padding-bottom:5%;
 padding-left:5%;
 padding-right:5%</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Вперед</string>
+             <string>Next</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -551,6 +617,9 @@ padding-right:5%</string>
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -576,6 +645,9 @@ padding-right:5%</string>
        </property>
        <item row="1" column="0">
         <spacer name="verticalSpacer">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -598,6 +670,9 @@ padding-right:5%</string>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="leftMargin">
            <number>0</number>
@@ -613,6 +688,9 @@ padding-right:5%</string>
           </property>
           <item>
            <widget class="Line" name="line">
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -645,8 +723,11 @@ padding-left:8%;
 padding-right:8%;
 </string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Закрыть все</string>
+             <string>Close all</string>
             </property>
            </widget>
           </item>
@@ -677,8 +758,11 @@ padding-left:8%;
 padding-right:8%;
 </string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Открыть все</string>
+             <string>Open all</string>
             </property>
            </widget>
           </item>
@@ -710,8 +794,11 @@ padding-right:8%;
 
 </string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Закрыть чётные</string>
+             <string>Close even</string>
             </property>
            </widget>
           </item>
@@ -739,8 +826,11 @@ padding-right:8%;
              <bold>true</bold>
             </font>
            </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
            <property name="text">
-            <string>Зоны Френеля:</string>
+            <string>Fresnel zones:</string>
            </property>
           </widget>
          </item>
@@ -756,6 +846,9 @@ padding-right:8%;
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
              </property>
              <property name="text">
               <string/>
@@ -773,8 +866,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 1</string>
+              <string>zone 1</string>
              </property>
             </widget>
            </item>
@@ -793,6 +889,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -809,8 +908,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 2</string>
+              <string>zone 2</string>
              </property>
             </widget>
            </item>
@@ -829,6 +931,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -845,8 +950,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 3</string>
+              <string>zone 3</string>
              </property>
             </widget>
            </item>
@@ -865,6 +973,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -881,8 +992,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 4</string>
+              <string>zone 4</string>
              </property>
             </widget>
            </item>
@@ -901,6 +1015,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -917,8 +1034,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 5</string>
+              <string>zone 5</string>
              </property>
             </widget>
            </item>
@@ -937,6 +1057,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -953,8 +1076,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 6</string>
+              <string>zone 6</string>
              </property>
             </widget>
            </item>
@@ -973,6 +1099,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -989,8 +1118,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 7</string>
+              <string>zone 7</string>
              </property>
             </widget>
            </item>
@@ -1009,6 +1141,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -1025,8 +1160,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 8</string>
+              <string>zone 8</string>
              </property>
             </widget>
            </item>
@@ -1045,6 +1183,9 @@ padding-right:8%;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -1061,8 +1202,11 @@ padding-right:8%;
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
              <property name="text">
-              <string>зона 9</string>
+              <string>zone 9</string>
              </property>
             </widget>
            </item>

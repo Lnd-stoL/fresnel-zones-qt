@@ -20,7 +20,7 @@ IntensityPlot::IntensityPlot (QWidget *parent) :
     yAxis->setTickLabels (false);
 
 
-    yAxis->setLabel ("Интенсивность");
+    yAxis->setLabel ("Intensity");
 
     _switchToXDependence();
 }
@@ -48,7 +48,7 @@ void IntensityPlot::useMode (bool xDependence)
 
 void IntensityPlot::_switchToXDependence()
 {
-    xAxis->setLabel ("Расстояние, м");
+    xAxis->setLabel ("Distance, m");
 
     this->clearItems();
 
@@ -70,7 +70,7 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    xAxis->setLabel ("Радиус отверстия, мм");
+    xAxis->setLabel ("Hole radius, mm");
     this->clearItems();
 }
 

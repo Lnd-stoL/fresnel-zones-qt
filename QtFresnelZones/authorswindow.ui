@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>768</height>
+    <height>799</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,8 +43,11 @@
          <string notr="true">padding-top:15%;
 padding-bottom:15%</string>
         </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <property name="text">
-         <string>В меню</string>
+         <string>Menu</string>
         </property>
        </widget>
       </item>
@@ -58,8 +61,11 @@ padding-bottom:15%</string>
             <pointsize>16</pointsize>
            </font>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="text">
-           <string>Александр Царьков</string>
+           <string>Alexander Tsarkov</string>
           </property>
          </widget>
         </item>
@@ -71,8 +77,11 @@ padding-bottom:15%</string>
             <pointsize>16</pointsize>
            </font>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="text">
-           <string>Леонид Столяров</string>
+           <string>Leonid Stolyarov</string>
           </property>
          </widget>
         </item>
@@ -86,8 +95,11 @@ padding-bottom:15%</string>
           <pointsize>16</pointsize>
          </font>
         </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <property name="text">
-         <string>ВМК МГУ, 2014</string>
+         <string>CMC MSU, 2014</string>
         </property>
        </widget>
       </item>
@@ -101,6 +113,9 @@ padding-bottom:15%</string>
         </property>
         <item>
          <spacer name="verticalSpacer_4">
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -124,8 +139,11 @@ padding-bottom:15%</string>
             <italic>false</italic>
            </font>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="text">
-           <string>Московский государственный университет имени М.В. Ломоносова</string>
+           <string>Lomonosov Moscow State University</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -141,9 +159,12 @@ padding-bottom:15%</string>
             <italic>false</italic>
            </font>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="text">
-           <string>Компьютерные демонстрации по курсу лекций
-&quot;Физика волновых процессов&quot;</string>
+           <string>Computer presentations lecture curce
+&quot;Physics of wave processes&quot;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -152,6 +173,9 @@ padding-bottom:15%</string>
         </item>
         <item>
          <spacer name="verticalSpacer_2">
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -177,8 +201,11 @@ padding-bottom:15%</string>
             <bold>true</bold>
            </font>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="text">
-           <string>Зонная пластинка Френеля</string>
+           <string>Fresnel zone plate</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -200,6 +227,9 @@ padding-bottom:15%</string>
           <property name="styleSheet">
            <string notr="true">image: url(:/new/prefix1/cmc-logo.svg);</string>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
          </widget>
         </item>
         <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
@@ -218,11 +248,18 @@ padding-bottom:15%</string>
             <kerning>true</kerning>
            </font>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="text">
-           <string>Факультет ВМК</string>
+           <string>Faculty of Computation
+Mathematics and Cybernetics</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -247,6 +284,9 @@ padding-bottom:15%</string>
           <property name="styleSheet">
            <string notr="true">image: url(:/new/prefix1/sanya.png);</string>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
          </widget>
         </item>
         <item>
@@ -266,12 +306,18 @@ padding-bottom:15%</string>
           <property name="styleSheet">
            <string notr="true">image: url(:/new/prefix1/lenya.png);</string>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
          </widget>
         </item>
        </layout>
       </item>
       <item row="4" column="1">
        <spacer name="verticalSpacer_3">
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -294,6 +340,9 @@ padding-bottom:15%</string>
           <height>70</height>
          </size>
         </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout"/>
        </widget>
       </item>
@@ -309,6 +358,9 @@ padding-bottom:15%</string>
           </property>
           <property name="styleSheet">
            <string notr="true">image: url(:/new/prefix1/phys-logo.svg);</string>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
           </property>
          </widget>
         </item>
@@ -328,11 +380,18 @@ padding-bottom:15%</string>
             <kerning>true</kerning>
            </font>
           </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
           <property name="text">
-           <string>Физический факультет</string>
+           <string>Faculty of 
+Physics</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -340,6 +399,9 @@ padding-bottom:15%</string>
       </item>
       <item row="11" column="1">
        <spacer name="verticalSpacer_7">
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -362,13 +424,19 @@ padding-bottom:15%</string>
           <pointsize>16</pointsize>
          </font>
         </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <property name="text">
-         <string>Лекторы А.Ю. Чикишев, В.П. Кандидов</string>
+         <string>Lectors A.Yu. Chikishev, V.P. Kandidov</string>
         </property>
        </widget>
       </item>
       <item row="8" column="1">
        <spacer name="verticalSpacer">
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -385,6 +453,9 @@ padding-bottom:15%</string>
       </item>
       <item row="3" column="0" colspan="3">
        <widget class="Line" name="line">
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
