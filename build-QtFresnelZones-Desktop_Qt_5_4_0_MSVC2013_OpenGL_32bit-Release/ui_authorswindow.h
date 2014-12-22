@@ -65,7 +65,7 @@ public:
     {
         if (AuthorsWindow->objectName().isEmpty())
             AuthorsWindow->setObjectName(QStringLiteral("AuthorsWindow"));
-        AuthorsWindow->resize(1024, 768);
+        AuthorsWindow->resize(1382, 913);
         centralwidget = new QWidget(AuthorsWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout_2 = new QGridLayout(centralwidget);
@@ -175,7 +175,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy1);
-        widget_2->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/cmc-logo.svg);"));
+        widget_2->setStyleSheet(QStringLiteral("image: url(:/cmc-logo.png);"));
 
         verticalLayout_2->addWidget(widget_2);
 
@@ -206,7 +206,7 @@ public:
         sizePolicy1.setHeightForWidth(widget_5->sizePolicy().hasHeightForWidth());
         widget_5->setSizePolicy(sizePolicy1);
         widget_5->setMinimumSize(QSize(0, 260));
-        widget_5->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/sanya.png);"));
+        widget_5->setStyleSheet(QStringLiteral("image: url(:sanya.png);"));
 
         horizontalLayout_3->addWidget(widget_5);
 
@@ -215,7 +215,7 @@ public:
         sizePolicy1.setHeightForWidth(widget_4->sizePolicy().hasHeightForWidth());
         widget_4->setSizePolicy(sizePolicy1);
         widget_4->setMinimumSize(QSize(0, 260));
-        widget_4->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/lenya.png);"));
+        widget_4->setStyleSheet(QStringLiteral("image: url(:lenya.png);"));
 
         horizontalLayout_3->addWidget(widget_4);
 
@@ -240,7 +240,7 @@ public:
         widget_3->setObjectName(QStringLiteral("widget_3"));
         sizePolicy1.setHeightForWidth(widget_3->sizePolicy().hasHeightForWidth());
         widget_3->setSizePolicy(sizePolicy1);
-        widget_3->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/phys-logo.svg);"));
+        widget_3->setStyleSheet(QStringLiteral("image: url(:/phys-logo.png);"));
 
         verticalLayout_4->addWidget(widget_3);
 
