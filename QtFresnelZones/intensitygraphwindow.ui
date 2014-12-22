@@ -557,7 +557,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string>  м</string>
+                 <string> м</string>
                 </property>
                </widget>
               </item>
@@ -645,7 +645,7 @@ padding-right:5%</string>
                  <string notr="true">background-color: white;</string>
                 </property>
                 <property name="suffix">
-                 <string>  мм</string>
+                 <string> мм</string>
                 </property>
                </widget>
               </item>
