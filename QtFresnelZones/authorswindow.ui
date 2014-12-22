@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>768</height>
+    <height>799</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -245,7 +245,7 @@ padding-bottom:15%</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/sanya.png);</string>
+           <string notr="true">image: url(:/new/prefix1/sanya.jpg);</string>
           </property>
          </widget>
         </item>
@@ -264,7 +264,7 @@ padding-bottom:15%</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/lenya.png);</string>
+           <string notr="true">image: url(:/new/prefix1/lenya.jpg);</string>
           </property>
          </widget>
         </item>
