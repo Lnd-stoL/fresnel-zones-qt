@@ -23,6 +23,9 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <property name="spacing">
         <number>0</number>
@@ -68,8 +71,11 @@ padding-bottom:5%;
 padding-left:5%;
 padding-right:5%</string>
          </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="text">
-          <string>Выход</string>
+          <string>Quit</string>
          </property>
          <property name="autoDefault">
           <bool>false</bool>
@@ -84,6 +90,9 @@ padding-right:5%</string>
        </item>
        <item>
         <spacer name="horizontalSpacer_2">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -112,8 +121,11 @@ padding-right:5%</string>
            <underline>true</underline>
           </font>
          </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="text">
-          <string>Построение зон Френеля</string>
+          <string>Construction of Fresnel zones</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -122,6 +134,9 @@ padding-right:5%</string>
        </item>
        <item>
         <spacer name="horizontalSpacer">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -162,8 +177,11 @@ padding-bottom:5%;
 padding-left:5%;
 padding-right:5%</string>
          </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="text">
-          <string>Вперед</string>
+          <string>Next</string>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -175,6 +193,9 @@ padding-right:5%</string>
     </item>
     <item>
      <widget class="QFrame" name="frame">
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -198,10 +219,18 @@ padding-right:5%</string>
         <number>8</number>
        </property>
        <item row="2" column="0">
-        <widget class="ZonesGraph" name="widget_zonesGraph" native="true"/>
+        <widget class="ZonesGraph" name="widget_zonesGraph" native="true">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
+        </widget>
        </item>
        <item row="0" column="1">
-        <widget class="IntensityPlot" name="widget_intensityPlot" native="true"/>
+        <widget class="IntensityPlot" name="widget_intensityPlot" native="true">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
+        </widget>
        </item>
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -222,8 +251,11 @@ padding-right:5%</string>
              <bold>false</bold>
             </font>
            </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
            <property name="text">
-            <string>Перемещайте  наблюдателя (глаз) курсором для изменения расстояния до отверстия</string>
+            <string>Point of observation (eye) can be moved to change the distance from the screen</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -240,6 +272,9 @@ padding-right:5%</string>
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -262,8 +297,11 @@ padding-right:5%</string>
                 <pointsize>16</pointsize>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
               <property name="text">
-               <string>Расстояние до отверстия:</string>
+               <string>Distance from the screen:</string>
               </property>
              </widget>
             </item>
@@ -280,6 +318,9 @@ padding-right:5%</string>
                 <family>Arial</family>
                 <pointsize>16</pointsize>
                </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
               </property>
               <property name="text">
                <string>2</string>
@@ -300,8 +341,11 @@ padding-right:5%</string>
                 <pointsize>16</pointsize>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
               <property name="text">
-               <string>м</string>
+               <string>m</string>
               </property>
              </widget>
             </item>
@@ -315,6 +359,9 @@ padding-right:5%</string>
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -337,8 +384,11 @@ padding-right:5%</string>
                 <pointsize>16</pointsize>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
               <property name="text">
-               <string>Радиус отверстия:</string>
+               <string>Hole radius:</string>
               </property>
              </widget>
             </item>
@@ -355,6 +405,9 @@ padding-right:5%</string>
                 <family>Arial</family>
                 <pointsize>16</pointsize>
                </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
               </property>
               <property name="text">
                <string>2</string>
@@ -375,8 +428,11 @@ padding-right:5%</string>
                 <pointsize>16</pointsize>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
               <property name="text">
-               <string>мм</string>
+               <string>mm</string>
               </property>
              </widget>
             </item>
@@ -390,6 +446,9 @@ padding-right:5%</string>
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -412,8 +471,11 @@ padding-right:5%</string>
                 <pointsize>16</pointsize>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
               <property name="text">
-               <string>Длина волны:</string>
+               <string>Wavelength:</string>
               </property>
              </widget>
             </item>
@@ -430,6 +492,9 @@ padding-right:5%</string>
                 <family>Arial</family>
                 <pointsize>16</pointsize>
                </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
               </property>
               <property name="text">
                <string>495</string>
@@ -450,8 +515,11 @@ padding-right:5%</string>
                 <pointsize>16</pointsize>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
               <property name="text">
-               <string>нм</string>
+               <string>nm</string>
               </property>
              </widget>
             </item>
@@ -461,7 +529,11 @@ padding-right:5%</string>
         </layout>
        </item>
        <item row="2" column="1">
-        <widget class="SchemeGraph" name="widget_schemeGraph" native="true"/>
+        <widget class="SchemeGraph" name="widget_schemeGraph" native="true">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

@@ -17,6 +17,9 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0" colspan="2">
      <widget class="QFrame" name="frame_3">
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -44,6 +47,9 @@
        </property>
        <item row="1" column="0">
         <widget class="QFrame" name="frame">
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -65,6 +71,9 @@
           </property>
           <item>
            <widget class="QFrame" name="frame_5">
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -95,6 +104,9 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="locale">
+                <locale language="English" country="UnitedStates"/>
+               </property>
               </widget>
              </item>
             </layout>
@@ -107,6 +119,9 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
@@ -138,10 +153,16 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="locale">
+                <locale language="English" country="UnitedStates"/>
+               </property>
               </widget>
              </item>
              <item alignment="Qt::AlignTop">
               <widget class="QFrame" name="frame_7">
+               <property name="locale">
+                <locale language="English" country="UnitedStates"/>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
                </property>
@@ -159,8 +180,11 @@
                     <bold>true</bold>
                    </font>
                   </property>
+                  <property name="locale">
+                   <locale language="English" country="UnitedStates"/>
+                  </property>
                   <property name="text">
-                   <string>Интенсивность в точке наблюдения</string>
+                   <string>Intensity at the point of observation</string>
                   </property>
                  </widget>
                 </item>
@@ -172,6 +196,9 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="locale">
+                   <locale language="English" country="UnitedStates"/>
+                  </property>
                   <property name="value">
                    <number>24</number>
                   </property>
@@ -179,6 +206,9 @@
                 </item>
                 <item>
                  <spacer name="verticalSpacer">
+                  <property name="locale">
+                   <locale language="English" country="UnitedStates"/>
+                  </property>
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
@@ -206,13 +236,19 @@
                     <bold>true</bold>
                    </font>
                   </property>
+                  <property name="locale">
+                   <locale language="English" country="UnitedStates"/>
+                  </property>
                   <property name="text">
-                   <string>Тип фазовой пластинки:</string>
+                   <string>Type of the phase plate:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QFrame" name="frame_8">
+                  <property name="locale">
+                   <locale language="English" country="UnitedStates"/>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
@@ -239,6 +275,9 @@
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
+                     </property>
+                     <property name="locale">
+                      <locale language="English" country="UnitedStates"/>
                      </property>
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
@@ -273,6 +312,9 @@
                           <pointsize>16</pointsize>
                          </font>
                         </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
+                        </property>
                         <property name="text">
                          <string/>
                         </property>
@@ -295,6 +337,9 @@
                           <pointsize>16</pointsize>
                          </font>
                         </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
+                        </property>
                         <property name="text">
                          <string/>
                         </property>
@@ -313,6 +358,9 @@
                           <family>Arial</family>
                           <pointsize>16</pointsize>
                          </font>
+                        </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
                         </property>
                         <property name="text">
                          <string/>
@@ -333,6 +381,9 @@
                           <pointsize>16</pointsize>
                          </font>
                         </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
+                        </property>
                         <property name="text">
                          <string/>
                         </property>
@@ -343,6 +394,9 @@
                    </item>
                    <item>
                     <widget class="QFrame" name="frame_10">
+                     <property name="locale">
+                      <locale language="English" country="UnitedStates"/>
+                     </property>
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
                      </property>
@@ -370,8 +424,11 @@
                           <pointsize>16</pointsize>
                          </font>
                         </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
+                        </property>
                         <property name="text">
-                         <string>Полуволновая</string>
+                         <string>Half-wavelength</string>
                         </property>
                        </widget>
                       </item>
@@ -383,8 +440,11 @@
                           <pointsize>16</pointsize>
                          </font>
                         </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
+                        </property>
                         <property name="text">
-                         <string>Ступенчатая</string>
+                         <string>Stepwise</string>
                         </property>
                        </widget>
                       </item>
@@ -396,8 +456,11 @@
                           <pointsize>16</pointsize>
                          </font>
                         </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
+                        </property>
                         <property name="text">
-                         <string>Плоско-выпуклая линза</string>
+                         <string>Plano-convex lens</string>
                         </property>
                        </widget>
                       </item>
@@ -409,8 +472,11 @@
                           <pointsize>16</pointsize>
                          </font>
                         </property>
+                        <property name="locale">
+                         <locale language="English" country="UnitedStates"/>
+                        </property>
                         <property name="text">
-                         <string>Плоская линза Френеля</string>
+                         <string>Flat Fresnel lens</string>
                         </property>
                        </widget>
                       </item>
@@ -436,6 +502,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -477,8 +546,11 @@
              <string notr="true">padding-bottom:6;
 </string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Амплитуда на оси</string>
+             <string>Amplitude at the axis</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -492,6 +564,9 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
             </property>
            </widget>
           </item>
@@ -508,6 +583,9 @@
          </property>
          <property name="styleSheet">
           <string notr="true"/>
+         </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
@@ -554,8 +632,11 @@ padding-bottom:5%;
 padding-left:5%;
 padding-right:5%</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Выход</string>
+             <string>Quit</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -570,6 +651,9 @@ padding-right:5%</string>
           </item>
           <item>
            <spacer name="horizontalSpacer_2">
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -598,8 +682,11 @@ padding-right:5%</string>
               <underline>true</underline>
              </font>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>Фазовая пластинка</string>
+             <string>Phase plate</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -608,6 +695,9 @@ padding-right:5%</string>
           </item>
           <item>
            <spacer name="horizontalSpacer">
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -648,8 +738,11 @@ padding-bottom:5%;
 padding-left:5%;
 padding-right:5%</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
             <property name="text">
-             <string>В начало</string>
+             <string>Menu</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -683,15 +776,15 @@ padding-right:5%</string>
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>SchemeGraph</class>
+   <extends>QWidget</extends>
+   <header>schemegraph.h</header>
+  </customwidget>
+  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>SchemeGraph</class>
-   <extends>QWidget</extends>
-   <header>schemegraph.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
