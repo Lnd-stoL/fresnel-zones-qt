@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_AmplitudePlateWindow_t {
-    QByteArrayData data[11];
-    char stringdata[197];
+    QByteArrayData data[12];
+    char stringdata[217];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,19 +33,21 @@ QT_MOC_LITERAL(0, 0, 20),
 QT_MOC_LITERAL(1, 21, 7),
 QT_MOC_LITERAL(2, 29, 0),
 QT_MOC_LITERAL(3, 30, 19),
-QT_MOC_LITERAL(4, 50, 22),
-QT_MOC_LITERAL(5, 73, 23),
-QT_MOC_LITERAL(6, 97, 22),
-QT_MOC_LITERAL(7, 120, 19),
-QT_MOC_LITERAL(8, 140, 25),
-QT_MOC_LITERAL(9, 166, 5),
-QT_MOC_LITERAL(10, 172, 23)
+QT_MOC_LITERAL(4, 50, 19),
+QT_MOC_LITERAL(5, 70, 22),
+QT_MOC_LITERAL(6, 93, 23),
+QT_MOC_LITERAL(7, 117, 22),
+QT_MOC_LITERAL(8, 140, 19),
+QT_MOC_LITERAL(9, 160, 25),
+QT_MOC_LITERAL(10, 186, 5),
+QT_MOC_LITERAL(11, 192, 23)
     },
     "AmplitudePlateWindow\0_update\0\0"
-    "button_Back_Pressed\0button_OpenAll_Pressed\0"
-    "button_CloseAll_Pressed\0button_OpenOdd_Pressed\0"
-    "button_Tune_Pressed\0slider_WaveLength_Changed\0"
-    "value\0spin_WaveLength_Changed\0"
+    "button_Back_Pressed\0button_Next_Pressed\0"
+    "button_OpenAll_Pressed\0button_CloseAll_Pressed\0"
+    "button_OpenOdd_Pressed\0button_Tune_Pressed\0"
+    "slider_WaveLength_Changed\0value\0"
+    "spin_WaveLength_Changed\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +57,7 @@ static const uint qt_meta_data_AmplitudePlateWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,14 +65,15 @@ static const uint qt_meta_data_AmplitudePlateWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x08,
-       3,    0,   55,    2, 0x08,
-       4,    0,   56,    2, 0x08,
-       5,    0,   57,    2, 0x08,
-       6,    0,   58,    2, 0x08,
-       7,    0,   59,    2, 0x08,
-       8,    1,   60,    2, 0x08,
-      10,    1,   63,    2, 0x08,
+       1,    0,   59,    2, 0x08,
+       3,    0,   60,    2, 0x08,
+       4,    0,   61,    2, 0x08,
+       5,    0,   62,    2, 0x08,
+       6,    0,   63,    2, 0x08,
+       7,    0,   64,    2, 0x08,
+       8,    0,   65,    2, 0x08,
+       9,    1,   66,    2, 0x08,
+      11,    1,   69,    2, 0x08,
 
  // slots: parameters
     QMetaType::Void,
@@ -79,8 +82,9 @@ static const uint qt_meta_data_AmplitudePlateWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    9,
-    QMetaType::Void, QMetaType::Double,    9,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void, QMetaType::Double,   10,
 
        0        // eod
 };
@@ -92,12 +96,13 @@ void AmplitudePlateWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         switch (_id) {
         case 0: _t->_update(); break;
         case 1: _t->button_Back_Pressed(); break;
-        case 2: _t->button_OpenAll_Pressed(); break;
-        case 3: _t->button_CloseAll_Pressed(); break;
-        case 4: _t->button_OpenOdd_Pressed(); break;
-        case 5: _t->button_Tune_Pressed(); break;
-        case 6: _t->slider_WaveLength_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->spin_WaveLength_Changed((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 2: _t->button_Next_Pressed(); break;
+        case 3: _t->button_OpenAll_Pressed(); break;
+        case 4: _t->button_CloseAll_Pressed(); break;
+        case 5: _t->button_OpenOdd_Pressed(); break;
+        case 6: _t->button_Tune_Pressed(); break;
+        case 7: _t->slider_WaveLength_Changed((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->spin_WaveLength_Changed((*reinterpret_cast< double(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -128,13 +133,13 @@ int AmplitudePlateWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

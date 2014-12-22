@@ -139,7 +139,7 @@ void AmplitudePlateWindow::_updateProgressBar()
 
     ui->progressBar->setValue (progress);
 
-    ui->label_Intensity->setText (QString ("Интенсивность на оси: ") +
+    ui->label_intensity->setText (QString ("Интенсивность на оси: ") +
                                   QString::number (_fresnel->intensity() / _initialIntensity, 'g', 4) + " Io");
 }
 
@@ -158,6 +158,8 @@ void AmplitudePlateWindow::_update()
     _fresnel->spiral (ui->widget_spiralGraph->spiralX, ui->widget_spiralGraph->spiralY);
     ui->widget_spiralGraph->repaint();
     ui->widget_schemeGraph->repaint();
+    ui->label_intensity->setText("Интенсивность в точке наблюдения: " +
+                                 QString::number ((int)round (_fresnel->intensity() / this->_progressBarHigh)) + " Io");
 
     _updateProgressBar();
 }
@@ -205,7 +207,7 @@ void AmplitudePlateWindow::button_OpenOdd_Pressed()
 
 void AmplitudePlateWindow::button_Tune_Pressed()
 {
-    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (8));
+    _fresnel->setObserverDistance (_fresnel->getObserverDistanceForZone (6));
     _update();
 }
 

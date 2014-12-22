@@ -13,9 +13,7 @@ void Fresnel::setDefaults ()
     waveLength            = wave_def;                   // l
     holeRadius            = radius_def;                 // R
     observerDistance      = dist_def;                   // b
-    sourceDistance        = 0.05;                       // a
-    accuracyPlot          = 0.0001;                     // dr in amplitude integral
-    accuracySpiral        = 10;                         // Number of spiral vectors in one zone
+    sourceDistance        = src_dist_def;               // a
     waveNumber            = 2.0 * M_PI / waveLength;    // k
     currentFresnelNumber  = fresnelNumber (holeRadius); // fn
     refractiveIndex       = 2.0;                        // n
@@ -238,7 +236,7 @@ int Fresnel::fresnelNumber (double r) const
     }
     double b  = observerDistance;
     double l  = waveLength;
-    int    fn = (int) (2.0 * (sqrt (b*b + r*r) - b) / l);
+    int    fn = (int) (2.0 * (sqrt (b*b + r*r) - b) / l + 0.001);
     return fn;
 }
 

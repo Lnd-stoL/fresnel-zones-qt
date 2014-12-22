@@ -41,7 +41,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,1,1,16">
+      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,1,16">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -57,26 +57,6 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item>
-        <widget class="FontScalableLabel" name="label_3">
-         <property name="font">
-          <font>
-           <family>Courier New</family>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <italic>true</italic>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">padding-left:6;
-</string>
-         </property>
-         <property name="text">
-          <string>Io - Интенсивность при отсутствии отверстия</string>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QWidget" name="widget_3" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -95,27 +75,6 @@
           <property name="bottomMargin">
            <number>10</number>
           </property>
-          <item>
-           <widget class="FontScalableLabel" name="label_Intensity">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <family>Courier New</family>
-              <pointsize>17</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Интенсивность на оси: Io</string>
-            </property>
-           </widget>
-          </item>
           <item>
            <widget class="QProgressBar" name="progressBar">
             <property name="sizePolicy">
@@ -141,6 +100,50 @@
             </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="FontScalableLabel" name="label_intensity">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>Courier New</family>
+              <pointsize>17</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Интенсивность на оси: Io</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft">
+           <widget class="FontScalableLabel" name="label_3">
+            <property name="font">
+             <font>
+              <family>Courier New</family>
+              <pointsize>14</pointsize>
+              <weight>75</weight>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">padding-left:0;
+</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Io - Интенсивность при отсутствии отверстия&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>

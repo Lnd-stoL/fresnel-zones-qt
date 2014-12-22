@@ -1,4 +1,4 @@
 fresnel-zones-qt
 ================
 
-Simply the shit we are fucking with every week.
+Simply the sheet we are lucky with every week.

@@ -22,7 +22,7 @@ public:
     QPointF         eyePosition;
     double          holeCenterXRelativePosition         = 0.2;     // Hole center position relative to graph width
     double          eyeCenterXRelativePosition          = 0.8;     // Eye position relative to graph width
-    double          holeRelativeSize                    = 0.6;     // Hole size relative to graph height
+    double          holeRelativeSize                    = 0.57;     // Hole size relative to graph height
     double          eyeRelativeSize                     = 0.1;     // Eye size relative to graph height
     int             platePenWidth                       = 4;
     int             wallPenWidth                        = 8;
