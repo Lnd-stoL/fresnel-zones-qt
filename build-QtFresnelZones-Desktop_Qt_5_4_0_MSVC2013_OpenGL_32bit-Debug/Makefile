@@ -193,7 +193,6 @@ Makefile: ..\QtFresnelZones\QtFresnelZones.pro D:\win-qt\5.4\msvc2013_opengl\mks
 		..\QtFresnelZones\QtFresnelZones.pro \
 		D:/win-qt/5.4/msvc2013_opengl/lib/qtmaind.prl \
 		D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Cored.prl \
-		D:/win-qt/5.4/msvc2013_opengl/lib/Qt5OpenGL.prl \
 		D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Widgets.prl \
 		D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Gui.prl \
 		D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Core.prl
@@ -318,7 +317,6 @@ D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\lex.prf:
 ..\QtFresnelZones\QtFresnelZones.pro:
 D:/win-qt/5.4/msvc2013_opengl/lib/qtmaind.prl:
 D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Cored.prl:
-D:/win-qt/5.4/msvc2013_opengl/lib/Qt5OpenGL.prl:
 D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Widgets.prl:
 D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Gui.prl:
 D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Core.prl:

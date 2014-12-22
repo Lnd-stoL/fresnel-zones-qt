@@ -11,13 +11,13 @@ MAKEFILE      = Makefile.Release
 
 CC            = cl
 CXX           = cl
-DEFINES       = -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG
+DEFINES       = -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG
 CFLAGS        = -nologo -Zm200 -Zc:wchar_t -FS -O2 -MD -Zc:strictStrings -W3 $(DEFINES)
 CXXFLAGS      = -nologo -Zm200 -Zc:wchar_t -FS -O2 -MD -Zc:strictStrings -GR -W3 -w34100 -w34189 -EHsc $(DEFINES)
-INCPATH       = -I"D:\win-qt\5.4\msvc2013_opengl\include" -I"D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL" -I"D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets" -I"D:\win-qt\5.4\msvc2013_opengl\include\QtGui" -I"D:\win-qt\5.4\msvc2013_opengl\include\QtCore" -I"release" -I"." -I"." -I"D:\win-qt\5.4\msvc2013_opengl\mkspecs\win32-msvc2013"
+INCPATH       = -I"D:\win-qt\5.4\msvc2013_opengl\include" -I"D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets" -I"D:\win-qt\5.4\msvc2013_opengl\include\QtGui" -I"D:\win-qt\5.4\msvc2013_opengl\include\QtCore" -I"release" -I"." -I"." -I"D:\win-qt\5.4\msvc2013_opengl\mkspecs\win32-msvc2013"
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = glu32.lib opengl32.lib gdi32.lib user32.lib /LIBPATH:D:\win-qt\5.4\msvc2013_opengl\lib D:\win-qt\5.4\msvc2013_opengl\lib\qtmain.lib shell32.lib D:\win-qt\5.4\msvc2013_opengl\lib\Qt5OpenGL.lib D:\win-qt\5.4\msvc2013_opengl\lib\Qt5Widgets.lib D:\win-qt\5.4\msvc2013_opengl\lib\Qt5Gui.lib D:\win-qt\5.4\msvc2013_opengl\lib\Qt5Core.lib 
+LIBS          = glu32.lib opengl32.lib gdi32.lib user32.lib /LIBPATH:D:\win-qt\5.4\msvc2013_opengl\lib D:\win-qt\5.4\msvc2013_opengl\lib\qtmain.lib shell32.lib D:\win-qt\5.4\msvc2013_opengl\lib\Qt5Widgets.lib D:\win-qt\5.4\msvc2013_opengl\lib\Qt5Gui.lib D:\win-qt\5.4\msvc2013_opengl\lib\Qt5Core.lib 
 QMAKE         = D:\win-qt\5.4\msvc2013_opengl\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -237,7 +237,7 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) QtFresnelZones.zip $(SOURCES) $(DIST) ..\QtFresnelZones\QtFresnelZones.pro D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\spec_pre.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\common\shell-win32.conf D:\win-qt\5.4\msvc2013_opengl\mkspecs\qconfig.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axbase.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axbase_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axcontainer.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axcontainer_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axserver.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axserver_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_bluetooth.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_bluetooth_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_bootstrap_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_clucene_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_concurrent.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_concurrent_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_core.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_core_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_declarative.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_declarative_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_designer.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_designer_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_designercomponents_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_enginio.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_enginio_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_gui.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_gui_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_help.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_help_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_location.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_location_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimedia.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimedia_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimediawidgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_network.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_network_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_nfc.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_nfc_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_opengl.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_opengl_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_openglextensions.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_openglextensions_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_platformsupport_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_positioning.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_positioning_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_printsupport.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_printsupport_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qml.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qml_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qmltest.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qmltest_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quick.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quick_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quickparticles_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quickwidgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_script.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_script_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_scripttools.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_scripttools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sensors.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sensors_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_serialport.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_serialport_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sql.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sql_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_svg.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_svg_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_testlib.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_testlib_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_uitools.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_uitools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webchannel.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webchannel_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkit.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkit_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkitwidgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkitwidgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_websockets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_websockets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webview.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webview_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_widgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_widgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_winextras.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_winextras_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xml.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xml_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xmlpatterns.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\qt_functions.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\qt_config.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\qt_config.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\win32-msvc2013\qmake.conf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\spec_post.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\exclusive_builds.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\default_pre.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\default_pre.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\resolve_config.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\exclusive_builds_post.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\default_post.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\build_pass.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\c++11.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\rtti.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\precompile_header.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\warn_on.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\qt.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\resources.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\moc.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\opengl.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\uic.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\windows.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\testcase_targets.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\exceptions.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\yacc.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\lex.prf ..\QtFresnelZones\QtFresnelZones.pro ..\QtFresnelZones\icons.qrc D:/win-qt/5.4/msvc2013_opengl/lib/qtmain.prl D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Core.prl D:/win-qt/5.4/msvc2013_opengl/lib/Qt5OpenGL.prl D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Widgets.prl D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Gui.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
+	$(ZIP) QtFresnelZones.zip $(SOURCES) $(DIST) ..\QtFresnelZones\QtFresnelZones.pro D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\spec_pre.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\common\shell-win32.conf D:\win-qt\5.4\msvc2013_opengl\mkspecs\qconfig.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axbase.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axbase_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axcontainer.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axcontainer_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axserver.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_axserver_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_bluetooth.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_bluetooth_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_bootstrap_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_clucene_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_concurrent.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_concurrent_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_core.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_core_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_declarative.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_declarative_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_designer.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_designer_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_designercomponents_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_enginio.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_enginio_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_gui.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_gui_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_help.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_help_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_location.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_location_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimedia.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimedia_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimediawidgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_network.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_network_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_nfc.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_nfc_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_opengl.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_opengl_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_openglextensions.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_openglextensions_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_platformsupport_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_positioning.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_positioning_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_printsupport.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_printsupport_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qml.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qml_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qmltest.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qmltest_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quick.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quick_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quickparticles_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quickwidgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_script.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_script_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_scripttools.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_scripttools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sensors.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sensors_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_serialport.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_serialport_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sql.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_sql_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_svg.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_svg_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_testlib.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_testlib_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_uitools.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_uitools_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webchannel.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webchannel_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkit.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkit_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkitwidgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webkitwidgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_websockets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_websockets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webview.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_webview_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_widgets.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_widgets_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_winextras.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_winextras_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xml.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xml_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xmlpatterns.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\qt_functions.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\qt_config.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\qt_config.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\win32-msvc2013\qmake.conf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\spec_post.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\exclusive_builds.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\default_pre.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\default_pre.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\resolve_config.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\exclusive_builds_post.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\default_post.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\build_pass.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\c++11.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\rtti.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\precompile_header.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\warn_on.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\qt.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\resources.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\moc.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\opengl.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\uic.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\win32\windows.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\testcase_targets.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\exceptions.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\yacc.prf D:\win-qt\5.4\msvc2013_opengl\mkspecs\features\lex.prf ..\QtFresnelZones\QtFresnelZones.pro ..\QtFresnelZones\icons.qrc D:/win-qt/5.4/msvc2013_opengl/lib/qtmain.prl D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Core.prl D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Widgets.prl D:/win-qt/5.4/msvc2013_opengl/lib/Qt5Gui.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\main.obj release\qcustomplot.obj release\spiralgraph.obj release\zonesgraph.obj release\titlewindow.obj release\intensitygraphwindow.obj release\complex.obj release\fresnel.obj release\fontscalablelabel.obj release\fontscalablespinbox.obj release\fontscalablepushbutton.obj release\amplitudeplatewindow.obj release\colortransform.obj release\intensityplot.obj release\hidpiscaler.obj release\phaseplatewindow.obj release\schemegraph.obj release\drawer.obj release\introwindow.obj release\authorswindow.obj release\qrc_icons.obj release\moc_qcustomplot.obj release\moc_spiralgraph.obj release\moc_zonesgraph.obj release\moc_titlewindow.obj release\moc_intensitygraphwindow.obj release\moc_fontscalablelabel.obj release\moc_fontscalablespinbox.obj release\moc_fontscalablepushbutton.obj release\moc_amplitudeplatewindow.obj release\moc_intensityplot.obj release\moc_phaseplatewindow.obj release\moc_schemegraph.obj release\moc_introwindow.obj release\moc_authorswindow.obj
@@ -259,10 +259,10 @@ compiler_rcc_make_all: release\qrc_icons.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_icons.cpp
 release\qrc_icons.cpp: ..\QtFresnelZones\icons.qrc \
+		..\QtFresnelZones\sanya.jpg \
+		..\QtFresnelZones\lenya.jpg \
 		..\QtFresnelZones\phys-logo.svg \
-		..\QtFresnelZones\cmc-logo.svg \
-		..\QtFresnelZones\sanya.png \
-		..\QtFresnelZones\lenya.png
+		..\QtFresnelZones\cmc-logo.svg
 	D:\win-qt\5.4\msvc2013_opengl\bin\rcc.exe -name icons ..\QtFresnelZones\icons.qrc -o release\qrc_icons.cpp
 
 compiler_moc_header_make_all: release\moc_qcustomplot.cpp release\moc_spiralgraph.cpp release\moc_zonesgraph.cpp release\moc_titlewindow.cpp release\moc_intensitygraphwindow.cpp release\moc_fontscalablelabel.cpp release\moc_fontscalablespinbox.cpp release\moc_fontscalablepushbutton.cpp release\moc_amplitudeplatewindow.cpp release\moc_intensityplot.cpp release\moc_phaseplatewindow.cpp release\moc_schemegraph.cpp release\moc_introwindow.cpp release\moc_authorswindow.cpp
@@ -396,7 +396,7 @@ release\moc_qcustomplot.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QObjec
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmath.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QtNumeric \
 		..\QtFresnelZones\qcustomplot.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\qcustomplot.h -o release\moc_qcustomplot.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\qcustomplot.h -o release\moc_qcustomplot.cpp
 
 release\moc_spiralgraph.cpp: ..\QtFresnelZones\drawer.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPainter \
@@ -508,19 +508,8 @@ release\moc_spiralgraph.cpp: ..\QtFresnelZones\drawer.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		..\QtFresnelZones\spiralgraph.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\spiralgraph.h -o release\moc_spiralgraph.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\spiralgraph.h -o release\moc_spiralgraph.cpp
 
 release\moc_zonesgraph.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
@@ -628,7 +617,7 @@ release\moc_zonesgraph.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWid
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
 		..\QtFresnelZones\zonesgraph.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\zonesgraph.h -o release\moc_zonesgraph.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\zonesgraph.h -o release\moc_zonesgraph.cpp
 
 release\moc_titlewindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
@@ -739,7 +728,7 @@ release\moc_titlewindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMa
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
 		..\QtFresnelZones\titlewindow.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\titlewindow.h -o release\moc_titlewindow.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\titlewindow.h -o release\moc_titlewindow.cpp
 
 release\moc_intensitygraphwindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
@@ -879,7 +868,7 @@ release\moc_intensitygraphwindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWi
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
 		..\QtFresnelZones\intensitygraphwindow.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\intensitygraphwindow.h -o release\moc_intensitygraphwindow.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\intensitygraphwindow.h -o release\moc_intensitygraphwindow.cpp
 
 release\moc_fontscalablelabel.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
@@ -986,7 +975,7 @@ release\moc_fontscalablelabel.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidge
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
 		..\QtFresnelZones\fontscalablelabel.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\fontscalablelabel.h -o release\moc_fontscalablelabel.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\fontscalablelabel.h -o release\moc_fontscalablelabel.cpp
 
 release\moc_fontscalablespinbox.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
@@ -1096,7 +1085,7 @@ release\moc_fontscalablespinbox.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWid
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
 		..\QtFresnelZones\fontscalablespinbox.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\fontscalablespinbox.h -o release\moc_fontscalablespinbox.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\fontscalablespinbox.h -o release\moc_fontscalablespinbox.cpp
 
 release\moc_fontscalablepushbutton.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
@@ -1205,7 +1194,7 @@ release\moc_fontscalablepushbutton.cpp: D:\win-qt\5.4\msvc2013_opengl\include\Qt
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qicon.h \
 		..\QtFresnelZones\fontscalablepushbutton.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\fontscalablepushbutton.h -o release\moc_fontscalablepushbutton.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\fontscalablepushbutton.h -o release\moc_fontscalablepushbutton.cpp
 
 release\moc_amplitudeplatewindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
@@ -1322,7 +1311,7 @@ release\moc_amplitudeplatewindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWi
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
 		..\QtFresnelZones\amplitudeplatewindow.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\amplitudeplatewindow.h -o release\moc_amplitudeplatewindow.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\amplitudeplatewindow.h -o release\moc_amplitudeplatewindow.cpp
 
 release\moc_intensityplot.cpp: ..\QtFresnelZones\qcustomplot.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QObject \
@@ -1455,7 +1444,7 @@ release\moc_intensityplot.cpp: ..\QtFresnelZones\qcustomplot.h \
 		..\QtFresnelZones\fresnel.h \
 		..\QtFresnelZones\complex.h \
 		..\QtFresnelZones\intensityplot.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\intensityplot.h -o release\moc_intensityplot.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\intensityplot.h -o release\moc_intensityplot.cpp
 
 release\moc_phaseplatewindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
@@ -1566,7 +1555,7 @@ release\moc_phaseplatewindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidget
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
 		..\QtFresnelZones\phaseplatewindow.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\phaseplatewindow.h -o release\moc_phaseplatewindow.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\phaseplatewindow.h -o release\moc_phaseplatewindow.cpp
 
 release\moc_schemegraph.cpp: ..\QtFresnelZones\fresnel.h \
 		..\QtFresnelZones\complex.h \
@@ -1680,17 +1669,6 @@ release\moc_schemegraph.cpp: ..\QtFresnelZones\fresnel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \
@@ -1700,7 +1678,7 @@ release\moc_schemegraph.cpp: ..\QtFresnelZones\fresnel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabwidget.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qicon.h \
 		..\QtFresnelZones\schemegraph.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\schemegraph.h -o release\moc_schemegraph.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\schemegraph.h -o release\moc_schemegraph.cpp
 
 release\moc_introwindow.cpp: ..\QtFresnelZones\fresnel.h \
 		..\QtFresnelZones\complex.h \
@@ -1816,17 +1794,6 @@ release\moc_introwindow.cpp: ..\QtFresnelZones\fresnel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
 		..\QtFresnelZones\spiralgraph.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabwidget.h \
@@ -1834,7 +1801,7 @@ release\moc_introwindow.cpp: ..\QtFresnelZones\fresnel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\introwindow.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\introwindow.h -o release\moc_introwindow.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\introwindow.h -o release\moc_introwindow.cpp
 
 release\moc_authorswindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
@@ -1945,7 +1912,7 @@ release\moc_authorswindow.cpp: D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\Q
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
 		..\QtFresnelZones\authorswindow.h
-	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtOpenGL -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\authorswindow.h -o release\moc_authorswindow.cpp
+	D:\win-qt\5.4\msvc2013_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -ID:/win-qt/5.4/msvc2013_opengl/mkspecs/win32-msvc2013 -IC:/Users/Leonid/Documents/GitHub/fresnel-zones-qt/QtFresnelZones -ID:/win-qt/5.4/msvc2013_opengl/include -ID:/win-qt/5.4/msvc2013_opengl/include/QtWidgets -ID:/win-qt/5.4/msvc2013_opengl/include/QtGui -ID:/win-qt/5.4/msvc2013_opengl/include/QtCore -I. ..\QtFresnelZones\authorswindow.h -o release\moc_authorswindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -2729,17 +2696,6 @@ ui_intensitygraphwindow.h: ..\QtFresnelZones\intensitygraphwindow.ui \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs.h \
@@ -2853,9 +2809,9 @@ ui_amplitudeplatewindow.h: ..\QtFresnelZones\amplitudeplatewindow.ui \
 		..\QtFresnelZones\fontscalablelabel.h \
 		..\QtFresnelZones\fontscalablepushbutton.h \
 		..\QtFresnelZones\zonesgraph.h \
-		..\QtFresnelZones\schemegraph.h \
 		..\QtFresnelZones\spiralgraph.h \
 		..\QtFresnelZones\fontscalablespinbox.h \
+		..\QtFresnelZones\schemegraph.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
@@ -3171,6 +3127,223 @@ ui_amplitudeplatewindow.h: ..\QtFresnelZones\amplitudeplatewindow.ui \
 		..\QtFresnelZones\fresnel.h \
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
+		..\QtFresnelZones\drawer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPainter \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnamespace.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobal.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qconfig.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfeatures.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsystemdetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qprocessordetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcompilerdetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypeinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypetraits.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsysinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlogging.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qflags.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbasicatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_bootstrap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qgenericatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_msvc.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv7.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv6.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv5.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_ia64.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_mips.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_x86.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_cxx11.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_gcc.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_unix.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobalstatic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmutex.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnumeric.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrect.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmargins.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsize.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpoint.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qscopedpointer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixmap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintdevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs_win.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcolor.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qrgb.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringlist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qalgorithms.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdatastream.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiodevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstring.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qchar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearray.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrefcount.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qarraydata.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringbuilder.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiterator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearraylist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreevent.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmetatype.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvarlengtharray.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontainerfwd.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qisenum.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpair.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregexp.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringmatcher.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qshareddata.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qhash.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qimage.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtransform.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qmatrix.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpolygon.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvector.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qregion.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qline.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainterpath.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixelformat.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qbrush.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfont.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontmetrics.h \
+		..\QtFresnelZones\fresnel.h \
+		..\QtFresnelZones\complex.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpalette.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qsizepolicy.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcursor.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qkeysequence.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qevent.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvariant.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdebug.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtextstream.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlocale.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qset.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontiguouscache.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurlquery.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfile.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobal.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qconfig.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfeatures.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsystemdetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qprocessordetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcompilerdetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypeinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypetraits.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsysinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlogging.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qflags.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbasicatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_bootstrap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qgenericatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_msvc.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv7.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv6.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv5.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_ia64.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_mips.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_x86.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_cxx11.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_gcc.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_unix.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobalstatic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmutex.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnumeric.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnamespace.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs_win.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstring.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qchar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearray.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrefcount.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qarraydata.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringbuilder.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qalgorithms.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiterator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearraylist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreevent.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qscopedpointer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmetatype.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvarlengtharray.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontainerfwd.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qisenum.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmargins.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintdevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrect.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsize.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpoint.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpalette.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcolor.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qrgb.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringlist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdatastream.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiodevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpair.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregexp.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringmatcher.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qbrush.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvector.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qmatrix.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpolygon.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qregion.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qline.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtransform.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainterpath.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qimage.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixelformat.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixmap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qshareddata.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qhash.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfont.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontmetrics.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qsizepolicy.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcursor.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qkeysequence.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qevent.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvariant.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdebug.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtextstream.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlocale.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qset.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontiguouscache.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurlquery.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfile.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QDoubleSpinBox \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
 		..\QtFresnelZones\fresnel.h \
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
@@ -3283,17 +3456,6 @@ ui_amplitudeplatewindow.h: ..\QtFresnelZones\amplitudeplatewindow.ui \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \
@@ -3301,235 +3463,7 @@ ui_amplitudeplatewindow.h: ..\QtFresnelZones\amplitudeplatewindow.ui \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabwidget.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qicon.h \
-		..\QtFresnelZones\drawer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPainter \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnamespace.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qconfig.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfeatures.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsystemdetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qprocessordetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcompilerdetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypeinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypetraits.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsysinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlogging.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qflags.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbasicatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_bootstrap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qgenericatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_msvc.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv7.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv6.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv5.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_ia64.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_mips.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_x86.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_cxx11.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_gcc.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_unix.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobalstatic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmutex.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnumeric.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrect.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmargins.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsize.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpoint.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qscopedpointer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixmap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs_win.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcolor.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qrgb.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringlist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qalgorithms.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdatastream.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiodevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstring.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qchar.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearray.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrefcount.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qarraydata.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringbuilder.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiterator.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearraylist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreevent.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmetatype.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvarlengtharray.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontainerfwd.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qisenum.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpair.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregexp.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringmatcher.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qshareddata.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qhash.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qimage.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtransform.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qmatrix.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpolygon.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvector.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qregion.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qline.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainterpath.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixelformat.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qbrush.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfont.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontmetrics.h \
-		..\QtFresnelZones\fresnel.h \
-		..\QtFresnelZones\complex.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpalette.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qsizepolicy.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcursor.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qkeysequence.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qevent.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvariant.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdebug.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtextstream.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlocale.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qset.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontiguouscache.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurlquery.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfile.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qconfig.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfeatures.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsystemdetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qprocessordetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcompilerdetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypeinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypetraits.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsysinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlogging.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qflags.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbasicatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_bootstrap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qgenericatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_msvc.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv7.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv6.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv5.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_ia64.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_mips.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_x86.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_cxx11.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_gcc.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_unix.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobalstatic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmutex.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnumeric.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnamespace.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs_win.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstring.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qchar.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearray.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrefcount.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qarraydata.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringbuilder.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qalgorithms.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiterator.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearraylist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreevent.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qscopedpointer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmetatype.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvarlengtharray.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontainerfwd.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qisenum.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmargins.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrect.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsize.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpoint.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpalette.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcolor.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qrgb.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringlist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdatastream.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiodevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpair.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregexp.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringmatcher.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qbrush.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvector.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qmatrix.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpolygon.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qregion.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qline.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtransform.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainterpath.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qimage.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixelformat.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixmap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qshareddata.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qhash.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfont.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontmetrics.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qsizepolicy.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcursor.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qkeysequence.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qevent.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvariant.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdebug.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtextstream.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlocale.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qset.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontiguouscache.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurlquery.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfile.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QDoubleSpinBox \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qspinbox.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qicon.h
 	D:\win-qt\5.4\msvc2013_opengl\bin\uic.exe ..\QtFresnelZones\amplitudeplatewindow.ui -o ui_amplitudeplatewindow.h
 
 ui_phaseplatewindow.h: ..\QtFresnelZones\phaseplatewindow.ui \
@@ -3963,17 +3897,6 @@ ui_phaseplatewindow.h: ..\QtFresnelZones\phaseplatewindow.ui \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		..\QtFresnelZones\fresnel.h \
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
@@ -4086,17 +4009,6 @@ ui_phaseplatewindow.h: ..\QtFresnelZones\phaseplatewindow.ui \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \
@@ -4111,8 +4023,8 @@ ui_introwindow.h: ..\QtFresnelZones\introwindow.ui \
 		..\QtFresnelZones\fontscalablelabel.h \
 		..\QtFresnelZones\fontscalablepushbutton.h \
 		..\QtFresnelZones\zonesgraph.h \
-		..\QtFresnelZones\schemegraph.h \
 		..\QtFresnelZones\intensityplot.h \
+		..\QtFresnelZones\schemegraph.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
@@ -4428,137 +4340,6 @@ ui_introwindow.h: ..\QtFresnelZones\introwindow.ui \
 		..\QtFresnelZones\fresnel.h \
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
-		..\QtFresnelZones\fresnel.h \
-		..\QtFresnelZones\complex.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvector.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qalgorithms.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qconfig.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfeatures.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsystemdetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qprocessordetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcompilerdetection.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypeinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypetraits.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsysinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlogging.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qflags.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbasicatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_bootstrap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qgenericatomic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_msvc.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv7.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv6.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv5.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_ia64.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_mips.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_x86.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_cxx11.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_gcc.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_unix.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobalstatic.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmutex.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnumeric.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiterator.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrefcount.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qarraydata.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearraylist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearray.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnamespace.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstring.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qchar.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringbuilder.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpoint.h \
-		..\QtFresnelZones\drawer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPainter \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrect.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmargins.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsize.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qscopedpointer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixmap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs_win.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcolor.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qrgb.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringlist.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdatastream.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiodevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreevent.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmetatype.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvarlengtharray.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontainerfwd.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qisenum.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpair.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregexp.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringmatcher.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qshareddata.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qhash.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer_impl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qimage.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtransform.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qmatrix.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpolygon.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qregion.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qline.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainterpath.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixelformat.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qbrush.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontinfo.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfont.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontmetrics.h \
-		..\QtFresnelZones\introwindow.h \
-		..\QtFresnelZones\schemegraph.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpalette.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qsizepolicy.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcursor.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qkeysequence.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qevent.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvariant.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdebug.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtextstream.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlocale.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qset.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontiguouscache.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurlquery.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfile.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
-		..\QtFresnelZones\zonesgraph.h \
-		..\QtFresnelZones\spiralgraph.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabwidget.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qicon.h \
 		..\QtFresnelZones\qcustomplot.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QObject \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject.h \
@@ -4688,7 +4469,127 @@ ui_introwindow.h: ..\QtFresnelZones\introwindow.ui \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmath.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QtNumeric \
 		..\QtFresnelZones\fresnel.h \
-		..\QtFresnelZones\complex.h
+		..\QtFresnelZones\complex.h \
+		..\QtFresnelZones\fresnel.h \
+		..\QtFresnelZones\complex.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvector.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qalgorithms.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobal.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qconfig.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfeatures.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsystemdetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qprocessordetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcompilerdetection.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypeinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtypetraits.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsysinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlogging.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qflags.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbasicatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_bootstrap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qgenericatomic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_msvc.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv7.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv6.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_armv5.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_ia64.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_mips.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_x86.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_cxx11.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_gcc.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qatomic_unix.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qglobalstatic.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmutex.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnumeric.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiterator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrefcount.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qarraydata.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearraylist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qbytearray.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qnamespace.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstring.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qchar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringbuilder.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpoint.h \
+		..\QtFresnelZones\drawer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPainter \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qrect.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmargins.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsize.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qscopedpointer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixmap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintdevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobjectdefs_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qwindowdefs_win.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcolor.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qrgb.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringlist.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdatastream.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qiodevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreevent.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmetatype.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvarlengtharray.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontainerfwd.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qisenum.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qobject_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpair.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregexp.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstringmatcher.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qshareddata.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qhash.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qsharedpointer_impl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qimage.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtransform.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qmatrix.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpolygon.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qregion.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qline.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainterpath.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpixelformat.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qbrush.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontinfo.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfont.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qfontmetrics.h \
+		..\QtFresnelZones\introwindow.h \
+		..\QtFresnelZones\schemegraph.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpalette.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qsizepolicy.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qcursor.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qkeysequence.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qevent.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qvariant.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmap.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdebug.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qtextstream.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qlocale.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qset.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcontiguouscache.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurl.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qurlquery.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfile.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
+		..\QtFresnelZones\zonesgraph.h \
+		..\QtFresnelZones\spiralgraph.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qicon.h
 	D:\win-qt\5.4\msvc2013_opengl\bin\uic.exe ..\QtFresnelZones\introwindow.ui -o ui_introwindow.h
 
 ui_authorswindow.h: ..\QtFresnelZones\authorswindow.ui \
@@ -5305,17 +5206,6 @@ release\spiralgraph.obj: ..\QtFresnelZones\spiralgraph.cpp ..\QtFresnelZones\spi
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QDebug \
 		..\QtFresnelZones\hidpiscaler.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QVector2D \
@@ -5556,17 +5446,6 @@ release\titlewindow.obj: ..\QtFresnelZones\titlewindow.cpp ..\QtFresnelZones\tit
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \
@@ -6589,7 +6468,8 @@ release\hidpiscaler.obj: ..\QtFresnelZones\hidpiscaler.cpp ..\QtFresnelZones\hid
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QFontMetrics
 
 release\phaseplatewindow.obj: ..\QtFresnelZones\phaseplatewindow.cpp ..\QtFresnelZones\phaseplatewindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
@@ -6820,17 +6700,6 @@ release\schemegraph.obj: ..\QtFresnelZones\schemegraph.cpp ..\QtFresnelZones\sch
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
 		..\QtFresnelZones\spiralgraph.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmainwindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabwidget.h \
@@ -7044,17 +6913,6 @@ release\introwindow.obj: ..\QtFresnelZones\introwindow.cpp ..\QtFresnelZones\int
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qfiledevice.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvector2d.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtouchdevice.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \
@@ -7184,17 +7042,6 @@ release\authorswindow.obj: ..\QtFresnelZones\authorswindow.cpp ..\QtFresnelZones
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\QGLWidget \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qgl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengl.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qt_windows.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopengles2ext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qopenglext.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpaintengine.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qglcolormap.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtOpenGL\qtopenglglobal.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QSurfaceFormat \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qsurfaceformat.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \

@@ -1,8 +1,8 @@
 <RCC>
-    <qresource prefix="/new/prefix1">
-        <file>cmc-logo.svg</file>
-        <file>phys-logo.svg</file>
-        <file>sanya.jpg</file>
-        <file>lenya.jpg</file>
+    <qresource prefix="/">
+        <file>lenya.png</file>
+        <file>sanya.png</file>
+        <file>cmc-logo.png</file>
+        <file>phys-logo.png</file>
     </qresource>
 </RCC>

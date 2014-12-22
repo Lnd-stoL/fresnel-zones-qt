@@ -65,7 +65,7 @@ public:
     {
         if (TitleWindow->objectName().isEmpty())
             TitleWindow->setObjectName(QStringLiteral("TitleWindow"));
-        TitleWindow->resize(1024, 768);
+        TitleWindow->resize(1382, 823);
         centralwidget = new QWidget(TitleWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout_2 = new QGridLayout(centralwidget);
@@ -229,7 +229,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy1);
-        widget_2->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/cmc-logo.svg);"));
+        widget_2->setStyleSheet(QStringLiteral("image: url(:cmc-logo.png);"));
 
         verticalLayout_2->addWidget(widget_2);
 
@@ -259,7 +259,7 @@ public:
         widget_3->setObjectName(QStringLiteral("widget_3"));
         sizePolicy1.setHeightForWidth(widget_3->sizePolicy().hasHeightForWidth());
         widget_3->setSizePolicy(sizePolicy1);
-        widget_3->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/phys-logo.svg);"));
+        widget_3->setStyleSheet(QStringLiteral("image: url(:phys-logo.png);"));
 
         verticalLayout_4->addWidget(widget_3);
 

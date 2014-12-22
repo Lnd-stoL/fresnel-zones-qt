@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>768</height>
+    <width>1382</width>
+    <height>823</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -387,7 +387,7 @@ padding-bottom:15%</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/cmc-logo.svg);</string>
+           <string notr="true">image: url(:cmc-logo.png);</string>
           </property>
          </widget>
         </item>
@@ -428,7 +428,7 @@ padding-bottom:15%</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/phys-logo.svg);</string>
+           <string notr="true">image: url(:phys-logo.png);</string>
           </property>
          </widget>
         </item>

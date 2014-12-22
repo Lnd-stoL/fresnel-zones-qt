@@ -17,6 +17,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
@@ -53,7 +54,7 @@ public:
     QSpacerItem *verticalSpacer_2;
     FontScalableLabel *label_6;
     QVBoxLayout *verticalLayout_2;
-    QWidget *widget_2;
+    QLabel *label_3;
     FontScalableLabel *label;
     QVBoxLayout *verticalLayout_4;
     QWidget *widget_3;
@@ -65,7 +66,7 @@ public:
     {
         if (TitleWindow->objectName().isEmpty())
             TitleWindow->setObjectName(QStringLiteral("TitleWindow"));
-        TitleWindow->resize(1024, 768);
+        TitleWindow->resize(1382, 823);
         centralwidget = new QWidget(TitleWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout_2 = new QGridLayout(centralwidget);
@@ -222,24 +223,19 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        widget_2 = new QWidget(centralwidget);
-        widget_2->setObjectName(QStringLiteral("widget_2"));
-        QSizePolicy sizePolicy1(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
-        widget_2->setSizePolicy(sizePolicy1);
-        widget_2->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/cmc-logo.svg);"));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setPixmap(QPixmap(QString::fromUtf8(":/cmc-logo.svg")));
 
-        verticalLayout_2->addWidget(widget_2);
+        verticalLayout_2->addWidget(label_3);
 
         label = new FontScalableLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
-        label->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy1);
         QFont font4;
         font4.setFamily(QStringLiteral("Arial"));
         font4.setPointSize(16);
@@ -257,16 +253,19 @@ public:
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         widget_3 = new QWidget(centralwidget);
         widget_3->setObjectName(QStringLiteral("widget_3"));
-        sizePolicy1.setHeightForWidth(widget_3->sizePolicy().hasHeightForWidth());
-        widget_3->setSizePolicy(sizePolicy1);
-        widget_3->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/phys-logo.svg);"));
+        QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(widget_3->sizePolicy().hasHeightForWidth());
+        widget_3->setSizePolicy(sizePolicy2);
+        widget_3->setStyleSheet(QStringLiteral("image: url(:/phys-logo.svg);"));
 
         verticalLayout_4->addWidget(widget_3);
 
         label_2 = new FontScalableLabel(centralwidget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy1);
         label_2->setFont(font4);
         label_2->setAlignment(Qt::AlignCenter);
 
@@ -325,6 +324,7 @@ public:
         label_5->setText(QApplication::translate("TitleWindow", "\320\232\320\276\320\274\320\277\321\214\321\216\321\202\320\265\321\200\320\275\321\213\320\265 \320\264\320\265\320\274\320\276\320\275\321\201\321\202\321\200\320\260\321\206\320\270\320\270 \320\277\320\276 \320\272\321\203\321\200\321\201\321\203 \320\273\320\265\320\272\321\206\320\270\320\271\n"
 "\"\320\244\320\270\320\267\320\270\320\272\320\260 \320\262\320\276\320\273\320\275\320\276\320\262\321\213\321\205 \320\277\321\200\320\276\321\206\320\265\321\201\321\201\320\276\320\262\"", 0));
         label_6->setText(QApplication::translate("TitleWindow", "\320\227\320\276\320\275\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
+        label_3->setText(QString());
         label->setText(QApplication::translate("TitleWindow", "\320\244\320\260\320\272\321\203\320\273\321\214\321\202\320\265\321\202 \320\222\320\234\320\232", 0));
         label_2->setText(QApplication::translate("TitleWindow", "\320\244\320\270\320\267\320\270\321\207\320\265\321\201\320\272\320\270\320\271 \321\204\320\260\320\272\321\203\320\273\321\214\321\202\320\265\321\202", 0));
         pushButton_Authors->setText(QApplication::translate("TitleWindow", "\320\220\320\262\321\202\320\276\321\200\321\213", 0));

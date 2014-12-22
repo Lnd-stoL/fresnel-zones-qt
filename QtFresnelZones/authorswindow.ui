@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>799</height>
+    <width>1382</width>
+    <height>913</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -198,7 +198,7 @@ padding-bottom:15%</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/cmc-logo.svg);</string>
+           <string notr="true">image: url(:/cmc-logo.png);</string>
           </property>
          </widget>
         </item>
@@ -245,7 +245,7 @@ padding-bottom:15%</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/sanya.jpg);</string>
+           <string notr="true">image: url(:sanya.png);</string>
           </property>
          </widget>
         </item>
@@ -264,7 +264,7 @@ padding-bottom:15%</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/lenya.jpg);</string>
+           <string notr="true">image: url(:lenya.png);</string>
           </property>
          </widget>
         </item>
@@ -308,7 +308,7 @@ padding-bottom:15%</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/phys-logo.svg);</string>
+           <string notr="true">image: url(:/phys-logo.png);</string>
           </property>
          </widget>
         </item>

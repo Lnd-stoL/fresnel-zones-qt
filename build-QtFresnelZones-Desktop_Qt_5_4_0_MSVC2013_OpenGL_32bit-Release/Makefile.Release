@@ -259,10 +259,10 @@ compiler_rcc_make_all: release\qrc_icons.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_icons.cpp
 release\qrc_icons.cpp: ..\QtFresnelZones\icons.qrc \
+		..\QtFresnelZones\sanya.jpg \
+		..\QtFresnelZones\lenya.jpg \
 		..\QtFresnelZones\phys-logo.svg \
-		..\QtFresnelZones\cmc-logo.svg \
-		..\QtFresnelZones\sanya.png \
-		..\QtFresnelZones\lenya.png
+		..\QtFresnelZones\cmc-logo.svg
 	D:\win-qt\5.4\msvc2013_opengl\bin\rcc.exe -name icons ..\QtFresnelZones\icons.qrc -o release\qrc_icons.cpp
 
 compiler_moc_header_make_all: release\moc_qcustomplot.cpp release\moc_spiralgraph.cpp release\moc_zonesgraph.cpp release\moc_titlewindow.cpp release\moc_intensitygraphwindow.cpp release\moc_fontscalablelabel.cpp release\moc_fontscalablespinbox.cpp release\moc_fontscalablepushbutton.cpp release\moc_amplitudeplatewindow.cpp release\moc_intensityplot.cpp release\moc_phaseplatewindow.cpp release\moc_schemegraph.cpp release\moc_introwindow.cpp release\moc_authorswindow.cpp
@@ -5438,6 +5438,53 @@ release\titlewindow.obj: ..\QtFresnelZones\titlewindow.cpp ..\QtFresnelZones\tit
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
 		ui_titlewindow.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVariant \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QAction \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qaction.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qactiongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QButtonGroup \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qbuttongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QFrame \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QGridLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qgridlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayoutitem.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qboxlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHeaderView \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qheaderview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractscrollarea.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qabstractitemmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qitemselectionmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyleoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyle.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qrubberband.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSpacerItem \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QVBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
+		..\QtFresnelZones\fontscalablelabel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
+		..\QtFresnelZones\fontscalablepushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QPushButton \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
 		..\QtFresnelZones\introwindow.h \
 		..\QtFresnelZones\schemegraph.h \
 		..\QtFresnelZones\drawer.h \
@@ -5445,7 +5492,6 @@ release\titlewindow.obj: ..\QtFresnelZones\titlewindow.cpp ..\QtFresnelZones\tit
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \
@@ -5471,26 +5517,13 @@ release\titlewindow.obj: ..\QtFresnelZones\titlewindow.cpp ..\QtFresnelZones\tit
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QMargins \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmath.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QtNumeric \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QPushButton \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
 		..\QtFresnelZones\amplitudeplatewindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QCheckBox \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qcheckbox.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
 		..\QtFresnelZones\phaseplatewindow.h \
 		..\QtFresnelZones\authorswindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmessagebox.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdialog.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdialog.h
 
 release\intensitygraphwindow.obj: ..\QtFresnelZones\intensitygraphwindow.cpp ..\QtFresnelZones\intensitygraphwindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QMainWindow \
@@ -5631,6 +5664,59 @@ release\intensitygraphwindow.obj: ..\QtFresnelZones\intensitygraphwindow.cpp ..\
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
 		ui_intensitygraphwindow.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVariant \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QAction \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qaction.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qactiongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QButtonGroup \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qbuttongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QFrame \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QGridLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qgridlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayoutitem.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qboxlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHeaderView \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qheaderview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractscrollarea.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qabstractitemmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qitemselectionmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyleoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyle.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qrubberband.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QRadioButton \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qradiobutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSlider \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSpacerItem \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QVBoxLayout \
+		..\QtFresnelZones\fontscalablelabel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
+		..\QtFresnelZones\fontscalablepushbutton.h \
+		..\QtFresnelZones\fontscalablespinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QDoubleSpinBox \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qspinbox.h \
+		..\QtFresnelZones\intensityplot.h \
+		..\QtFresnelZones\spiralgraph.h \
+		..\QtFresnelZones\drawer.h \
+		..\QtFresnelZones\zonesgraph.h \
 		..\QtFresnelZones\qvectormax.h \
 		..\QtFresnelZones\titlewindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QTimer \
@@ -6158,6 +6244,66 @@ release\amplitudeplatewindow.obj: ..\QtFresnelZones\amplitudeplatewindow.cpp ..\
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
 		ui_amplitudeplatewindow.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVariant \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QAction \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qaction.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qactiongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QButtonGroup \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qbuttongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QFrame \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QGridLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qgridlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayoutitem.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qboxlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHeaderView \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qheaderview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractscrollarea.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qabstractitemmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qitemselectionmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyleoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyle.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qrubberband.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QProgressBar \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qprogressbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSlider \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSpacerItem \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QVBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
+		..\QtFresnelZones\fontscalablelabel.h \
+		..\QtFresnelZones\fontscalablepushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QPushButton \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
+		..\QtFresnelZones\fontscalablespinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QDoubleSpinBox \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qspinbox.h \
+		..\QtFresnelZones\schemegraph.h \
+		..\QtFresnelZones\drawer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPainter \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
+		..\QtFresnelZones\introwindow.h \
+		..\QtFresnelZones\zonesgraph.h \
+		..\QtFresnelZones\spiralgraph.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\colortransform.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QColor \
 		..\QtFresnelZones\titlewindow.h
@@ -6583,6 +6729,68 @@ release\phaseplatewindow.obj: ..\QtFresnelZones\phaseplatewindow.cpp ..\QtFresne
 		..\QtFresnelZones\colortransform.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QColor \
 		ui_phaseplatewindow.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVariant \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QAction \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qaction.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qactiongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QButtonGroup \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qbuttongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QFrame \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QGridLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qgridlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayoutitem.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qboxlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHeaderView \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qheaderview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractscrollarea.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qabstractitemmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qitemselectionmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyleoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyle.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qrubberband.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QProgressBar \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qprogressbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QRadioButton \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qradiobutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSpacerItem \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QVBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
+		..\QtFresnelZones\fontscalablelabel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
+		..\QtFresnelZones\fontscalablepushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QPushButton \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
+		..\QtFresnelZones\schemegraph.h \
+		..\QtFresnelZones\drawer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPainter \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
+		..\QtFresnelZones\introwindow.h \
+		..\QtFresnelZones\zonesgraph.h \
+		..\QtFresnelZones\spiralgraph.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\titlewindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QDebug
 
@@ -6922,6 +7130,73 @@ release\introwindow.obj: ..\QtFresnelZones\introwindow.cpp ..\QtFresnelZones\int
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabwidget.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qicon.h \
 		ui_introwindow.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVariant \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QAction \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qaction.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qactiongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QButtonGroup \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qbuttongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QFrame \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QGridLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qgridlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayoutitem.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qboxlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHeaderView \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qheaderview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractscrollarea.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qabstractitemmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qitemselectionmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyleoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyle.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qrubberband.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSpacerItem \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QVBoxLayout \
+		..\QtFresnelZones\fontscalablelabel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
+		..\QtFresnelZones\fontscalablepushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QPushButton \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
+		..\QtFresnelZones\intensityplot.h \
+		..\QtFresnelZones\qcustomplot.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QObject \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QPointer \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qpointer.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPaintEvent \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QPixmap \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QString \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QDateTime \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qdatetime.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QMultiMap \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QFlags \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QDebug \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QVector2D \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QStack \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qstack.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QCache \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcache.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QMargins \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmath.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QtNumeric \
 		..\QtFresnelZones\titlewindow.h
 
 release\authorswindow.obj: ..\QtFresnelZones\authorswindow.cpp ..\QtFresnelZones\authorswindow.h \
@@ -7034,6 +7309,53 @@ release\authorswindow.obj: ..\QtFresnelZones\authorswindow.cpp ..\QtFresnelZones
 		..\QtFresnelZones\complex.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVector \
 		ui_authorswindow.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QVariant \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QAction \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qaction.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qactiongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QButtonGroup \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qbuttongroup.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QFrame \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QGridLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qgridlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlayoutitem.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qboxlayout.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QHeaderView \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qheaderview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemview.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractscrollarea.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qabstractitemmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qitemselectionmodel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyleoption.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractspinbox.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qvalidator.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qregularexpression.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractslider.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qstyle.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qtabbar.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qrubberband.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QSpacerItem \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QVBoxLayout \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
+		..\QtFresnelZones\fontscalablelabel.h \
+		..\QtFresnelZones\fontscalablepushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QPushButton \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
 		..\QtFresnelZones\introwindow.h \
 		..\QtFresnelZones\schemegraph.h \
 		..\QtFresnelZones\drawer.h \
@@ -7041,7 +7363,6 @@ release\authorswindow.obj: ..\QtFresnelZones\authorswindow.cpp ..\QtFresnelZones
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpainter.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qtextoption.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qpen.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QWidget \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QMouseEvent \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\QResizeEvent \
 		..\QtFresnelZones\zonesgraph.h \
@@ -7067,25 +7388,12 @@ release\authorswindow.obj: ..\QtFresnelZones\authorswindow.cpp ..\QtFresnelZones
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QMargins \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qmath.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\QtNumeric \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QPushButton \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qpushbutton.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qabstractbutton.h \
 		..\QtFresnelZones\amplitudeplatewindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QCheckBox \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qcheckbox.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QLabel \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qlabel.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qframe.h \
 		..\QtFresnelZones\phaseplatewindow.h \
 		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qmessagebox.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdialog.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\QApplication \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qapplication.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qcoreapplication.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtCore\qeventloop.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdesktopwidget.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qguiapplication.h \
-		D:\win-qt\5.4\msvc2013_opengl\include\QtGui\qinputmethod.h
+		D:\win-qt\5.4\msvc2013_opengl\include\QtWidgets\qdialog.h
 
 release\qrc_icons.obj: release\qrc_icons.cpp 
 
