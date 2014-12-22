@@ -2,6 +2,48 @@
 #include <QDebug>
 #include <cmath>
 
+
+const double M_PI = 3.141592653589793238463;
+
+const double Fresnel::nano_to_si_exp      = 1e-9;
+  const double Fresnel::milli_to_si_exp     = 1e-3;
+  const double Fresnel::micro_to_si_exp     = 1e-6;
+  const double Fresnel::centi_to_si_exp     = 1e-2;
+
+//
+//-------------- 'scale' = centi -----------------
+// * To change scale change ONLY 'scale_to_si_exp'
+//
+  const double Fresnel::scale_to_si_exp     = centi_to_si_exp;                    // scale -> System International (meter)
+  const double Fresnel::scale_to_nano_exp   = scale_to_si_exp / nano_to_si_exp;   // scale -> nano
+  const double Fresnel::scale_to_micro_exp  = scale_to_si_exp / micro_to_si_exp;   // scale -> nano
+  const double Fresnel::scale_to_milli_exp  = scale_to_si_exp / milli_to_si_exp;  // scale -> milli
+
+  const double Fresnel::si_to_scale_exp     = 1.0 / scale_to_si_exp;
+  const double Fresnel::nano_to_scale_exp   = nano_to_si_exp * si_to_scale_exp;   // nano -> scale
+  const double Fresnel::micro_to_scale_exp  = micro_to_si_exp * si_to_scale_exp;   // nano -> scale
+  const double Fresnel::milli_to_scale_exp  = milli_to_si_exp * si_to_scale_exp;  // milli -> scale
+
+//
+//-------------------------------------- MODEL SCALING -----------------------------------------
+// * ALL variables, arguments and return values are defined in 'scale'
+// * To convert values MULTIPLY, NOT DIVIDE by appropriate exp defined above to avoid confusions
+//
+  const double Fresnel::radius_min = 0.1;
+  const double Fresnel::radius_max = 0.5;
+  const double Fresnel::radius_def = 0.37;
+  const double Fresnel::dist_min   = 400;
+  const double Fresnel::dist_max   = 8000;
+  const double Fresnel::dist_def   = 1800;
+  const double Fresnel::src_dist_def = 0.7;
+  const double Fresnel::wave_min   = 410 * nano_to_scale_exp;
+  const double Fresnel::wave_max   = 650 * nano_to_scale_exp;
+  const double Fresnel::wave_def   = 495 * nano_to_scale_exp;
+  const double Fresnel::accuracyPlot = radius_max / 100.0;                     // dr in amplitude integral
+  const double Fresnel::accuracySpiral = 10;                         // Number of spiral vectors in one zone
+
+
+
 Fresnel::Fresnel ()
 {
     setDefaults ();

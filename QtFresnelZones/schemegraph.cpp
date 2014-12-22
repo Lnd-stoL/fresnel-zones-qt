@@ -6,7 +6,8 @@
 #include <QDebug>
 
 SchemeGraph::SchemeGraph (QWidget *parent) :
-    QGLWidget  (QGLFormat (QGL::SampleBuffers), parent)
+    QWidget (parent)
+    //QGLWidget  (QGLFormat (QGL::SampleBuffers), parent)
 {
 }
 
@@ -207,7 +208,7 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
     }
     double  eyeDeltaY       = eyeRelativeSize * height / (showingZonesCount * 2);
     double  eyeY            = eyePosition.y ();
-    double  zoneOuterEdges[showingZonesCount + 1];
+    double  *zoneOuterEdges = new double[showingZonesCount + 1];
     zoneOuterEdges[0] = centerY;
     for (int i = 1; i < showingZonesCount + 1; ++i) {
         zoneOuterEdges[i] = centerY - fresnel->zoneOuterRadius (i - 1) * scaling;
@@ -254,6 +255,8 @@ void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
         painter.drawLine (holeCenterPosition.x () - 10, zoneOuterEdges[i], holeCenterPosition.x () + 10, zoneOuterEdges[i]);
         painter.drawLine (holeCenterPosition.x () - 10, height - zoneOuterEdges[i], holeCenterPosition.x () + 10, height - zoneOuterEdges[i]);
     }
+
+    delete[] zoneOuterEdges;
 }
 
 double SchemeGraph::getScaling ()

@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>IntroWindow</class>
  <widget class="QMainWindow" name="IntroWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,7 +16,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QWidget" name="widget" native="true">
@@ -487,15 +498,15 @@ padding-right:5%</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>SchemeGraph</class>
-   <extends>QWidget</extends>
-   <header>schemegraph.h</header>
-  </customwidget>
-  <customwidget>
    <class>IntensityPlot</class>
    <extends>QWidget</extends>
    <header>intensityplot.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SchemeGraph</class>
+   <extends>QWidget</extends>
+   <header>schemegraph.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

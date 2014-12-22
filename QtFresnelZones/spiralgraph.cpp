@@ -9,7 +9,8 @@
 
 
 SpiralGraph::SpiralGraph (QWidget *parent) :
-    QGLWidget (QGLFormat (QGL::SampleBuffers), parent)
+    QWidget (parent)
+    //QGLWidget (QGLFormat (QGL::SampleBuffers), parent)
 {
     //setAutoFillBackground (false);
 }
@@ -18,7 +19,7 @@ SpiralGraph::SpiralGraph (QWidget *parent) :
 void SpiralGraph::useFresnel (Fresnel *fresnel_)
 {
     fresnel = fresnel_;
-}\
+}
 
 
 void SpiralGraph::dontScale (double maxVal)
@@ -41,12 +42,16 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     painter.setBrush (QBrush (QColor (250, 250, 250)));  // Background
     painter.drawRect (0, 0, width, height);
 
+    //qDebug() << "===";
     double maxVal = 0;
-    for (int i = 0; i < spiralX.size(); ++i)
+    for (int i = 0; i < spiralY.size(); ++i)
     {
         if (fabs (spiralX[i]*2) > maxVal)  maxVal = fabs (2*spiralX[i]);
+
+        //qDebug() << fabs (spiralY[i]);
         if (fabs (spiralY[i]) > maxVal)    maxVal = fabs (spiralY[i]);
     }
+    //qDebug() << "===";
     if (_maxValue != 0)  maxVal = _maxValue;
 
     unsigned squareSide = std::min (width, height);
@@ -96,6 +101,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     painter.setPen (QPen (QBrush (ColorTransform::getRGBfromLambda (fresnel->getWaveLength() * Fresnel::scale_to_nano_exp)),
                           4 * dpiScaling.y()));
     Drawer::drawArrow (painter, width/2, dispY, prevX + dispX, dispY - prevY, 80, 20);
+    //qDebug() << maxVal << " " << prevX << " " << prevY << squareSide;
 
     painter.end();
 }

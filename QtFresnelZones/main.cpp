@@ -7,6 +7,8 @@
 
 int main (int argc, char *argv[])
 {
+    QApplication::setStyle( "macintosh" );
+
     QApplication a (argc, argv);
     TitleWindow w;
     w.showFullScreen();

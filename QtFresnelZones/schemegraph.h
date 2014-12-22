@@ -6,11 +6,11 @@
 #include "introwindow.h"
 
 #include <QWidget>
-#include <QGLWidget>
+//#include <QGLWidget>
 #include <QMouseEvent>
 #include <QResizeEvent>
 
-class SchemeGraph : public QGLWidget
+class SchemeGraph : public QWidget
 {
     Q_OBJECT
 public:
