@@ -9,6 +9,7 @@
 #ifndef UI_INTROWINDOW_H
 #define UI_INTROWINDOW_H
 
+#include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -85,6 +86,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
         widget->setSizePolicy(sizePolicy);
+        widget->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         horizontalLayout_4 = new QHBoxLayout(widget);
         horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
@@ -108,6 +110,7 @@ public:
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
+        pushButton_Back->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         pushButton_Back->setAutoDefault(false);
         pushButton_Back->setDefault(true);
         pushButton_Back->setFlat(false);
@@ -128,6 +131,7 @@ public:
         font2.setUnderline(true);
         font2.setWeight(75);
         label->setFont(font2);
+        label->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignVCenter);
@@ -147,6 +151,7 @@ public:
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
+        pushButton_Next->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         pushButton_Next->setFlat(false);
 
         horizontalLayout_4->addWidget(pushButton_Next);
@@ -156,6 +161,7 @@ public:
 
         frame = new QFrame(centralwidget);
         frame->setObjectName(QStringLiteral("frame"));
+        frame->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         gridLayout = new QGridLayout(frame);
@@ -164,11 +170,13 @@ public:
         gridLayout->setContentsMargins(7, 8, 0, 0);
         widget_zonesGraph = new ZonesGraph(frame);
         widget_zonesGraph->setObjectName(QStringLiteral("widget_zonesGraph"));
+        widget_zonesGraph->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout->addWidget(widget_zonesGraph, 2, 0, 1, 1);
 
         widget_intensityPlot = new IntensityPlot(frame);
         widget_intensityPlot->setObjectName(QStringLiteral("widget_intensityPlot"));
+        widget_intensityPlot->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout->addWidget(widget_intensityPlot, 0, 1, 1, 1);
 
@@ -185,6 +193,7 @@ public:
         font3.setItalic(true);
         font3.setWeight(50);
         label_2->setFont(font3);
+        label_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         label_2->setWordWrap(true);
 
@@ -194,6 +203,7 @@ public:
         frame_6->setObjectName(QStringLiteral("frame_6"));
         sizePolicy.setHeightForWidth(frame_6->sizePolicy().hasHeightForWidth());
         frame_6->setSizePolicy(sizePolicy);
+        frame_6->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_6->setFrameShape(QFrame::NoFrame);
         frame_6->setFrameShadow(QFrame::Raised);
         horizontalLayout_7 = new QHBoxLayout(frame_6);
@@ -209,6 +219,7 @@ public:
         font4.setFamily(QStringLiteral("Arial"));
         font4.setPointSize(16);
         label_12->setFont(font4);
+        label_12->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_7->addWidget(label_12);
 
@@ -217,6 +228,7 @@ public:
         sizePolicy2.setHeightForWidth(distance_label->sizePolicy().hasHeightForWidth());
         distance_label->setSizePolicy(sizePolicy2);
         distance_label->setFont(font4);
+        distance_label->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_7->addWidget(distance_label);
 
@@ -225,6 +237,7 @@ public:
         sizePolicy.setHeightForWidth(label_13->sizePolicy().hasHeightForWidth());
         label_13->setSizePolicy(sizePolicy);
         label_13->setFont(font4);
+        label_13->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_7->addWidget(label_13);
 
@@ -235,6 +248,7 @@ public:
         frame_3->setObjectName(QStringLiteral("frame_3"));
         sizePolicy.setHeightForWidth(frame_3->sizePolicy().hasHeightForWidth());
         frame_3->setSizePolicy(sizePolicy);
+        frame_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_3->setFrameShape(QFrame::NoFrame);
         frame_3->setFrameShadow(QFrame::Raised);
         horizontalLayout_3 = new QHBoxLayout(frame_3);
@@ -244,6 +258,7 @@ public:
         sizePolicy2.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
         label_5->setSizePolicy(sizePolicy2);
         label_5->setFont(font4);
+        label_5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_3->addWidget(label_5);
 
@@ -252,6 +267,7 @@ public:
         sizePolicy2.setHeightForWidth(radius_label->sizePolicy().hasHeightForWidth());
         radius_label->setSizePolicy(sizePolicy2);
         radius_label->setFont(font4);
+        radius_label->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_3->addWidget(radius_label);
 
@@ -260,6 +276,7 @@ public:
         sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy);
         label_6->setFont(font4);
+        label_6->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_3->addWidget(label_6);
 
@@ -270,6 +287,7 @@ public:
         frame_2->setObjectName(QStringLiteral("frame_2"));
         sizePolicy.setHeightForWidth(frame_2->sizePolicy().hasHeightForWidth());
         frame_2->setSizePolicy(sizePolicy);
+        frame_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_2->setFrameShape(QFrame::NoFrame);
         frame_2->setFrameShadow(QFrame::Raised);
         horizontalLayout_2 = new QHBoxLayout(frame_2);
@@ -279,6 +297,7 @@ public:
         sizePolicy2.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
         label_3->setSizePolicy(sizePolicy2);
         label_3->setFont(font4);
+        label_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_2->addWidget(label_3);
 
@@ -287,6 +306,7 @@ public:
         sizePolicy2.setHeightForWidth(waveLength_label->sizePolicy().hasHeightForWidth());
         waveLength_label->setSizePolicy(sizePolicy2);
         waveLength_label->setFont(font4);
+        waveLength_label->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_2->addWidget(waveLength_label);
 
@@ -295,6 +315,7 @@ public:
         sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
         label_4->setSizePolicy(sizePolicy);
         label_4->setFont(font4);
+        label_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_2->addWidget(label_4);
 
@@ -306,6 +327,7 @@ public:
 
         widget_schemeGraph = new SchemeGraph(frame);
         widget_schemeGraph->setObjectName(QStringLiteral("widget_schemeGraph"));
+        widget_schemeGraph->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout->addWidget(widget_schemeGraph, 2, 1, 1, 1);
 
@@ -324,19 +346,19 @@ public:
     void retranslateUi(QMainWindow *IntroWindow)
     {
         IntroWindow->setWindowTitle(QApplication::translate("IntroWindow", "MainWindow", 0));
-        pushButton_Back->setText(QApplication::translate("IntroWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
-        label->setText(QApplication::translate("IntroWindow", "\320\237\320\276\321\201\321\202\321\200\320\276\320\265\320\275\320\270\320\265 \320\267\320\276\320\275 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
-        pushButton_Next->setText(QApplication::translate("IntroWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
-        label_2->setText(QApplication::translate("IntroWindow", "\320\237\320\265\321\200\320\265\320\274\320\265\321\211\320\260\320\271\321\202\320\265  \320\275\320\260\320\261\320\273\321\216\320\264\320\260\321\202\320\265\320\273\321\217 (\320\263\320\273\320\260\320\267) \320\272\321\203\321\200\321\201\320\276\321\200\320\276\320\274 \320\264\320\273\321\217 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217 \321\200\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\321\217 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
-        label_12->setText(QApplication::translate("IntroWindow", "\320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
+        pushButton_Back->setText(QApplication::translate("IntroWindow", "Exit", 0));
+        label->setText(QApplication::translate("IntroWindow", "Construction of Fresnel zones", 0));
+        pushButton_Next->setText(QApplication::translate("IntroWindow", "Next", 0));
+        label_2->setText(QApplication::translate("IntroWindow", "Point of observation (eye) can be moved to change the distance from the screen", 0));
+        label_12->setText(QApplication::translate("IntroWindow", "Distance from the screen:", 0));
         distance_label->setText(QApplication::translate("IntroWindow", "2", 0));
-        label_13->setText(QApplication::translate("IntroWindow", "\320\274", 0));
-        label_5->setText(QApplication::translate("IntroWindow", "\320\240\320\260\320\264\320\270\321\203\321\201 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
+        label_13->setText(QApplication::translate("IntroWindow", "m", 0));
+        label_5->setText(QApplication::translate("IntroWindow", "Hole radius:", 0));
         radius_label->setText(QApplication::translate("IntroWindow", "2", 0));
-        label_6->setText(QApplication::translate("IntroWindow", "\320\274\320\274", 0));
-        label_3->setText(QApplication::translate("IntroWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
+        label_6->setText(QApplication::translate("IntroWindow", "mm", 0));
+        label_3->setText(QApplication::translate("IntroWindow", "Wavelength:", 0));
         waveLength_label->setText(QApplication::translate("IntroWindow", "495", 0));
-        label_4->setText(QApplication::translate("IntroWindow", "\320\275\320\274", 0));
+        label_4->setText(QApplication::translate("IntroWindow", "nm", 0));
     } // retranslateUi
 
 };

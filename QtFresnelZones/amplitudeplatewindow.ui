@@ -491,7 +491,7 @@ padding-right:5%</string>
              <locale language="English" country="UnitedStates"/>
             </property>
             <property name="text">
-             <string>Quit</string>
+             <string>Exit</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -618,11 +618,11 @@ padding-right:5%</string>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="locale">
-       <locale language="English" country="UnitedStates"/>
-      </property>
       <property name="styleSheet">
        <string notr="true"/>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>

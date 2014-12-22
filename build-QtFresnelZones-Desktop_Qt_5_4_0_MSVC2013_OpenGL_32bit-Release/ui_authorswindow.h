@@ -9,6 +9,7 @@
 #ifndef UI_AUTHORSWINDOW_H
 #define UI_AUTHORSWINDOW_H
 
+#include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -88,6 +89,7 @@ public:
         pushButton_Menu->setFont(font);
         pushButton_Menu->setStyleSheet(QLatin1String("padding-top:15%;\n"
 "padding-bottom:15%"));
+        pushButton_Menu->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout->addWidget(pushButton_Menu, 10, 2, 1, 1);
 
@@ -99,12 +101,14 @@ public:
         font1.setFamily(QStringLiteral("Arial"));
         font1.setPointSize(16);
         label_7->setFont(font1);
+        label_7->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_4->addWidget(label_7, 0, Qt::AlignHCenter);
 
         label_3 = new FontScalableLabel(centralwidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setFont(font1);
+        label_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_4->addWidget(label_3, 0, Qt::AlignHCenter);
 
@@ -114,6 +118,7 @@ public:
         label_9 = new QLabel(centralwidget);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setFont(font1);
+        label_9->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout->addWidget(label_9, 7, 1, 1, 1, Qt::AlignHCenter);
 
@@ -131,6 +136,7 @@ public:
         font2.setPointSize(16);
         font2.setItalic(false);
         label_4->setFont(font2);
+        label_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_4->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_4);
@@ -142,6 +148,7 @@ public:
         font3.setPointSize(18);
         font3.setItalic(false);
         label_5->setFont(font3);
+        label_5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_5->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_5);
@@ -159,6 +166,7 @@ public:
         font4.setItalic(false);
         font4.setWeight(75);
         label_6->setFont(font4);
+        label_6->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_6->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_6);
@@ -176,6 +184,7 @@ public:
         sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy1);
         widget_2->setStyleSheet(QStringLiteral("image: url(:/cmc-logo.png);"));
+        widget_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         verticalLayout_2->addWidget(widget_2);
 
@@ -192,7 +201,9 @@ public:
         font5.setItalic(false);
         font5.setKerning(true);
         label->setFont(font5);
+        label->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label->setAlignment(Qt::AlignCenter);
+        label->setWordWrap(false);
 
         verticalLayout_2->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignBottom);
 
@@ -207,6 +218,7 @@ public:
         widget_5->setSizePolicy(sizePolicy1);
         widget_5->setMinimumSize(QSize(0, 260));
         widget_5->setStyleSheet(QStringLiteral("image: url(:sanya.png);"));
+        widget_5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_3->addWidget(widget_5);
 
@@ -216,6 +228,7 @@ public:
         widget_4->setSizePolicy(sizePolicy1);
         widget_4->setMinimumSize(QSize(0, 260));
         widget_4->setStyleSheet(QStringLiteral("image: url(:lenya.png);"));
+        widget_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_3->addWidget(widget_4);
 
@@ -229,6 +242,7 @@ public:
         widget = new QWidget(centralwidget);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setMinimumSize(QSize(0, 70));
+        widget->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
 
@@ -241,6 +255,7 @@ public:
         sizePolicy1.setHeightForWidth(widget_3->sizePolicy().hasHeightForWidth());
         widget_3->setSizePolicy(sizePolicy1);
         widget_3->setStyleSheet(QStringLiteral("image: url(:/phys-logo.png);"));
+        widget_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         verticalLayout_4->addWidget(widget_3);
 
@@ -249,7 +264,9 @@ public:
         sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy2);
         label_2->setFont(font5);
+        label_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_2->setAlignment(Qt::AlignCenter);
+        label_2->setWordWrap(false);
 
         verticalLayout_4->addWidget(label_2, 0, Qt::AlignHCenter|Qt::AlignBottom);
 
@@ -263,6 +280,7 @@ public:
         label_8 = new QLabel(centralwidget);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setFont(font1);
+        label_8->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout->addWidget(label_8, 9, 1, 1, 1, Qt::AlignHCenter);
 
@@ -272,6 +290,7 @@ public:
 
         line = new QFrame(centralwidget);
         line->setObjectName(QStringLiteral("line"));
+        line->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
 
@@ -293,17 +312,19 @@ public:
     void retranslateUi(QMainWindow *AuthorsWindow)
     {
         AuthorsWindow->setWindowTitle(QApplication::translate("AuthorsWindow", "MainWindow", 0));
-        pushButton_Menu->setText(QApplication::translate("AuthorsWindow", "\320\222 \320\274\320\265\320\275\321\216", 0));
-        label_7->setText(QApplication::translate("AuthorsWindow", "\320\220\320\273\320\265\320\272\321\201\320\260\320\275\320\264\321\200 \320\246\320\260\321\200\321\214\320\272\320\276\320\262", 0));
-        label_3->setText(QApplication::translate("AuthorsWindow", "\320\233\320\265\320\276\320\275\320\270\320\264 \320\241\321\202\320\276\320\273\321\217\321\200\320\276\320\262", 0));
-        label_9->setText(QApplication::translate("AuthorsWindow", "\320\222\320\234\320\232 \320\234\320\223\320\243, 2014", 0));
-        label_4->setText(QApplication::translate("AuthorsWindow", "\320\234\320\276\321\201\320\272\320\276\320\262\321\201\320\272\320\270\320\271 \320\263\320\276\321\201\321\203\320\264\320\260\321\200\321\201\321\202\320\262\320\265\320\275\320\275\321\213\320\271 \321\203\320\275\320\270\320\262\320\265\321\200\321\201\320\270\321\202\320\265\321\202 \320\270\320\274\320\265\320\275\320\270 \320\234.\320\222. \320\233\320\276\320\274\320\276\320\275\320\276\321\201\320\276\320\262\320\260", 0));
-        label_5->setText(QApplication::translate("AuthorsWindow", "\320\232\320\276\320\274\320\277\321\214\321\216\321\202\320\265\321\200\320\275\321\213\320\265 \320\264\320\265\320\274\320\276\320\275\321\201\321\202\321\200\320\260\321\206\320\270\320\270 \320\277\320\276 \320\272\321\203\321\200\321\201\321\203 \320\273\320\265\320\272\321\206\320\270\320\271\n"
-"\"\320\244\320\270\320\267\320\270\320\272\320\260 \320\262\320\276\320\273\320\275\320\276\320\262\321\213\321\205 \320\277\321\200\320\276\321\206\320\265\321\201\321\201\320\276\320\262\"", 0));
-        label_6->setText(QApplication::translate("AuthorsWindow", "\320\227\320\276\320\275\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
-        label->setText(QApplication::translate("AuthorsWindow", "\320\244\320\260\320\272\321\203\320\273\321\214\321\202\320\265\321\202 \320\222\320\234\320\232", 0));
-        label_2->setText(QApplication::translate("AuthorsWindow", "\320\244\320\270\320\267\320\270\321\207\320\265\321\201\320\272\320\270\320\271 \321\204\320\260\320\272\321\203\320\273\321\214\321\202\320\265\321\202", 0));
-        label_8->setText(QApplication::translate("AuthorsWindow", "\320\233\320\265\320\272\321\202\320\276\321\200\321\213 \320\220.\320\256. \320\247\320\270\320\272\320\270\321\210\320\265\320\262, \320\222.\320\237. \320\232\320\260\320\275\320\264\320\270\320\264\320\276\320\262", 0));
+        pushButton_Menu->setText(QApplication::translate("AuthorsWindow", "Menu", 0));
+        label_7->setText(QApplication::translate("AuthorsWindow", "Alexander Tsarkov", 0));
+        label_3->setText(QApplication::translate("AuthorsWindow", "Leonid Stolyarov", 0));
+        label_9->setText(QApplication::translate("AuthorsWindow", "CMC MSU, 2014", 0));
+        label_4->setText(QApplication::translate("AuthorsWindow", "Lomonosov Moscow State University", 0));
+        label_5->setText(QApplication::translate("AuthorsWindow", "Computer presentations lecture curce\n"
+"\"Physics of wave processes\"", 0));
+        label_6->setText(QApplication::translate("AuthorsWindow", "Fresnel zone plate", 0));
+        label->setText(QApplication::translate("AuthorsWindow", "Faculty of Computation\n"
+"Mathematics and Cybernetics", 0));
+        label_2->setText(QApplication::translate("AuthorsWindow", "Faculty of \n"
+"Physics", 0));
+        label_8->setText(QApplication::translate("AuthorsWindow", "Lecturers A.Yu. Chikishev, V.P. Kandidov", 0));
     } // retranslateUi
 
 };

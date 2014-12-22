@@ -9,6 +9,7 @@
 #ifndef UI_INTENSITYGRAPHWINDOW_H
 #define UI_INTENSITYGRAPHWINDOW_H
 
+#include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -107,6 +108,7 @@ public:
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         frame_3 = new QFrame(centralwidget);
         frame_3->setObjectName(QStringLiteral("frame_3"));
+        frame_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
         gridLayout_3 = new QGridLayout(frame_3);
@@ -121,6 +123,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
         widget->setSizePolicy(sizePolicy);
+        widget->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         horizontalLayout_4 = new QHBoxLayout(widget);
         horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
@@ -144,6 +147,7 @@ public:
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
+        pushButton_Back->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         pushButton_Back->setAutoDefault(false);
         pushButton_Back->setDefault(true);
         pushButton_Back->setFlat(false);
@@ -164,6 +168,7 @@ public:
         font1.setUnderline(true);
         font1.setWeight(75);
         label->setFont(font1);
+        label->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignVCenter);
@@ -183,6 +188,7 @@ public:
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
+        pushButton_Next->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         pushButton_Next->setFlat(false);
 
         horizontalLayout_4->addWidget(pushButton_Next);
@@ -193,6 +199,7 @@ public:
         widget_Graph = new IntensityPlot(frame_3);
         widget_Graph->setObjectName(QStringLiteral("widget_Graph"));
         widget_Graph->setMaximumSize(QSize(16777215, 16000000));
+        widget_Graph->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout_3->addWidget(widget_Graph, 1, 0, 1, 1);
 
@@ -203,6 +210,7 @@ public:
         frame_5->setObjectName(QStringLiteral("frame_5"));
         sizePolicy.setHeightForWidth(frame_5->sizePolicy().hasHeightForWidth());
         frame_5->setSizePolicy(sizePolicy);
+        frame_5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_5->setFrameShape(QFrame::NoFrame);
         frame_5->setFrameShadow(QFrame::Raised);
         verticalLayout = new QVBoxLayout(frame_5);
@@ -217,6 +225,7 @@ public:
         sizePolicy2.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy2);
         widget_2->setMinimumSize(QSize(0, 0));
+        widget_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         gridLayout_8 = new QGridLayout(widget_2);
         gridLayout_8->setSpacing(0);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
@@ -234,6 +243,7 @@ public:
         QFont font2;
         font2.setPointSize(18);
         radioButton_xDependance->setFont(font2);
+        radioButton_xDependance->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         radioButton_xDependance->setChecked(true);
 
         horizontalLayout_6->addWidget(radioButton_xDependance);
@@ -252,6 +262,7 @@ public:
         font3.setUnderline(true);
         font3.setWeight(75);
         label_xMode->setFont(font3);
+        label_xMode->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_6->addWidget(label_xMode);
 
@@ -264,6 +275,7 @@ public:
         sizePolicy3.setHeightForWidth(radioButton_holeDependance->sizePolicy().hasHeightForWidth());
         radioButton_holeDependance->setSizePolicy(sizePolicy3);
         radioButton_holeDependance->setFont(font2);
+        radioButton_holeDependance->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_6->addWidget(radioButton_holeDependance);
 
@@ -275,6 +287,7 @@ public:
         font4.setFamily(QStringLiteral("Arial"));
         font4.setPointSize(16);
         label_hMode->setFont(font4);
+        label_hMode->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_6->addWidget(label_hMode);
 
@@ -294,6 +307,7 @@ public:
         sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
         frame->setSizePolicy(sizePolicy5);
+        frame->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame->setFrameShape(QFrame::NoFrame);
         frame->setFrameShadow(QFrame::Raised);
         gridLayout_4 = new QGridLayout(frame);
@@ -302,6 +316,7 @@ public:
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
         widget_Zones = new ZonesGraph(frame);
         widget_Zones->setObjectName(QStringLiteral("widget_Zones"));
+        widget_Zones->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout_4->addWidget(widget_Zones, 0, 0, 1, 1);
 
@@ -315,6 +330,7 @@ public:
         sizePolicy6.setVerticalStretch(0);
         sizePolicy6.setHeightForWidth(frame_4->sizePolicy().hasHeightForWidth());
         frame_4->setSizePolicy(sizePolicy6);
+        frame_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
         gridLayout_6 = new QGridLayout(frame_4);
@@ -326,6 +342,7 @@ public:
         sizePolicy.setHeightForWidth(frame_6->sizePolicy().hasHeightForWidth());
         frame_6->setSizePolicy(sizePolicy);
         frame_6->setMinimumSize(QSize(0, 200));
+        frame_6->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_6->setFrameShape(QFrame::StyledPanel);
         frame_6->setFrameShadow(QFrame::Raised);
         verticalLayout_3 = new QVBoxLayout(frame_6);
@@ -347,6 +364,7 @@ public:
         font5.setPointSize(16);
         font5.setItalic(true);
         label_4->setFont(font5);
+        label_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_4->setScaledContents(false);
         label_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
@@ -357,6 +375,7 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         slider_xDistance = new QSlider(frame_6);
         slider_xDistance->setObjectName(QStringLiteral("slider_xDistance"));
+        slider_xDistance->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         slider_xDistance->setOrientation(Qt::Horizontal);
 
         horizontalLayout->addWidget(slider_xDistance);
@@ -375,6 +394,7 @@ public:
         spin_xDistance->setFont(font6);
         spin_xDistance->setAutoFillBackground(false);
         spin_xDistance->setStyleSheet(QStringLiteral("background-color: white;"));
+        spin_xDistance->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout->addWidget(spin_xDistance);
 
@@ -386,6 +406,7 @@ public:
 
         line = new QFrame(frame_6);
         line->setObjectName(QStringLiteral("line"));
+        line->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
 
@@ -403,6 +424,7 @@ public:
         label_holeRadius->setSizePolicy(sizePolicy9);
         label_holeRadius->setMaximumSize(QSize(500, 16777215));
         label_holeRadius->setFont(font5);
+        label_holeRadius->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_holeRadius->setScaledContents(false);
         label_holeRadius->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
@@ -413,6 +435,7 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         slider_HoleRadius = new QSlider(frame_6);
         slider_HoleRadius->setObjectName(QStringLiteral("slider_HoleRadius"));
+        slider_HoleRadius->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         slider_HoleRadius->setOrientation(Qt::Horizontal);
 
         horizontalLayout_3->addWidget(slider_HoleRadius);
@@ -427,6 +450,7 @@ public:
         spin_HoleRadius->setMinimumSize(QSize(0, 0));
         spin_HoleRadius->setFont(font6);
         spin_HoleRadius->setStyleSheet(QStringLiteral("background-color: white;"));
+        spin_HoleRadius->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_3->addWidget(spin_HoleRadius);
 
@@ -438,6 +462,7 @@ public:
 
         line_2 = new QFrame(frame_6);
         line_2->setObjectName(QStringLiteral("line_2"));
+        line_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
 
@@ -457,6 +482,7 @@ public:
         font7.setItalic(true);
         font7.setWeight(50);
         label_WaveLength->setFont(font7);
+        label_WaveLength->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_WaveLength->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         verticalLayout_4->addWidget(label_WaveLength);
@@ -469,6 +495,7 @@ public:
         QFont font8;
         font8.setPointSize(15);
         slider_WaveLength->setFont(font8);
+        slider_WaveLength->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         slider_WaveLength->setOrientation(Qt::Horizontal);
 
         horizontalLayout_2->addWidget(slider_WaveLength);
@@ -480,6 +507,7 @@ public:
         spin_WaveLength->setMinimumSize(QSize(0, 0));
         spin_WaveLength->setFont(font6);
         spin_WaveLength->setStyleSheet(QStringLiteral("background-color: white;"));
+        spin_WaveLength->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_2->addWidget(spin_WaveLength);
 
@@ -496,6 +524,7 @@ public:
         frame_7->setObjectName(QStringLiteral("frame_7"));
         sizePolicy1.setHeightForWidth(frame_7->sizePolicy().hasHeightForWidth());
         frame_7->setSizePolicy(sizePolicy1);
+        frame_7->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_7->setFrameShape(QFrame::StyledPanel);
         frame_7->setFrameShadow(QFrame::Raised);
         horizontalLayout_5 = new QHBoxLayout(frame_7);
@@ -510,6 +539,7 @@ public:
         font9.setFamily(QStringLiteral("Arial Black"));
         font9.setPointSize(11);
         pushButton_params1->setFont(font9);
+        pushButton_params1->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_5->addWidget(pushButton_params1);
 
@@ -519,6 +549,7 @@ public:
         pushButton_params2->setSizePolicy(sizePolicy8);
         pushButton_params2->setMinimumSize(QSize(30, 0));
         pushButton_params2->setFont(font9);
+        pushButton_params2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_5->addWidget(pushButton_params2);
 
@@ -528,6 +559,7 @@ public:
         pushButton_params3->setSizePolicy(sizePolicy8);
         pushButton_params3->setMinimumSize(QSize(30, 0));
         pushButton_params3->setFont(font9);
+        pushButton_params3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_5->addWidget(pushButton_params3);
 
@@ -537,6 +569,7 @@ public:
         pushButton_params4->setSizePolicy(sizePolicy8);
         pushButton_params4->setMinimumSize(QSize(30, 0));
         pushButton_params4->setFont(font9);
+        pushButton_params4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_5->addWidget(pushButton_params4);
 
@@ -546,6 +579,7 @@ public:
         pushButton_params5->setSizePolicy(sizePolicy8);
         pushButton_params5->setMinimumSize(QSize(30, 0));
         pushButton_params5->setFont(font9);
+        pushButton_params5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_5->addWidget(pushButton_params5);
 
@@ -563,6 +597,7 @@ public:
         font10.setPointSize(14);
         font10.setItalic(true);
         label_2->setFont(font10);
+        label_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout_6->addWidget(label_2, 0, 0, 1, 1);
 
@@ -573,6 +608,7 @@ public:
         pushButton_paramsDefault->setMinimumSize(QSize(100, 0));
         pushButton_paramsDefault->setFont(font9);
         pushButton_paramsDefault->setStyleSheet(QStringLiteral(""));
+        pushButton_paramsDefault->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout_6->addWidget(pushButton_paramsDefault, 3, 0, 1, 1);
 
@@ -585,6 +621,7 @@ public:
 
         frame_2 = new QFrame(centralwidget);
         frame_2->setObjectName(QStringLiteral("frame_2"));
+        frame_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         gridLayout_5 = new QGridLayout(frame_2);
@@ -595,6 +632,7 @@ public:
         widget_spiralGraph->setObjectName(QStringLiteral("widget_spiralGraph"));
         sizePolicy5.setHeightForWidth(widget_spiralGraph->sizePolicy().hasHeightForWidth());
         widget_spiralGraph->setSizePolicy(sizePolicy5);
+        widget_spiralGraph->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout_5->addWidget(widget_spiralGraph, 0, 0, 1, 1);
 
@@ -616,26 +654,26 @@ public:
     void retranslateUi(QMainWindow *IntensityGraphWindow)
     {
         IntensityGraphWindow->setWindowTitle(QApplication::translate("IntensityGraphWindow", "MainWindow", 0));
-        pushButton_Back->setText(QApplication::translate("IntensityGraphWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
-        label->setText(QApplication::translate("IntensityGraphWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\275\320\260 \320\276\321\201\320\270", 0));
-        pushButton_Next->setText(QApplication::translate("IntensityGraphWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
+        pushButton_Back->setText(QApplication::translate("IntensityGraphWindow", "Exit", 0));
+        label->setText(QApplication::translate("IntensityGraphWindow", "Intensity at the axis", 0));
+        pushButton_Next->setText(QApplication::translate("IntensityGraphWindow", "Next", 0));
         radioButton_xDependance->setText(QString());
-        label_xMode->setText(QApplication::translate("IntensityGraphWindow", " \320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
+        label_xMode->setText(QApplication::translate("IntensityGraphWindow", "Distance from the screen", 0));
         radioButton_holeDependance->setText(QString());
-        label_hMode->setText(QApplication::translate("IntensityGraphWindow", " \320\240\320\260\320\264\320\270\321\203\321\201 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
-        label_4->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
-        spin_xDistance->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\274", 0));
-        label_holeRadius->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\320\264\320\270\321\203\321\201 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
-        spin_HoleRadius->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\274\320\274", 0));
-        label_WaveLength->setText(QApplication::translate("IntensityGraphWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
-        spin_WaveLength->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\275\320\274", 0));
+        label_hMode->setText(QApplication::translate("IntensityGraphWindow", "Hole radius", 0));
+        label_4->setText(QApplication::translate("IntensityGraphWindow", "Distance from the screen:", 0));
+        spin_xDistance->setSuffix(QApplication::translate("IntensityGraphWindow", " m", 0));
+        label_holeRadius->setText(QApplication::translate("IntensityGraphWindow", "Hole radius:", 0));
+        spin_HoleRadius->setSuffix(QApplication::translate("IntensityGraphWindow", " mm", 0));
+        label_WaveLength->setText(QApplication::translate("IntensityGraphWindow", "Wavelength:", 0));
+        spin_WaveLength->setSuffix(QApplication::translate("IntensityGraphWindow", " nm", 0));
         pushButton_params1->setText(QApplication::translate("IntensityGraphWindow", "1", 0));
         pushButton_params2->setText(QApplication::translate("IntensityGraphWindow", "2", 0));
         pushButton_params3->setText(QApplication::translate("IntensityGraphWindow", "3", 0));
         pushButton_params4->setText(QApplication::translate("IntensityGraphWindow", "4", 0));
         pushButton_params5->setText(QApplication::translate("IntensityGraphWindow", "5", 0));
-        label_2->setText(QApplication::translate("IntensityGraphWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262\320\270\321\202\321\214 \321\207\320\270\321\201\320\273\320\276 \320\267\320\276\320\275 \320\262 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\320\270:", 0));
-        pushButton_paramsDefault->setText(QApplication::translate("IntensityGraphWindow", "   \320\241\320\261\321\200\320\276\321\201\320\270\321\202\321\214   ", 0));
+        label_2->setText(QApplication::translate("IntensityGraphWindow", "Set the number of the zones in the hole:", 0));
+        pushButton_paramsDefault->setText(QApplication::translate("IntensityGraphWindow", "Reset", 0));
     } // retranslateUi
 
 };

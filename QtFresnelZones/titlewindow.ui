@@ -592,7 +592,7 @@ padding-bottom:15%</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>Quit</string>
+         <string>Exit</string>
         </property>
         <property name="default">
          <bool>true</bool>

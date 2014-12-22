@@ -9,6 +9,7 @@
 #ifndef UI_AMPLITUDEPLATEWINDOW_H
 #define UI_AMPLITUDEPLATEWINDOW_H
 
+#include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -127,6 +128,7 @@ public:
         sizePolicy.setHeightForWidth(frame_4->sizePolicy().hasHeightForWidth());
         frame_4->setSizePolicy(sizePolicy);
         frame_4->setMinimumSize(QSize(200, 0));
+        frame_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
         verticalLayout_5 = new QVBoxLayout(frame_4);
@@ -135,6 +137,7 @@ public:
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
         widget_3 = new QWidget(frame_4);
         widget_3->setObjectName(QStringLiteral("widget_3"));
+        widget_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         verticalLayout_3 = new QVBoxLayout(widget_3);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
@@ -151,6 +154,7 @@ public:
         font.setFamily(QStringLiteral("Arial"));
         font.setPointSize(16);
         progressBar->setFont(font);
+        progressBar->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         progressBar->setValue(24);
         progressBar->setOrientation(Qt::Horizontal);
 
@@ -169,6 +173,7 @@ public:
         font1.setBold(true);
         font1.setWeight(75);
         label_intensity->setFont(font1);
+        label_intensity->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         verticalLayout_3->addWidget(label_intensity);
 
@@ -183,6 +188,7 @@ public:
         label_3->setFont(font2);
         label_3->setStyleSheet(QLatin1String("padding-left:0;\n"
 ""));
+        label_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         verticalLayout_3->addWidget(label_3, 0, Qt::AlignLeft);
@@ -197,6 +203,7 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(widget_4->sizePolicy().hasHeightForWidth());
         widget_4->setSizePolicy(sizePolicy3);
+        widget_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         gridLayout_6 = new QGridLayout(widget_4);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         verticalLayout_4 = new QVBoxLayout();
@@ -213,6 +220,7 @@ public:
         font3.setItalic(true);
         font3.setWeight(50);
         label_WaveLength->setFont(font3);
+        label_WaveLength->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_WaveLength->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         verticalLayout_4->addWidget(label_WaveLength);
@@ -225,6 +233,7 @@ public:
         QFont font4;
         font4.setPointSize(15);
         slider_WaveLength->setFont(font4);
+        slider_WaveLength->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         slider_WaveLength->setOrientation(Qt::Horizontal);
 
         horizontalLayout_12->addWidget(slider_WaveLength);
@@ -239,6 +248,7 @@ public:
         font5.setPointSize(15);
         spin_WaveLength->setFont(font5);
         spin_WaveLength->setStyleSheet(QStringLiteral("background-color: white;"));
+        spin_WaveLength->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_12->addWidget(spin_WaveLength);
 
@@ -253,6 +263,7 @@ public:
 
         widget_5 = new QWidget(frame_4);
         widget_5->setObjectName(QStringLiteral("widget_5"));
+        widget_5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         horizontalLayout_13 = new QHBoxLayout(widget_5);
         horizontalLayout_13->setSpacing(7);
         horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
@@ -260,6 +271,7 @@ public:
         widget_schemeGraph = new SchemeGraph(widget_5);
         widget_schemeGraph->setObjectName(QStringLiteral("widget_schemeGraph"));
         widget_schemeGraph->setStyleSheet(QStringLiteral("background-color:#ffffff;"));
+        widget_schemeGraph->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_13->addWidget(widget_schemeGraph);
 
@@ -268,6 +280,7 @@ public:
         sizePolicy.setHeightForWidth(widget_Zones->sizePolicy().hasHeightForWidth());
         widget_Zones->setSizePolicy(sizePolicy);
         widget_Zones->setMinimumSize(QSize(0, 0));
+        widget_Zones->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_13->addWidget(widget_Zones);
 
@@ -284,6 +297,7 @@ public:
 
         frame_2 = new QFrame(centralwidget);
         frame_2->setObjectName(QStringLiteral("frame_2"));
+        frame_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         gridLayout_4 = new QGridLayout(frame_2);
@@ -294,6 +308,7 @@ public:
         widget_spiralGraph->setObjectName(QStringLiteral("widget_spiralGraph"));
         sizePolicy.setHeightForWidth(widget_spiralGraph->sizePolicy().hasHeightForWidth());
         widget_spiralGraph->setSizePolicy(sizePolicy);
+        widget_spiralGraph->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         gridLayout_4->addWidget(widget_spiralGraph, 1, 0, 1, 1);
 
@@ -303,6 +318,7 @@ public:
         label_2->setSizePolicy(sizePolicy2);
         label_2->setFont(font);
         label_2->setStyleSheet(QStringLiteral("padding-bottom:6;"));
+        label_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_2, 0, 0, 1, 1);
@@ -314,6 +330,7 @@ public:
         frame_3->setObjectName(QStringLiteral("frame_3"));
         sizePolicy2.setHeightForWidth(frame_3->sizePolicy().hasHeightForWidth());
         frame_3->setSizePolicy(sizePolicy2);
+        frame_3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
         gridLayout_2 = new QGridLayout(frame_3);
@@ -325,6 +342,7 @@ public:
         widget->setObjectName(QStringLiteral("widget"));
         sizePolicy2.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
         widget->setSizePolicy(sizePolicy2);
+        widget->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         horizontalLayout_4 = new QHBoxLayout(widget);
         horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
@@ -348,6 +366,7 @@ public:
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
+        pushButton_Back->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         pushButton_Back->setAutoDefault(false);
         pushButton_Back->setDefault(true);
         pushButton_Back->setFlat(false);
@@ -368,6 +387,7 @@ public:
         font7.setUnderline(true);
         font7.setWeight(75);
         label->setFont(font7);
+        label->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignVCenter);
@@ -387,6 +407,7 @@ public:
 "padding-bottom:5%;\n"
 "padding-left:5%;\n"
 "padding-right:5%"));
+        pushButton_Next->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         pushButton_Next->setFlat(false);
 
         horizontalLayout_4->addWidget(pushButton_Next);
@@ -402,6 +423,7 @@ public:
         sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
         frame->setSizePolicy(sizePolicy);
         frame->setStyleSheet(QStringLiteral(""));
+        frame->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame->setFrameShape(QFrame::NoFrame);
         frame->setFrameShadow(QFrame::Raised);
         gridLayout_3 = new QGridLayout(frame);
@@ -419,11 +441,13 @@ public:
         sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy5);
+        widget_2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         verticalLayout_2 = new QVBoxLayout(widget_2);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         line = new QFrame(widget_2);
         line->setObjectName(QStringLiteral("line"));
+        line->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
 
@@ -443,6 +467,7 @@ public:
 "padding-left:8%;\n"
 "padding-right:8%;\n"
 ""));
+        pushButton_closeAll->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         verticalLayout_2->addWidget(pushButton_closeAll);
 
@@ -457,6 +482,7 @@ public:
 "padding-left:8%;\n"
 "padding-right:8%;\n"
 ""));
+        pushButton_openAll->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         verticalLayout_2->addWidget(pushButton_openAll);
 
@@ -472,6 +498,7 @@ public:
 "padding-right:8%;\n"
 "\n"
 ""));
+        pushButton_OpenOdd->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         verticalLayout_2->addWidget(pushButton_OpenOdd);
 
@@ -491,6 +518,7 @@ public:
         font9.setBold(true);
         font9.setWeight(75);
         label_8->setFont(font9);
+        label_8->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         verticalLayout->addWidget(label_8, 0, Qt::AlignLeft);
 
@@ -504,6 +532,7 @@ public:
         sizePolicy6.setVerticalStretch(0);
         sizePolicy6.setHeightForWidth(checkBox_Zone0->sizePolicy().hasHeightForWidth());
         checkBox_Zone0->setSizePolicy(sizePolicy6);
+        checkBox_Zone0->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone0->setChecked(true);
 
         horizontalLayout->addWidget(checkBox_Zone0);
@@ -514,6 +543,7 @@ public:
         font10.setFamily(QStringLiteral("Trebuchet MS"));
         font10.setPointSize(16);
         label_zone0->setFont(font10);
+        label_zone0->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout->addWidget(label_zone0);
 
@@ -527,6 +557,7 @@ public:
         checkBox_Zone1->setObjectName(QStringLiteral("checkBox_Zone1"));
         sizePolicy6.setHeightForWidth(checkBox_Zone1->sizePolicy().hasHeightForWidth());
         checkBox_Zone1->setSizePolicy(sizePolicy6);
+        checkBox_Zone1->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone1->setChecked(true);
 
         horizontalLayout_2->addWidget(checkBox_Zone1);
@@ -534,6 +565,7 @@ public:
         label_zone1 = new FontScalableLabel(frame);
         label_zone1->setObjectName(QStringLiteral("label_zone1"));
         label_zone1->setFont(font10);
+        label_zone1->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_2->addWidget(label_zone1);
 
@@ -547,6 +579,7 @@ public:
         checkBox_Zone2->setObjectName(QStringLiteral("checkBox_Zone2"));
         sizePolicy6.setHeightForWidth(checkBox_Zone2->sizePolicy().hasHeightForWidth());
         checkBox_Zone2->setSizePolicy(sizePolicy6);
+        checkBox_Zone2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone2->setChecked(true);
 
         horizontalLayout_3->addWidget(checkBox_Zone2);
@@ -554,6 +587,7 @@ public:
         label_zone2 = new FontScalableLabel(frame);
         label_zone2->setObjectName(QStringLiteral("label_zone2"));
         label_zone2->setFont(font10);
+        label_zone2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_3->addWidget(label_zone2);
 
@@ -567,6 +601,7 @@ public:
         checkBox_Zone3->setObjectName(QStringLiteral("checkBox_Zone3"));
         sizePolicy6.setHeightForWidth(checkBox_Zone3->sizePolicy().hasHeightForWidth());
         checkBox_Zone3->setSizePolicy(sizePolicy6);
+        checkBox_Zone3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone3->setChecked(true);
 
         horizontalLayout_5->addWidget(checkBox_Zone3);
@@ -574,6 +609,7 @@ public:
         label_zone3 = new FontScalableLabel(frame);
         label_zone3->setObjectName(QStringLiteral("label_zone3"));
         label_zone3->setFont(font10);
+        label_zone3->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_5->addWidget(label_zone3);
 
@@ -587,6 +623,7 @@ public:
         checkBox_Zone4->setObjectName(QStringLiteral("checkBox_Zone4"));
         sizePolicy6.setHeightForWidth(checkBox_Zone4->sizePolicy().hasHeightForWidth());
         checkBox_Zone4->setSizePolicy(sizePolicy6);
+        checkBox_Zone4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone4->setChecked(true);
 
         horizontalLayout_6->addWidget(checkBox_Zone4);
@@ -594,6 +631,7 @@ public:
         label_zone4 = new FontScalableLabel(frame);
         label_zone4->setObjectName(QStringLiteral("label_zone4"));
         label_zone4->setFont(font10);
+        label_zone4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_6->addWidget(label_zone4);
 
@@ -607,6 +645,7 @@ public:
         checkBox_Zone5->setObjectName(QStringLiteral("checkBox_Zone5"));
         sizePolicy6.setHeightForWidth(checkBox_Zone5->sizePolicy().hasHeightForWidth());
         checkBox_Zone5->setSizePolicy(sizePolicy6);
+        checkBox_Zone5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone5->setChecked(true);
 
         horizontalLayout_7->addWidget(checkBox_Zone5);
@@ -614,6 +653,7 @@ public:
         label_zone5 = new FontScalableLabel(frame);
         label_zone5->setObjectName(QStringLiteral("label_zone5"));
         label_zone5->setFont(font10);
+        label_zone5->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_7->addWidget(label_zone5);
 
@@ -627,6 +667,7 @@ public:
         checkBox_Zone6->setObjectName(QStringLiteral("checkBox_Zone6"));
         sizePolicy6.setHeightForWidth(checkBox_Zone6->sizePolicy().hasHeightForWidth());
         checkBox_Zone6->setSizePolicy(sizePolicy6);
+        checkBox_Zone6->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone6->setChecked(true);
 
         horizontalLayout_8->addWidget(checkBox_Zone6);
@@ -634,6 +675,7 @@ public:
         label_zone6 = new FontScalableLabel(frame);
         label_zone6->setObjectName(QStringLiteral("label_zone6"));
         label_zone6->setFont(font10);
+        label_zone6->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_8->addWidget(label_zone6);
 
@@ -647,6 +689,7 @@ public:
         checkBox_Zone7->setObjectName(QStringLiteral("checkBox_Zone7"));
         sizePolicy6.setHeightForWidth(checkBox_Zone7->sizePolicy().hasHeightForWidth());
         checkBox_Zone7->setSizePolicy(sizePolicy6);
+        checkBox_Zone7->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone7->setChecked(true);
 
         horizontalLayout_9->addWidget(checkBox_Zone7);
@@ -654,6 +697,7 @@ public:
         label_zone7 = new FontScalableLabel(frame);
         label_zone7->setObjectName(QStringLiteral("label_zone7"));
         label_zone7->setFont(font10);
+        label_zone7->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_9->addWidget(label_zone7);
 
@@ -667,6 +711,7 @@ public:
         checkBox_Zone8->setObjectName(QStringLiteral("checkBox_Zone8"));
         sizePolicy6.setHeightForWidth(checkBox_Zone8->sizePolicy().hasHeightForWidth());
         checkBox_Zone8->setSizePolicy(sizePolicy6);
+        checkBox_Zone8->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         checkBox_Zone8->setChecked(true);
 
         horizontalLayout_10->addWidget(checkBox_Zone8);
@@ -674,6 +719,7 @@ public:
         label_zone8 = new FontScalableLabel(frame);
         label_zone8->setObjectName(QStringLiteral("label_zone8"));
         label_zone8->setFont(font10);
+        label_zone8->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 
         horizontalLayout_10->addWidget(label_zone8);
 
@@ -698,36 +744,36 @@ public:
     void retranslateUi(QMainWindow *AmplitudePlateWindow)
     {
         AmplitudePlateWindow->setWindowTitle(QApplication::translate("AmplitudePlateWindow", "MainWindow", 0));
-        label_intensity->setText(QApplication::translate("AmplitudePlateWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\275\320\260 \320\276\321\201\320\270: Io", 0));
-        label_3->setText(QApplication::translate("AmplitudePlateWindow", "<html><head/><body><p>Io - \320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\277\321\200\320\270 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217</p></body></html>", 0));
-        label_WaveLength->setText(QApplication::translate("AmplitudePlateWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
-        spin_WaveLength->setSuffix(QApplication::translate("AmplitudePlateWindow", " \320\275\320\274", 0));
-        label_2->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\264\320\270\321\202\321\203\320\264\320\260 \320\275\320\260 \320\276\321\201\320\270", 0));
-        pushButton_Back->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
-        label->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
-        pushButton_Next->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\320\277\320\265\321\200\320\265\320\264", 0));
-        pushButton_closeAll->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \320\262\321\201\320\265", 0));
-        pushButton_openAll->setText(QApplication::translate("AmplitudePlateWindow", "\320\236\321\202\320\272\321\200\321\213\321\202\321\214 \320\262\321\201\320\265", 0));
-        pushButton_OpenOdd->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \321\207\321\221\321\202\320\275\321\213\320\265", 0));
-        label_8->setText(QApplication::translate("AmplitudePlateWindow", "\320\227\320\276\320\275\321\213 \320\244\321\200\320\265\320\275\320\265\320\273\321\217:", 0));
+        label_intensity->setText(QApplication::translate("AmplitudePlateWindow", "Intensity at the axis: Io", 0));
+        label_3->setText(QApplication::translate("AmplitudePlateWindow", "<html><head/><body><p>Io - Intensity in the abscence of the screen with a hole</p></body></html>", 0));
+        label_WaveLength->setText(QApplication::translate("AmplitudePlateWindow", "Wavelength:", 0));
+        spin_WaveLength->setSuffix(QApplication::translate("AmplitudePlateWindow", " nm", 0));
+        label_2->setText(QApplication::translate("AmplitudePlateWindow", "Amplitude at the axis", 0));
+        pushButton_Back->setText(QApplication::translate("AmplitudePlateWindow", "Exit", 0));
+        label->setText(QApplication::translate("AmplitudePlateWindow", "Amplitude plate", 0));
+        pushButton_Next->setText(QApplication::translate("AmplitudePlateWindow", "Next", 0));
+        pushButton_closeAll->setText(QApplication::translate("AmplitudePlateWindow", "Close all", 0));
+        pushButton_openAll->setText(QApplication::translate("AmplitudePlateWindow", "Open all", 0));
+        pushButton_OpenOdd->setText(QApplication::translate("AmplitudePlateWindow", "Close even", 0));
+        label_8->setText(QApplication::translate("AmplitudePlateWindow", "Fresnel zones:", 0));
         checkBox_Zone0->setText(QString());
-        label_zone0->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 1", 0));
+        label_zone0->setText(QApplication::translate("AmplitudePlateWindow", "zone 1", 0));
         checkBox_Zone1->setText(QString());
-        label_zone1->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 2", 0));
+        label_zone1->setText(QApplication::translate("AmplitudePlateWindow", "zone 2", 0));
         checkBox_Zone2->setText(QString());
-        label_zone2->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 3", 0));
+        label_zone2->setText(QApplication::translate("AmplitudePlateWindow", "zone 3", 0));
         checkBox_Zone3->setText(QString());
-        label_zone3->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 4", 0));
+        label_zone3->setText(QApplication::translate("AmplitudePlateWindow", "zone 4", 0));
         checkBox_Zone4->setText(QString());
-        label_zone4->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 5", 0));
+        label_zone4->setText(QApplication::translate("AmplitudePlateWindow", "zone 5", 0));
         checkBox_Zone5->setText(QString());
-        label_zone5->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 6", 0));
+        label_zone5->setText(QApplication::translate("AmplitudePlateWindow", "zone 6", 0));
         checkBox_Zone6->setText(QString());
-        label_zone6->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 7", 0));
+        label_zone6->setText(QApplication::translate("AmplitudePlateWindow", "zone 7", 0));
         checkBox_Zone7->setText(QString());
-        label_zone7->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 8", 0));
+        label_zone7->setText(QApplication::translate("AmplitudePlateWindow", "zone 8", 0));
         checkBox_Zone8->setText(QString());
-        label_zone8->setText(QApplication::translate("AmplitudePlateWindow", "\320\267\320\276\320\275\320\260 9", 0));
+        label_zone8->setText(QApplication::translate("AmplitudePlateWindow", "zone 9", 0));
     } // retranslateUi
 
 };
