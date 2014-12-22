@@ -32,42 +32,44 @@ private:
     void        updateAmplitudePlate (int oldFN);
 
 public:
-    static constexpr double nano_to_si_exp      = 1e-9;
-    static constexpr double milli_to_si_exp     = 1e-3;
-    static constexpr double micro_to_si_exp     = 1e-6;
-    static constexpr double centi_to_si_exp     = 1e-2;
+
+    static const double nano_to_si_exp;
+    static const double milli_to_si_exp;
+    static const double micro_to_si_exp;
+    static const double centi_to_si_exp;
 
     //
     //-------------- 'scale' = centi -----------------
     // * To change scale change ONLY 'scale_to_si_exp'
     //
-    static constexpr double scale_to_si_exp     = centi_to_si_exp;                    // scale -> System International (meter)
-    static constexpr double scale_to_nano_exp   = scale_to_si_exp / nano_to_si_exp;   // scale -> nano
-    static constexpr double scale_to_micro_exp  = scale_to_si_exp / micro_to_si_exp;   // scale -> nano
-    static constexpr double scale_to_milli_exp  = scale_to_si_exp / milli_to_si_exp;  // scale -> milli
+    static const double scale_to_si_exp;                    // scale -> System International (meter)
+    static const double scale_to_nano_exp;   // scale -> nano
+    static const double scale_to_micro_exp;   // scale -> nano
+    static const double scale_to_milli_exp;  // scale -> milli
 
-    static constexpr double si_to_scale_exp     = 1.0 / scale_to_si_exp;
-    static constexpr double nano_to_scale_exp   = nano_to_si_exp * si_to_scale_exp;   // nano -> scale
-    static constexpr double micro_to_scale_exp  = micro_to_si_exp * si_to_scale_exp;   // nano -> scale
-    static constexpr double milli_to_scale_exp  = milli_to_si_exp * si_to_scale_exp;  // milli -> scale
+    static const double si_to_scale_exp;
+    static const double nano_to_scale_exp;   // nano -> scale
+    static const double micro_to_scale_exp;   // nano -> scale
+    static const double milli_to_scale_exp;  // milli -> scale
 
     //
     //-------------------------------------- MODEL SCALING -----------------------------------------
     // * ALL variables, arguments and return values are defined in 'scale'
     // * To convert values MULTIPLY, NOT DIVIDE by appropriate exp defined above to avoid confusions
     //
-    static constexpr double radius_min = 0.1;
-    static constexpr double radius_max = 0.5;
-    static constexpr double radius_def = 0.37;
-    static constexpr double dist_min   = 400;
-    static constexpr double dist_max   = 8000;
-    static constexpr double dist_def   = 1800;
-    static constexpr double src_dist_def = 0.7;
-    static constexpr double wave_min   = 410 * nano_to_scale_exp;
-    static constexpr double wave_max   = 650 * nano_to_scale_exp;
-    static constexpr double wave_def   = 495 * nano_to_scale_exp;
-    static constexpr double accuracyPlot = radius_max / 100.0;                     // dr in amplitude integral
-    static constexpr double accuracySpiral = 10;                         // Number of spiral vectors in one zone
+    static const double radius_min;
+    static const double radius_max;
+    static const double radius_def;
+    static const double dist_min;
+    static const double dist_max;
+    static const double dist_def;
+    static const double src_dist_def;
+    static const double wave_min;
+    static const double wave_max;
+    static const double wave_def;
+    static const double accuracyPlot;                     // dr in amplitude integral
+    static const double accuracySpiral;                         // Number of spiral vectors in one zone
+
 
     double      refractiveIndex;    // n (refractive index of phase plate)
     PhasePlate  phasePlateType;

@@ -621,6 +621,9 @@ padding-right:5%</string>
       <property name="locale">
        <locale language="English" country="UnitedStates"/>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -1238,11 +1241,6 @@ padding-right:8%;
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>SchemeGraph</class>
-   <extends>QWidget</extends>
-   <header>schemegraph.h</header>
-  </customwidget>
-  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
@@ -1252,6 +1250,11 @@ padding-right:8%;
    <class>FontScalableSpinBox</class>
    <extends>QSpinBox</extends>
    <header>fontscalablespinbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SchemeGraph</class>
+   <extends>QWidget</extends>
+   <header>schemegraph.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

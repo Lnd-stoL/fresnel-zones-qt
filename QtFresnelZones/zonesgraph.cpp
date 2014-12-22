@@ -26,7 +26,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
     else  painter.setBrush (blackBrush);
 
     float wholeRad = squareWidth * (_fresnel->getHoleRadius() / maxRad);
-    painter.drawEllipse (QPoint (width / 2, height / 2), wholeRad, wholeRad);
+    painter.drawEllipse (QPoint (width / 2, height / 2), (int)wholeRad, (int)wholeRad);
 
     QPen dashedPen (QBrush (QColor (110, 110, 110)), 2 * dpiScaling.y(), Qt::PenStyle::DashLine);
     painter.setPen (dashedPen);
@@ -56,7 +56,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
         }
         else  painter.setBrush (blackBrush);
 
-        painter.drawEllipse (QPoint (width / 2, height / 2), radius, radius);
+        painter.drawEllipse (QPoint (width / 2, height / 2), (int)radius, (int)radius);
         if (n == fresnelNumber + 1)  painter.setPen (zonesPen);
     }
 
@@ -102,7 +102,7 @@ void ZonesGraph::_drawPhasePlate (QPainter &painter, double squareWidth, double 
 
         QColor clr = QColor (0, 150, 255);
         painter.setPen (QColor (clr.red() * colorIntensity, clr.green() * colorIntensity, clr.blue() * colorIntensity));
-        painter.drawEllipse (QPoint (width / 2, height / 2), n, n);
+        painter.drawEllipse (QPoint (width / 2, height / 2), (int)n, (int)n);
     }
 }
 
@@ -116,13 +116,15 @@ ZonesGraph::ZonesGraph (QWidget *parent) :
 void ZonesGraph::update (Fresnel *fresnel)
 {
     _fresnel = fresnel;
+    //emit QPaintEvent (QRect());
+    //wa_widget_update (this);
     this->repaint();
 }
 
 
 void ZonesGraph::paintEvent (QPaintEvent *event)
 {
-    if (_fresnel == nullptr)  return;
+    //if (_fresnel == nullptr)  return;
 
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
 

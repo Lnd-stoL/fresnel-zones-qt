@@ -1,0 +1,11 @@
+﻿Build started 22.12.2014 13:44:19.
+     1>Project "C:\Users\Leonid\Documents\GitHub\fresnel-zones-qt\QtFresnelZones\QtFresnelZones.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         MOC amplitudeplatewindow.h
+         Системе не удается найти указанный путь.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppCommon.targets(170,5): error MSB6006: "cmd.exe" exited with code 3.
+     1>Done Building Project "C:\Users\Leonid\Documents\GitHub\fresnel-zones-qt\QtFresnelZones\QtFresnelZones.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.67
