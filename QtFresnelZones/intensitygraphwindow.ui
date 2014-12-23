@@ -922,6 +922,9 @@ padding-right:5%</string>
          <property name="text">
           <string>Установить число зон в отверстии:</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item row="3" column="0">
@@ -1022,12 +1025,6 @@ padding-right:5%</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>IntensityPlot</class>
-   <extends>QWidget</extends>
-   <header>intensityplot.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
@@ -1037,6 +1034,12 @@ padding-right:5%</string>
    <class>FontScalableSpinBox</class>
    <extends>QSpinBox</extends>
    <header>fontscalablespinbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>IntensityPlot</class>
+   <extends>QWidget</extends>
+   <header>intensityplot.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

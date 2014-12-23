@@ -44,7 +44,6 @@ public:
     QVBoxLayout *verticalLayout_3;
     QProgressBar *progressBar;
     FontScalableLabel *label_intensity;
-    FontScalableLabel *label_3;
     QWidget *widget_4;
     QGridLayout *gridLayout_6;
     QVBoxLayout *verticalLayout_4;
@@ -52,6 +51,7 @@ public:
     QHBoxLayout *horizontalLayout_12;
     QSlider *slider_WaveLength;
     FontScalableSpinBox *spin_WaveLength;
+    FontScalableLabel *label_3;
     QWidget *widget_5;
     QHBoxLayout *horizontalLayout_13;
     SchemeGraph *widget_schemeGraph;
@@ -172,21 +172,6 @@ public:
 
         verticalLayout_3->addWidget(label_intensity);
 
-        label_3 = new FontScalableLabel(widget_3);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Courier New"));
-        font2.setPointSize(14);
-        font2.setBold(true);
-        font2.setItalic(true);
-        font2.setWeight(75);
-        label_3->setFont(font2);
-        label_3->setStyleSheet(QLatin1String("padding-left:0;\n"
-""));
-        label_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        verticalLayout_3->addWidget(label_3, 0, Qt::AlignLeft);
-
 
         verticalLayout_5->addWidget(widget_3);
 
@@ -206,13 +191,13 @@ public:
         label_WaveLength->setObjectName(QStringLiteral("label_WaveLength"));
         sizePolicy3.setHeightForWidth(label_WaveLength->sizePolicy().hasHeightForWidth());
         label_WaveLength->setSizePolicy(sizePolicy3);
-        QFont font3;
-        font3.setFamily(QStringLiteral("Arial"));
-        font3.setPointSize(16);
-        font3.setBold(false);
-        font3.setItalic(true);
-        font3.setWeight(50);
-        label_WaveLength->setFont(font3);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(16);
+        font2.setBold(false);
+        font2.setItalic(true);
+        font2.setWeight(50);
+        label_WaveLength->setFont(font2);
         label_WaveLength->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         verticalLayout_4->addWidget(label_WaveLength);
@@ -222,9 +207,9 @@ public:
         horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
         slider_WaveLength = new QSlider(widget_4);
         slider_WaveLength->setObjectName(QStringLiteral("slider_WaveLength"));
-        QFont font4;
-        font4.setPointSize(15);
-        slider_WaveLength->setFont(font4);
+        QFont font3;
+        font3.setPointSize(15);
+        slider_WaveLength->setFont(font3);
         slider_WaveLength->setOrientation(Qt::Horizontal);
 
         horizontalLayout_12->addWidget(slider_WaveLength);
@@ -234,10 +219,10 @@ public:
         sizePolicy.setHeightForWidth(spin_WaveLength->sizePolicy().hasHeightForWidth());
         spin_WaveLength->setSizePolicy(sizePolicy);
         spin_WaveLength->setMinimumSize(QSize(0, 0));
-        QFont font5;
-        font5.setFamily(QStringLiteral("Trebuchet MS"));
-        font5.setPointSize(15);
-        spin_WaveLength->setFont(font5);
+        QFont font4;
+        font4.setFamily(QStringLiteral("Trebuchet MS"));
+        font4.setPointSize(15);
+        spin_WaveLength->setFont(font4);
         spin_WaveLength->setStyleSheet(QStringLiteral("background-color: white;"));
 
         horizontalLayout_12->addWidget(spin_WaveLength);
@@ -246,7 +231,25 @@ public:
         verticalLayout_4->addLayout(horizontalLayout_12);
 
 
-        gridLayout_6->addLayout(verticalLayout_4, 0, 0, 1, 1);
+        gridLayout_6->addLayout(verticalLayout_4, 1, 0, 1, 1);
+
+        label_3 = new FontScalableLabel(widget_4);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
+        QFont font5;
+        font5.setFamily(QStringLiteral("Courier New"));
+        font5.setPointSize(14);
+        font5.setBold(true);
+        font5.setItalic(true);
+        font5.setWeight(75);
+        label_3->setFont(font5);
+        label_3->setStyleSheet(QLatin1String("padding-left:0;\n"
+""));
+        label_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        label_3->setWordWrap(true);
+
+        gridLayout_6->addWidget(label_3, 0, 0, 1, 1);
 
 
         verticalLayout_5->addWidget(widget_4);
@@ -699,9 +702,9 @@ public:
     {
         AmplitudePlateWindow->setWindowTitle(QApplication::translate("AmplitudePlateWindow", "MainWindow", 0));
         label_intensity->setText(QApplication::translate("AmplitudePlateWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\275\320\260 \320\276\321\201\320\270: Io", 0));
-        label_3->setText(QApplication::translate("AmplitudePlateWindow", "<html><head/><body><p>Io - \320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\277\321\200\320\270 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217</p></body></html>", 0));
         label_WaveLength->setText(QApplication::translate("AmplitudePlateWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
         spin_WaveLength->setSuffix(QApplication::translate("AmplitudePlateWindow", " \320\275\320\274", 0));
+        label_3->setText(QApplication::translate("AmplitudePlateWindow", "<html><head/><body><p>Io - \320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\262 \320\276\321\202\321\201\321\203\321\202\321\201\321\202\320\262\320\270\320\270 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217</p></body></html>", 0));
         label_2->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\264\320\270\321\202\321\203\320\264\320\260 \320\275\320\260 \320\276\321\201\320\270", 0));
         pushButton_Back->setText(QApplication::translate("AmplitudePlateWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("AmplitudePlateWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));

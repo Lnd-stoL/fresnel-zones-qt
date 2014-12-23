@@ -563,6 +563,7 @@ public:
         font10.setPointSize(14);
         font10.setItalic(true);
         label_2->setFont(font10);
+        label_2->setWordWrap(true);
 
         gridLayout_6->addWidget(label_2, 0, 0, 1, 1);
 
