@@ -37,7 +37,6 @@ private:
     void _update();
     void _initFresnelBasedSliders();
 
-    void _update_FresnelModel();
     void _updateZoneGraph();
     void _updateSpiralGraph();
 

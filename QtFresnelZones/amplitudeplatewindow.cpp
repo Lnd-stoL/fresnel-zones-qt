@@ -134,7 +134,7 @@ void AmplitudePlateWindow::_updateProgressBar()
     ui->progressBar->setStyleSheet (st);
     ui->progressBar->setGeometry (r.x(), r.y() + 3, r.width(), r.height() - 6);
 
-    unsigned progress = round ((_fresnel->intensity() / _progressBarHigh) * 100);
+    int progress = round ((_fresnel->intensity() / _progressBarHigh) * 100);
     if (progress < 0)    progress = -progress;
     if (progress > 100)  progress = 100;
 
