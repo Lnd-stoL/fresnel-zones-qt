@@ -39,7 +39,7 @@ protected:
     void _updateRDependence (Fresnel *fresnel);
     void _clearPlotItems();
     void _updateGraphData (double highest, double step, double lowest,
-                           Fresnel *fresnel, std::function<double(double)> calculator);
+                           std::function<double(double)> calculator);
 
 
 public:

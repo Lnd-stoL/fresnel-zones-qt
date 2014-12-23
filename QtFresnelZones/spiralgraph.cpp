@@ -28,7 +28,7 @@ void SpiralGraph::dontScale (double maxVal)
 }
 
 
-void SpiralGraph::paintEvent (QPaintEvent *event)
+void SpiralGraph::paintEvent (QPaintEvent *)
 {
     QVector2D dpiScaling = HiDpiScaler::scalingFactors();
 
@@ -55,7 +55,7 @@ void SpiralGraph::paintEvent (QPaintEvent *event)
     if (_maxValue != 0)  maxVal = _maxValue;
 
     unsigned squareSide = std::min (width, height);
-    unsigned squareSideY = squareSide;
+    //unsigned squareSideY = squareSide;
 
     if (fresnel != nullptr) {
         if (fresnel->phasePlate) {

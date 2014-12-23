@@ -10,8 +10,6 @@ void Drawer::drawArrow (QPainter& painter, double x0, double y0, double x1, doub
 {
     double tx = (double)x1 - (double)x0;
     double ty = (double)y1 - (double)y0;
-    double length = sqrt (tx*tx + ty*ty);
-    //if (length > 500) return;
     double ptx = -ty / k1;
     double pty = tx / k1;
 

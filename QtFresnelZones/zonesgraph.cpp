@@ -74,7 +74,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
 
 
 void ZonesGraph::_drawPhasePlate (QPainter &painter, double squareWidth, double maxRad,
-                                  QBrush &colorBrush, QBrush &blackBrush)
+                                  QBrush &, QBrush &)
 {
     int width = size().width();
     int height = size().height();
@@ -122,7 +122,7 @@ void ZonesGraph::update (Fresnel *fresnel)
 }
 
 
-void ZonesGraph::paintEvent (QPaintEvent *event)
+void ZonesGraph::paintEvent (QPaintEvent *)
 {
     //if (_fresnel == nullptr)  return;
 

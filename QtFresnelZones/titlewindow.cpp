@@ -25,9 +25,6 @@ TitleWindow::TitleWindow (QWidget *parent) :
     connect (ui->pushButton_Authors, SIGNAL(clicked()), this, SLOT(openAuthorsWindow()));
 
     connect (ui->pushButton_Exit, SIGNAL(clicked()), this, SLOT(exitApplication()));
-
-    //ui->label_3->setPixmap (QPixmap (QApplication::applicationDirPath() + "/cmc-logo.svg"));
-    qDebug() << QApplication::applicationDirPath() + "\\cmc-logo.svg";
 }
 
 

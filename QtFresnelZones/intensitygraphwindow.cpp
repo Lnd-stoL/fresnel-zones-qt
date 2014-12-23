@@ -136,14 +136,6 @@ void IntensityGraphWindow::_update()
     _updateParamsSetButtons();
 }
 
-
-void IntensityGraphWindow::_update_FresnelModel()
-{
-    double newXDistance  = Fresnel::si_to_scale_exp * ui->slider_xDistance->value()  / _sliderScaling;
-    double newHoleRadius = Fresnel::milli_to_scale_exp * ui->slider_HoleRadius->value() / _sliderScaling;
-    double newWaveLength = Fresnel::nano_to_scale_exp  * ui->spin_WaveLength->value();
-}
-
 //----------------------------------------------------------------------------------------------------------------------
 
 void IntensityGraphWindow::button_Back_Pressed()

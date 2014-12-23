@@ -51,7 +51,7 @@ bool SchemeGraph::isMouseOnEye(QPoint cursor)
 
 void SchemeGraph::drawWall (QPainter &painter)
 {
-    double  width       = size ().width ();
+//    double  width       = size ().width ();
     double  height      = size ().height ();
     double  holeRadius  = height * holeRelativeSize / 2.0;
     double  centerY     = holeCenterPosition.y ();
@@ -87,12 +87,12 @@ void SchemeGraph::drawAxis (QPainter &painter)
 
 void SchemeGraph::drawEye (QPainter &painter)
 {
-    double  width           = size ().width ();
+//    double  width           = size ().width ();
     double  height          = size ().height ();
     double  centerX         = eyePosition.x ();
     double  centerY         = eyePosition.y ();
     double  eyeSize         = height * eyeRelativeSize;
-    double  eyeLidSize      = eyeSize * sqrt (5.0) / 2.0;
+//    double  eyeLidSize      = eyeSize * sqrt (5.0) / 2.0;
     double  orbSize         = eyeSize * 3.0 / 8.0;
     double  orbRadius       = eyeSize / 6.0;
     double  eyeCenterRadius = orbRadius / 2.0;
@@ -121,7 +121,7 @@ void SchemeGraph::drawEye (QPainter &painter)
 
 void SchemeGraph::drawSourceRays (QPainter &painter)
 {
-    double  width           = size ().width ();
+//    double  width           = size ().width ();
     double  height          = size ().height ();
     double  holeRadius      = height * holeRelativeSize / 2.0;
     double  centerY         = holeCenterPosition.y ();
@@ -149,7 +149,7 @@ void SchemeGraph::drawSourceRays (QPainter &painter)
 
 void SchemeGraph::drawDiffractedRays (QPainter &painter)
 {
-    double  width           = size ().width ();
+//    double  width           = size ().width ();
     double  height          = size ().height ();
     double  holeRadius      = height * holeRelativeSize / 2.0;
     double  centerY         = holeCenterPosition.y ();
@@ -189,15 +189,15 @@ void SchemeGraph::drawDiffractedRays (QPainter &painter)
 
 void SchemeGraph::drawFresnelZoneRays (QPainter &painter)
 {
-    double  width           = size ().width ();
+//    double  width           = size ().width ();
     double  height          = size ().height ();
     double  holeRadius      = height * holeRelativeSize / 2.0;
     double  centerY         = holeCenterPosition.y ();
     QPointF holeTop           (holeCenterPosition.x (), centerY - (holeRadius + wallPenWidth / 2.0));
     QPointF holeBottom        (holeCenterPosition.x (), centerY + (holeRadius + wallPenWidth / 2.0));
-    double  deltaY          = (holeBottom.y () - holeTop.y ()) / (oneSideRayCount * 2);
+//    double  deltaY          = (holeBottom.y () - holeTop.y ()) / (oneSideRayCount * 2);
     double  x               = fresnel->phasePlate ? maximum (plateX) : holeCenterPosition.x ();
-    double  y               = holeTop.y () + deltaY / 2.0;
+//    double  y               = holeTop.y () + deltaY / 2.0;
     int     fn              = fresnel->fresnelNumber ();
     double  scaling         = holeRadius / fresnel->getHoleRadius ();
     int     showingZonesCount = fn;
@@ -281,8 +281,8 @@ void SchemeGraph::drawPlate (QPainter& painter)
         return;
     }
 
-    double width    = size ().width ();
-    double height   = size ().height ();
+//    double width    = size ().width ();
+//    double height   = size ().height ();
     double scaling  = getScaling ();
     double x        = 0.0;
     double radius   = fresnel->getHoleRadius();
@@ -345,7 +345,7 @@ void SchemeGraph::drawPlate (QPainter& painter)
     }
 }
 
-void SchemeGraph::paintEvent (QPaintEvent *event)
+void SchemeGraph::paintEvent (QPaintEvent *)
 {
     if (fresnel == nullptr) {
         return;
@@ -390,7 +390,7 @@ void SchemeGraph::mousePressEvent(QMouseEvent *event)
     }
 }
 
-void SchemeGraph::mouseReleaseEvent(QMouseEvent *event)
+void SchemeGraph::mouseReleaseEvent(QMouseEvent *)
 {
     if (isMousePressed) {
         emit fresnelChanged();
@@ -419,7 +419,7 @@ void SchemeGraph::mouseMoveEvent(QMouseEvent *event)
     }
 }
 
-void SchemeGraph::resizeEvent(QResizeEvent *event)
+void SchemeGraph::resizeEvent(QResizeEvent *)
 {
     double width  = size ().width ();
     double height = size ().height ();
