@@ -71,6 +71,7 @@ public:
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setSizeConstraint(QLayout::SetNoConstraint);
         pushButton_IntensityGraph = new FontScalablePushButton(centralwidget);
         pushButton_IntensityGraph->setObjectName(QStringLiteral("pushButton_IntensityGraph"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -182,7 +183,7 @@ public:
         label_4->setObjectName(QStringLiteral("label_4"));
         QFont font2;
         font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(16);
+        font2.setPointSize(15);
         font2.setItalic(false);
         label_4->setFont(font2);
         label_4->setAlignment(Qt::AlignCenter);
@@ -191,20 +192,24 @@ public:
 
         label_5 = new FontScalableLabel(centralwidget);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setFont(font2);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(16);
+        font3.setItalic(false);
+        label_5->setFont(font3);
         label_5->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_5);
 
         label_6 = new FontScalableLabel(centralwidget);
         label_6->setObjectName(QStringLiteral("label_6"));
-        QFont font3;
-        font3.setFamily(QStringLiteral("Arial"));
-        font3.setPointSize(32);
-        font3.setBold(true);
-        font3.setItalic(false);
-        font3.setWeight(75);
-        label_6->setFont(font3);
+        QFont font4;
+        font4.setFamily(QStringLiteral("Arial"));
+        font4.setPointSize(32);
+        font4.setBold(true);
+        font4.setItalic(false);
+        font4.setWeight(75);
+        label_6->setFont(font4);
         label_6->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_6);
@@ -221,6 +226,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy1);
+        widget_2->setMinimumSize(QSize(0, 100));
         widget_2->setStyleSheet(QStringLiteral("image: url(:cmc-logo.png);"));
 
         verticalLayout_2->addWidget(widget_2);
@@ -232,12 +238,12 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy2);
-        QFont font4;
-        font4.setFamily(QStringLiteral("Arial"));
-        font4.setPointSize(16);
-        font4.setItalic(false);
-        font4.setKerning(true);
-        label->setFont(font4);
+        QFont font5;
+        font5.setFamily(QStringLiteral("Arial"));
+        font5.setPointSize(16);
+        font5.setItalic(false);
+        font5.setKerning(true);
+        label->setFont(font5);
         label->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignBottom);
@@ -251,6 +257,7 @@ public:
         widget_3->setObjectName(QStringLiteral("widget_3"));
         sizePolicy1.setHeightForWidth(widget_3->sizePolicy().hasHeightForWidth());
         widget_3->setSizePolicy(sizePolicy1);
+        widget_3->setMinimumSize(QSize(0, 100));
         widget_3->setStyleSheet(QStringLiteral("image: url(:phys-logo.png);"));
 
         verticalLayout_4->addWidget(widget_3);
@@ -259,7 +266,7 @@ public:
         label_2->setObjectName(QStringLiteral("label_2"));
         sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy2);
-        label_2->setFont(font4);
+        label_2->setFont(font5);
         label_2->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(label_2, 0, Qt::AlignHCenter|Qt::AlignBottom);
@@ -271,13 +278,13 @@ public:
         pushButton_Authors->setObjectName(QStringLiteral("pushButton_Authors"));
         sizePolicy.setHeightForWidth(pushButton_Authors->sizePolicy().hasHeightForWidth());
         pushButton_Authors->setSizePolicy(sizePolicy);
-        pushButton_Authors->setMinimumSize(QSize(0, 50));
-        QFont font5;
-        font5.setFamily(QStringLiteral("Arial"));
-        font5.setPointSize(20);
-        font5.setBold(false);
-        font5.setWeight(50);
-        pushButton_Authors->setFont(font5);
+        pushButton_Authors->setMinimumSize(QSize(0, 0));
+        QFont font6;
+        font6.setFamily(QStringLiteral("Arial"));
+        font6.setPointSize(20);
+        font6.setBold(false);
+        font6.setWeight(50);
+        pushButton_Authors->setFont(font6);
         pushButton_Authors->setStyleSheet(QLatin1String("padding-top:15%;\n"
 "padding-bottom:15%"));
 
@@ -288,7 +295,7 @@ public:
         sizePolicy.setHeightForWidth(pushButton_Exit->sizePolicy().hasHeightForWidth());
         pushButton_Exit->setSizePolicy(sizePolicy);
         pushButton_Exit->setMinimumSize(QSize(0, 0));
-        pushButton_Exit->setFont(font5);
+        pushButton_Exit->setFont(font6);
         pushButton_Exit->setDefault(true);
 
         gridLayout->addWidget(pushButton_Exit, 15, 0, 1, 1);
@@ -297,9 +304,9 @@ public:
 
         gridLayout->addItem(verticalSpacer, 14, 1, 1, 1);
 
-        gridLayout->setColumnStretch(0, 1);
-        gridLayout->setColumnStretch(1, 3);
-        gridLayout->setColumnStretch(2, 1);
+        gridLayout->setColumnStretch(0, 2);
+        gridLayout->setColumnStretch(1, 4);
+        gridLayout->setColumnStretch(2, 2);
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
 
