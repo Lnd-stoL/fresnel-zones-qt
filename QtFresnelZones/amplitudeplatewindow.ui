@@ -136,7 +136,7 @@
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignLeft">
+          <item>
            <widget class="FontScalableLabel" name="label_3">
             <property name="font">
              <font>
@@ -155,10 +155,13 @@
              <locale language="English" country="UnitedStates"/>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Io - Intensity in the abscence of the screen with a hole&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Io is the intensity in the abscence of the screen with the aperture&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -668,7 +671,7 @@ padding-right:5%</string>
        <item row="2" column="0">
         <widget class="QWidget" name="widget_2" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>

@@ -1,5 +1,6 @@
 
 #include "zonesgraph.h"
+#include "schemegraph.h"
 #include <QPainter>
 #include <stdio.h>
 #include <QDebug>
@@ -119,6 +120,13 @@ void ZonesGraph::update (Fresnel *fresnel)
     //emit QPaintEvent (QRect());
     //wa_widget_update (this);
     this->repaint();
+}
+
+double ZonesGraph::getHoleRadius ()
+{
+    int width = size().width();
+    int height = size().height();
+    return (std::min (height/2, width/2) - 5) * (_fresnel->getHoleRadius() / Fresnel::radius_max);
 }
 
 

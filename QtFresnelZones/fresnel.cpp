@@ -2,10 +2,9 @@
 #include <QDebug>
 #include <cmath>
 
+#define M_PI 3.141592653589793238463
 
-const double M_PI = 3.141592653589793238463;
-
-const double Fresnel::nano_to_si_exp      = 1e-9;
+  const double Fresnel::nano_to_si_exp      = 1e-9;
   const double Fresnel::milli_to_si_exp     = 1e-3;
   const double Fresnel::micro_to_si_exp     = 1e-6;
   const double Fresnel::centi_to_si_exp     = 1e-2;

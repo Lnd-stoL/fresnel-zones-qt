@@ -4,6 +4,7 @@
 #include "fresnel.h"
 #include "drawer.h"
 #include "introwindow.h"
+#include "zonesgraph.h"
 
 #include <QWidget>
 //#include <QGLWidget>
@@ -34,6 +35,7 @@ public:
 
     bool            isMousePressed                      = false;
     QPoint          cursorOld;
+    ZonesGraph     *zonesGraph = nullptr;
 
     Fresnel        *fresnel = nullptr;
 

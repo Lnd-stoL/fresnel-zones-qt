@@ -70,7 +70,7 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    xAxis->setLabel ("Hole radius, mm");
+    xAxis->setLabel ("Aperture radius, mm");
     this->clearItems();
 }
 

@@ -33,6 +33,7 @@ AmplitudePlateWindow::AmplitudePlateWindow (Fresnel *fresnel, TitleWindow *tw) :
     _fresnel->setHoleRadius (Fresnel::radius_max * 0.85);
     button_Tune_Pressed();
     ui->widget_schemeGraph->fresnel  = _fresnel;
+    ui->widget_schemeGraph->zonesGraph = ui->widget_Zones;
     ui->widget_schemeGraph->schemeType = SchemeGraph::SchemeType::AmplitudePlateScheme;
 
     for (unsigned i = 1; i < zoneCheckBoxesNum+1; ++i)  _fresnel->setZoneOpenness (i, false);
