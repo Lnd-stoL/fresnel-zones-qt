@@ -563,6 +563,7 @@ public:
         font10.setPointSize(14);
         font10.setItalic(true);
         label_2->setFont(font10);
+        label_2->setWordWrap(true);
 
         gridLayout_6->addWidget(label_2, 0, 0, 1, 1);
 
@@ -624,9 +625,9 @@ public:
         radioButton_holeDependance->setText(QString());
         label_hMode->setText(QApplication::translate("IntensityGraphWindow", " \320\240\320\260\320\264\320\270\321\203\321\201 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217", 0));
         label_4->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265 \320\264\320\276 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
-        spin_xDistance->setSuffix(QApplication::translate("IntensityGraphWindow", "  \320\274", 0));
+        spin_xDistance->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\274", 0));
         label_holeRadius->setText(QApplication::translate("IntensityGraphWindow", "\320\240\320\260\320\264\320\270\321\203\321\201 \320\276\321\202\320\262\320\265\321\200\321\201\321\202\320\270\321\217:", 0));
-        spin_HoleRadius->setSuffix(QApplication::translate("IntensityGraphWindow", "  \320\274\320\274", 0));
+        spin_HoleRadius->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\274\320\274", 0));
         label_WaveLength->setText(QApplication::translate("IntensityGraphWindow", "\320\224\320\273\320\270\320\275\320\260 \320\262\320\276\320\273\320\275\321\213:", 0));
         spin_WaveLength->setSuffix(QApplication::translate("IntensityGraphWindow", " \320\275\320\274", 0));
         pushButton_params1->setText(QApplication::translate("IntensityGraphWindow", "1", 0));

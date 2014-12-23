@@ -23,6 +23,7 @@ protected:
 public:
     explicit ZonesGraph (QWidget *parent = 0);
     void update (Fresnel *fresnel);
+    double getHoleRadius();
 
 
 signals:

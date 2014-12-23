@@ -1,5 +1,6 @@
 
 #include "zonesgraph.h"
+#include "schemegraph.h"
 #include <QPainter>
 #include <stdio.h>
 #include <QDebug>
@@ -25,7 +26,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
     if (_fresnel->isZoneOpened (_fresnel->fresnelNumber()))  painter.setBrush (colorBrush);
     else  painter.setBrush (blackBrush);
 
-    float wholeRad = squareWidth  * 0.57 * (_fresnel->getHoleRadius() / maxRad);
+    float wholeRad = squareWidth * (_fresnel->getHoleRadius() / maxRad);
     painter.drawEllipse (QPoint (width / 2, height / 2), (int)wholeRad, (int)wholeRad);
 
     QPen dashedPen (QBrush (QColor (110, 110, 110)), 2 * dpiScaling.y(), Qt::PenStyle::DashLine);
@@ -119,6 +120,13 @@ void ZonesGraph::update (Fresnel *fresnel)
     //emit QPaintEvent (QRect());
     //wa_widget_update (this);
     this->repaint();
+}
+
+double ZonesGraph::getHoleRadius ()
+{
+    int width = size().width();
+    int height = size().height();
+    return (std::min (height/2, width/2) - 5) * (_fresnel->getHoleRadius() / Fresnel::radius_max);
 }
 
 

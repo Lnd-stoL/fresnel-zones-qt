@@ -68,9 +68,14 @@ public:
     {
         if (IntroWindow->objectName().isEmpty())
             IntroWindow->setObjectName(QStringLiteral("IntroWindow"));
+        IntroWindow->setWindowModality(Qt::ApplicationModal);
         IntroWindow->resize(800, 600);
+        IntroWindow->setAutoFillBackground(false);
         centralwidget = new QWidget(IntroWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
+        QFont font;
+        font.setStyleStrategy(QFont::PreferAntialias);
+        centralwidget->setFont(font);
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         widget = new QWidget(centralwidget);
@@ -92,12 +97,12 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_Back->sizePolicy().hasHeightForWidth());
         pushButton_Back->setSizePolicy(sizePolicy1);
         pushButton_Back->setMinimumSize(QSize(0, 0));
-        QFont font;
-        font.setFamily(QStringLiteral("Arial"));
-        font.setPointSize(14);
-        font.setBold(true);
-        font.setWeight(75);
-        pushButton_Back->setFont(font);
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
+        font1.setPointSize(14);
+        font1.setBold(true);
+        font1.setWeight(75);
+        pushButton_Back->setFont(font1);
         pushButton_Back->setStyleSheet(QLatin1String("background-color:white;\n"
 "padding-top:5%;\n"
 "padding-bottom:5%;\n"
@@ -116,13 +121,13 @@ public:
         label = new FontScalableLabel(widget);
         label->setObjectName(QStringLiteral("label"));
         label->setMaximumSize(QSize(16777215, 50));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial"));
-        font1.setPointSize(22);
-        font1.setBold(true);
-        font1.setUnderline(true);
-        font1.setWeight(75);
-        label->setFont(font1);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(22);
+        font2.setBold(true);
+        font2.setUnderline(true);
+        font2.setWeight(75);
+        label->setFont(font2);
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignVCenter);
@@ -136,7 +141,7 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_Next->sizePolicy().hasHeightForWidth());
         pushButton_Next->setSizePolicy(sizePolicy1);
         pushButton_Next->setMinimumSize(QSize(0, 0));
-        pushButton_Next->setFont(font);
+        pushButton_Next->setFont(font1);
         pushButton_Next->setStyleSheet(QLatin1String("background-color:white;\n"
 "padding-top:5%;\n"
 "padding-bottom:5%;\n"
@@ -173,13 +178,13 @@ public:
         verticalLayout_2->setSizeConstraint(QLayout::SetDefaultConstraint);
         label_2 = new FontScalableLabel(frame);
         label_2->setObjectName(QStringLiteral("label_2"));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(16);
-        font2.setBold(false);
-        font2.setItalic(true);
-        font2.setWeight(50);
-        label_2->setFont(font2);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(16);
+        font3.setBold(false);
+        font3.setItalic(true);
+        font3.setWeight(50);
+        label_2->setFont(font3);
         label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         label_2->setWordWrap(true);
 
@@ -200,10 +205,10 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(label_12->sizePolicy().hasHeightForWidth());
         label_12->setSizePolicy(sizePolicy2);
-        QFont font3;
-        font3.setFamily(QStringLiteral("Arial"));
-        font3.setPointSize(16);
-        label_12->setFont(font3);
+        QFont font4;
+        font4.setFamily(QStringLiteral("Arial"));
+        font4.setPointSize(16);
+        label_12->setFont(font4);
 
         horizontalLayout_7->addWidget(label_12);
 
@@ -211,7 +216,7 @@ public:
         distance_label->setObjectName(QStringLiteral("distance_label"));
         sizePolicy2.setHeightForWidth(distance_label->sizePolicy().hasHeightForWidth());
         distance_label->setSizePolicy(sizePolicy2);
-        distance_label->setFont(font3);
+        distance_label->setFont(font4);
 
         horizontalLayout_7->addWidget(distance_label);
 
@@ -219,7 +224,7 @@ public:
         label_13->setObjectName(QStringLiteral("label_13"));
         sizePolicy.setHeightForWidth(label_13->sizePolicy().hasHeightForWidth());
         label_13->setSizePolicy(sizePolicy);
-        label_13->setFont(font3);
+        label_13->setFont(font4);
 
         horizontalLayout_7->addWidget(label_13);
 
@@ -238,7 +243,7 @@ public:
         label_5->setObjectName(QStringLiteral("label_5"));
         sizePolicy2.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
         label_5->setSizePolicy(sizePolicy2);
-        label_5->setFont(font3);
+        label_5->setFont(font4);
 
         horizontalLayout_3->addWidget(label_5);
 
@@ -246,7 +251,7 @@ public:
         radius_label->setObjectName(QStringLiteral("radius_label"));
         sizePolicy2.setHeightForWidth(radius_label->sizePolicy().hasHeightForWidth());
         radius_label->setSizePolicy(sizePolicy2);
-        radius_label->setFont(font3);
+        radius_label->setFont(font4);
 
         horizontalLayout_3->addWidget(radius_label);
 
@@ -254,7 +259,7 @@ public:
         label_6->setObjectName(QStringLiteral("label_6"));
         sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy);
-        label_6->setFont(font3);
+        label_6->setFont(font4);
 
         horizontalLayout_3->addWidget(label_6);
 
@@ -273,7 +278,7 @@ public:
         label_3->setObjectName(QStringLiteral("label_3"));
         sizePolicy2.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
         label_3->setSizePolicy(sizePolicy2);
-        label_3->setFont(font3);
+        label_3->setFont(font4);
 
         horizontalLayout_2->addWidget(label_3);
 
@@ -281,7 +286,7 @@ public:
         waveLength_label->setObjectName(QStringLiteral("waveLength_label"));
         sizePolicy2.setHeightForWidth(waveLength_label->sizePolicy().hasHeightForWidth());
         waveLength_label->setSizePolicy(sizePolicy2);
-        waveLength_label->setFont(font3);
+        waveLength_label->setFont(font4);
 
         horizontalLayout_2->addWidget(waveLength_label);
 
@@ -289,7 +294,7 @@ public:
         label_4->setObjectName(QStringLiteral("label_4"));
         sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
         label_4->setSizePolicy(sizePolicy);
-        label_4->setFont(font3);
+        label_4->setFont(font4);
 
         horizontalLayout_2->addWidget(label_4);
 

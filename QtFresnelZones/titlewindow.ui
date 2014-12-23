@@ -48,19 +48,6 @@ padding-bottom:15%</string>
         </property>
        </widget>
       </item>
-      <item row="14" column="1">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
       <item row="5" column="1">
        <widget class="FontScalablePushButton" name="pushButton_Intro">
         <property name="sizePolicy">
@@ -182,12 +169,12 @@ padding-bottom:15%</string>
          <enum>Qt::Vertical</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
+         <enum>QSizePolicy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>20</height>
+          <height>40</height>
          </size>
         </property>
        </spacer>
@@ -324,7 +311,7 @@ padding-bottom:15%</string>
           <property name="font">
            <font>
             <family>Arial</family>
-            <pointsize>18</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
            </font>
           </property>
@@ -342,7 +329,7 @@ padding-bottom:15%</string>
           <property name="font">
            <font>
             <family>Arial</family>
-            <pointsize>36</pointsize>
+            <pointsize>32</pointsize>
             <weight>75</weight>
             <italic>false</italic>
             <bold>true</bold>
@@ -500,6 +487,19 @@ padding-bottom:15%</string>
          <bool>true</bool>
         </property>
        </widget>
+      </item>
+      <item row="14" column="1">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>

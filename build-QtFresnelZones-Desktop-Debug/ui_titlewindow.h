@@ -33,12 +33,12 @@ public:
     QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
     FontScalablePushButton *pushButton_IntensityGraph;
-    QSpacerItem *verticalSpacer;
     FontScalablePushButton *pushButton_Intro;
     QSpacerItem *verticalSpacer_5;
     FontScalablePushButton *pushButton_PhasePlate;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
+    FontScalableLabel *label_3;
     QSpacerItem *verticalSpacer_3;
     QSpacerItem *verticalSpacer_6;
     QFrame *line;
@@ -47,10 +47,8 @@ public:
     FontScalablePushButton *pushButton_AmplitudePlate;
     QSpacerItem *verticalSpacer_9;
     QVBoxLayout *verticalLayout;
-    QSpacerItem *verticalSpacer_4;
     FontScalableLabel *label_4;
     FontScalableLabel *label_5;
-    QSpacerItem *verticalSpacer_2;
     FontScalableLabel *label_6;
     QVBoxLayout *verticalLayout_2;
     QWidget *widget_2;
@@ -60,12 +58,13 @@ public:
     FontScalableLabel *label_2;
     FontScalablePushButton *pushButton_Authors;
     FontScalablePushButton *pushButton_Exit;
+    QSpacerItem *verticalSpacer;
 
     void setupUi(QMainWindow *TitleWindow)
     {
         if (TitleWindow->objectName().isEmpty())
             TitleWindow->setObjectName(QStringLiteral("TitleWindow"));
-        TitleWindow->resize(1024, 768);
+        TitleWindow->resize(1382, 823);
         centralwidget = new QWidget(TitleWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout_2 = new QGridLayout(centralwidget);
@@ -90,10 +89,6 @@ public:
 "padding-bottom:15%"));
 
         gridLayout->addWidget(pushButton_IntensityGraph, 7, 1, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 14, 1, 1, 1);
 
         pushButton_Intro = new FontScalablePushButton(centralwidget);
         pushButton_Intro->setObjectName(QStringLiteral("pushButton_Intro"));
@@ -130,10 +125,19 @@ public:
         widget->setMinimumSize(QSize(0, 70));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        label_3 = new FontScalableLabel(widget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
+        font1.setPointSize(16);
+        label_3->setFont(font1);
+
+        horizontalLayout->addWidget(label_3, 0, Qt::AlignHCenter);
+
 
         gridLayout->addWidget(widget, 15, 1, 1, 1);
 
-        verticalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout->addItem(verticalSpacer_3, 4, 1, 1, 1);
 
@@ -174,41 +178,29 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(6, -1, 6, -1);
-        verticalSpacer_4 = new QSpacerItem(20, 30, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        verticalLayout->addItem(verticalSpacer_4);
-
         label_4 = new FontScalableLabel(centralwidget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial"));
-        font1.setPointSize(16);
-        font1.setItalic(false);
-        label_4->setFont(font1);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(16);
+        font2.setItalic(false);
+        label_4->setFont(font2);
         label_4->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_4);
 
         label_5 = new FontScalableLabel(centralwidget);
         label_5->setObjectName(QStringLiteral("label_5"));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(18);
-        font2.setItalic(false);
         label_5->setFont(font2);
         label_5->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_5);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        verticalLayout->addItem(verticalSpacer_2);
-
         label_6 = new FontScalableLabel(centralwidget);
         label_6->setObjectName(QStringLiteral("label_6"));
         QFont font3;
         font3.setFamily(QStringLiteral("Arial"));
-        font3.setPointSize(36);
+        font3.setPointSize(32);
         font3.setBold(true);
         font3.setItalic(false);
         font3.setWeight(75);
@@ -229,7 +221,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy1);
-        widget_2->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/cmc-logo.svg);"));
+        widget_2->setStyleSheet(QStringLiteral("image: url(:cmc-logo.png);"));
 
         verticalLayout_2->addWidget(widget_2);
 
@@ -259,7 +251,7 @@ public:
         widget_3->setObjectName(QStringLiteral("widget_3"));
         sizePolicy1.setHeightForWidth(widget_3->sizePolicy().hasHeightForWidth());
         widget_3->setSizePolicy(sizePolicy1);
-        widget_3->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/phys-logo.svg);"));
+        widget_3->setStyleSheet(QStringLiteral("image: url(:phys-logo.png);"));
 
         verticalLayout_4->addWidget(widget_3);
 
@@ -301,6 +293,10 @@ public:
 
         gridLayout->addWidget(pushButton_Exit, 15, 0, 1, 1);
 
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 14, 1, 1, 1);
+
         gridLayout->setColumnStretch(0, 1);
         gridLayout->setColumnStretch(1, 3);
         gridLayout->setColumnStretch(2, 1);
@@ -320,6 +316,7 @@ public:
         pushButton_IntensityGraph->setText(QApplication::translate("TitleWindow", "\320\230\320\275\321\202\320\265\320\275\321\201\320\270\320\262\320\275\320\276\321\201\321\202\321\214 \320\275\320\260 \320\276\321\201\320\270", 0));
         pushButton_Intro->setText(QApplication::translate("TitleWindow", "\320\237\320\276\321\201\321\202\321\200\320\276\320\265\320\275\320\270\320\265 \320\267\320\276\320\275 \320\244\321\200\320\265\320\275\320\265\320\273\321\217", 0));
         pushButton_PhasePlate->setText(QApplication::translate("TitleWindow", "\320\244\320\260\320\267\320\276\320\262\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
+        label_3->setText(QApplication::translate("TitleWindow", "2014 \320\263.", 0));
         pushButton_AmplitudePlate->setText(QApplication::translate("TitleWindow", "\320\220\320\274\320\277\320\273\320\270\321\202\321\203\320\264\320\275\320\260\321\217 \320\277\320\273\320\260\321\201\321\202\320\270\320\275\320\272\320\260", 0));
         label_4->setText(QApplication::translate("TitleWindow", "\320\234\320\276\321\201\320\272\320\276\320\262\321\201\320\272\320\270\320\271 \320\263\320\276\321\201\321\203\320\264\320\260\321\200\321\201\321\202\320\262\320\265\320\275\320\275\321\213\320\271 \321\203\320\275\320\270\320\262\320\265\321\200\321\201\320\270\321\202\320\265\321\202 \320\270\320\274\320\265\320\275\320\270 \320\234.\320\222. \320\233\320\276\320\274\320\276\320\275\320\276\321\201\320\276\320\262\320\260", 0));
         label_5->setText(QApplication::translate("TitleWindow", "\320\232\320\276\320\274\320\277\321\214\321\216\321\202\320\265\321\200\320\275\321\213\320\265 \320\264\320\265\320\274\320\276\320\275\321\201\321\202\321\200\320\260\321\206\320\270\320\270 \320\277\320\276 \320\272\321\203\321\200\321\201\321\203 \320\273\320\265\320\272\321\206\320\270\320\271\n"
