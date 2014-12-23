@@ -32,7 +32,7 @@ private:
 
     QTimer *_updateTimer = nullptr;
 
-    const double _sliderScaling = 10000000;
+    const double _sliderScaling = 1000;
 
     void _update();
     void _initFresnelBasedSliders();

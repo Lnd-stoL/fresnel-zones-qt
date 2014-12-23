@@ -54,9 +54,13 @@ void IntroWindow::fresnelChanged()
 
 void IntroWindow::_update()
 {
+    //ui->widget_zonesGraph->setAttribute (Qt::WA_OpaquePaintEvent, true);
+    //this->setAttribute (Qt::WA_OpaquePaintEvent, true);
+
     ui->widget_intensityPlot->update(_fresnel);
     ui->widget_schemeGraph->update();
     ui->widget_zonesGraph->update(_fresnel);
+    //ui->widget_zonesGraph->paintEvent (nullptr);
 
     ui->distance_label->setText (QString::number(_fresnel->getObserverDistance() * Fresnel::scale_to_si_exp, 'f', 2));
     ui->radius_label->setText (QString::number(_fresnel->getHoleRadius() * Fresnel::scale_to_milli_exp, 'f', 2));

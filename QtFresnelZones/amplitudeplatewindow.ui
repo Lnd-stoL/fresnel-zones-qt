@@ -491,7 +491,7 @@ padding-right:5%</string>
              <locale language="English" country="UnitedStates"/>
             </property>
             <property name="text">
-             <string>Quit</string>
+             <string>Exit</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -617,6 +617,9 @@ padding-right:5%</string>
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="locale">
        <locale language="English" country="UnitedStates"/>
@@ -1238,11 +1241,6 @@ padding-right:8%;
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>SchemeGraph</class>
-   <extends>QWidget</extends>
-   <header>schemegraph.h</header>
-  </customwidget>
-  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
@@ -1252,6 +1250,11 @@ padding-right:8%;
    <class>FontScalableSpinBox</class>
    <extends>QSpinBox</extends>
    <header>fontscalablespinbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SchemeGraph</class>
+   <extends>QWidget</extends>
+   <header>schemegraph.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

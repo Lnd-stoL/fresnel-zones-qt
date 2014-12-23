@@ -10549,6 +10549,8 @@ bool QCustomPlot::savePdf(const QString &fileName, bool noCosmeticPen, int width
 #endif // QT_NO_PRINTER
   return success;
   */
+
+  return true;
 }
 
 /*!

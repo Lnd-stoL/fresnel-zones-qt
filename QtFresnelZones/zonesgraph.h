@@ -29,7 +29,7 @@ signals:
 
 public slots:
 
-protected:
+public:
     void paintEvent (QPaintEvent *event);
 };
 

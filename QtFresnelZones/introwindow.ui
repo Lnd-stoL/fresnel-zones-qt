@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>IntroWindow</class>
  <widget class="QMainWindow" name="IntroWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,7 +16,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QWidget" name="widget" native="true">
@@ -75,7 +86,7 @@ padding-right:5%</string>
           <locale language="English" country="UnitedStates"/>
          </property>
          <property name="text">
-          <string>Quit</string>
+          <string>Exit</string>
          </property>
          <property name="autoDefault">
           <bool>false</bool>

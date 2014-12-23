@@ -108,7 +108,7 @@ padding-right:5%</string>
              <locale language="English" country="UnitedStates"/>
             </property>
             <property name="text">
-             <string>Quit</string>
+             <string>Exit</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -1146,12 +1146,6 @@ padding-right:5%</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>IntensityPlot</class>
-   <extends>QWidget</extends>
-   <header>intensityplot.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
@@ -1161,6 +1155,12 @@ padding-right:5%</string>
    <class>FontScalableSpinBox</class>
    <extends>QSpinBox</extends>
    <header>fontscalablespinbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>IntensityPlot</class>
+   <extends>QWidget</extends>
+   <header>intensityplot.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -636,7 +636,7 @@ padding-right:5%</string>
              <locale language="English" country="UnitedStates"/>
             </property>
             <property name="text">
-             <string>Quit</string>
+             <string>Exit</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -776,15 +776,15 @@ padding-right:5%</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>SchemeGraph</class>
-   <extends>QWidget</extends>
-   <header>schemegraph.h</header>
-  </customwidget>
-  <customwidget>
    <class>SpiralGraph</class>
    <extends>QWidget</extends>
    <header>spiralgraph.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SchemeGraph</class>
+   <extends>QWidget</extends>
+   <header>schemegraph.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

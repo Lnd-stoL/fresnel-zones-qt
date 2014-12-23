@@ -1,14 +1,14 @@
 #ifndef SPIRALGRAPH_H
 #define SPIRALGRAPH_H
 
-#include <drawer.h>
+#include "drawer.h"
 
 #include "fresnel.h"
 
 #include <QWidget>
-#include <QGLWidget>
+//#include <QGLWidget>
 
-class SpiralGraph : public QGLWidget
+class SpiralGraph : public QWidget
 {
     Q_OBJECT
 

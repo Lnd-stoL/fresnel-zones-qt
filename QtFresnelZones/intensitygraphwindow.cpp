@@ -161,18 +161,8 @@ void IntensityGraphWindow::button_Next_Pressed()
 
 void IntensityGraphWindow::slider_xDistance_Changed (int value)
 {
-    double val = (double) value / _sliderScaling;
-    ui->spin_xDistance->setValue (val);
-    _fresnel->setObserverDistance (Fresnel::si_to_scale_exp * val);
-    if (_xDependenceMode)
-    {
-        if (_updateTimer == nullptr)
-        {
-            _updateTimer = new QTimer (this);
-            connect (_updateTimer, SIGNAL(timeout()), this, SLOT(update_Needed()));
-            _updateTimer->start (40);
-        }
-    }
+    double spinVal = ((double) value) / _sliderScaling;
+    ui->spin_xDistance->setValue (spinVal);
 }
 
 
@@ -196,7 +186,7 @@ void IntensityGraphWindow::slider_HoleRadius_Changed (int value)
         {
             _updateTimer = new QTimer (this);
             connect (_updateTimer, SIGNAL(timeout()), this, SLOT(update_Needed()));
-            _updateTimer->start (40);
+            _updateTimer->start (50);
         }
     }
 }
@@ -217,8 +207,22 @@ void IntensityGraphWindow::update_Needed()
 
 void IntensityGraphWindow::spin_xDistance_Changed (double value)
 {
+    _fresnel->setObserverDistance (Fresnel::si_to_scale_exp * value);
+    //qDebug() << Fresnel::si_to_scale_exp * value;
+
+    if (_xDependenceMode)
+    {
+        if (_updateTimer == nullptr)
+        {
+            _updateTimer = new QTimer (this);
+            connect (_updateTimer, SIGNAL(timeout()), this, SLOT(update_Needed()));
+            _updateTimer->start (50);
+        }
+    }
+
     ui->slider_xDistance->setValue (value * _sliderScaling);
 }
+
 
 void IntensityGraphWindow::spin_WaveLength_Changed (double value)
 {
