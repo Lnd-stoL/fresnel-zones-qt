@@ -165,7 +165,7 @@ Lectures course &quot;Physics of wave processes&quot;</string>
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>16</pointsize>
+          <pointsize>20</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -226,7 +226,6 @@ Lectures course &quot;Physics of wave processes&quot;</string>
           <property name="locale">
            <locale language="English" country="UnitedStates"/>
           </property>
-          <zorder>label</zorder>
          </widget>
         </item>
         <item>
@@ -306,8 +305,6 @@ Mathematics and Cybernetics</string>
           <property name="locale">
            <locale language="English" country="UnitedStates"/>
           </property>
-          <zorder>widget_5</zorder>
-          <zorder>widget_5</zorder>
          </widget>
         </item>
        </layout>
