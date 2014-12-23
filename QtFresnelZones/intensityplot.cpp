@@ -70,13 +70,13 @@ void IntensityPlot::_switchToXDependence()
 
 void IntensityPlot::_switchToRDependence()
 {
-    xAxis->setLabel ("Hole radius, mm");
+    xAxis->setLabel ("Aperture radius, mm");
     this->clearItems();
 }
 
 
 void IntensityPlot::_updateGraphData (double highest, double step, double lowest,
-                                      Fresnel *fresnel, std::function<double(double)> calculator)
+                                      std::function<double(double)> calculator)
 {
     unsigned valuesCount = (highest - lowest) / step;
     _plotX.resize (valuesCount);
@@ -109,7 +109,7 @@ void IntensityPlot::_updateXDependence (Fresnel *fresnel)
         double step = (double) (highest - lowest) / 1000.0;
 
         double oldDistance = fresnel->getObserverDistance();    // this is to save the current observer distance
-        _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {
+        _updateGraphData (highest, step, lowest, [fresnel](double x) {
             fresnel->setObserverDistance (x);
             return fresnel->intensity();
         });
@@ -135,7 +135,7 @@ void IntensityPlot::_updateRDependence (Fresnel *fresnel)
         double step = (double) (highest - lowest) / 1000.0;
 
         double oldHoleRadius = fresnel->getHoleRadius();
-        _updateGraphData (highest, step, lowest, fresnel, [fresnel](double x) {
+        _updateGraphData (highest, step, lowest, [fresnel](double x) {
             fresnel->setHoleRadius (x);
             return fresnel->intensity();
         });

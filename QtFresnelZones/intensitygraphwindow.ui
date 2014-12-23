@@ -415,7 +415,7 @@ padding-right:5%</string>
                <locale language="English" country="UnitedStates"/>
               </property>
               <property name="text">
-               <string>Hole radius</string>
+               <string>Aperture radius</string>
               </property>
              </widget>
             </item>
@@ -672,7 +672,7 @@ padding-right:5%</string>
                <locale language="English" country="UnitedStates"/>
               </property>
               <property name="text">
-               <string>Hole radius:</string>
+               <string>Aperture radius:</string>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -1035,7 +1035,10 @@ padding-right:5%</string>
           <locale language="English" country="UnitedStates"/>
          </property>
          <property name="text">
-          <string>Set the number of the zones in the hole:</string>
+          <string>Set the number of the zones in the aperture:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>

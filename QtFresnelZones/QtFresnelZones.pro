@@ -4,9 +4,22 @@
 #
 #-------------------------------------------------
 
-QT       += core gui svg
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+CONFIG += static
+static
+{
+    CONFIG += static
+    //QTPLUGIN += qsvg
+    DEFINES += STATIC
+
+    QMAKE_CFLAGS_RELEASE += /MT
+    QMAKE_CXXFLAGS_RELEASE += /MT
+    QMAKE_CFLAGS_DEBUG += /MTd
+    QMAKE_CXXFLAGS_DEBUG += /MTd
+}
 
 TARGET = QtFresnelZones
 TEMPLATE = app

@@ -1,5 +1,6 @@
 
 #include "zonesgraph.h"
+#include "schemegraph.h"
 #include <QPainter>
 #include <stdio.h>
 #include <QDebug>
@@ -74,7 +75,7 @@ void ZonesGraph::_drawAmplitudePlate (QPainter &painter, double squareWidth, dou
 
 
 void ZonesGraph::_drawPhasePlate (QPainter &painter, double squareWidth, double maxRad,
-                                  QBrush &colorBrush, QBrush &blackBrush)
+                                  QBrush &, QBrush &)
 {
     int width = size().width();
     int height = size().height();
@@ -121,8 +122,15 @@ void ZonesGraph::update (Fresnel *fresnel)
     this->repaint();
 }
 
+double ZonesGraph::getHoleRadius ()
+{
+    int width = size().width();
+    int height = size().height();
+    return (std::min (height/2, width/2) - 5) * (_fresnel->getHoleRadius() / Fresnel::radius_max);
+}
 
-void ZonesGraph::paintEvent (QPaintEvent *event)
+
+void ZonesGraph::paintEvent (QPaintEvent *)
 {
     //if (_fresnel == nullptr)  return;
 

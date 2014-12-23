@@ -3,14 +3,16 @@
 #include <QApplication>
 #include "titlewindow.h"
 #include "intensitygraphwindow.h"
+#include <QStyleFactory>
+#include <QtPlugin>
 
 
 int main (int argc, char *argv[])
 {
-    Q_INIT_RESOURCE(icons);
+    Q_INIT_RESOURCE (icons);
 
     QApplication::addLibraryPath (".");
-    QApplication::setStyle( "macintosh" );
+    QApplication::setStyle (QStyleFactory::create ("Fusion"));
 
     QApplication a (argc, argv);
     TitleWindow w;

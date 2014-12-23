@@ -399,7 +399,7 @@ padding-right:5%</string>
                <locale language="English" country="UnitedStates"/>
               </property>
               <property name="text">
-               <string>Hole radius:</string>
+               <string>Aperture radius:</string>
               </property>
              </widget>
             </item>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1382</width>
+    <width>1388</width>
     <height>823</height>
    </rect>
   </property>
@@ -16,7 +16,41 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout" columnstretch="1,3,1">
+     <layout class="QGridLayout" name="gridLayout" columnstretch="2,4,2">
+      <item row="15" column="2">
+       <widget class="FontScalablePushButton" name="pushButton_Authors">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-top:15%;
+padding-bottom:15%</string>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>Authors</string>
+        </property>
+       </widget>
+      </item>
       <item row="7" column="1">
        <widget class="FontScalablePushButton" name="pushButton_IntensityGraph">
         <property name="sizePolicy">
@@ -166,20 +200,6 @@ padding-bottom:15%</string>
         </property>
        </widget>
       </item>
-      <item row="15" column="1">
-       <widget class="QWidget" name="widget" native="true">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>70</height>
-         </size>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout"/>
-       </widget>
-      </item>
       <item row="4" column="1">
        <spacer name="verticalSpacer_3">
         <property name="locale">
@@ -189,12 +209,12 @@ padding-bottom:15%</string>
          <enum>Qt::Vertical</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
+         <enum>QSizePolicy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>20</height>
+          <height>40</height>
          </size>
         </property>
        </spacer>
@@ -328,30 +348,11 @@ padding-bottom:15%</string>
          <number>6</number>
         </property>
         <item>
-         <spacer name="verticalSpacer_4">
-          <property name="locale">
-           <locale language="English" country="UnitedStates"/>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>30</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
          <widget class="FontScalableLabel" name="label_4">
           <property name="font">
            <font>
             <family>Arial</family>
-            <pointsize>16</pointsize>
+            <pointsize>15</pointsize>
             <italic>false</italic>
            </font>
           </property>
@@ -371,7 +372,7 @@ padding-bottom:15%</string>
           <property name="font">
            <font>
             <family>Arial</family>
-            <pointsize>18</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
            </font>
           </property>
@@ -379,8 +380,8 @@ padding-bottom:15%</string>
            <locale language="English" country="UnitedStates"/>
           </property>
           <property name="text">
-           <string>Computer presentation lecture course
-&quot;Physics of wave processes&quot;</string>
+           <string>Computer presentations
+Lectures course &quot;Physics of wave processes&quot;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -391,30 +392,11 @@ padding-bottom:15%</string>
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacer_2">
-          <property name="locale">
-           <locale language="English" country="UnitedStates"/>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
          <widget class="FontScalableLabel" name="label_6">
           <property name="font">
            <font>
             <family>Arial</family>
-            <pointsize>36</pointsize>
+            <pointsize>32</pointsize>
             <weight>75</weight>
             <italic>false</italic>
             <bold>true</bold>
@@ -443,6 +425,12 @@ padding-bottom:15%</string>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">image: url(:cmc-logo.png);</string>
           </property>
@@ -451,7 +439,7 @@ padding-bottom:15%</string>
           </property>
          </widget>
         </item>
-        <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+        <item alignment="Qt::AlignHCenter">
          <widget class="FontScalableLabel" name="label">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -494,6 +482,12 @@ Mathematics and Cybernetics</string>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">image: url(:phys-logo.png);</string>
           </property>
@@ -532,40 +526,6 @@ Physics</string>
         </item>
        </layout>
       </item>
-      <item row="15" column="2">
-       <widget class="FontScalablePushButton" name="pushButton_Authors">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>20</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">padding-top:15%;
-padding-bottom:15%</string>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>Authors</string>
-        </property>
-       </widget>
-      </item>
       <item row="15" column="0">
        <widget class="FontScalablePushButton" name="pushButton_Exit">
         <property name="sizePolicy">
@@ -597,6 +557,47 @@ padding-bottom:15%</string>
         <property name="default">
          <bool>true</bool>
         </property>
+       </widget>
+      </item>
+      <item row="14" column="1">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="15" column="1">
+       <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="FontScalableLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>2014</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
