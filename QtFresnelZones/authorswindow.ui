@@ -16,100 +16,38 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout" columnstretch="1,0,0">
-      <item row="7" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item alignment="Qt::AlignHCenter">
-         <widget class="FontScalableLabel" name="label_7">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>16</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Александр Царьков</string>
-          </property>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignHCenter">
-         <widget class="FontScalableLabel" name="label_3">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>16</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Леонид Столяров</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+     <layout class="QGridLayout" name="gridLayout" columnstretch="2,4,2">
+      <item row="4" column="1">
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
-      <item row="1" column="1">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <property name="leftMargin">
-         <number>6</number>
+      <item row="6" column="1">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
         </property>
-        <property name="rightMargin">
-         <number>6</number>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
         </property>
-        <item>
-         <widget class="FontScalableLabel" name="label_4">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>16</pointsize>
-            <italic>false</italic>
-           </font>
-          </property>
-          <property name="text">
-           <string>Московский государственный университет имени М.В. Ломоносова</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="FontScalableLabel" name="label_5">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>18</pointsize>
-            <italic>false</italic>
-           </font>
-          </property>
-          <property name="text">
-           <string>Компьютерные демонстрации по курсу лекций
-&quot;Физика волновых процессов&quot;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="FontScalableLabel" name="label_6">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>36</pointsize>
-            <weight>75</weight>
-            <italic>false</italic>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Зонная пластинка Френеля</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item row="1" column="0">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -152,8 +90,151 @@
         </item>
        </layout>
       </item>
-      <item row="4" column="1">
-       <spacer name="verticalSpacer_3">
+      <item row="1" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="leftMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="FontScalableLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>15</pointsize>
+            <italic>false</italic>
+           </font>
+          </property>
+          <property name="text">
+           <string>Московский государственный университет имени М.В. Ломоносова</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="FontScalableLabel" name="label_5">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+            <italic>false</italic>
+           </font>
+          </property>
+          <property name="text">
+           <string>Компьютерные демонстрации по курсу лекций
+&quot;Физика волновых процессов&quot;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="FontScalableLabel" name="label_6">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>32</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Зонная пластинка Френеля</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="13" column="1">
+       <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>70</height>
+         </size>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout"/>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="FontScalableLabel" name="label_7">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Александр Царьков</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="FontScalableLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Леонид Столяров</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="13" column="2">
+       <widget class="FontScalablePushButton" name="pushButton_Menu">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-top:15%;
+padding-bottom:15%</string>
+        </property>
+        <property name="text">
+         <string>В меню</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="3">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -163,52 +244,10 @@
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>20</height>
+          <height>80</height>
          </size>
         </property>
        </spacer>
-      </item>
-      <item row="6" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QWidget" name="widget_5" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>260</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">image: url(:sanya.png);</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="widget_4" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>260</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">image: url(:lenya.png);</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
       </item>
       <item row="1" column="2">
        <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -251,7 +290,77 @@
         </item>
        </layout>
       </item>
-      <item row="12" column="1">
+      <item row="5" column="1" alignment="Qt::AlignHCenter">
+       <widget class="QLabel" name="label_9">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>20</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Авторы</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QWidget" name="widget_5" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>260</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">image: url(:sanya.png);</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_4" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>260</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">image: url(:lenya.png);</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="11" column="1" alignment="Qt::AlignHCenter">
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Лекторы: В.П. Кандидов, А.Ю. Чикишев</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="1">
        <spacer name="verticalSpacer_7">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -267,96 +376,18 @@
         </property>
        </spacer>
       </item>
-      <item row="9" column="1">
-       <spacer name="verticalSpacer">
+      <item row="12" column="1">
+       <spacer name="verticalSpacer_4">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>80</height>
+          <height>0</height>
          </size>
         </property>
        </spacer>
-      </item>
-      <item row="11" column="1">
-       <widget class="QWidget" name="widget" native="true">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>70</height>
-         </size>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout"/>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="3">
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="2">
-       <widget class="FontScalablePushButton" name="pushButton_Menu">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>20</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">padding-top:15%;
-padding-bottom:15%</string>
-        </property>
-        <property name="text">
-         <string>В меню</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1" alignment="Qt::AlignHCenter">
-       <widget class="QLabel" name="label_9">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Авторы</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="1" alignment="Qt::AlignHCenter">
-       <widget class="QLabel" name="label_8">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Лекторы: В.П. Кандидов, А.Ю. Чикишев</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </item>

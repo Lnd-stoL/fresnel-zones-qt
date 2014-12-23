@@ -363,6 +363,7 @@ void SchemeGraph::paintEvent (QPaintEvent *)
     switch (schemeType) {
     case SchemeType::MovingScheme:
         holeCenterXRelativePosition = 0.04;
+        holeCenterPosition = QPointF (width * holeCenterXRelativePosition, height / 2.0);
         drawMovingScheme (painter);
         break;
 
@@ -371,8 +372,9 @@ void SchemeGraph::paintEvent (QPaintEvent *)
         break;
 
     case SchemeType::AmplitudePlateScheme:
-        holeRelativeSize = 0.8;
         holeCenterXRelativePosition = 0.5;
+        holeRelativeSize = zonesGraph == nullptr ? 0.8 : zonesGraph->getHoleRadius() / (height / 2.0);
+        holeCenterPosition = QPointF (width * holeCenterXRelativePosition, height / 2.0);
         drawAmplitudePlateScheme (painter);
         break;
     }
