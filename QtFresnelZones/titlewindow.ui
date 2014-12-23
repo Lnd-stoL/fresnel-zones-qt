@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1382</width>
+    <width>1388</width>
     <height>823</height>
    </rect>
   </property>
@@ -352,7 +352,7 @@ padding-bottom:15%</string>
           <property name="font">
            <font>
             <family>Arial</family>
-            <pointsize>16</pointsize>
+            <pointsize>15</pointsize>
             <italic>false</italic>
            </font>
           </property>

@@ -228,7 +228,7 @@ Lectures course &quot;Physics of wave processes&quot;</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item alignment="Qt::AlignHCenter">
          <widget class="FontScalableLabel" name="label">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -248,7 +248,7 @@ Lectures course &quot;Physics of wave processes&quot;</string>
            <locale language="English" country="UnitedStates"/>
           </property>
           <property name="text">
-           <string>Faculty of Computation
+           <string>Faculty of Computational
 Mathematics and Cybernetics</string>
           </property>
           <property name="alignment">

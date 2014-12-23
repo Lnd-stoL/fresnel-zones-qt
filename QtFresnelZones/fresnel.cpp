@@ -212,7 +212,7 @@ double Fresnel::getPhasePlateWidthOnRing (double r) const
     double n        = refractiveIndex;
     double k        = waveNumber;
     double b        = observerDistance;
-    double l        = waveLength;
+//    double l        = waveLength;
     double width    = 0.0;
 
     if (phasePlateType == PhasePlate::SIMPLE) {
